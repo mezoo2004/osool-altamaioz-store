@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Heart, ShoppingBag, User } from "lucide-react";
+import { Heart, User } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { CartIconButton } from "@/components/commerce/cart-icon-button";
 import { useCart } from "@/components/commerce/cart-provider";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Logo } from "@/components/layout/logo";
@@ -62,16 +63,7 @@ export function HomeHeader() {
                 <IconLink href="/wishlist" label={t("wishlist")}>
                   <Heart strokeWidth={1.5} className="h-5 w-5" />
                 </IconLink>
-                <IconLink href="/cart" label={t("cart")}>
-                  <span className="relative">
-                    <ShoppingBag strokeWidth={1.5} className="h-5 w-5" />
-                    {cartCount > 0 && (
-                      <span className="absolute -end-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-orange px-1 text-[10px] font-bold leading-none text-white">
-                        {cartCount > 99 ? "99+" : cartCount}
-                      </span>
-                    )}
-                  </span>
-                </IconLink>
+                <CartIconButton label={t("cart")} count={cartCount} />
               </div>
             </div>
 

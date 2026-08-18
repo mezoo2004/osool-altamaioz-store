@@ -28,7 +28,7 @@ export function ShopBySpaceSection() {
   const tCommon = useTranslations("common");
 
   return (
-    <section className="home-section-y bg-[#faf9f7]">
+    <section className="home-section-y bg-[#faf9f7] home-reveal">
       <div className="container-home">
         <HomeSectionHeader
           title={t("spacesTitle")}
@@ -36,53 +36,34 @@ export function ShopBySpaceSection() {
           action={<HomeArrowLink href="/spaces">{tCommon("viewAll")}</HomeArrowLink>}
         />
 
-        <div className="home-space-scroll">
-          {homepageSpaces.map((space, index) => {
+        <div className="home-space-grid">
+          {homepageSpaces.map((space) => {
             const imageEntry = homeImages.spaces[space.imageKey];
-            const featured = index === 0;
 
             return (
               <Link
                 key={space.key}
                 href={`/spaces/${space.slug}`}
-                className={cn(
-                  "group relative overflow-hidden home-clip-card",
-                  "w-[74vw] shrink-0 snap-start sm:w-[46vw]",
-                  "md:w-auto md:shrink",
-                  featured && "md:col-span-2 md:row-span-2",
-                )}
+                className={cn("home-space-card group relative overflow-hidden home-clip-card", space.gridClass)}
               >
-                <div
-                  className={cn(
-                    "relative overflow-hidden",
-                    featured ? "home-space-featured aspect-[4/5] md:aspect-auto" : "home-space-standard aspect-[5/4] md:aspect-auto",
-                  )}
-                >
+                <div className="home-space-card-inner relative h-full min-h-[13rem] overflow-hidden sm:min-h-[14rem]">
                   <HomeImage
                     entry={imageEntry}
                     alt={tSpaces(space.key)}
                     fill
-                    sizes={featured ? "(max-width: 768px) 74vw, 40vw" : "(max-width: 768px) 74vw, 22vw"}
-                    className="transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 767px) 74vw, (max-width: 1023px) 33vw, 20vw"
+                    className="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/25 to-black/10 transition-colors duration-300 group-hover:from-black/88"
+                    className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/35 to-black/8 transition-opacity duration-500 group-hover:from-black/92"
                     aria-hidden="true"
                   />
-                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 lg:p-6">
-                    <p className="font-mono text-sm font-medium tracking-[0.12em] text-brand-orange">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <div className="mt-2 flex items-end justify-between gap-3">
-                      <p
-                        className={cn(
-                          "font-medium text-white",
-                          featured ? "text-xl sm:text-2xl lg:text-[1.75rem]" : "text-base sm:text-lg lg:text-xl",
-                        )}
-                      >
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                    <div className="flex items-end justify-between gap-3">
+                      <p className="text-base font-medium tracking-tight text-white sm:text-lg lg:text-xl">
                         {tSpaces(space.key)}
                       </p>
-                      <span className="mb-0.5 inline-flex h-9 w-9 items-center justify-center border border-white/25 bg-white/8 opacity-80 transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-brand-orange/50 group-hover:opacity-100 rtl:group-hover:-translate-x-0.5 lg:h-10 lg:w-10">
+                      <span className="home-space-arrow mb-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 opacity-90 backdrop-blur-sm transition-all duration-300 group-hover:border-brand-orange/60 group-hover:bg-brand-orange/15 group-hover:opacity-100">
                         <HomeArrowIcon className="h-4 w-4 text-white rtl:rotate-180" />
                       </span>
                     </div>
@@ -103,7 +84,7 @@ export function CategoriesSection() {
   const tSecondary = useTranslations("homeSecondary");
 
   return (
-    <section className="home-section-y-sm bg-white">
+    <section className="home-section-y-sm bg-white home-reveal">
       <div className="container-home">
         <HomeSectionHeader title={t("categoriesTitle")} subtitle={t("categoriesSubtitle")} />
 
@@ -122,16 +103,20 @@ export function CategoriesSection() {
               <HomeCategoryIcon
                 type={cat.icon}
                 className={cn(
-                  "h-10 w-10 lg:h-11 lg:w-11",
-                  "accent" in cat && cat.accent ? "text-brand-orange" : "text-brand-black-soft",
+                  "h-10 w-10 transition-colors duration-200 lg:h-11 lg:w-11",
+                  "accent" in cat && cat.accent
+                    ? "text-brand-orange"
+                    : "text-brand-black-soft group-hover:text-brand-orange",
                 )}
               />
               <div className="flex items-center justify-between gap-2">
                 <span className="text-sm font-medium leading-snug lg:text-base">{tNav(cat.key)}</span>
                 <HomeArrowIcon
                   className={cn(
-                    "h-4 w-4 opacity-45 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5",
-                    "accent" in cat && cat.accent ? "text-brand-orange" : "text-brand-black-soft",
+                    "h-4 w-4 opacity-45 transition-all duration-200 group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5",
+                    "accent" in cat && cat.accent
+                      ? "text-brand-orange"
+                      : "text-brand-black-soft group-hover:text-brand-orange",
                   )}
                 />
               </div>
@@ -148,15 +133,19 @@ export function CategoriesSection() {
             >
               <span
                 className={cn(
-                  "inline-flex h-11 w-11 items-center justify-center rounded-sm border border-[#E0DFDD]/80 bg-[#faf9f7] transition-colors lg:h-12 lg:w-12",
-                  "accent" in category && category.accent && "group-hover:border-brand-orange/35 group-hover:bg-brand-orange/5",
+                  "inline-flex h-11 w-11 items-center justify-center rounded-sm border border-[#E0DFDD]/80 bg-[#faf9f7] transition-all duration-200 lg:h-12 lg:w-12",
+                  "accent" in category && category.accent
+                    ? "border-brand-orange/20 group-hover:border-brand-orange/35 group-hover:bg-brand-orange/5"
+                    : "group-hover:border-brand-orange/30 group-hover:bg-brand-orange/5",
                 )}
               >
                 <HomeCategoryIcon
                   type={category.icon}
                   className={cn(
-                    "h-6 w-6 lg:h-7 lg:w-7",
-                    "accent" in category && category.accent ? "text-brand-orange" : "text-brand-black-soft",
+                    "h-6 w-6 transition-colors duration-200 lg:h-7 lg:w-7",
+                    "accent" in category && category.accent
+                      ? "text-brand-orange"
+                      : "text-brand-black-soft group-hover:text-brand-orange",
                   )}
                 />
               </span>

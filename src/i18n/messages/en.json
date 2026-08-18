@@ -21,6 +21,31 @@
     "from": "From",
     "currency": "SAR"
   },
+  "cartFeedback": {
+    "addedTitle": "Product added to cart",
+    "viewCart": "View cart",
+    "continueShopping": "Continue shopping",
+    "dismiss": "Dismiss",
+    "miniCartTitle": "Your cart",
+    "close": "Close",
+    "loading": "Loading..."
+  },
+  "assistant": {
+    "title": "Osool Smart Assistant",
+    "subtitle": "Ask about lighting, products, or styling your space",
+    "welcome": "Welcome to Osool Altamaioz. I'm your smart assistant — I can help with lighting by room, color temperature, and navigating the store.",
+    "inputPlaceholder": "Type your question...",
+    "send": "Send",
+    "open": "Open assistant",
+    "close": "Close",
+    "fallback": "Sorry, I couldn't respond right now. Try one of the suggestions below.",
+    "suggestion1": "Suggest lighting for a majlis",
+    "suggestion2": "What's the difference between 3000K and 4000K?",
+    "suggestion3": "I need kitchen lighting",
+    "suggestion4": "Where can I find outdoor lighting?",
+    "suggestion5": "Help me choose modern lighting",
+    "suggestion6": "Best lighting for a bedroom?"
+  },
   "nav": {
     "indoor": "Indoor lighting",
     "outdoor": "Outdoor lighting",

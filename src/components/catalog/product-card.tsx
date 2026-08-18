@@ -38,7 +38,7 @@ export function ProductCard({
       className={cn(
         "group relative overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-brand-gray/50",
         outOfStock && "opacity-75",
-        isHome && "rounded-none border-0 bg-transparent shadow-none hover:border-0",
+        isHome && "rounded-none border-0 bg-transparent shadow-none hover:-translate-y-1 hover:shadow-none",
         className,
       )}
     >
@@ -46,9 +46,9 @@ export function ProductCard({
         type="button"
         onClick={() => toggle(product.slug)}
         className={cn(
-          "absolute end-2.5 top-2.5 z-10 inline-flex items-center justify-center rounded-lg bg-white/90 transition-colors",
+          "icon-btn-premium absolute end-2.5 top-2.5 z-10 bg-white/90 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:text-brand-orange",
           isHome ? "end-3 top-3 h-10 w-10" : "h-8 w-8",
-          inWishlist ? "text-brand-orange" : "text-text-secondary hover:text-brand-black-soft",
+          inWishlist && "text-brand-orange ring-1 ring-brand-orange/20",
         )}
         aria-label={inWishlist ? t("removeFromWishlist") : t("addToWishlist")}
       >
@@ -76,7 +76,11 @@ export function ProductCard({
               )}
             />
           ) : isHome ? (
-            <HomeProductImagePlaceholder className="h-full w-full" />
+            <HomeProductImagePlaceholder
+              className="h-full w-full"
+              categorySlugs={product.categorySlugs}
+              productType={product.productType}
+            />
           ) : (
             <ProductImagePlaceholder locale={locale} />
           )}

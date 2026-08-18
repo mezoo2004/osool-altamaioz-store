@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T19:09:20.769Z",
+  "generatedAt": "2026-08-18T23:43:13.566Z",
   "importBatch": "batch-001",
   "totalConflicts": 0,
   "policy": "Conflicts are reported — ambiguous SKU matches are never auto-merged.",

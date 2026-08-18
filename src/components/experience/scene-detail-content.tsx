@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/components/commerce/cart-provider";
+import { useCartFeedback } from "@/components/commerce/cart-feedback-provider";
 import { ProductImagePlaceholder } from "@/components/ui/product-image-placeholder";
 import { ExperienceBreadcrumb } from "@/components/experience/experience-breadcrumb";
 import { getPriceDisplay, getProductName } from "@/lib/catalog/display";
@@ -42,6 +43,7 @@ export function SceneDetailContent({
   const tCommon = useTranslations("common");
   const tCatalog = useTranslations("catalog");
   const { addLine, mergeLines } = useCart();
+  const { showAddedFeedback } = useCartFeedback();
   const brand = locale === "ar" ? "اصول التميز" : "Osool Altamaioz";
 
   const [activeHotspotId, setActiveHotspotId] = useState<string | null>(
@@ -86,6 +88,11 @@ export function SceneDetailContent({
       productSlug: active.product.slug,
       variantId: active.variant.id,
       variantSku: active.variant.sku,
+      quantity: qty,
+    });
+    showAddedFeedback({
+      productName: getProductName(active.product, locale),
+      productSlug: active.product.slug,
       quantity: qty,
     });
     trackEvent("shop_scene_add_item", { scene_slug: scene.slug, product_slug: active.product.slug });

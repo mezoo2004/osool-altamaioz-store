@@ -116,7 +116,7 @@ export function IconLink({
   children: React.ReactNode;
 }) {
   return (
-    <Link href={href} aria-label={label} className="icon-btn">
+    <Link href={href} aria-label={label} className="icon-btn-premium">
       {children}
     </Link>
   );

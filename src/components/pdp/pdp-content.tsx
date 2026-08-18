@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/components/commerce/cart-provider";
+import { useCartFeedback } from "@/components/commerce/cart-feedback-provider";
 import { useWishlist } from "@/components/commerce/wishlist-provider";
 import { ProductGrid } from "@/components/catalog/product-card";
 import {
@@ -37,6 +38,7 @@ export function PdpContent({
   const t = useTranslations("pdp");
   const tCatalog = useTranslations("catalog");
   const { addLine } = useCart();
+  const { showAddedFeedback } = useCartFeedback();
   const { has, toggle } = useWishlist();
 
   const relatedProducts = related;
@@ -107,6 +109,7 @@ export function PdpContent({
       variantSku: selectedVariant.sku,
       quantity,
     });
+    showAddedFeedback({ productName: name, productSlug: product.slug, quantity });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

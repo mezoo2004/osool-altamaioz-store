@@ -29,13 +29,13 @@ export const homeSecondaryCategories = [
 ] as const;
 
 export const homepageSpaces = [
-  { key: "majlis", slug: "majlis", imageKey: "majlis" as const },
-  { key: "living", slug: "living-room", imageKey: "living" as const },
-  { key: "bedroom", slug: "bedroom", imageKey: "bedroom" as const },
-  { key: "kitchen", slug: "kitchen", imageKey: "kitchen" as const },
-  { key: "office", slug: "office", imageKey: "office" as const },
-  { key: "restaurant", slug: "restaurant", imageKey: "restaurant" as const },
-  { key: "retail", slug: "retail-store", imageKey: "retail" as const },
-  { key: "facade", slug: "facade", imageKey: "facade" as const },
-  { key: "garden", slug: "garden", imageKey: "garden" as const },
+  { key: "majlis", slug: "majlis", imageKey: "majlis" as const, gridClass: "home-space-majlis" },
+  { key: "living", slug: "living-room", imageKey: "living" as const, gridClass: "home-space-living" },
+  { key: "bedroom", slug: "bedroom", imageKey: "bedroom" as const, gridClass: "home-space-bedroom" },
+  { key: "kitchen", slug: "kitchen", imageKey: "kitchen" as const, gridClass: "home-space-kitchen" },
+  { key: "office", slug: "office", imageKey: "office" as const, gridClass: "home-space-office" },
+  { key: "restaurant", slug: "restaurant", imageKey: "restaurant" as const, gridClass: "home-space-restaurant" },
+  { key: "retail", slug: "retail-store", imageKey: "retail" as const, gridClass: "home-space-retail" },
+  { key: "facade", slug: "facade", imageKey: "facade" as const, gridClass: "home-space-facade" },
+  { key: "garden", slug: "garden", imageKey: "garden" as const, gridClass: "home-space-garden" },
 ] as const;

@@ -1,13 +1,15 @@
 "use client";
 
+import { Heart, User } from "lucide-react";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { CartIconButton } from "@/components/commerce/cart-icon-button";
+import { useCart } from "@/components/commerce/cart-provider";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Logo } from "@/components/layout/logo";
 import { MegaMenu } from "@/components/layout/mega-menu";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { IconLink, SearchBar } from "@/components/layout/search-bar";
-import { useCart } from "@/components/commerce/cart-provider";
 
 export function SiteHeader() {
   const locale = useLocale() as "ar" | "en";
@@ -29,7 +31,7 @@ export function SiteHeader() {
           <div className="flex h-[var(--header-height)] items-center gap-2 md:gap-4">
             <button
               type="button"
-              className="icon-btn lg:hidden"
+              className="icon-btn-premium lg:hidden"
               aria-label={t("menu")}
               onClick={() => setMenuOpen(true)}
             >
@@ -47,20 +49,11 @@ export function SiteHeader() {
                 <LanguageSwitcher label={t("language")} />
               </div>
               <IconLink href="/wishlist" label={t("wishlist")}>
-                <HeartIcon />
+                <Heart strokeWidth={1.5} className="h-5 w-5" />
               </IconLink>
-              <IconLink href="/cart" label={t("cart")}>
-                <span className="relative">
-                  <CartIcon />
-                  {cartCount > 0 && (
-                    <span className="absolute -end-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-orange px-1 text-[10px] font-bold leading-none text-white">
-                      {cartCount > 99 ? "99+" : cartCount}
-                    </span>
-                  )}
-                </span>
-              </IconLink>
+              <CartIconButton label={t("cart")} count={cartCount} />
               <IconLink href="/account" label={t("account")}>
-                <UserIcon />
+                <User strokeWidth={1.5} className="h-5 w-5" />
               </IconLink>
             </div>
           </div>
@@ -84,38 +77,6 @@ function MenuIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function HeartIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path
-        d="M12 20s-7-4.35-7-9.5a4.5 4.5 0 0 1 8-2.74A4.5 4.5 0 0 1 19 10.5C19 15.65 12 20 12 20Z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
-    </svg>
-  );
-}
-
-function CartIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M6 6h15l-1.5 9H8L6 6Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-      <path d="M6 6 5 3H2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      <circle cx="10" cy="19" r="1.2" fill="currentColor" />
-      <circle cx="18" cy="19" r="1.2" fill="currentColor" />
-    </svg>
-  );
-}
-
-function UserIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="12" cy="8" r="3.2" stroke="currentColor" strokeWidth="1.8" />
-      <path d="M5 20a7 7 0 0 1 14 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
