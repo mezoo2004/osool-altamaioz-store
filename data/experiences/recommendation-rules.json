@@ -1,0 +1,133 @@
+{
+  "moods": [
+    { "id": "warm", "nameAr": "دافئ", "nameEn": "Warm" },
+    { "id": "luxury", "nameAr": "فاخر", "nameEn": "Luxury" },
+    { "id": "modern", "nameAr": "مودرن", "nameEn": "Modern" },
+    { "id": "relaxed", "nameAr": "هادئ", "nameEn": "Relaxed" },
+    { "id": "minimal", "nameAr": "مينيمال", "nameEn": "Minimal" },
+    { "id": "hotel", "nameAr": "فندقي", "nameEn": "Hotel" },
+    { "id": "dramatic", "nameAr": "درامي", "nameEn": "Dramatic" },
+    { "id": "functional", "nameAr": "عملي", "nameEn": "Functional" }
+  ],
+  "spaceRules": {
+    "majlis": {
+      "defaultCategories": ["chandeliers", "cob-spotlights", "led-strips", "track"],
+      "moodOverrides": {
+        "warm": { "categories": ["chandeliers", "cob-spotlights", "led-strips"], "productSlugs": ["p-w-light-std-chandeliers-2", "s1-7w-cob-std-cob-spotlights", "2835-9w-led_strip-std-led-strips-3"] },
+        "luxury": { "categories": ["chandeliers", "track", "cob-spotlights"], "productSlugs": ["p-w-light-std-chandeliers-4", "s1-10w-light-std-track", "s1-10w-cob-std-cob-spotlights-2"] },
+        "modern": { "categories": ["track", "cob-spotlights", "profiles"], "productSlugs": ["s1-20w-light-black-track", "s1-10w-cob-std-cob-spotlights-2", "p-w-led_strip-std-profiles"] },
+        "functional": { "categories": ["cob-spotlights", "panel-lights"], "productSlugs": ["s1-10w-cob-std-cob-spotlights-2", "s1-7w-panel-std-cob-spotlights"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 20, "items": { "s1-7w-cob-std-cob-spotlights": 4, "2835-9w-led_strip-std-led-strips-3": 1 } },
+        { "maxArea": 40, "items": { "s1-7w-cob-std-cob-spotlights": 6, "2835-9w-led_strip-std-led-strips-3": 2, "p-w-light-std-chandeliers-2": 1 } },
+        { "maxArea": 999, "items": { "s1-10w-cob-std-cob-spotlights-2": 8, "2835-9w-led_strip-std-led-strips-3": 3, "p-w-light-std-chandeliers-2": 1, "s1-10w-light-std-track": 2 } }
+      ]
+    },
+    "living-room": {
+      "defaultCategories": ["cob-spotlights", "track", "led-strips", "pendants"],
+      "moodOverrides": {
+        "warm": { "categories": ["cob-spotlights", "led-strips"], "productSlugs": ["s1-7w-cob-std-cob-spotlights", "2835-9w-led_strip-std-led-strips-3"] },
+        "modern": { "categories": ["track", "cob-spotlights"], "productSlugs": ["s1-10w-light-std-track", "s1-10w-cob-std-cob-spotlights-2"] },
+        "minimal": { "categories": ["cob-spotlights", "panel-lights"], "productSlugs": ["s1-10w-cob-std-cob-spotlights-2", "s1-7w-panel-std-cob-spotlights"] },
+        "relaxed": { "categories": ["cob-spotlights", "led-strips", "pendants"], "productSlugs": ["s1-7w-cob-std-cob-spotlights", "2835-9w-led_strip-std-led-strips-3", "yz6201-w-track-std-track"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 25, "items": { "s1-10w-cob-std-cob-spotlights-2": 4 } },
+        { "maxArea": 999, "items": { "s1-10w-cob-std-cob-spotlights-2": 6, "s1-10w-light-std-track": 2 } }
+      ]
+    },
+    "bedroom": {
+      "defaultCategories": ["cob-spotlights", "led-strips", "track"],
+      "moodOverrides": {
+        "warm": { "categories": ["cob-spotlights", "led-strips"], "productSlugs": ["s1-7w-cob-std-cob-spotlights", "2835-9w-led_strip-std-led-strips-3"] },
+        "relaxed": { "categories": ["cob-spotlights", "led-strips"], "productSlugs": ["s1-7w-cob-std-cob-spotlights", "2835-9w-led_strip-std-led-strips-3"] },
+        "minimal": { "categories": ["cob-spotlights"], "productSlugs": ["s1-7w-cob-std-cob-spotlights"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 999, "items": { "s1-7w-cob-std-cob-spotlights": 4, "2835-9w-led_strip-std-led-strips-3": 1 } }
+      ]
+    },
+    "kitchen": {
+      "defaultCategories": ["cob-spotlights", "panel-lights", "profiles", "led-strips"],
+      "moodOverrides": {
+        "functional": { "categories": ["cob-spotlights", "panel-lights", "profiles"], "productSlugs": ["s1-10w-cob-std-cob-spotlights-2", "s1-7w-panel-std-cob-spotlights", "p-w-led_strip-std-profiles-2"] },
+        "modern": { "categories": ["cob-spotlights", "profiles"], "productSlugs": ["s1-10w-cob-std-cob-spotlights-2", "p-w-led_strip-std-profiles-2"] },
+        "minimal": { "categories": ["panel-lights", "cob-spotlights"], "productSlugs": ["s1-7w-panel-std-cob-spotlights", "s1-10w-cob-std-cob-spotlights-2"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 15, "items": { "s1-10w-cob-std-cob-spotlights-2": 4, "p-w-led_strip-std-profiles-2": 2 } },
+        { "maxArea": 999, "items": { "s1-10w-cob-std-cob-spotlights-2": 6, "s1-7w-panel-std-cob-spotlights": 2, "p-w-led_strip-std-profiles-2": 3 } }
+      ]
+    },
+    "office": {
+      "defaultCategories": ["cob-spotlights", "panel-lights", "track"],
+      "moodOverrides": {
+        "functional": { "categories": ["cob-spotlights", "panel-lights"], "productSlugs": ["s1-10w-cob-std-cob-spotlights-2", "s1-20w-panel-std-cob-spotlights"] },
+        "modern": { "categories": ["track", "cob-spotlights"], "productSlugs": ["s1-20w-light-black-track", "s1-10w-cob-std-cob-spotlights-2"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 999, "items": { "s1-10w-cob-std-cob-spotlights-2": 4, "s1-20w-panel-std-cob-spotlights": 1 } }
+      ]
+    },
+    "restaurant": {
+      "defaultCategories": ["track", "cob-spotlights", "chandeliers"],
+      "moodOverrides": {
+        "luxury": { "categories": ["chandeliers", "track"], "productSlugs": ["p-w-light-std-chandeliers-4", "s1-10w-light-std-track"] },
+        "warm": { "categories": ["track", "cob-spotlights"], "productSlugs": ["s1-10w-light-std-track", "s1-15w-cob-std-cob-spotlights"] },
+        "dramatic": { "categories": ["track", "cob-spotlights"], "productSlugs": ["s1-20w-light-black-track", "s1-15w-cob-std-cob-spotlights"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 999, "items": { "s1-10w-light-std-track": 4, "s1-15w-cob-std-cob-spotlights": 6 } }
+      ]
+    },
+    "retail-store": {
+      "defaultCategories": ["track", "cob-spotlights", "floodlights"],
+      "moodOverrides": {
+        "functional": { "categories": ["track", "cob-spotlights"], "productSlugs": ["s1-20w-light-black-track", "s1-15w-cob-std-cob-spotlights"] },
+        "modern": { "categories": ["track", "cob-spotlights"], "productSlugs": ["s1-20w-light-black-track", "s1-15w-cob-std-cob-spotlights"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 999, "items": { "s1-20w-light-black-track": 6, "s1-15w-cob-std-cob-spotlights": 8 } }
+      ]
+    },
+    "facade": {
+      "defaultCategories": ["floodlights", "landscape"],
+      "moodOverrides": {
+        "dramatic": { "categories": ["floodlights"], "productSlugs": ["k1-15w-cob-std-cob-spotlights", "k1-10w-cob-std-cob-spotlights"] },
+        "warm": { "categories": ["floodlights", "landscape"], "productSlugs": ["k1-10w-cob-std-cob-spotlights", "p-w-flood-std-gu10"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 999, "items": { "k1-10w-cob-std-cob-spotlights": 4, "p-w-flood-std-gu10": 2 } }
+      ]
+    },
+    "garden": {
+      "defaultCategories": ["landscape", "floodlights", "ground-lights"],
+      "moodOverrides": {
+        "warm": { "categories": ["landscape", "floodlights"], "productSlugs": ["p-w-flood-std-gu10", "k1-10w-cob-std-cob-spotlights"] },
+        "relaxed": { "categories": ["landscape"], "productSlugs": ["p-w-flood-std-gu10", "p-w-flood-std-gu10-2"] },
+        "dramatic": { "categories": ["floodlights", "landscape"], "productSlugs": ["k1-15w-cob-std-cob-spotlights", "p-w-flood-std-gu10"] }
+      },
+      "areaQuantities": [
+        { "maxArea": 999, "items": { "p-w-flood-std-gu10": 4, "k1-10w-cob-std-cob-spotlights": 2 } }
+      ]
+    }
+  },
+  "categoryLabels": {
+    "chandeliers": { "ar": "نجف وثريات", "en": "Chandeliers" },
+    "cob-spotlights": { "ar": "سبوت COB", "en": "COB Spotlights" },
+    "led-strips": { "ar": "حبال LED", "en": "LED Strips" },
+    "track": { "ar": "تراك لايت", "en": "Track Lighting" },
+    "panel-lights": { "ar": "بانل", "en": "Panel Lights" },
+    "profiles": { "ar": "بروفايلات", "en": "Profiles" },
+    "pendants": { "ar": "معلقات", "en": "Pendants" },
+    "floodlights": { "ar": "كشافات", "en": "Floodlights" },
+    "landscape": { "ar": "إضاءة حدائق", "en": "Landscape" },
+    "ground-lights": { "ar": "إضاءة أرضية", "en": "Ground Lights" }
+  },
+  "cctVariantPreference": {
+    "3000K": ["3000k", "ww", "warm"],
+    "4000K": ["4000k", "neutral", "nw"],
+    "6500K": ["6500k", "cool", "wh", "white"]
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "batch": "batch-001",
+    "file": "تسعيرة افياش ومفاتيح بيانو.xlsx",
+    "variantCount": 76,
+    "outPath": "data\\import\\تسعيرة افياش ومفاتيح بيانو.json"
+  },
+  {
+    "batch": "batch-001",
+    "file": "تسعيرة انارة داخلية.xlsx",
+    "variantCount": 313,
+    "outPath": "data\\import\\تسعيرة انارة داخلية.json"
+  },
+  {
+    "batch": "batch-001",
+    "file": "تسعيرة حبل زينة.xlsx",
+    "variantCount": 166,
+    "outPath": "data\\import\\تسعيرة حبل زينة.json"
+  },
+  {
+    "batch": "batch-001",
+    "file": "تسعيرة كشافات متنوع.xlsx",
+    "variantCount": 70,
+    "outPath": "data\\import\\تسعيرة كشافات متنوع.json"
+  },
+  {
+    "batch": "batch-001",
+    "file": "تسعيرة كشافات.xlsx",
+    "variantCount": 109,
+    "outPath": "data\\import\\تسعيرة كشافات.json"
+  },
+  {
+    "batch": "batch-001",
+    "file": "تسعيرة مراوح -لمبات - نجف.xlsx",
+    "variantCount": 101,
+    "outPath": "data\\import\\تسعيرة مراوح -لمبات - نجف.json"
+  }
+]

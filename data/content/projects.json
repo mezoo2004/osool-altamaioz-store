@@ -1,0 +1,28 @@
+{
+  "confirmationStatus": "BUSINESS_CONFIRMATION_REQUIRED",
+  "note": "Project portfolio entries will be added when official photography and case studies are approved.",
+  "categories": [
+    {
+      "id": "residential",
+      "nameAr": "سكني",
+      "nameEn": "Residential",
+      "descriptionAr": "مجالس، صالات، غرف نوم — إضاءة للمنازل.",
+      "descriptionEn": "Majlis, living rooms, bedrooms — home lighting."
+    },
+    {
+      "id": "commercial",
+      "nameAr": "تجاري",
+      "nameEn": "Commercial",
+      "descriptionAr": "مكاتب، مطاعم، تجزئة — حلول إضاءة للمشاريع.",
+      "descriptionEn": "Offices, restaurants, retail — project lighting solutions."
+    },
+    {
+      "id": "outdoor",
+      "nameAr": "خارجي",
+      "nameEn": "Outdoor",
+      "descriptionAr": "واجهات، حدائق، مواقف — إضاءة خارجية.",
+      "descriptionEn": "Facades, gardens, parking — outdoor lighting."
+    }
+  ],
+  "projects": []
+}

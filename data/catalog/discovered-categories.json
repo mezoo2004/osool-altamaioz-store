@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-08-18T19:09:20.769Z",
+  "categories": [
+    {
+      "slug": "floodlights",
+      "productCount": 339
+    },
+    {
+      "slug": "indoor",
+      "productCount": 219
+    },
+    {
+      "slug": "led-strips",
+      "productCount": 164
+    },
+    {
+      "slug": "outdoor",
+      "productCount": 83
+    },
+    {
+      "slug": "chandeliers",
+      "productCount": 82
+    },
+    {
+      "slug": "switches-sockets",
+      "productCount": 76
+    },
+    {
+      "slug": "cob-spotlights",
+      "productCount": 71
+    },
+    {
+      "slug": "profiles",
+      "productCount": 53
+    },
+    {
+      "slug": "landscape",
+      "productCount": 48
+    },
+    {
+      "slug": "panel-lights",
+      "productCount": 37
+    },
+    {
+      "slug": "track",
+      "productCount": 36
+    },
+    {
+      "slug": "cylinder",
+      "productCount": 27
+    },
+    {
+      "slug": "pendants",
+      "productCount": 26
+    },
+    {
+      "slug": "ground-lights",
+      "productCount": 23
+    },
+    {
+      "slug": "gu10",
+      "productCount": 19
+    },
+    {
+      "slug": "bulbs",
+      "productCount": 19
+    },
+    {
+      "slug": "fans",
+      "productCount": 14
+    },
+    {
+      "slug": "decorative",
+      "productCount": 1
+    }
+  ]
+}

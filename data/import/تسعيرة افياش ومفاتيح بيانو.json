@@ -1,0 +1,1301 @@
+{
+  "importBatch": "batch-001",
+  "importedAt": "2026-08-17T18:15:11.893Z",
+  "sourceFile": "تسعيرة افياش ومفاتيح بيانو.xlsx",
+  "sheet": "Sheet1",
+  "variantCount": 76,
+  "variants": [
+    {
+      "rawCode": "C80301-WH",
+      "itemNo": 112010983,
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح مفرد ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح مفرد ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:2",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80302-WH",
+      "itemNo": "0112010984",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح مفرد دركسيون ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح مفرد دركسيون ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:3",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80303-WH",
+      "itemNo": "0112010985",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح مزدوج ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح مزدوج ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:4",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80304-WH",
+      "itemNo": "0112010986",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح مزدوج دركسيون ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح مزدوج دركسيون ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:5",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80305-WH",
+      "itemNo": "0112010987",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح ثلاثي ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح ثلاثي ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:6",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80306-WH",
+      "itemNo": "0112010988",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح ثلاثي دركسيون ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح ثلاثي دركسيون ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:7",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80307-WH",
+      "itemNo": "0112010989",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح رباعي ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح رباعي ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:8",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80308-WH",
+      "itemNo": "0112010990",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح رباعي دركسيون ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح رباعي دركسيون ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:9",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80317-WH",
+      "itemNo": "0112010991",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح جرس ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح جرس ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:10",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80411-WH",
+      "itemNo": "0112010992",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش 13امبير ابيض بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:11",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80324-WH",
+      "itemNo": "0112010993",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح سخان 20امبير ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح سخان 20امبير ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:12",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80327-WH",
+      "itemNo": "0112010994",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح مكيف 45امبير 7*7 ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح مكيف 45امبير 7*7 ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:13",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80412-WH",
+      "itemNo": "0112010995",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش 13امبير مجوز ابيض بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير مجوز ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:14",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80452-WH",
+      "itemNo": "0112010996",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش تليفون ابيض بيانو MT بلس",
+      "rawNameAr": "فيش تليفون ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:15",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80442-WH",
+      "itemNo": "0112010997",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش كمبيوتر ابيض بيانو MT بلس",
+      "rawNameAr": "فيش كمبيوتر ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:16",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80165-WH",
+      "itemNo": "0112010998",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش دش ابيض بيانو MT بلس",
+      "rawNameAr": "فيش دش ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:17",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80316-WH",
+      "itemNo": "0112010999",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح ستارة ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح ستارة ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:18",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80322-WH",
+      "itemNo": "0112011048",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح كارت الباب ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح كارت الباب ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:19",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80329-WH",
+      "itemNo": "0112011049",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "مفتاح مكيف 45امبير 7*14 ابيض بيانو MT بلس",
+      "rawNameAr": "مفتاح مكيف 45امبير 7*14 ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:20",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80401-WH",
+      "itemNo": "0112011050",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "غطاء تسكيرة 7*7 ابيض بيانو MT بلس",
+      "rawNameAr": "غطاء تسكيرة 7*7 ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:21",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80402-WH",
+      "itemNo": "0112011051",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "غطاء تسكيرة 7*14 ابيض بيانو MT بلس",
+      "rawNameAr": "غطاء تسكيرة 7*14 ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:22",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80444-WH",
+      "itemNo": "0112011052",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش كمبيوتر + تليفون ابيض بيانو MT بلس",
+      "rawNameAr": "فيش كمبيوتر + تليفون ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:23",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80491C-WH",
+      "itemNo": "0112011053",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "فيش 13امبير مع USB ابيض بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير مع USB ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:24",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80555-WH",
+      "itemNo": "0112011054",
+      "series": "CN80",
+      "color": "BRUSH WHITE",
+      "rawNameEn": "ديمر انارة 1000واط ابيض بيانو MT بلس",
+      "rawNameAr": "ديمر انارة 1000واط ابيض بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:25",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80301-GY",
+      "itemNo": "0112011000",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح مفرد رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح مفرد رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:26",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80302-GY",
+      "itemNo": "0112011001",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح مفرد دركسيون رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح مفرد دركسيون رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:27",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80303-GY",
+      "itemNo": "0112011002",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح مزدوج رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح مزدوج رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:28",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80304-GY",
+      "itemNo": "0112011003",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح مزدوج دركسيون رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح مزدوج دركسيون رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:29",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80305-GY",
+      "itemNo": "0112011004",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح ثلاثي رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح ثلاثي رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:30",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80306-GY",
+      "itemNo": "0112011005",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح ثلاثي دركسيون رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح ثلاثي دركسيون رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:31",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80307-GY",
+      "itemNo": "0112011006",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح رباعي رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح رباعي رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:32",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80308-GY",
+      "itemNo": "0112011007",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح رباعي دركسيون رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح رباعي دركسيون رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:33",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80317-GY",
+      "itemNo": "0112011008",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح جرس رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح جرس رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:34",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80411-GY",
+      "itemNo": "0112011009",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش 13امبير رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:35",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80324-GY",
+      "itemNo": "0112011010",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح سخان 20امبير رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح سخان 20امبير رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:36",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80327-GY",
+      "itemNo": "0112011011",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح مكيف 45امبير 7*7 رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح مكيف 45امبير 7*7 رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:37",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80412-GY",
+      "itemNo": "0112011012",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش 13امبير مجوز رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير مجوز رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:38",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80452-GY",
+      "itemNo": "0112011013",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش تليفون رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش تليفون رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:39",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80442-GY",
+      "itemNo": "0112011014",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش كمبيوتر رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش كمبيوتر رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:40",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80165-GY",
+      "itemNo": "0112011015",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش دش رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش دش رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:41",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80316-GY",
+      "itemNo": "0112011016",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح ستارة رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح ستارة رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:42",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80322-GY",
+      "itemNo": "0112011017",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح كارت الباب رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح كارت الباب رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:43",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80329-GY",
+      "itemNo": "0112011018",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "مفتاح مكيف 45امبير 7*14 رصاصي بيانو MT بلس",
+      "rawNameAr": "مفتاح مكيف 45امبير 7*14 رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:44",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80401-GY",
+      "itemNo": "0112011019",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "غطاء تسكيرة 7*7 رصاصي بيانو MT بلس",
+      "rawNameAr": "غطاء تسكيرة 7*7 رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:45",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80402-GY",
+      "itemNo": "0112011020",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "غطاء تسكيرة 7*14 رصاصي بيانو MT بلس",
+      "rawNameAr": "غطاء تسكيرة 7*14 رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:46",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80444-GY",
+      "itemNo": "0112011021",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش كمبيوتر + تليفون رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش كمبيوتر + تليفون رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:47",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80491C-GY",
+      "itemNo": "0112011022",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "فيش 13امبير مع USB رصاصي بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير مع USB رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:48",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80555-GY",
+      "itemNo": "0112011023",
+      "series": "CN80",
+      "color": "BRUSH GRAY",
+      "rawNameEn": "ديمر انارة 1000واط رصاصي بيانو MT بلس",
+      "rawNameAr": "ديمر انارة 1000واط رصاصي بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:49",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80301-BK",
+      "itemNo": "0112011024",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح مفرد اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح مفرد اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:50",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80302-BK",
+      "itemNo": "0112011025",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح مفرد دركسيون اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح مفرد دركسيون اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:51",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80303-BK",
+      "itemNo": "0112011026",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح مزدوج اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح مزدوج اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:52",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80304-BK",
+      "itemNo": "0112011027",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح مزدوج دركسيون اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح مزدوج دركسيون اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:53",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80305-BK",
+      "itemNo": "0112011028",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح ثلاثي اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح ثلاثي اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:54",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80306-BK",
+      "itemNo": "0112011029",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح ثلاثي دركسيون اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح ثلاثي دركسيون اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:55",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80307-BK",
+      "itemNo": "0112011030",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح رباعي اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح رباعي اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:56",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80308-BK",
+      "itemNo": "0112011031",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح رباعي دركسيون اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح رباعي دركسيون اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:57",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80317-BK",
+      "itemNo": "0112011032",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح جرس اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح جرس اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:58",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80411-BK",
+      "itemNo": "0112011033",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش 13امبير اسود بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:59",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80324-BK",
+      "itemNo": "0112011034",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح سخان 20امبير اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح سخان 20امبير اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:60",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80327-BK",
+      "itemNo": "0112011035",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح مكيف 45امبير 7*7 اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح مكيف 45امبير 7*7 اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:61",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80412-BK",
+      "itemNo": "0112011036",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش 13امبير مجوز اسود بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير مجوز اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:62",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80452-BK",
+      "itemNo": "0112011037",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش تليفون اسود بيانو MT بلس",
+      "rawNameAr": "فيش تليفون اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:63",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80442-BK",
+      "itemNo": "0112011038",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش كمبيوتر اسود بيانو MT بلس",
+      "rawNameAr": "فيش كمبيوتر اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:64",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80165-BK",
+      "itemNo": "0112011039",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش دش اسود بيانو MT بلس",
+      "rawNameAr": "فيش دش اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:65",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80316-BK",
+      "itemNo": "0112011040",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح ستارة اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح ستارة اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:66",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80322-BK",
+      "itemNo": "0112011041",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح كارت الباب اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح كارت الباب اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:67",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80329-BK",
+      "itemNo": "0112011042",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "مفتاح مكيف 45امبير 7*14 اسود بيانو MT بلس",
+      "rawNameAr": "مفتاح مكيف 45امبير 7*14 اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:68",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80401-BK",
+      "itemNo": "0112011043",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "غطاء تسكيرة 7*7 اسود بيانو MT بلس",
+      "rawNameAr": "غطاء تسكيرة 7*7 اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:69",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80402-BK",
+      "itemNo": "0112011044",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "غطاء تسكيرة 7*14 اسود بيانو MT بلس",
+      "rawNameAr": "غطاء تسكيرة 7*14 اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:70",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80444-BK",
+      "itemNo": "0112011045",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش كمبيوتر + تليفون اسود بيانو MT بلس",
+      "rawNameAr": "فيش كمبيوتر + تليفون اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:71",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80491C-BK",
+      "itemNo": "0112011046",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "فيش 13امبير مع USB اسود بيانو MT بلس",
+      "rawNameAr": "فيش 13امبير مع USB اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:72",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "C80555-BK",
+      "itemNo": "0112011047",
+      "series": "CN80",
+      "color": "BRUSH BLACK",
+      "rawNameEn": "ديمر انارة 1000واط اسود بيانو MT بلس",
+      "rawNameAr": "ديمر انارة 1000واط اسود بيانو MT بلس",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:73",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "V15-009-WH",
+      "itemNo": 112010975,
+      "series": "V15",
+      "color": "",
+      "rawNameEn": "مفتاح سداسي ابيض بيانو التميز",
+      "rawNameAr": "مفتاح سداسي ابيض بيانو التميز",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:74",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "V15-009-GRAY",
+      "itemNo": 112010977,
+      "series": "V15",
+      "color": "",
+      "rawNameEn": "مفتاح سداسي رصاصي بيانو التميز",
+      "rawNameAr": "مفتاح سداسي رصاصي بيانو التميز",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:75",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "V15-009-BK",
+      "itemNo": 112010978,
+      "series": "V15",
+      "color": "",
+      "rawNameEn": "مفتاح سداسي اسود بيانو التميز",
+      "rawNameAr": "مفتاح سداسي اسود بيانو التميز",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:76",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    },
+    {
+      "rawCode": "V1522/1-1GANGINTERMEDIAATE/GRAY",
+      "itemNo": 112010976,
+      "series": "V15",
+      "color": "",
+      "rawNameEn": "مفتاح سلم رصاصي بيانو التميز",
+      "rawNameAr": "مفتاح سلم رصاصي بيانو التميز",
+      "rawPrice": null,
+      "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+      "sourceRowRef": "sheet:Sheet1:row:77",
+      "sensitiveFieldsPresent": [
+        "Unit Price",
+        "تكلفة MT بلس",
+        "تكلفة التميز",
+        "سعر الجملة"
+      ]
+    }
+  ]
+}

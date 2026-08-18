@@ -1,0 +1,40 @@
+---
+description: Osool Altamaioz permanent project rules
+alwaysApply: true
+---
+
+# Permanent Project Rules
+
+## Brand spelling
+
+Customer-facing Arabic brand name must always be exactly:
+`اصول التميز`
+
+Customer-facing English brand name must always be exactly:
+`Osool Altamaioz`
+
+Never write `أصول التميز`.
+Never invent another English transliteration.
+Technical slug: `osool-altamaioz`.
+
+## UX / design
+
+Figma source of truth:
+https://www.figma.com/design/BN6SR5KcdPaS6u4qCxY3iN
+
+Arabic is primary RTL; English is LTR. Both desktop and mobile require feature parity.
+Do not replace the approved design with a generic template.
+
+## Business-critical data
+
+Never guess official selling prices, stock, warranty, shipping times or technical specifications.
+Never expose supplier/cost pricing.
+Never fake payment activation or merchant approval.
+
+## Engineering
+
+Inspect existing files before creating/replacing architecture.
+Use reusable components and structured product variants.
+Keep commerce/security-critical calculations server/platform authoritative.
+Run typecheck/lint/build after major phases and fix errors before marking them done.
+Update `docs/IMPLEMENTATION_STATUS.md` as work progresses.

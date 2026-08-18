@@ -1,0 +1,1399 @@
+{
+  "importBatch": "batch-001",
+  "importedAt": "2026-08-17T18:15:11.893Z",
+  "sourceFile": "تسعيرة كشافات متنوع.xlsx",
+  "sheet": "Sheet2 (2)",
+  "blockCount": 4,
+  "variantCount": 70,
+  "blocks": [
+    {
+      "headerRow": 5,
+      "categoryTitle": "كشافات أرضية",
+      "seriesLine": "K1 & TM",
+      "variants": [
+        {
+          "rawCode": "K2807/L300/7W/30CM/WW/K1",
+          "rawNameAr": "كشاف ارضي الومنيوم ليد 7واط 30سم اضاءة اصفر K1/K2807/L300",
+          "sku": "K2807/L300/7W/30CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:7",
+          "wattage": "7W",
+          "cct": null,
+          "series": "K2807",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2807",
+            "L300",
+            "7W",
+            "30CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2807/L500/9W/50CM/WW/K1",
+          "rawNameAr": "كشاف ارضي الومنيوم ليد 9واط 50سم اضاءة اصفر K1/K2807/L500",
+          "sku": "K2807/L500/9W/50CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:8",
+          "wattage": "9W",
+          "cct": null,
+          "series": "K2807",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2807",
+            "L500",
+            "9W",
+            "50CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2807/L600/K2802/18W/60CM/WW/K1",
+          "rawNameAr": "كشاف ارضي الومنيوم ليد 18واط 60سم اضاءة اصفر K1/K2807/L600/K2802",
+          "sku": "K2807/L600/K2802/18W/60CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:9",
+          "wattage": "18W",
+          "cct": null,
+          "series": "K2807",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2807",
+            "L600",
+            "K2802",
+            "18W",
+            "60CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2807/L1000/K2802/25W/100CM/WW/K1",
+          "rawNameAr": "كشاف ارضي الومنيوم ليد 25واط 100سم اضاءة اصفر K1/K2807/L1000/K2802",
+          "sku": "K2807/L1000/K2802/25W/100CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:10",
+          "wattage": "25W",
+          "cct": null,
+          "series": "K2807",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2807",
+            "L1000",
+            "K2802",
+            "25W",
+            "100CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2202A/3W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 3واط المونيوم 2202A اسود اضاءة اصفر K1",
+          "sku": "2202A/3W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:11",
+          "wattage": "3W",
+          "cct": null,
+          "series": "2202A",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2202A",
+            "3W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2202A/6W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 6واط المونيوم 2202A اسود اضاءة اصفر K1",
+          "sku": "2202A/6W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:12",
+          "wattage": "6W",
+          "cct": null,
+          "series": "2202A",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2202A",
+            "6W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2202A/18W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 18واط المونيوم 2202A اسود اضاءة اصفر K1",
+          "sku": "2202A/18W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:13",
+          "wattage": "18W",
+          "cct": null,
+          "series": "2202A",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2202A",
+            "18W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2202A/30W/BK/WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 30واط المونيوم اسود 2202A اضاءة اصفر K1",
+          "sku": "2202A/30W/BK/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:14",
+          "wattage": "30W",
+          "cct": null,
+          "series": "2202A",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2202A",
+            "30W",
+            "BK",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2202A/30W/SL/WH/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 30واط المونيوم فضي 2202A اضاءة ابيض K1",
+          "sku": "2202A/30W/SL/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:15",
+          "wattage": "30W",
+          "cct": null,
+          "series": "2202A",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2202A",
+            "30W",
+            "SL",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2202A/30W/SL/WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 30واط المونيوم فضي 2202A اضاءة اصفر K1",
+          "sku": "2202A/30W/SL/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:16",
+          "wattage": "30W",
+          "cct": null,
+          "series": "2202A",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2202A",
+            "30W",
+            "SL",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2224C/9W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 9واط المونيوم 2224C اسود اضاءة اصفر K1",
+          "sku": "2224C/9W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:17",
+          "wattage": "9W",
+          "cct": null,
+          "series": "2224C",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2224C",
+            "9W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2224C/12W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 12واط المونيوم 2224C اسود اضاءة اصفر K1",
+          "sku": "2224C/12W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:18",
+          "wattage": "12W",
+          "cct": null,
+          "series": "2224C",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2224C",
+            "12W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2224C/18W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 18واط المونيوم 2224C اسود اضاءة اصفر K1",
+          "sku": "2224C/18W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:19",
+          "wattage": "18W",
+          "cct": null,
+          "series": "2224C",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2224C",
+            "18W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2224C/36W/BK+WW/K1",
+          "rawNameAr": "كشاف ارضي ضد المياه 36واط المونيوم 2224C اسود اضاءة اصفر K1",
+          "sku": "2224C/36W/BK+WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:20",
+          "wattage": "36W",
+          "cct": null,
+          "series": "2224C",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "2224C",
+            "36W",
+            "BK+WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2803S/GU10/SQUARE/K1",
+          "rawNameAr": "كشاف ارضي ضد الماء بدون لمبة GU10 (الومنيوم) مربع K1/K2803S",
+          "sku": "K2803S/GU10/SQUARE/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:21",
+          "wattage": null,
+          "cct": null,
+          "series": "K2803S",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2803S",
+            "GU10",
+            "SQUARE",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "DM80/WH",
+          "rawNameAr": "كشاف ارضي ضد المياه 8 سم 3واط اضاءة ابيض",
+          "sku": "DM80/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:22",
+          "wattage": null,
+          "cct": null,
+          "series": "DM80",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "DM80",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "DM80/WW",
+          "rawNameAr": "كشاف ارضي ضد المياه 8سم 3واط اضاءة اصفر",
+          "sku": "DM80/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:23",
+          "wattage": null,
+          "cct": null,
+          "series": "DM80",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "DM80",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "DM100/WH",
+          "rawNameAr": "كشاف ارضي ضد المياه 10سم 7واط اضاءة ابيض",
+          "sku": "DM100/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:24",
+          "wattage": null,
+          "cct": null,
+          "series": "DM100",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "DM100",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "DM100/WW",
+          "rawNameAr": "كشاف ارضي ضد المياه 10سم 7واط اضاءة اصفر",
+          "sku": "DM100/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:25",
+          "wattage": null,
+          "cct": null,
+          "series": "DM100",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "DM100",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "9196S/4W/WH-JKD26S",
+          "rawNameAr": "كشاف درج ليد ابيض صغير",
+          "sku": "9196S/4W/WH-JKD26S",
+          "sourceRowRef": "sheet:Sheet2 (2):row:26",
+          "wattage": "4W",
+          "cct": null,
+          "series": "9196S",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "9196S",
+            "4W",
+            "WH-JKD26S"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "AK7018-S/BL-JKD26S/3019/3w",
+          "rawNameAr": "كشاف درج ليد ازرق صغير",
+          "sku": "AK7018-S/BL-JKD26S/3019/3w",
+          "sourceRowRef": "sheet:Sheet2 (2):row:27",
+          "wattage": "3w",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "AK7018-S",
+            "BL-JKD26S",
+            "3019",
+            "3w"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "3019/3w/WW",
+          "rawNameAr": "كشاف درج ليد اصفر صغير",
+          "sku": "3019/3w/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:28",
+          "wattage": "3w",
+          "cct": null,
+          "series": "3019",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "3019",
+            "3w",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 34,
+      "categoryTitle": "كشافات وأعمدة حدائق",
+      "seriesLine": "K1",
+      "variants": [
+        {
+          "rawCode": "2408-GU10-40CM-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم 40CM-K1",
+          "sku": "2408-GU10-40CM-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:36",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2408-GU10-40CM-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2408-GU10-60CM-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم 60CM-K1",
+          "sku": "2408-GU10-60CM-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:37",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2408-GU10-60CM-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2408-GU10-90CM-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم 90CM-K1",
+          "sku": "2408-GU10-90CM-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:38",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2408-GU10-90CM-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2909-GU10-H400-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم K2909-H400",
+          "sku": "K2909-GU10-H400-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:39",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2909-GU10-H400-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2909-GU10-H600-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم K2909-H600",
+          "sku": "K2909-GU10-H600-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:40",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2909-GU10-H600-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2911-GU10-H400-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم K2911-H400",
+          "sku": "K2911-GU10-H400-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:41",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2911-GU10-H400-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2911-GU10-H700-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 الومنيوم K2911-H700",
+          "sku": "K2911-GU10-H700-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:42",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2911-GU10-H700-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2919R-GU10-H600-ROUND-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 مدور الومنيوم K2919R-H600",
+          "sku": "K2919R-GU10-H600-ROUND-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:43",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2919R-GU10-H600-ROUND-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2919S-GU10-H600-SQUARE-K1",
+          "rawNameAr": "عامود حدائق بدون لمبه GU10 مضلع الومنيوم K2919S-H600",
+          "sku": "K2919S-GU10-H600-SQUARE-K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:44",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2919S-GU10-H600-SQUARE-K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2901/12W/COB/60CM/WW/K1",
+          "rawNameAr": "عامود حدائق ليد 12واط 60سم COB اضاءة اصفر K1/K2901",
+          "sku": "K2901/12W/COB/60CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:45",
+          "wattage": "12W",
+          "cct": null,
+          "series": "K2901",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2901",
+            "12W",
+            "COB",
+            "60CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2918/H300/10W/30CM/WW/K1",
+          "rawNameAr": "عامود حدائق ليد بانل 10واط 30سم اضاءة اصفر K1/K2918/H300",
+          "sku": "K2918/H300/10W/30CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:46",
+          "wattage": "10W",
+          "cct": null,
+          "series": "K2918",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2918",
+            "H300",
+            "10W",
+            "30CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2911/H300/12W/30CM/WW/K1",
+          "rawNameAr": "عامود حدائق ليد بانل 12واط 30سم اضاءة اصفر K1/K2911/H300",
+          "sku": "K2911/H300/12W/30CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:47",
+          "wattage": "12W",
+          "cct": null,
+          "series": "K2911",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2911",
+            "H300",
+            "12W",
+            "30CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2911/H600/12W/60CM/WW/K1",
+          "rawNameAr": "عامود حدائق ليد بانل 12واط 60سم اضاءة اصفر K1/K2911/H600",
+          "sku": "K2911/H600/12W/60CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:48",
+          "wattage": "12W",
+          "cct": null,
+          "series": "K2911",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2911",
+            "H600",
+            "12W",
+            "60CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K2912/12W/PANAL/60CM/WW/K1",
+          "rawNameAr": "عامود حدائق ليد بانل 12واط 60سم اضاءة اصفر K1/K2912",
+          "sku": "K2912/12W/PANAL/60CM/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:49",
+          "wattage": "12W",
+          "cct": null,
+          "series": "K2912",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K2912",
+            "12W",
+            "PANAL",
+            "60CM",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 55,
+      "categoryTitle": "كشافات حدائق",
+      "seriesLine": "K1 & TM",
+      "variants": [
+        {
+          "rawCode": "K101/XF1123/GU10/BK/K1",
+          "rawNameAr": "كشاف حدائق زرع بدون لمبة اسود K1",
+          "sku": "K101/XF1123/GU10/BK/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:57",
+          "wattage": null,
+          "cct": null,
+          "series": "K101",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "K101",
+            "XF1123",
+            "GU10",
+            "BK",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "3188/5W/G/TM",
+          "rawNameAr": "كشاف حدائق زرع ليد 5 واط اضاءة اخضر TM",
+          "sku": "3188/5W/G/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:58",
+          "wattage": "5W",
+          "cct": null,
+          "series": "3188",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "3188",
+            "5W",
+            "G",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "3188/5W/WW/TM",
+          "rawNameAr": "كشاف حدائق زرع ليد 5 واط اضاءة اصفر TM",
+          "sku": "3188/5W/WW/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:59",
+          "wattage": "5W",
+          "cct": null,
+          "series": "3188",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "3188",
+            "5W",
+            "WW",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ST-012/7W/COB/WW/K1",
+          "rawNameAr": "كشاف حدائق زرع ليد 7واط اصفر K1",
+          "sku": "ST-012/7W/COB/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:60",
+          "wattage": "7W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-012",
+            "7W",
+            "COB",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "3007/10W/S1/WH",
+          "rawNameAr": "كشاف حدائق زرع ليد 10واط اضاءة ابيض S1",
+          "sku": "3007/10W/S1/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:61",
+          "wattage": "10W",
+          "cct": null,
+          "series": "3007",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "3007",
+            "10W",
+            "S1",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "LY/3007/15W/GR/TM",
+          "rawNameAr": "كشاف حدائق زرع ليد 15واط اضاءة اخضر TM",
+          "sku": "LY/3007/15W/GR/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:62",
+          "wattage": "15W",
+          "cct": null,
+          "series": "LY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "LY",
+            "3007",
+            "15W",
+            "GR",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "LY/3007/15W/GREEN/K1",
+          "rawNameAr": "كشاف حدائق زرع ليد 15واط اضاءة اخضر K1",
+          "sku": "LY/3007/15W/GREEN/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:63",
+          "wattage": "15W",
+          "cct": null,
+          "series": "LY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "LY",
+            "3007",
+            "15W",
+            "GREEN",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ST-012/15W/COB/WW/K1",
+          "rawNameAr": "كشاف حدائق زرع ليد 15واط اضاءة اصفر K1",
+          "sku": "ST-012/15W/COB/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:64",
+          "wattage": "15W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-012",
+            "15W",
+            "COB",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ST-012/20W/COB/WW/K1",
+          "rawNameAr": "كشاف حدائق زرع 20واط اضاءة اصفر k1",
+          "sku": "ST-012/20W/COB/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:65",
+          "wattage": "20W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-012",
+            "20W",
+            "COB",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "3188/5W/RGB",
+          "rawNameAr": "كشاف زرع 5 واط مشكل",
+          "sku": "3188/5W/RGB",
+          "sourceRowRef": "sheet:Sheet2 (2):row:66",
+          "wattage": "5W",
+          "cct": null,
+          "series": "3188",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "3188",
+            "5W",
+            "RGB"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H1919/23CM/SB+WW",
+          "rawNameAr": "جلاسي ليد فوق السور 23 سم اسود اضاءة اصفر",
+          "sku": "H1919/23CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:67",
+          "wattage": null,
+          "cct": null,
+          "series": "H1919",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H1919",
+            "23CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H1919/55CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 55 سم اسود اضاءة اصفر",
+          "sku": "H1919/55CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:68",
+          "wattage": null,
+          "cct": null,
+          "series": "H1919",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H1919",
+            "55CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H1919/90CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 90 سم اسود اضاءة اصفر",
+          "sku": "H1919/90CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:69",
+          "wattage": null,
+          "cct": null,
+          "series": "H1919",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H1919",
+            "90CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H412/23CM/SB+WW",
+          "rawNameAr": "جلاسي ليد فوق السور 23 سم اسود اضاءة اصفر",
+          "sku": "H412/23CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:70",
+          "wattage": null,
+          "cct": null,
+          "series": "H412",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H412",
+            "23CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H412/55CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 55 سم اسود اضاءة اصفر",
+          "sku": "H412/55CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:71",
+          "wattage": null,
+          "cct": null,
+          "series": "H412",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H412",
+            "55CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H412/90CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 90 سم اسود اضاءة اصفر",
+          "sku": "H412/90CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:72",
+          "wattage": null,
+          "cct": null,
+          "series": "H412",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H412",
+            "90CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H413/23CM/SB+WW",
+          "rawNameAr": "جلاسي ليد فوق السور 23 سم اسود اضاءة اصفر",
+          "sku": "H413/23CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:73",
+          "wattage": null,
+          "cct": null,
+          "series": "H413",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H413",
+            "23CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H413/55CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 55 سم اسود اضاءة اصفر",
+          "sku": "H413/55CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:74",
+          "wattage": null,
+          "cct": null,
+          "series": "H413",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H413",
+            "55CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H413/90CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 90 سم اسود اضاءة اصفر",
+          "sku": "H413/90CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:75",
+          "wattage": null,
+          "cct": null,
+          "series": "H413",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H413",
+            "90CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H419/23CM/SB+WW",
+          "rawNameAr": "جلاسي ليد فوق السور 23 سم اسود اضاءة اصفر",
+          "sku": "H419/23CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:76",
+          "wattage": null,
+          "cct": null,
+          "series": "H419",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H419",
+            "23CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H419/55CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 55 سم اسود اضاءة اصفر",
+          "sku": "H419/55CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:77",
+          "wattage": null,
+          "cct": null,
+          "series": "H419",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H419",
+            "55CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H419/90CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 90 سم اسود اضاءة اصفر",
+          "sku": "H419/90CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:78",
+          "wattage": null,
+          "cct": null,
+          "series": "H419",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H419",
+            "90CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H433/55CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 55 سم اسود اضاءة اصفر",
+          "sku": "H433/55CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:79",
+          "wattage": null,
+          "cct": null,
+          "series": "H433",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H433",
+            "55CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H433/90CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 90 سم اسود اضاءة اصفر",
+          "sku": "H433/90CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:80",
+          "wattage": null,
+          "cct": null,
+          "series": "H433",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H433",
+            "90CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 86,
+      "categoryTitle": "كشافات حدائق",
+      "seriesLine": "K1 & TM",
+      "variants": [
+        {
+          "rawCode": "H448/23CM/SB+WW",
+          "rawNameAr": "جلاسي ليد فوق السور 23 سم اسود اضاءة اصفر",
+          "sku": "H448/23CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:88",
+          "wattage": null,
+          "cct": null,
+          "series": "H448",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H448",
+            "23CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H448/55CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 55 سم اسود اضاءة اصفر",
+          "sku": "H448/55CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:89",
+          "wattage": null,
+          "cct": null,
+          "series": "H448",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H448",
+            "55CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "H448/90CM/SB+WW",
+          "rawNameAr": "عامود خارجي مقاس 90 سم اسود اضاءة اصفر",
+          "sku": "H448/90CM/SB+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:90",
+          "wattage": null,
+          "cct": null,
+          "series": "H448",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "H448",
+            "90CM",
+            "SB+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "9023/6A1",
+          "rawNameAr": "عامود حدائق فانوس اسود 9023/6A1",
+          "sku": "9023/6A1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:91",
+          "wattage": null,
+          "cct": null,
+          "series": "9023",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "9023",
+            "6A1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "9909/1Y",
+          "rawNameAr": "عامود حدائق 1لمبه 9909/1Y",
+          "sku": "9909/1Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:92",
+          "wattage": null,
+          "cct": null,
+          "series": "9909",
+          "finish": null,
+          "warrantyHint": "1Y",
+          "parts": [
+            "9909",
+            "1Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "8233S/6A2",
+          "rawNameAr": "عامود حدائق فانوس اسود 8233S/6A2",
+          "sku": "8233S/6A2",
+          "sourceRowRef": "sheet:Sheet2 (2):row:93",
+          "wattage": null,
+          "cct": null,
+          "series": "8233S",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "8233S",
+            "6A2"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "F375/H800/BK+WW",
+          "rawNameAr": "عامود حديقة ليد 80سم اسود اضاءة اصفر F375",
+          "sku": "F375/H800/BK+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:94",
+          "wattage": null,
+          "cct": null,
+          "series": "F375",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "F375",
+            "H800",
+            "BK+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "L13-H40/BK+WW",
+          "rawNameAr": "عامود حديقة ليد 40سم L13-H40",
+          "sku": "L13-H40/BK+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:95",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "L13-H40",
+            "BK+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "L13-H60/BK+WW",
+          "rawNameAr": "عامود حديقة ليد 60سم L13-H60",
+          "sku": "L13-H60/BK+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:96",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "L13-H60",
+            "BK+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "L13-H80/BK+WW",
+          "rawNameAr": "عامود حديقة ليد 80سم L13-H80",
+          "sku": "L13-H80/BK+WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:97",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "L13-H80",
+            "BK+WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    }
+  ]
+}

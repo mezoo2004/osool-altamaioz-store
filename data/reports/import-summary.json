@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-08-18T19:09:20.769Z",
+  "importBatch": "batch-001",
+  "catalogScope": "initial-imported-sample",
+  "catalogScopeNote": "Current counts reflect the initial development sample only — NOT the full Osool Altamaioz catalog.",
+  "rawVariantCount": 835,
+  "groupedProductCount": 702,
+  "multiVariantProducts": 82,
+  "singleVariantProducts": 620,
+  "importStats": {
+    "variantsCreated": 835,
+    "variantsUpdated": 0,
+    "variantsUnchanged": 0,
+    "variantsSkipped": 0
+  },
+  "conflictCount": 0,
+  "unmappedCategoryCount": 0,
+  "discoveredCategoryCount": 18,
+  "sampleGroups": [
+    {
+      "slug": "cn80-w-switch-brush-white-switches-sockets",
+      "nameAr": "مفتاح مفرد ابيض بيانو MT بلس",
+      "variantCount": 1,
+      "skus": [
+        "C80301-WH"
+      ]
+    },
+    {
+      "slug": "cn80-w-switch-brush-white-switches-sockets-2",
+      "nameAr": "مفتاح مفرد دركسيون ابيض بيانو MT بلس",
+      "variantCount": 1,
+      "skus": [
+        "C80302-WH"
+      ]
+    },
+    {
+      "slug": "cn80-w-switch-brush-white-switches-sockets-3",
+      "nameAr": "مفتاح مزدوج ابيض بيانو MT بلس",
+      "variantCount": 1,
+      "skus": [
+        "C80303-WH"
+      ]
+    },
+    {
+      "slug": "cn80-w-switch-brush-white-switches-sockets-4",
+      "nameAr": "مفتاح مزدوج دركسيون ابيض بيانو MT بلس",
+      "variantCount": 1,
+      "skus": [
+        "C80304-WH"
+      ]
+    },
+    {
+      "slug": "cn80-w-switch-brush-white-switches-sockets-5",
+      "nameAr": "مفتاح ثلاثي ابيض بيانو MT بلس",
+      "variantCount": 1,
+      "skus": [
+        "C80305-WH"
+      ]
+    }
+  ],
+  "warnings": {
+    "missingImages": 835,
+    "missingSellingPrices": 835,
+    "unmappedCategories": 0
+  }
+}

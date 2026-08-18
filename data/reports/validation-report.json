@@ -1,0 +1,33 @@
+{
+  "validatedAt": "2026-08-18T17:42:28.112Z",
+  "catalogScope": "initial-imported-sample",
+  "summary": {
+    "errors": 0,
+    "warnings": 1673,
+    "informational": {
+      "priceUnavailable": 835,
+      "missingImages": 835
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "code": "broken_space_product_ref",
+      "space": "kitchen",
+      "productSlug": "p-w-led_strip-std-profiles-2"
+    },
+    {
+      "code": "broken_scene_product_ref",
+      "scene": "majlis-modern",
+      "productSlug": "p-w-led_strip-std-profiles"
+    },
+    {
+      "code": "broken_scene_product_ref",
+      "scene": "kitchen-functional",
+      "productSlug": "p-w-led_strip-std-profiles-2"
+    }
+  ],
+  "info": [
+    "Sample catalog: 702 grouped products"
+  ]
+}

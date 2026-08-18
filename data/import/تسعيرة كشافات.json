@@ -1,0 +1,2413 @@
+{
+  "importBatch": "batch-001",
+  "importedAt": "2026-08-17T18:15:11.893Z",
+  "sourceFile": "تسعيرة كشافات.xlsx",
+  "sheet": "Sheet2 (2)",
+  "blockCount": 4,
+  "variantCount": 109,
+  "blocks": [
+    {
+      "headerRow": 10,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "G13/SMD/K1/WH/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط ابيض SMD/K1",
+          "sku": "G13/SMD/K1/WH/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:12",
+          "wattage": "50W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WH",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/WW/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط اصفر SMD/K1",
+          "sku": "G13/SMD/K1/WW/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:13",
+          "wattage": "50W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WW",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/4000K/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط اوف وايت SMD/K1",
+          "sku": "G13/SMD/K1/4000K/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:14",
+          "wattage": "50W",
+          "cct": "4000K",
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "4000K",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "G13/SMD/K1/GREEN/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط اخضر SMD/K1",
+          "sku": "G13/SMD/K1/GREEN/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:15",
+          "wattage": "50W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "GREEN",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/WH/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط ابيض SMD/K1",
+          "sku": "G13/SMD/K1/WH/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:16",
+          "wattage": "100W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WH",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/WW/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط اصفر SMD/K1",
+          "sku": "G13/SMD/K1/WW/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:17",
+          "wattage": "100W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WW",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/4000K/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط اوف وايت SMD/K1",
+          "sku": "G13/SMD/K1/4000K/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:18",
+          "wattage": "100W",
+          "cct": "4000K",
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "4000K",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "G13/SMD/K1/WH/200W",
+          "rawNameAr": "كشاف ليد خارجي 200واط ابيض SMD/K1",
+          "sku": "G13/SMD/K1/WH/200W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:19",
+          "wattage": "200W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WH",
+            "200W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/WW/200W",
+          "rawNameAr": "كشاف ليد خارجي 200واط اصفر SMD/K1",
+          "sku": "G13/SMD/K1/WW/200W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:20",
+          "wattage": "200W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WW",
+            "200W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/4000K/200W",
+          "rawNameAr": "كشاف ليد خارجي 200واط اوف وايت SMD/K1",
+          "sku": "G13/SMD/K1/4000K/200W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:21",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "4000K",
+            "200W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "G13/SMD/K1/GREEN/200W",
+          "rawNameAr": "كشاف ليد خارجي 200واط اخضر SMD/K1",
+          "sku": "G13/SMD/K1/GREEN/200W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:22",
+          "wattage": "200W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "GREEN",
+            "200W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/WH/400W",
+          "rawNameAr": "كشاف ليد خارجي 400واط ابيض SMD/K1",
+          "sku": "G13/SMD/K1/WH/400W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:23",
+          "wattage": "400W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WH",
+            "400W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/WW/400W",
+          "rawNameAr": "كشاف ليد خارجي 400واط اصفر SMD/K1",
+          "sku": "G13/SMD/K1/WW/400W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:24",
+          "wattage": "400W",
+          "cct": null,
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "WW",
+            "400W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G13/SMD/K1/4000K/400W",
+          "rawNameAr": "كشاف ليد خارجي 400واط اوف وايت SMD/K1",
+          "sku": "G13/SMD/K1/4000K/400W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:25",
+          "wattage": "400W",
+          "cct": "4000K",
+          "series": "G13",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G13",
+            "SMD",
+            "K1",
+            "4000K",
+            "400W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/WH/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط ابيض SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/WH/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:26",
+          "wattage": "50W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "WH",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/WW/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط اصفر SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/WW/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:27",
+          "wattage": "50W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "WW",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/4000K/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط اوف وايت SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/4000K/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:28",
+          "wattage": "50W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "4000K",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/GREEN/50W",
+          "rawNameAr": "كشاف ليد خارجي 50واط اضاءة اخضر SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/GREEN/50W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:29",
+          "wattage": "50W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "GREEN",
+            "50W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/WH/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط ابيض SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/WH/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:30",
+          "wattage": "100W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "WH",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/WW/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط اصفر SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/WW/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:31",
+          "wattage": "100W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "WW",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/4000K/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط اوف وايت SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/4000K/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:32",
+          "wattage": "100W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "4000K",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/S1/GREEN/100W",
+          "rawNameAr": "كشاف ليد خارجي 100واط اضاءة اخضر SMD/S1",
+          "sku": "SU/GA/01/SMD/S1/GREEN/100W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:33",
+          "wattage": "100W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "S1",
+            "GREEN",
+            "100W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/WH/200W/S1",
+          "rawNameAr": "كشاف ليد خارجي 200واط ابيض S1/SMD",
+          "sku": "SU/GA/01/SMD/WH/200W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:34",
+          "wattage": "200W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "WH",
+            "200W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/WW/200W/S1",
+          "rawNameAr": "كشاف ليد خارجي 200واط اصفر S1/SMD",
+          "sku": "SU/GA/01/SMD/WW/200W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:35",
+          "wattage": "200W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "WW",
+            "200W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/4000K/200W/S1",
+          "rawNameAr": "كشاف ليد خارجي 200واط اوف وايت S1/SMD",
+          "sku": "SU/GA/01/SMD/4000K/200W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:36",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "4000K",
+            "200W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/GREEN/200W/S1",
+          "rawNameAr": "كشاف ليد خارجي 200واط اخضر S1/SMD",
+          "sku": "SU/GA/01/SMD/GREEN/200W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:37",
+          "wattage": "200W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "GREEN",
+            "200W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/WH/400W/S1",
+          "rawNameAr": "كشاف ليد خارجي 400واط ابيض S1/SMD",
+          "sku": "SU/GA/01/SMD/WH/400W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:38",
+          "wattage": "400W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "WH",
+            "400W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/WW/400W/S1",
+          "rawNameAr": "كشاف ليد خارجي 400واط اصفر S1/SMD",
+          "sku": "SU/GA/01/SMD/WW/400W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:39",
+          "wattage": "400W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "WW",
+            "400W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/GA/01/SMD/4000K/400W/S1",
+          "rawNameAr": "كشاف ليد خارجي 400واط اوف وايت S1/SMD",
+          "sku": "SU/GA/01/SMD/4000K/400W/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:40",
+          "wattage": "400W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "GA",
+            "01",
+            "SMD",
+            "4000K",
+            "400W",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        }
+      ]
+    },
+    {
+      "headerRow": 50,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "100W/WH/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 100واط ابيض التميز SMD",
+          "sku": "100W/WH/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:52",
+          "wattage": "100W",
+          "cct": null,
+          "series": "100W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "100W",
+            "WH",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "100W/GR/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 100واط اخضر التميز SMD",
+          "sku": "100W/GR/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:53",
+          "wattage": "100W",
+          "cct": null,
+          "series": "100W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "100W",
+            "GR",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "100W/RGB/SMD",
+          "rawNameAr": "كشاف ليد خارجي 100واط SMD مشكل TM",
+          "sku": "100W/RGB/SMD",
+          "sourceRowRef": "sheet:Sheet2 (2):row:54",
+          "wattage": "100W",
+          "cct": null,
+          "series": "100W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "100W",
+            "RGB",
+            "SMD"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "150W/WH/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 150واط ابيض التميز SMD",
+          "sku": "150W/WH/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:55",
+          "wattage": "150W",
+          "cct": null,
+          "series": "150W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "150W",
+            "WH",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "150W/WW/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 150واط اصفر التميز SMD",
+          "sku": "150W/WW/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:56",
+          "wattage": "150W",
+          "cct": null,
+          "series": "150W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "150W",
+            "WW",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "150W/GR/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 150واط اخضر التميز SMD",
+          "sku": "150W/GR/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:57",
+          "wattage": "150W",
+          "cct": null,
+          "series": "150W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "150W",
+            "GR",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "150W/RGB/SMD",
+          "rawNameAr": "كشاف ليد خارجي 150واط SMD مشكل TM",
+          "sku": "150W/RGB/SMD",
+          "sourceRowRef": "sheet:Sheet2 (2):row:58",
+          "wattage": "150W",
+          "cct": null,
+          "series": "150W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "150W",
+            "RGB",
+            "SMD"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "200W/WH/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 200واط ابيض التميز SMD",
+          "sku": "200W/WH/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:59",
+          "wattage": "200W",
+          "cct": null,
+          "series": "200W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "200W",
+            "WH",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "200W/WW/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 200واط اصفر التميز SMD",
+          "sku": "200W/WW/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:60",
+          "wattage": "200W",
+          "cct": null,
+          "series": "200W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "200W",
+            "WW",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "200W/GR/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 200واط اخضر التميز SMD",
+          "sku": "200W/GR/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:61",
+          "wattage": "200W",
+          "cct": null,
+          "series": "200W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "200W",
+            "GR",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "200w/SMD/RGB/TM",
+          "rawNameAr": "كشاف ليد خارجي 200واط SMD مشكل TM",
+          "sku": "200w/SMD/RGB/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:62",
+          "wattage": "200w",
+          "cct": null,
+          "series": "200w",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "200w",
+            "SMD",
+            "RGB",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "A164/200W GY-WH",
+          "rawNameAr": "كشاف ليد خارجي 200واط جرم رمادي SMD ابيض",
+          "sku": "A164/200W GY-WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:63",
+          "wattage": null,
+          "cct": null,
+          "series": "A164",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "A164",
+            "200W GY-WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "300W/WH/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 300واط ابيض التميز SMD",
+          "sku": "300W/WH/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:64",
+          "wattage": "300W",
+          "cct": null,
+          "series": "300W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "300W",
+            "WH",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "300W/WW/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 300واط اصفر التميز SMD",
+          "sku": "300W/WW/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:65",
+          "wattage": "300W",
+          "cct": null,
+          "series": "300W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "300W",
+            "WW",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "400W/WH/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 400واط ابيض التميز SMD",
+          "sku": "400W/WH/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:66",
+          "wattage": "400W",
+          "cct": null,
+          "series": "400W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "400W",
+            "WH",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "400W/WW/SMD/TM",
+          "rawNameAr": "كشاف ليد خارجي 400واط اصفر التميز SMD",
+          "sku": "400W/WW/SMD/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:67",
+          "wattage": "400W",
+          "cct": null,
+          "series": "400W",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "400W",
+            "WW",
+            "SMD",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/50W/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 50واط اضاءة ابيض KY",
+          "sku": "KY/50W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:68",
+          "wattage": "50W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "50W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/50W/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 50واط اضاءة اصفر KY",
+          "sku": "KY/50W/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:69",
+          "wattage": "50W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "50W",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/100/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 100واط اصفر KY",
+          "sku": "KY/TGDFDFC/100/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:70",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "100",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/100/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 100واط ابيض KY",
+          "sku": "KY/TGDFDFC/100/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:71",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "100",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/150W/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 150واط اضاءة ابيض KY",
+          "sku": "KY/150W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:72",
+          "wattage": "150W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "150W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/150W/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 150واط اضاءة اصفر KY",
+          "sku": "KY/150W/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:73",
+          "wattage": "150W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "150W",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/200W/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 200واط ابيض KY",
+          "sku": "KY/200W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:74",
+          "wattage": "200W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "200W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/200W/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 200واط اصفر KY",
+          "sku": "KY/200W/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:75",
+          "wattage": "200W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "200W",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/300/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 300واط ابيض KY",
+          "sku": "KY/TGDFDFC/300/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:76",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "300",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/300/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 300واط اصفر KY",
+          "sku": "KY/TGDFDFC/300/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:77",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "300",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/400/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 400واط ابيض KY",
+          "sku": "KY/TGDFDFC/400/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:78",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "400",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/400/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 400واط اصفر KY",
+          "sku": "KY/TGDFDFC/400/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:79",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "400",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/500W/WW",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 500واط اصفر KY",
+          "sku": "KY/500W/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:80",
+          "wattage": "500W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "500W",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDFDFC/500/WH",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 500واط ابيض KY",
+          "sku": "KY/TGDFDFC/500/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:81",
+          "wattage": null,
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDFDFC",
+            "500",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDD/600W/WH/MT",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 600واط ابيض KY/MT",
+          "sku": "KY/TGDD/600W/WH/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:82",
+          "wattage": "600W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDD",
+            "600W",
+            "WH",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDD/800W/WH/MT",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 800واط ابيض MT/KY",
+          "sku": "KY/TGDD/800W/WH/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:83",
+          "wattage": "800W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDD",
+            "800W",
+            "WH",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "KY/TGDD/1000W/WH/MT",
+          "rawNameAr": "كشاف خارجي عدسة داخلية 1000واط ابيض MT/KY",
+          "sku": "KY/TGDD/1000W/WH/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:84",
+          "wattage": "1000W",
+          "cct": null,
+          "series": "KY",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "KY",
+            "TGDD",
+            "1000W",
+            "WH",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 94,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "HB/150W/4000K/K1",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 150واط اضاءة اوف وايت K1",
+          "sku": "HB/150W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:96",
+          "wattage": "150W",
+          "cct": "4000K",
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "150W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "HB/150W/WH/K1",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 150واط اضاءة ابيض K1",
+          "sku": "HB/150W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:97",
+          "wattage": "150W",
+          "cct": null,
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "150W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HB/150W/4000K/TM",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 150واط اضاءة اوف وايت HB/150W",
+          "sku": "HB/150W/4000K/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:98",
+          "wattage": "150W",
+          "cct": "4000K",
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "150W",
+            "4000K",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "HB/150W/WH/TM",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 150واط اضاءة ابيض HB/6500K",
+          "sku": "HB/150W/WH/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:99",
+          "wattage": "150W",
+          "cct": null,
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "150W",
+            "WH",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HB/200W/4000K/K1",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 200واط اضاءة اوف وايت k1",
+          "sku": "HB/200W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:100",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "200W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "HB/200W/WH/K1",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 200واط اضاءة ابيض K1",
+          "sku": "HB/200W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:101",
+          "wattage": "200W",
+          "cct": null,
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "200W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HB/200W/4000K/TM",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 200واط اضاءة اوف وايت HB/200W",
+          "sku": "HB/200W/4000K/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:102",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "200W",
+            "4000K",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "HB/200W/WH/TM",
+          "rawNameAr": "كشاف هنجر اسود هاي باي 200واط اضاءة ابيض HB/200W",
+          "sku": "HB/200W/WH/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:103",
+          "wattage": "200W",
+          "cct": null,
+          "series": "HB",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HB",
+            "200W",
+            "WH",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH-GKD/2995/150W/WH",
+          "rawNameAr": "كشاف هنجر علاقي ليد 150واط SMD ابيض",
+          "sku": "QH-GKD/2995/150W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:104",
+          "wattage": "150W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH-GKD",
+            "2995",
+            "150W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/GKD/150W/4000K",
+          "rawNameAr": "كشاف هنجر علاقي ليد 150واط SMD اوف وايت",
+          "sku": "QH/GKD/150W/4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:105",
+          "wattage": "150W",
+          "cct": "4000K",
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "150W",
+            "4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "QH/GKD/200W/WH",
+          "rawNameAr": "كشاف هنجر علاقي ليد 200واط SMD ابيض",
+          "sku": "QH/GKD/200W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:106",
+          "wattage": "200W",
+          "cct": null,
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "200W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/GKD/200W/4000K",
+          "rawNameAr": "كشاف هنجر علاقي ليد 200واط SMD اوف وايت",
+          "sku": "QH/GKD/200W/4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:107",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "200W",
+            "4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "QH/GKD/200W/BK+WH",
+          "rawNameAr": "كشاف هنجر علاقي ليد 200واط SMD جرم اسود اضاءة ابيض",
+          "sku": "QH/GKD/200W/BK+WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:108",
+          "wattage": "200W",
+          "cct": null,
+          "series": "QH",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "200W",
+            "BK+WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/GKD/200W/BK+4000K",
+          "rawNameAr": "كشاف هنجر علاقي ليد 200واط SMD جرم اسود اضاءة اوف وايت",
+          "sku": "QH/GKD/200W/BK+4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:109",
+          "wattage": "200W",
+          "cct": null,
+          "series": "QH",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "200W",
+            "BK+4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/GKD/300W/WH",
+          "rawNameAr": "كشاف هنجر علاقي ليد 300واط SMD ابيض",
+          "sku": "QH/GKD/300W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:110",
+          "wattage": "300W",
+          "cct": null,
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "300W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/GKD/300W/4000K",
+          "rawNameAr": "كشاف هنجر علاقي ليد 300واط SMD اوف وايت",
+          "sku": "QH/GKD/300W/4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:111",
+          "wattage": "300W",
+          "cct": "4000K",
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "300W",
+            "4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "QH/GKD/300W/BK+WH",
+          "rawNameAr": "كشاف هنجر علاقي ليد 300واط SMD جرم اسود اضاءة ابيض",
+          "sku": "QH/GKD/300W/BK+WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:112",
+          "wattage": "300W",
+          "cct": null,
+          "series": "QH",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "300W",
+            "BK+WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/GKD/300W/BK+4000K",
+          "rawNameAr": "كشاف هنجر علاقي ليد 300واط SMD جرم اسود اضاءة اوف وايت",
+          "sku": "QH/GKD/300W/BK+4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:113",
+          "wattage": "300W",
+          "cct": null,
+          "series": "QH",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "GKD",
+            "300W",
+            "BK+4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/LED/HIGHTBAY/E27/100W/WH",
+          "rawNameAr": "كشاف هنجر ليد 100واط ابيض قاعدة E27",
+          "sku": "QH/LED/HIGHTBAY/E27/100W/WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:114",
+          "wattage": "100W",
+          "cct": null,
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "LED",
+            "HIGHTBAY",
+            "E27",
+            "100W",
+            "WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "QH/LED/HIGHTBAY/E27/100W/WW",
+          "rawNameAr": "كشاف هنجر ليد 100واط اصفر قاعدة E27",
+          "sku": "QH/LED/HIGHTBAY/E27/100W/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:115",
+          "wattage": "100W",
+          "cct": null,
+          "series": "QH",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "QH",
+            "LED",
+            "HIGHTBAY",
+            "E27",
+            "100W",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 124,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "SU/SL01/SMD/100W/4000K/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 100واط اضاءة اوف وايت ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/100W/4000K/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:126",
+          "wattage": "100W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "100W",
+            "4000K",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL01/SMD/100W/WH/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خليه 100واط اضاءة ابيض ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/100W/WH/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:127",
+          "wattage": "100W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "100W",
+            "WH",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL01/SMD/150W/4000K/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 150واط اضاءة اوف وايت ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/150W/4000K/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:128",
+          "wattage": "150W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "150W",
+            "4000K",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL01/SMD/150W/WH/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 150واط اضاءة ابيض ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/150W/WH/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:129",
+          "wattage": "150W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "150W",
+            "WH",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL01/SMD/200W/4000K/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 200واط اضاءة اوف وايت ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/200W/4000K/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:130",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "200W",
+            "4000K",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL01/SMD/200W/WH/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 200واط اضاءة ابيض ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/200W/WH/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:131",
+          "wattage": "200W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "200W",
+            "WH",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL01/SMD/300W/4000K/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 300واط اضاءة اوف وايت ضمان 3سنوات K1",
+          "sku": "SU/SL01/SMD/300W/4000K/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:132",
+          "wattage": "300W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "300W",
+            "4000K",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL01/SMD/300W/WH/3Y/K1",
+          "rawNameAr": "كشاف شوارع SMD بدون خلية 300واط اضاءة ابيض ضمان 3سنواتK1",
+          "sku": "SU/SL01/SMD/300W/WH/3Y/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:133",
+          "wattage": "300W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "SU",
+            "SL01",
+            "SMD",
+            "300W",
+            "WH",
+            "3Y",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/100W/4000K/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 100واط اضاءة اوف وايت ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/100W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:134",
+          "wattage": "100W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "100W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/100W/WH/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 100واط اضاءة ابيض ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/100W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:135",
+          "wattage": "100W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "100W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/150W/4000K/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 150واط اضاءة اوف وايت ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/150W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:136",
+          "wattage": "150W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "150W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/150W/WH/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 150واط اضاءة ابيض ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/150W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:137",
+          "wattage": "150W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "150W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/200W/4000K/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 200واط اضاءة اوف وايت ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/200W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:138",
+          "wattage": "200W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "200W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/200W/WH/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 200واط اضاءة ابيض ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/200W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:139",
+          "wattage": "200W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "200W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/250W/4000K/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 250واط اضاءة اوف وايت ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/250W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:140",
+          "wattage": "250W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "250W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/250W/WH/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 250واط اضاءة ابيض ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/250W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:141",
+          "wattage": "250W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "250W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/300W/4000K/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 300واط اضاءة اوف وايت ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/300W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:142",
+          "wattage": "300W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "300W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SL02/SMD/5Y/300W/WH/K1",
+          "rawNameAr": "كشاف شوارع SMD مع خلية 300واط اضاءة ابيض ضمان 5سنوات K1",
+          "sku": "SU/SL02/SMD/5Y/300W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:143",
+          "wattage": "300W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "SU",
+            "SL02",
+            "SMD",
+            "5Y",
+            "300W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "5018/150W/WW/TM",
+          "rawNameAr": "كشاف شوارع ليد 150واط اصفر التميز بدون خلية",
+          "sku": "5018/150W/WW/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:144",
+          "wattage": "150W",
+          "cct": null,
+          "series": "5018",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "5018",
+            "150W",
+            "WW",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "5018/200W/WW/TM",
+          "rawNameAr": "كشاف شوارع ليد 200واط اصفر التميز بدون خلية",
+          "sku": "5018/200W/WW/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:145",
+          "wattage": "200W",
+          "cct": null,
+          "series": "5018",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "5018",
+            "200W",
+            "WW",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "5018/200W/WW/TM/Cell/OS-ST001",
+          "rawNameAr": "كشاف شوارع ليد 200واط اصفر التميز مع خلية",
+          "sku": "5018/200W/WW/TM/Cell/OS-ST001",
+          "sourceRowRef": "sheet:Sheet2 (2):row:146",
+          "wattage": "200W",
+          "cct": null,
+          "series": "5018",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "5018",
+            "200W",
+            "WW",
+            "TM",
+            "Cell",
+            "OS-ST001"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "5018/250W/WW/TM/OS-ST001",
+          "rawNameAr": "كشاف شوارع ليد 250واط اصفر التميز بدون خلية",
+          "sku": "5018/250W/WW/TM/OS-ST001",
+          "sourceRowRef": "sheet:Sheet2 (2):row:147",
+          "wattage": "250W",
+          "cct": null,
+          "series": "5018",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "5018",
+            "250W",
+            "WW",
+            "TM",
+            "OS-ST001"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SMD/30W/4000K/K1",
+          "rawNameAr": "كشاف ليد محطات 30واط اضاءة اوف وايت K1",
+          "sku": "SU/SMD/30W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:148",
+          "wattage": "30W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "SMD",
+            "30W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SMD/30W/WH/K1",
+          "rawNameAr": "كشاف ليد محطات 30واط اضاءة ابيض K1",
+          "sku": "SU/SMD/30W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:149",
+          "wattage": "30W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "SMD",
+            "30W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SMD/50W/4000K/K1",
+          "rawNameAr": "كشاف ليد محطات 50واط اضاءة اوف وايت K1",
+          "sku": "SU/SMD/50W/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:150",
+          "wattage": "50W",
+          "cct": "4000K",
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "SMD",
+            "50W",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SU/SMD/50W/WH/K1",
+          "rawNameAr": "كشاف ليد محطات 50واط اضاءة ابيض K1",
+          "sku": "SU/SMD/50W/WH/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:151",
+          "wattage": "50W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "SMD",
+            "50W",
+            "WH",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SU/SMD/50W/WW/K1",
+          "rawNameAr": "كشاف ليد محطات 50واط اضاءة اصفر K1",
+          "sku": "SU/SMD/50W/WW/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:152",
+          "wattage": "50W",
+          "cct": null,
+          "series": "SU",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SU",
+            "SMD",
+            "50W",
+            "WW",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    }
+  ]
+}

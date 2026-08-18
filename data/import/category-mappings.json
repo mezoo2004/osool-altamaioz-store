@@ -1,0 +1,12 @@
+{
+  "_comment": "Explicit source category → storefront slug mappings. Unmapped sources are reported as UNMAPPED_CATEGORY.",
+  "mappings": [
+    { "sourceKey": "سبوت لايت cob", "categorySlug": "cob-spotlights" },
+    { "sourceKey": "سبوت cob", "categorySlug": "cob-spotlights" },
+    { "sourceKey": "كشافات", "categorySlug": "floodlights" },
+    { "sourceKey": "حبل زينة", "categorySlug": "led-strips" },
+    { "sourceKey": "نجف", "categorySlug": "chandeliers" },
+    { "sourceKey": "مفاتيح", "categorySlug": "switches" },
+    { "sourceKey": "switches-sockets", "categorySlug": "switches-sockets" }
+  ]
+}

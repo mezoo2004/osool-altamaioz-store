@@ -1,0 +1,2309 @@
+{
+  "importBatch": "batch-001",
+  "importedAt": "2026-08-17T18:15:11.893Z",
+  "sourceFile": "تسعيرة مراوح -لمبات - نجف.xlsx",
+  "sheet": "Sheet2 (2)",
+  "blockCount": 5,
+  "variantCount": 101,
+  "blocks": [
+    {
+      "headerRow": 10,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "MT10-12A-3Y-MT",
+          "rawNameAr": "مروحه شفط سقف مقاس 20 ضمان 3سنوات MT",
+          "sku": "MT10-12A-3Y-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:12",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT10-12A-3Y-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT10-25A-3Y-MT",
+          "rawNameAr": "مروحه شفط سقف مقاس 25 ضمان 3سنوات MT",
+          "sku": "MT10-25A-3Y-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:13",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT10-25A-3Y-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "BPT-30A-MT",
+          "rawNameAr": "مروحه شفط سقف مقاس 30 MT",
+          "sku": "BPT-30A-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:14",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "BPT-30A-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "TM12-14-3",
+          "rawNameAr": "مروحة شفط سقف مقاس 20 ضمان 5سنوات التميز",
+          "sku": "TM12-14-3",
+          "sourceRowRef": "sheet:Sheet2 (2):row:15",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "TM12-14-3"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "TM12-24-3",
+          "rawNameAr": "مروحه شفط سقف مقاس 25 ضمان 5سنوات التميز",
+          "sku": "TM12-24-3",
+          "sourceRowRef": "sheet:Sheet2 (2):row:16",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "TM12-24-3"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "TM15-23-3",
+          "rawNameAr": "مروحه شفط سقف مقاس 30 ضمان 5سنوات التميز",
+          "sku": "TM15-23-3",
+          "sourceRowRef": "sheet:Sheet2 (2):row:17",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "TM15-23-3"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "APB15-H-MT",
+          "rawNameAr": "مروحه شفط جدار رقم 15 MT",
+          "sku": "APB15-H-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:18",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "APB15-H-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "APB20-H-MT",
+          "rawNameAr": "مروحه شفط جدار رقم 20 MT",
+          "sku": "APB20-H-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:19",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "APB20-H-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "APB25-H-MT",
+          "rawNameAr": "مروحه شفط جدار رقم 25 MT",
+          "sku": "APB25-H-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:20",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "APB25-H-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "APB30-H-MT",
+          "rawNameAr": "مروحه شفط جدار رقم 30 MT",
+          "sku": "APB30-H-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:21",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "APB30-H-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HOOZ",
+          "rawNameAr": "هوز مروحه شفط 4بوصه",
+          "sku": "HOOZ",
+          "sourceRowRef": "sheet:Sheet2 (2):row:22",
+          "wattage": null,
+          "cct": null,
+          "series": "HOOZ",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HOOZ"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "LOUVERP/PLASTIC4IN",
+          "rawNameAr": "غطاء هوز مروحه شفط ديكور 4بوصه",
+          "sku": "LOUVERP/PLASTIC4IN",
+          "sourceRowRef": "sheet:Sheet2 (2):row:23",
+          "wattage": null,
+          "cct": null,
+          "series": "LOUVERP",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "LOUVERP",
+            "PLASTIC4IN"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 32,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "FS/40/JWF/18A/S/MT",
+          "rawNameAr": "مروحه هواء عامود مع ريموت MT",
+          "sku": "FS/40/JWF/18A/S/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:34",
+          "wattage": null,
+          "cct": null,
+          "series": "FS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "FS",
+            "40",
+            "JWF",
+            "18A",
+            "S",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "FW/40/JWF/18A/MT",
+          "rawNameAr": "مروحه هواء جدار مع ريموت MT",
+          "sku": "FW/40/JWF/18A/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:35",
+          "wattage": null,
+          "cct": null,
+          "series": "FW",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "FW",
+            "40",
+            "JWF",
+            "18A",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 46,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "K1/E27/7W/3000K",
+          "rawNameAr": "لمبه ليد 7واط اصفر K1/E27",
+          "sku": "K1/E27/7W/3000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:48",
+          "wattage": "7W",
+          "cct": "3000K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "E27",
+            "7W",
+            "3000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "K1/E14/7W/3000K",
+          "rawNameAr": "لمبه ليد 7واط اصفر K1/E14",
+          "sku": "K1/E14/7W/3000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:49",
+          "wattage": "7W",
+          "cct": "3000K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "E14",
+            "7W",
+            "3000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "k1/A60/9W/E27/3000K",
+          "rawNameAr": "لمبه ليد كوره 9واط اصفر 3000K/k1",
+          "sku": "k1/A60/9W/E27/3000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:50",
+          "wattage": "9W",
+          "cct": "3000K",
+          "series": "k1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "k1",
+            "A60",
+            "9W",
+            "E27",
+            "3000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "A60/9W/E27/6500K/k1",
+          "rawNameAr": "لمبه ليد كوره 9واط ابيض 6500K/K1",
+          "sku": "A60/9W/E27/6500K/k1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:51",
+          "wattage": "9W",
+          "cct": "6500K",
+          "series": "A60",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "A60",
+            "9W",
+            "E27",
+            "6500K",
+            "k1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "K1/12W/3000K",
+          "rawNameAr": "لمبه كوره 12واط اصفر K1",
+          "sku": "K1/12W/3000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:52",
+          "wattage": "12W",
+          "cct": "3000K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "12W",
+            "3000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "K1/12W/6500K",
+          "rawNameAr": "لمبه كوره 12واط ابيض K1",
+          "sku": "K1/12W/6500K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:53",
+          "wattage": "12W",
+          "cct": "6500K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "12W",
+            "6500K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "K1/A60/15W/3000K",
+          "rawNameAr": "لمبة كورة 15واط اضاءة اصفر K1/A60",
+          "sku": "K1/A60/15W/3000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:54",
+          "wattage": "15W",
+          "cct": "3000K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "A60",
+            "15W",
+            "3000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "K1/A60/15W/6500K",
+          "rawNameAr": "لمبة كورة 15واط اضاءة ابيض K1/A60",
+          "sku": "K1/A60/15W/6500K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:55",
+          "wattage": "15W",
+          "cct": "6500K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "A60",
+            "15W",
+            "6500K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "G45/E27/4W/3000K/K1",
+          "rawNameAr": "لمبه 4واط G45 اضاءة اصفر K1",
+          "sku": "G45/E27/4W/3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:56",
+          "wattage": "4W",
+          "cct": "3000K",
+          "series": "G45",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G45",
+            "E27",
+            "4W",
+            "3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "C37/E14/4W/3000K/K1",
+          "rawNameAr": "لمبه بلحه 4واط C37 اضاءة اصفر K1/E14",
+          "sku": "C37/E14/4W/3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:57",
+          "wattage": "4W",
+          "cct": "3000K",
+          "series": "C37",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "C37",
+            "E14",
+            "4W",
+            "3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "E27/9W/6500K/T45/K1",
+          "rawNameAr": "لمبه ليد 9واط ابيض طويله K1/T45",
+          "sku": "E27/9W/6500K/T45/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:58",
+          "wattage": "9W",
+          "cct": "6500K",
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "9W",
+            "6500K",
+            "T45",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "E27/9W/3000K/T45/K1",
+          "rawNameAr": "لمبه ليد 9واط اصفر طويله K1/T45",
+          "sku": "E27/9W/3000K/T45/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:59",
+          "wattage": "9W",
+          "cct": "3000K",
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "9W",
+            "3000K",
+            "T45",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "E27/12W/6500K/T45/K1",
+          "rawNameAr": "لمبه ليد 12واط ابيض طويله K1/T45",
+          "sku": "E27/12W/6500K/T45/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:60",
+          "wattage": "12W",
+          "cct": "6500K",
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "12W",
+            "6500K",
+            "T45",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "E27/12W/3000K/T45/K1",
+          "rawNameAr": "لمبه ليد 12واط اصفر طويله K1/T45",
+          "sku": "E27/12W/3000K/T45/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:61",
+          "wattage": "12W",
+          "cct": "3000K",
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "12W",
+            "3000K",
+            "T45",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "E27/9W/GREEN/K1",
+          "rawNameAr": "لمبه ليد كوره 9واط اخضر K1",
+          "sku": "E27/9W/GREEN/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:62",
+          "wattage": "9W",
+          "cct": null,
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "9W",
+            "GREEN",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "E27/9W/BLUE/K1",
+          "rawNameAr": "لمبه ليد كوره 9واط ازرق K1",
+          "sku": "E27/9W/BLUE/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:63",
+          "wattage": "9W",
+          "cct": null,
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "9W",
+            "BLUE",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "E27/9W/PINK/K1",
+          "rawNameAr": "لمبه ليد كوره 9واط وردي K1",
+          "sku": "E27/9W/PINK/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:64",
+          "wattage": "9W",
+          "cct": null,
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "9W",
+            "PINK",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "E27/9W/3000K/K1",
+          "rawNameAr": "لمبه ليد كوره 9واط اصفر غامق K1",
+          "sku": "E27/9W/3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:65",
+          "wattage": "9W",
+          "cct": "3000K",
+          "series": "E27",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27",
+            "9W",
+            "3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "T80/18W/3000K/K1",
+          "rawNameAr": "لمبه ليد 18واط T80/K1 اصفر",
+          "sku": "T80/18W/3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:66",
+          "wattage": "18W",
+          "cct": "3000K",
+          "series": "T80",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T80",
+            "18W",
+            "3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "T80/18W/6500K/K1",
+          "rawNameAr": "لمبه ليد 18واط T80/K1 ابيض",
+          "sku": "T80/18W/6500K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:67",
+          "wattage": "18W",
+          "cct": "6500K",
+          "series": "T80",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T80",
+            "18W",
+            "6500K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "T100/30W/3000K/K1",
+          "rawNameAr": "لمبه ليد 30واط T100/K1 اصفر",
+          "sku": "T100/30W/3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:68",
+          "wattage": "30W",
+          "cct": "3000K",
+          "series": "T100",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T100",
+            "30W",
+            "3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "T100/30W/6500K/K1",
+          "rawNameAr": "لمبه ليد 30واط T100/K1 ابيض",
+          "sku": "T100/30W/6500K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:69",
+          "wattage": "30W",
+          "cct": "6500K",
+          "series": "T100",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T100",
+            "30W",
+            "6500K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "T140/50W/6500K/K1",
+          "rawNameAr": "لمبه ليد 50واط T140/K1 ابيض",
+          "sku": "T140/50W/6500K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:70",
+          "wattage": "50W",
+          "cct": "6500K",
+          "series": "T140",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T140",
+            "50W",
+            "6500K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "T140/50W/3000K/K1",
+          "rawNameAr": "لمبه ليد 50واط T140/K1 اصفر",
+          "sku": "T140/50W/3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:71",
+          "wattage": "50W",
+          "cct": "3000K",
+          "series": "T140",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T140",
+            "50W",
+            "3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        }
+      ]
+    },
+    {
+      "headerRow": 83,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "E14-8+8W/7W/3COLORS/S1",
+          "rawNameAr": "لمبه ليد 7واط 3لون E14/S1",
+          "sku": "E14-8+8W/7W/3COLORS/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:85",
+          "wattage": "7W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E14-8+8W",
+            "7W",
+            "3COLORS",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "E27-8+8W/7W/3COLORS/S1",
+          "rawNameAr": "لمبه ليد 7واط 3لون E27/S1",
+          "sku": "E27-8+8W/7W/3COLORS/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:86",
+          "wattage": "7W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27-8+8W",
+            "7W",
+            "3COLORS",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "G9/5W/6500K/S1",
+          "rawNameAr": "لمبه ليد 5واط G9 ابيض S1",
+          "sku": "G9/5W/6500K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:87",
+          "wattage": "5W",
+          "cct": "6500K",
+          "series": "G9",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G9",
+            "5W",
+            "6500K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "G9/5W/3000K/S1",
+          "rawNameAr": "لمبه ليد 5واط G9 اصفر S1",
+          "sku": "G9/5W/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:88",
+          "wattage": "5W",
+          "cct": "3000K",
+          "series": "G9",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G9",
+            "5W",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "E27-8+8W/7W/3000K/S1",
+          "rawNameAr": "لمبه ليد 7واط اضاءة اصفر E27/S1",
+          "sku": "E27-8+8W/7W/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:89",
+          "wattage": "7W",
+          "cct": "3000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "E27-8+8W",
+            "7W",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "G4/5W/3000K/S1",
+          "rawNameAr": "لمبة ليد 5واط G4 اصفر S1",
+          "sku": "G4/5W/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:90",
+          "wattage": "5W",
+          "cct": "3000K",
+          "series": "G4",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G4",
+            "5W",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "T45/5W/E27/3000K/S1",
+          "rawNameAr": "لمبة 5واط T45 اصفر S1/E27",
+          "sku": "T45/5W/E27/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:91",
+          "wattage": "5W",
+          "cct": "3000K",
+          "series": "T45",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T45",
+            "5W",
+            "E27",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "ST64/7W/E27/3000K/S1",
+          "rawNameAr": "لمبة 7واط اصفر S1/ST64/E27",
+          "sku": "ST64/7W/E27/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:92",
+          "wattage": "7W",
+          "cct": "3000K",
+          "series": "ST64",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST64",
+            "7W",
+            "E27",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "G45/E27/4W/3000K/S1",
+          "rawNameAr": "لمبة ليد 4واط كورة اصفر فر كبير G45/S1",
+          "sku": "G45/E27/4W/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:93",
+          "wattage": "4W",
+          "cct": "3000K",
+          "series": "G45",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G45",
+            "E27",
+            "4W",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "G125/4W/E27/3000K/S1",
+          "rawNameAr": "لمبة 4واط اصفر S1/G125/E27",
+          "sku": "G125/4W/E27/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:94",
+          "wattage": "4W",
+          "cct": "3000K",
+          "series": "G125",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "G125",
+            "4W",
+            "E27",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "T30*185/4W/E27/3000K/S1",
+          "rawNameAr": "لمبة 4واط اصفر S1/T30*185/E27",
+          "sku": "T30*185/4W/E27/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:95",
+          "wattage": "4W",
+          "cct": "3000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "T30*185",
+            "4W",
+            "E27",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "DST64/3W/E27/2000K/S1",
+          "rawNameAr": "لمبة 3واط مع لمبة داخلية اضاءة اصفر غامق S1/DST64",
+          "sku": "DST64/3W/E27/2000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:96",
+          "wattage": "3W",
+          "cct": "2000K",
+          "series": "DST64",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "DST64",
+            "3W",
+            "E27",
+            "2000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ST-010/T8/10-12W/0.6M/4000K/S1",
+          "rawNameAr": "قزاز ليد قصير 10-12واط 0.6M اوف وايت S1",
+          "sku": "ST-010/T8/10-12W/0.6M/4000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:97",
+          "wattage": null,
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-010",
+            "T8",
+            "10-12W",
+            "0.6M",
+            "4000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "ST-010/T8/10-12W/0.6M/6500K/S1",
+          "rawNameAr": "قزاز ليد قصير 10-12واط 0.6M ابيض S1",
+          "sku": "ST-010/T8/10-12W/0.6M/6500K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:98",
+          "wattage": null,
+          "cct": "6500K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-010",
+            "T8",
+            "10-12W",
+            "0.6M",
+            "6500K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "ST-010/T8/10W/0.6M/3000K/S1",
+          "rawNameAr": "قزاز ليد قصير 10واط 0.6M اصفر S1",
+          "sku": "ST-010/T8/10W/0.6M/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:99",
+          "wattage": "10W",
+          "cct": "3000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-010",
+            "T8",
+            "10W",
+            "0.6M",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "ST-020/T8/20W/1.2M/4000K/S1",
+          "rawNameAr": "قزاز ليد طويل 20واط 1.2M اوف وايت S1",
+          "sku": "ST-020/T8/20W/1.2M/4000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:100",
+          "wattage": "20W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-020",
+            "T8",
+            "20W",
+            "1.2M",
+            "4000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "ST-020/T8/20W/1.2M/6500K/S1",
+          "rawNameAr": "قزاز ليد طويل 20واط 1.2M ابيض S1",
+          "sku": "ST-020/T8/20W/1.2M/6500K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:101",
+          "wattage": "20W",
+          "cct": "6500K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-020",
+            "T8",
+            "20W",
+            "1.2M",
+            "6500K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "ST-020/T8/20W/1.2M/3000K/S1",
+          "rawNameAr": "قزاز ليد طويل 20واط 1.2M اصفر S1",
+          "sku": "ST-020/T8/20W/1.2M/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:102",
+          "wattage": "20W",
+          "cct": "3000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-020",
+            "T8",
+            "20W",
+            "1.2M",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "ST-030/T8/30W/1.2M/4000K/S1",
+          "rawNameAr": "قزاز ليد طويل 30واط 1.2M اوف وايت S1",
+          "sku": "ST-030/T8/30W/1.2M/4000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:103",
+          "wattage": "30W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-030",
+            "T8",
+            "30W",
+            "1.2M",
+            "4000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "ST-030/T8/30W/1.2M/6500K/S1",
+          "rawNameAr": "قزاز ليد طويل 30واط 1.2M ابيضS1",
+          "sku": "ST-030/T8/30W/1.2M/6500K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:104",
+          "wattage": "30W",
+          "cct": "6500K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-030",
+            "T8",
+            "30W",
+            "1.2M",
+            "6500K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "ST-030/T8/30W/1.2M/3000K/S1",
+          "rawNameAr": "قزاز ليد طويل 30واط 1.2M اصفرS1",
+          "sku": "ST-030/T8/30W/1.2M/3000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:105",
+          "wattage": "30W",
+          "cct": "3000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-030",
+            "T8",
+            "30W",
+            "1.2M",
+            "3000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        }
+      ]
+    },
+    {
+      "headerRow": 113,
+      "categoryTitle": null,
+      "seriesLine": null,
+      "variants": [
+        {
+          "rawCode": "220+110/LED/96W/3000K/60*60",
+          "rawNameAr": "نجف ليد 60*60 شرائح 96واط اصفر التميز 220+110",
+          "sku": "220+110/LED/96W/3000K/60*60",
+          "sourceRowRef": "sheet:Sheet2 (2):row:115",
+          "wattage": "96W",
+          "cct": "3000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "220+110",
+            "LED",
+            "96W",
+            "3000K",
+            "60*60"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "LED/96W/4000K/60*60/220+110",
+          "rawNameAr": "نجف ليد 60*60 شرائح 96واط اوف وايت التميز 220+110",
+          "sku": "LED/96W/4000K/60*60/220+110",
+          "sourceRowRef": "sheet:Sheet2 (2):row:116",
+          "wattage": "96W",
+          "cct": "4000K",
+          "series": "LED",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "LED",
+            "96W",
+            "4000K",
+            "60*60",
+            "220+110"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "LED/GPL/96W/60*60/6500K/TM/3Y",
+          "rawNameAr": "نجف ليد 60*60 شرائح 96واط ابيض التميز ضمان 3سنوات",
+          "sku": "LED/GPL/96W/60*60/6500K/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:117",
+          "wattage": "96W",
+          "cct": "6500K",
+          "series": "LED",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "LED",
+            "GPL",
+            "96W",
+            "60*60",
+            "6500K",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "LED/GPL/96W/60*60/4000K/TM/3Y",
+          "rawNameAr": "نجف ليد 60*60 شرائح 96واط اوف وايت التميز ضمان 3سنوات",
+          "sku": "LED/GPL/96W/60*60/4000K/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:118",
+          "wattage": "96W",
+          "cct": "4000K",
+          "series": "LED",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "LED",
+            "GPL",
+            "96W",
+            "60*60",
+            "4000K",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "K1/ZL/96W/60*60/6500K/3Y",
+          "rawNameAr": "نجف ليد 60*60 شرائح 96 واط اضاءة ابيض ضمان 3سنوات K1",
+          "sku": "K1/ZL/96W/60*60/6500K/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:119",
+          "wattage": "96W",
+          "cct": "6500K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "K1",
+            "ZL",
+            "96W",
+            "60*60",
+            "6500K",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "LED/GPL/60W/60*60/6500K/TM/2Y",
+          "rawNameAr": "نجف ليد 60*60 بانل 60واط ابيض التميز",
+          "sku": "LED/GPL/60W/60*60/6500K/TM/2Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:120",
+          "wattage": "60W",
+          "cct": "6500K",
+          "series": "LED",
+          "finish": null,
+          "warrantyHint": "2Y",
+          "parts": [
+            "LED",
+            "GPL",
+            "60W",
+            "60*60",
+            "6500K",
+            "TM",
+            "2Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "S1/60W/60*60/PANAL/6500K/2Y",
+          "rawNameAr": "نجف ليد 60*60 بانل 60واط اضاءة ابيض ضمان سنتين S1",
+          "sku": "S1/60W/60*60/PANAL/6500K/2Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:121",
+          "wattage": "60W",
+          "cct": "6500K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": "2Y",
+          "parts": [
+            "S1",
+            "60W",
+            "60*60",
+            "PANAL",
+            "6500K",
+            "2Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "S1/60W/60*60/PANAL/4000K/2Y",
+          "rawNameAr": "نجف ليد 60*60 بانل 60واط اضاءة اوف وايت ضمان سنتين S1",
+          "sku": "S1/60W/60*60/PANAL/4000K/2Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:122",
+          "wattage": "60W",
+          "cct": "4000K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": "2Y",
+          "parts": [
+            "S1",
+            "60W",
+            "60*60",
+            "PANAL",
+            "4000K",
+            "2Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "S1/60W/60*60/PANAL/3000K/2Y",
+          "rawNameAr": "نجف ليد 60*60 بانل 60واط اضاءة اصفر ضمان سنتين S1",
+          "sku": "S1/60W/60*60/PANAL/3000K/2Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:123",
+          "wattage": "60W",
+          "cct": "3000K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": "2Y",
+          "parts": [
+            "S1",
+            "60W",
+            "60*60",
+            "PANAL",
+            "3000K",
+            "2Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "SSL/60W/8000K/1.2M/F63/S1",
+          "rawNameAr": "نجف ليد 60واط 120سم ابيض S1-8000K",
+          "sku": "SSL/60W/8000K/1.2M/F63/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:124",
+          "wattage": "60W",
+          "cct": "8000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "60W",
+            "8000K",
+            "1.2M",
+            "F63",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SSL/60W/4000K/1.2M/F63/S1",
+          "rawNameAr": "نجف ليد 60واط 120سم اوف وايت S1",
+          "sku": "SSL/60W/4000K/1.2M/F63/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:125",
+          "wattage": "60W",
+          "cct": "4000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "60W",
+            "4000K",
+            "1.2M",
+            "F63",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SSL/100W/8000K/1.2M/F95/S1",
+          "rawNameAr": "نجف ليد 100واط 120سم ابيض S1-8000K",
+          "sku": "SSL/100W/8000K/1.2M/F95/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:126",
+          "wattage": "100W",
+          "cct": "8000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "100W",
+            "8000K",
+            "1.2M",
+            "F95",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SSL/50W/8000K/1.2M/F63/S1",
+          "rawNameAr": "نجف ليد 50واط 120سم ابيض S1-8000K",
+          "sku": "SSL/50W/8000K/1.2M/F63/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:127",
+          "wattage": "50W",
+          "cct": "8000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "50W",
+            "8000K",
+            "1.2M",
+            "F63",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SSL/50W/4000K/1.2M/F63/S1",
+          "rawNameAr": "نجف ليد 50واط 120سم اوف وايت S1",
+          "sku": "SSL/50W/4000K/1.2M/F63/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:128",
+          "wattage": "50W",
+          "cct": "4000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "50W",
+            "4000K",
+            "1.2M",
+            "F63",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SSL/75W/8000K/1.2M/F75/S1",
+          "rawNameAr": "نجف ليد 75واط 120سم ابيض S1-8000K",
+          "sku": "SSL/75W/8000K/1.2M/F75/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:129",
+          "wattage": "75W",
+          "cct": "8000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "75W",
+            "8000K",
+            "1.2M",
+            "F75",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SSL/75W/4000K/1.2M/F75/S1",
+          "rawNameAr": "نجف ليد 75واط 120سم اوف وايت S1-4000K",
+          "sku": "SSL/75W/4000K/1.2M/F75/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:130",
+          "wattage": "75W",
+          "cct": "4000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "75W",
+            "4000K",
+            "1.2M",
+            "F75",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SSL/100W/4000K/1.2M/F75/S1",
+          "rawNameAr": "نجف ليد 100واط 120سم اوف وايت S1-4000K",
+          "sku": "SSL/100W/4000K/1.2M/F75/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:131",
+          "wattage": "100W",
+          "cct": "4000K",
+          "series": "SSL",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "100W",
+            "4000K",
+            "1.2M",
+            "F75",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "S1/25W/265V/8000K",
+          "rawNameAr": "نجف ليد قصير 25واط شفاف ( نجوم ) S1/8000K",
+          "sku": "S1/25W/265V/8000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:132",
+          "wattage": "25W",
+          "cct": "8000K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "S1",
+            "25W",
+            "265V",
+            "8000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "S1/60W/265V/8000K",
+          "rawNameAr": "نجف ليد طويل 60واط شفاف ( نجوم ) S1/8000K",
+          "sku": "S1/60W/265V/8000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:133",
+          "wattage": "60W",
+          "cct": "8000K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "S1",
+            "60W",
+            "265V",
+            "8000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "IP65/75W/265V/8000K/S1",
+          "rawNameAr": "نجف ليد طويل وتر بروف 75واط S1/8000K",
+          "sku": "IP65/75W/265V/8000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:134",
+          "wattage": "75W",
+          "cct": "8000K",
+          "series": "IP65",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "IP65",
+            "75W",
+            "265V",
+            "8000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "IP65/75W/265V/4000K/S1",
+          "rawNameAr": "نجف ليد طويل وتر بروف 75واط S1/4000K",
+          "sku": "IP65/75W/265V/4000K/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:135",
+          "wattage": "75W",
+          "cct": "4000K",
+          "series": "IP65",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "IP65",
+            "75W",
+            "265V",
+            "4000K",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "S1/60CM/25W/8000K",
+          "rawNameAr": "نجف ليد 25واط 60سم ابيض S1/8000K",
+          "sku": "S1/60CM/25W/8000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:136",
+          "wattage": "25W",
+          "cct": "8000K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "S1",
+            "60CM",
+            "25W",
+            "8000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "S1/60CM/25W/4000K",
+          "rawNameAr": "نجف ليد 25واط 60سم S1/4000K",
+          "sku": "S1/60CM/25W/4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:137",
+          "wattage": "25W",
+          "cct": "4000K",
+          "series": "S1",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "S1",
+            "60CM",
+            "25W",
+            "4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "SSL/60W/BK+4000K/1.2M/S1",
+          "rawNameAr": "نجف ليد 60واط 120سم اسود اضاءة اوف وايت S1/4000K",
+          "sku": "SSL/60W/BK+4000K/1.2M/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:138",
+          "wattage": "60W",
+          "cct": null,
+          "series": "SSL",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "60W",
+            "BK+4000K",
+            "1.2M",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "SSL/75W/BK+4000K/1.2M/S1",
+          "rawNameAr": "نجف ليد 75واط 120سم اسود اضاءة اوف وايت S1/4000K",
+          "sku": "SSL/75W/BK+4000K/1.2M/S1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:139",
+          "wattage": "75W",
+          "cct": null,
+          "series": "SSL",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "SSL",
+            "75W",
+            "BK+4000K",
+            "1.2M",
+            "S1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ST-060/60W/1.2M/6500K/K1",
+          "rawNameAr": "نجف ليد طويل 60واط وتر بروف ابيض K1",
+          "sku": "ST-060/60W/1.2M/6500K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:140",
+          "wattage": "60W",
+          "cct": "6500K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-060",
+            "60W",
+            "1.2M",
+            "6500K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "ST-060/60W/1.2M/4000K/K1",
+          "rawNameAr": "نجف ليد طويل 60واط وتر بروف اوف وايت K1",
+          "sku": "ST-060/60W/1.2M/4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:141",
+          "wattage": "60W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ST-060",
+            "60W",
+            "1.2M",
+            "4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "k1/ZL/72W/6500K/3Y",
+          "rawNameAr": "نجف ليد طويل وتر بروف 72 واط اضاءة ابيض ضمان 3 سنوات k1/6500",
+          "sku": "k1/ZL/72W/6500K/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:142",
+          "wattage": "72W",
+          "cct": "6500K",
+          "series": "k1",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "k1",
+            "ZL",
+            "72W",
+            "6500K",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "K1/ZL/72W/3000K/3Y",
+          "rawNameAr": "نجف ليد طويل وتر بروف 72واط اضاءة اصفر ضمان 3 سنوات K1/3000",
+          "sku": "K1/ZL/72W/3000K/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:143",
+          "wattage": "72W",
+          "cct": "3000K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "K1",
+            "ZL",
+            "72W",
+            "3000K",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "دافئ",
+            "en": "Warm"
+          }
+        },
+        {
+          "rawCode": "K1/ZL/72W/4000K/3Y",
+          "rawNameAr": "نجف ليد طويل وتر بروف 72 واط اضاءة اوف وايت ضمان 3سنوات K1/4000K",
+          "sku": "K1/ZL/72W/4000K/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:144",
+          "wattage": "72W",
+          "cct": "4000K",
+          "series": "K1",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "K1",
+            "ZL",
+            "72W",
+            "4000K",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "XTD/50W/COB/120CM/BK+3000K/K1",
+          "rawNameAr": "نجف علاقي 50واط 120سم COB اسود اضاءة اصفر K1",
+          "sku": "XTD/50W/COB/120CM/BK+3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:145",
+          "wattage": "50W",
+          "cct": null,
+          "series": "XTD",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "50W",
+            "COB",
+            "120CM",
+            "BK+3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/50W/COB/120CM/BK+4000K/K1",
+          "rawNameAr": "نجف علاقي 50واط 120سم COB اسود اضاءة اوف وايتK1",
+          "sku": "XTD/50W/COB/120CM/BK+4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:146",
+          "wattage": "50W",
+          "cct": null,
+          "series": "XTD",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "50W",
+            "COB",
+            "120CM",
+            "BK+4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/50W/COB/120CM/WH+3000K/K1",
+          "rawNameAr": "نجف علاقي 50واط 120سم COB ابيض اضاءة اصفر K1",
+          "sku": "XTD/50W/COB/120CM/WH+3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:147",
+          "wattage": "50W",
+          "cct": null,
+          "series": "XTD",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "50W",
+            "COB",
+            "120CM",
+            "WH+3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/50W/COB/120CM/WH+4000K/K1",
+          "rawNameAr": "نجف علاقي 50واط 120سم COB ابيض اضاءة اوف وايت K1",
+          "sku": "XTD/50W/COB/120CM/WH+4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:148",
+          "wattage": "50W",
+          "cct": null,
+          "series": "XTD",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "50W",
+            "COB",
+            "120CM",
+            "WH+4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K1/T9/1.2M/50W/BK+6500K",
+          "rawNameAr": "لاينر نحيف ليد 50واط COB اسود اضاءة ابيض (علاقي+لطش) K1",
+          "sku": "K1/T9/1.2M/50W/BK+6500K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:149",
+          "wattage": "50W",
+          "cct": null,
+          "series": "K1",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "T9",
+            "1.2M",
+            "50W",
+            "BK+6500K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K1/T9/1.2M/50W/BK+3000K",
+          "rawNameAr": "لاينر نحيف ليد 50واط COB اسود اضاءة اصفر ( علاقي+لطش ) K1",
+          "sku": "K1/T9/1.2M/50W/BK+3000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:150",
+          "wattage": "50W",
+          "cct": null,
+          "series": "K1",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "T9",
+            "1.2M",
+            "50W",
+            "BK+3000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "K1/T9/1.2M/50W/BK+4000K",
+          "rawNameAr": "لاينر نحيف ليد 50واط COB اسود اضاءة اوف وايت ( علاقي+لطش ) K1",
+          "sku": "K1/T9/1.2M/50W/BK+4000K",
+          "sourceRowRef": "sheet:Sheet2 (2):row:151",
+          "wattage": "50W",
+          "cct": null,
+          "series": "K1",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "K1",
+            "T9",
+            "1.2M",
+            "50W",
+            "BK+4000K"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/DX60/60W/PANAL/120CM/BK+3000K/K1",
+          "rawNameAr": "نجف علاقي بانل 60واط 120سم اسود اضاءة اصفر K1",
+          "sku": "XTD/DX60/60W/PANAL/120CM/BK+3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:152",
+          "wattage": "60W",
+          "cct": null,
+          "series": "XTD",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "DX60",
+            "60W",
+            "PANAL",
+            "120CM",
+            "BK+3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/(DX60)60W/PANAL/120CM/BK+4000K/K1",
+          "rawNameAr": "نجف علاقي بانل 60واط 120سم اسود اضاءة اوف وايت K1",
+          "sku": "XTD/(DX60)60W/PANAL/120CM/BK+4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:153",
+          "wattage": null,
+          "cct": null,
+          "series": "XTD",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "(DX60)60W",
+            "PANAL",
+            "120CM",
+            "BK+4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/DX60/60W/PANAL/120CM/WH+3000K/K1",
+          "rawNameAr": "نجف علاقي بانل 60واط 120سم ابيض اضاءة اصفر K1",
+          "sku": "XTD/DX60/60W/PANAL/120CM/WH+3000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:154",
+          "wattage": "60W",
+          "cct": null,
+          "series": "XTD",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "DX60",
+            "60W",
+            "PANAL",
+            "120CM",
+            "WH+3000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/DX60/60W/PANAL/120CM/WH+4000K/K1",
+          "rawNameAr": "نجف علاقي بانل 60واط 120سم ابيض اضاءة اوف وايت K1",
+          "sku": "XTD/DX60/60W/PANAL/120CM/WH+4000K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:155",
+          "wattage": "60W",
+          "cct": null,
+          "series": "XTD",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "DX60",
+            "60W",
+            "PANAL",
+            "120CM",
+            "WH+4000K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XTD/DX60/60W/PANAL/120CM/BK+6500K/K1",
+          "rawNameAr": "نجف علاقي بانل 60واط 120سم اسود اضاءة ابيض K1",
+          "sku": "XTD/DX60/60W/PANAL/120CM/BK+6500K/K1",
+          "sourceRowRef": "sheet:Sheet2 (2):row:156",
+          "wattage": "60W",
+          "cct": null,
+          "series": "XTD",
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XTD",
+            "DX60",
+            "60W",
+            "PANAL",
+            "120CM",
+            "BK+6500K",
+            "K1"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    }
+  ]
+}

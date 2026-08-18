@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-08-18T19:09:20.769Z",
+  "importBatch": "batch-001",
+  "totalConflicts": 0,
+  "policy": "Conflicts are reported — ambiguous SKU matches are never auto-merged.",
+  "recommendedAction": "Review conflicts manually before apply. Do not auto-merge ambiguous records.",
+  "conflicts": []
+}

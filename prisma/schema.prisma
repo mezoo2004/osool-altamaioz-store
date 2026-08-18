@@ -1,0 +1,356 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum ImportBatchStatus {
+  PENDING
+  DRY_RUN
+  APPLIED
+  FAILED
+  PARTIAL
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum StockStatus {
+  IN_STOCK
+  LOW_STOCK
+  OUT_OF_STOCK
+  PREORDER
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  PAID
+  FAILED
+  REFUNDED
+}
+
+model Category {
+  id               String            @id @default(cuid())
+  slug             String            @unique @db.VarChar(191)
+  parentId         String?
+  parent           Category?         @relation("CategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children         Category[]        @relation("CategoryTree")
+  nameAr           String            @db.VarChar(255)
+  nameEn           String            @db.VarChar(255)
+  descriptionAr    String?           @db.Text
+  descriptionEn    String?           @db.Text
+  sortOrder        Int               @default(0)
+  isActive         Boolean           @default(true)
+  isFeatured       Boolean           @default(false)
+  seoTitleAr       String?           @db.VarChar(255)
+  seoTitleEn       String?           @db.VarChar(255)
+  seoDescriptionAr String?           @db.Text
+  seoDescriptionEn String?           @db.Text
+  products         Product[]
+  productLinks     ProductCategory[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([parentId])
+}
+
+model Product {
+  id               String            @id @default(cuid())
+  slug             String            @unique @db.VarChar(191)
+  sku              String?           @unique @db.VarChar(191)
+  modelNumber      String?           @db.VarChar(191)
+  nameAr           String            @db.VarChar(500)
+  nameEn           String            @db.VarChar(500)
+  descriptionAr    String?           @db.Text
+  descriptionEn    String?           @db.Text
+  categoryId       String?
+  category         Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  brand            String?           @db.VarChar(191)
+  series           String?           @db.VarChar(191)
+  status           ProductStatus     @default(DRAFT)
+  stockStatus      StockStatus       @default(OUT_OF_STOCK)
+  isFeatured       Boolean           @default(false)
+  isNew            Boolean           @default(false)
+  isBestseller     Boolean           @default(false)
+  isOnOffer        Boolean           @default(false)
+  basePrice        Decimal?          @db.Decimal(12, 2)
+  salePrice        Decimal?          @db.Decimal(12, 2)
+  priceConfirmed   Boolean           @default(false)
+  vatIncluded      Boolean           @default(true)
+  warrantyTextAr   String?           @db.Text
+  warrantyTextEn   String?           @db.Text
+  seoTitleAr       String?           @db.VarChar(255)
+  seoTitleEn       String?           @db.VarChar(255)
+  seoDescriptionAr String?           @db.Text
+  seoDescriptionEn String?           @db.Text
+  productType      String?           @db.VarChar(191)
+  installationType String?           @db.VarChar(191)
+  variants         ProductVariant[]
+  images           ProductImage[]
+  specs            ProductSpec[]
+  categoryLinks    ProductCategory[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  sourceBatchId    String?           @db.VarChar(191)
+  groupKey         String?           @db.VarChar(191)
+  importMeta       Json?
+
+  @@index([categoryId])
+  @@index([series])
+  @@index([status])
+  @@index([groupKey])
+  @@index([sourceBatchId])
+}
+
+model ProductCategory {
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  isPrimary  Boolean  @default(false)
+
+  @@id([productId, categoryId])
+  @@index([categoryId])
+}
+
+model ImportBatch {
+  id            String            @id @db.VarChar(191)
+  sourceFile    String?           @db.VarChar(500)
+  sourceType    String            @default("excel") @db.VarChar(64)
+  label         String?           @db.VarChar(255)
+  description   String?           @db.Text
+  sourceFiles   Json
+  importedAt    DateTime          @default(now())
+  rowCount      Int               @default(0)
+  createdCount  Int               @default(0)
+  updatedCount  Int               @default(0)
+  skippedCount  Int               @default(0)
+  conflictCount Int               @default(0)
+  variantCount  Int               @default(0)
+  productCount  Int               @default(0)
+  status        ImportBatchStatus @default(PENDING)
+  notes         String?           @db.Text
+  reportPath    String?           @db.VarChar(500)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+}
+
+model CategorySourceMapping {
+  id           String   @id @default(cuid())
+  sourceKey    String   @unique @db.VarChar(191)
+  sourceFile   String?  @db.VarChar(500)
+  categorySlug String?  @db.VarChar(191)
+  status       String   @default("mapped") @db.VarChar(64)
+  notes        String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([categorySlug])
+  @@index([status])
+}
+
+model ProductVariant {
+  id             String      @id @default(cuid())
+  productId      String
+  product        Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku            String      @unique @db.VarChar(191)
+  normalizedSku  String?     @unique @db.VarChar(191)
+  modelNumber    String?     @db.VarChar(191)
+  wattage        String?     @db.VarChar(64)
+  cct            String?     @db.VarChar(64)
+  finish         String?     @db.VarChar(128)
+  size           String?     @db.VarChar(128)
+  voltage        String?     @db.VarChar(64)
+  length         String?     @db.VarChar(64)
+  beamAngle      String?     @db.VarChar(64)
+  ipRating       String?     @db.VarChar(64)
+  price          Decimal?    @db.Decimal(12, 2)
+  salePrice      Decimal?    @db.Decimal(12, 2)
+  priceConfirmed Boolean     @default(false)
+  stockQty       Int         @default(0)
+  stockStatus    StockStatus @default(OUT_OF_STOCK)
+  imageUrl       String?     @db.VarChar(500)
+  nameAr         String?     @db.VarChar(500)
+  nameEn         String?     @db.VarChar(500)
+  isDefault      Boolean     @default(false)
+  attributes     Json?
+  sourceBatchId  String?     @db.VarChar(191)
+  sourceFile     String?     @db.VarChar(500)
+  sourceRowRef   String?     @db.VarChar(255)
+  importMeta     Json?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  @@index([productId])
+  @@index([cct])
+  @@index([wattage])
+  @@index([sourceBatchId])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String  @db.VarChar(500)
+  altAr     String? @db.VarChar(255)
+  altEn     String? @db.VarChar(255)
+  sortOrder Int     @default(0)
+  isPrimary Boolean @default(false)
+
+  @@index([productId])
+}
+
+model ProductSpec {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  keyAr     String  @db.VarChar(255)
+  keyEn     String  @db.VarChar(255)
+  valueAr   String  @db.Text
+  valueEn   String  @db.Text
+  sortOrder Int     @default(0)
+
+  @@index([productId])
+}
+
+model Customer {
+  id            String         @id @default(cuid())
+  email         String         @unique @db.VarChar(191)
+  passwordHash  String?        @db.VarChar(255)
+  firstName     String?        @db.VarChar(191)
+  lastName      String?        @db.VarChar(191)
+  phone         String?        @db.VarChar(32)
+  locale        String         @default("ar") @db.VarChar(8)
+  addresses     Address[]
+  orders        Order[]
+  wishlistItems WishlistItem[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model WishlistItem {
+  id          String   @id @default(cuid())
+  customerId  String
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  productSlug String   @db.VarChar(191)
+  createdAt   DateTime @default(now())
+
+  @@unique([customerId, productSlug])
+  @@index([customerId])
+  @@index([productSlug])
+}
+
+model Address {
+  id         String   @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  label      String?  @db.VarChar(191)
+  firstName  String   @db.VarChar(191)
+  lastName   String   @db.VarChar(191)
+  phone      String   @db.VarChar(32)
+  line1      String   @db.VarChar(500)
+  line2      String?  @db.VarChar(500)
+  city       String   @db.VarChar(191)
+  region     String?  @db.VarChar(191)
+  postalCode String?  @db.VarChar(32)
+  country    String   @default("SA") @db.VarChar(8)
+  isDefault  Boolean  @default(false)
+
+  @@index([customerId])
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  orderNumber     String        @unique @db.VarChar(191)
+  customerId      String?
+  customer        Customer?     @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  guestEmail      String?       @db.VarChar(191)
+  guestPhone      String?       @db.VarChar(32)
+  status          OrderStatus   @default(PENDING)
+  paymentStatus   PaymentStatus @default(PENDING)
+  subtotal        Decimal       @db.Decimal(12, 2)
+  discountTotal   Decimal       @default(0) @db.Decimal(12, 2)
+  shippingTotal   Decimal       @default(0) @db.Decimal(12, 2)
+  vatTotal        Decimal       @default(0) @db.Decimal(12, 2)
+  grandTotal      Decimal       @db.Decimal(12, 2)
+  currency        String        @default("SAR") @db.VarChar(8)
+  shippingAddress Json
+  billingAddress  Json?
+  paymentMethod   String?       @db.VarChar(64)
+  paymentRef      String?       @db.VarChar(191)
+  trackingNumber  String?       @db.VarChar(191)
+  trackingUrl     String?       @db.VarChar(500)
+  items           OrderItem[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([customerId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id                 String   @id @default(cuid())
+  orderId            String
+  order              Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId          String?  @db.VarChar(191)
+  variantId          String?  @db.VarChar(191)
+  skuSnapshot        String   @db.VarChar(191)
+  nameArSnapshot     String   @db.VarChar(500)
+  nameEnSnapshot     String   @db.VarChar(500)
+  attributesSnapshot Json?
+  imageUrlSnapshot   String?  @db.VarChar(500)
+  unitPrice          Decimal  @db.Decimal(12, 2)
+  quantity           Int
+  lineTotal          Decimal  @db.Decimal(12, 2)
+
+  @@index([orderId])
+  @@index([skuSnapshot])
+}
+
+model Space {
+  id            String   @id @default(cuid())
+  slug          String   @unique @db.VarChar(191)
+  nameAr        String   @db.VarChar(255)
+  nameEn        String   @db.VarChar(255)
+  descriptionAr String?  @db.Text
+  descriptionEn String?  @db.Text
+  heroImageUrl  String?  @db.VarChar(500)
+  tipsAr        Json?
+  tipsEn        Json?
+  isActive      Boolean  @default(true)
+  scenes        Scene[]
+}
+
+model Scene {
+  id            String  @id @default(cuid())
+  slug          String  @unique @db.VarChar(191)
+  spaceId       String?
+  space         Space?  @relation(fields: [spaceId], references: [id], onDelete: SetNull)
+  nameAr        String  @db.VarChar(255)
+  nameEn        String  @db.VarChar(255)
+  descriptionAr String? @db.Text
+  descriptionEn String? @db.Text
+  imageUrl      String? @db.VarChar(500)
+  hotspots      Json?
+  isActive      Boolean @default(true)
+
+  @@index([spaceId])
+}

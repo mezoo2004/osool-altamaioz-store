@@ -1,0 +1,331 @@
+[
+  {
+    "id": "space-majlis",
+    "slug": "majlis",
+    "nameAr": "مجلس",
+    "nameEn": "Majlis",
+    "shortDescriptionAr": "إضاءة دافئة متعددة الطبقات للاستقبال والضيافة",
+    "shortDescriptionEn": "Warm layered lighting for hospitality and gathering",
+    "descriptionAr": "المجلس يحتاج توازناً بين الإضاءة الاحتفالية والراحة البصرية. ننصح بدمج عنصر مركزي ديكوري مع سبوتات COB للإضاءة العامة، وإضاءة غير مباشرة لإبراز الجدران والديكور.",
+    "descriptionEn": "A majlis needs balance between ceremonial presence and visual comfort. Combine a decorative centerpiece with COB downlights for general illumination and indirect accent lighting for walls and décor.",
+    "heroImage": "/images/spaces/majlis.jpg",
+    "mobileHeroImage": "/images/spaces/majlis-mobile.jpg",
+    "recommendedCategorySlugs": ["chandeliers", "cob-spotlights", "led-strips", "track"],
+    "recommendedProductSlugs": [
+      "p-w-light-std-chandeliers-2",
+      "s1-7w-cob-std-cob-spotlights",
+      "2835-9w-led_strip-std-led-strips",
+      "s1-10w-light-std-track"
+    ],
+    "tipsAr": [
+      "استخدم 3000K للأجواء الدافئة المناسبة للضيافة",
+      "وزّع الإضاءة على ثلاث طبقات: عامة، تركيز، وديكور",
+      "الثريا أو العنصر المركزي يحدد شخصية المجلس",
+      "سبوتات COB للإضاءة العامة دون وهج مزعج"
+    ],
+    "tipsEn": [
+      "Use 3000K for warm hospitality ambience",
+      "Layer lighting: general, accent, and decorative",
+      "A chandelier or centerpiece defines the majlis character",
+      "COB downlights provide general light without harsh glare"
+    ],
+    "sceneIds": ["scene-majlis-classic", "scene-majlis-modern"],
+    "featured": true,
+    "sortOrder": 1,
+    "seoTitleAr": "إضاءة المجلس | اصول التميز",
+    "seoTitleEn": "Majlis Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "اكتشف حلول إضاءة المجلس: ثريات، سبوت COB، وإضاءة غير مباشرة لأجواء ضيافة فاخرة.",
+    "seoDescriptionEn": "Discover majlis lighting: chandeliers, COB spotlights, and indirect accent lighting for premium hospitality."
+  },
+  {
+    "id": "space-living",
+    "slug": "living-room",
+    "nameAr": "صالة",
+    "nameEn": "Living Room",
+    "shortDescriptionAr": "إضاءة متوازنة للجلوس والترفيه",
+    "shortDescriptionEn": "Balanced lighting for living and entertainment",
+    "descriptionAr": "الصالة تحتاج مرونة بين الإضاءة العامة الهادئة وإضاءة التركيز عند التلفاز أو منطقة القراءة. البروفايلات والسبوتات COB خيارات عملية للسقف المستوي.",
+    "descriptionEn": "Living rooms need flexibility between soft general light and focused zones for TV or reading. Profiles and COB downlights work well for flat ceilings.",
+    "heroImage": "/images/spaces/living.jpg",
+    "recommendedCategorySlugs": ["cob-spotlights", "track", "led-strips", "pendants"],
+    "recommendedProductSlugs": [
+      "s1-10w-cob-std-cob-spotlights-2",
+      "s1-10w-light-std-track",
+      "2835-9w-led_strip-std-led-strips",
+      "yz6201-w-track-std-track"
+    ],
+    "tipsAr": [
+      "4000K خيار متوازن للاستخدام اليومي",
+      "أضف إضاءة غير مباشرة خلف التلفاز لتقليل إجهاد العين",
+      "استخدم تراك لايت لتوجيه الضوء على مناطق الجلوس",
+      "تجنب الإضاءة الساطعة المباشرة فوق منطقة التلفاز"
+    ],
+    "tipsEn": [
+      "4000K is a balanced choice for daily use",
+      "Add indirect lighting behind the TV to reduce eye strain",
+      "Use track lighting to aim light at seating areas",
+      "Avoid harsh direct light over the TV zone"
+    ],
+    "sceneIds": ["scene-living-contemporary"],
+    "featured": true,
+    "sortOrder": 2,
+    "seoTitleAr": "إضاءة الصالة | اصول التميز",
+    "seoTitleEn": "Living Room Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "حلول إضاءة الصالة: سبوتات، تراك، وإضاءة غير مباشرة لمساحة معيشة مريحة.",
+    "seoDescriptionEn": "Living room lighting solutions: downlights, track, and indirect lighting for comfortable living."
+  },
+  {
+    "id": "space-bedroom",
+    "slug": "bedroom",
+    "nameAr": "غرفة نوم",
+    "nameEn": "Bedroom",
+    "shortDescriptionAr": "إضاءة هادئة وطبقات تحكم للراحة",
+    "shortDescriptionEn": "Calm layered lighting with control for comfort",
+    "descriptionAr": "غرفة النوم تستفيد من درجة لون دافئة وإضاءة منخفضة للمساء. اجمع بين إضاءة عامة خافتة وإضاءة جانبية أو غير مباشرة حول السرير.",
+    "descriptionEn": "Bedrooms benefit from warm color temperature and dim evening light. Combine soft general lighting with bedside or indirect lighting around the bed.",
+    "heroImage": "/images/spaces/bedroom.jpg",
+    "recommendedCategorySlugs": ["cob-spotlights", "led-strips", "pendants"],
+    "recommendedProductSlugs": [
+      "s1-7w-cob-std-cob-spotlights",
+      "2835-9w-led_strip-std-led-strips-3",
+      "s1-10w-light-black-track"
+    ],
+    "tipsAr": [
+      "3000K يساعد على الاسترخاء قبل النوم",
+      "إضاءة غير مباشرة أفضل من مصباح سقف واحد قوي",
+      "خطط لمسارات إضاءة حول رأس السرير",
+      "تجنب الضوء المباشر في خط البصر عند الاستلقاء"
+    ],
+    "tipsEn": [
+      "3000K supports relaxation before sleep",
+      "Indirect lighting beats a single harsh ceiling fixture",
+      "Plan lighting paths around the headboard",
+      "Avoid direct light in the line of sight when lying down"
+    ],
+    "sceneIds": [],
+    "featured": true,
+    "sortOrder": 3,
+    "seoTitleAr": "إضاءة غرفة النوم | اصول التميز",
+    "seoTitleEn": "Bedroom Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "إضاءة غرف نوم هادئة: سبوتات دافئة وإضاءة غير مباشرة للراحة.",
+    "seoDescriptionEn": "Calm bedroom lighting: warm downlights and indirect accent for restful spaces."
+  },
+  {
+    "id": "space-kitchen",
+    "slug": "kitchen",
+    "nameAr": "مطبخ",
+    "nameEn": "Kitchen",
+    "shortDescriptionAr": "إضاءة عملية للعمل والتحضير",
+    "shortDescriptionEn": "Functional lighting for prep and work surfaces",
+    "descriptionAr": "المطبخ يحتاج إضاءة عامة متساوية فوق مناطق الحركة، مع إضاءة مهمة فوق سطح العمل. 4000K يساعد على تمييز الألوان الطبيعية للطعام.",
+    "descriptionEn": "Kitchens need even general lighting over circulation areas plus task lighting over work surfaces. 4000K helps render natural food colors.",
+    "heroImage": "/images/spaces/kitchen.jpg",
+    "recommendedCategorySlugs": ["cob-spotlights", "panel-lights", "led-strips", "profiles"],
+    "recommendedProductSlugs": [
+      "s1-10w-cob-std-cob-spotlights-2",
+      "s1-7w-panel-std-cob-spotlights",
+      "2835-9w-led_strip-std-led-strips",
+      "p-w-led_strip-std-profiles-2"
+    ],
+    "tipsAr": [
+      "ركّز الإضاءة فوق سطح التحضير والمغسلة",
+      "4000K مناسب للمهام اليومية في المطبخ",
+      "البروفايلات خطية ممتازة تحت الخزائن العلوية",
+      "تجنب الظلال على مناطق التقطيع والطبخ"
+    ],
+    "tipsEn": [
+      "Focus light over prep surfaces and the sink",
+      "4000K suits daily kitchen tasks",
+      "Linear profiles work well under upper cabinets",
+      "Avoid shadows on cutting and cooking zones"
+    ],
+    "sceneIds": ["scene-kitchen-functional"],
+    "featured": true,
+    "sortOrder": 4,
+    "seoTitleAr": "إضاءة المطبخ | اصول التميز",
+    "seoTitleEn": "Kitchen Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "إضاءة مطابخ عملية: سبوتات، بانل، وبروفايلات خطية لسطح العمل.",
+    "seoDescriptionEn": "Practical kitchen lighting: downlights, panels, and linear profiles for work surfaces."
+  },
+  {
+    "id": "space-office",
+    "slug": "office",
+    "nameAr": "مكتب",
+    "nameEn": "Office",
+    "shortDescriptionAr": "إضاءة مريحة للتركيز والعمل",
+    "shortDescriptionEn": "Comfortable lighting for focus and productivity",
+    "descriptionAr": "المكتب المنزلي أو التجاري يحتاج إضاءة عامة متوازنة مع إمكانية توجيه الضوء على منطقة المكتب. تجنب التباين الشديد بين الشاشة والخلفية.",
+    "descriptionEn": "Home or commercial offices need balanced general lighting with aimable light on the desk zone. Avoid strong contrast between screen and background.",
+    "heroImage": "/images/spaces/office.jpg",
+    "recommendedCategorySlugs": ["cob-spotlights", "panel-lights", "track"],
+    "recommendedProductSlugs": [
+      "s1-10w-cob-std-cob-spotlights-2",
+      "s1-20w-panel-std-cob-spotlights",
+      "s1-20w-light-black-track"
+    ],
+    "tipsAr": [
+      "4000K يدعم التركيز دون برودة مفرطة",
+      "وزّع الإضاءة لتقليل الوهج على الشاشة",
+      "تراك لايت يسمح بتعديل اتجاه الضوء",
+      "تجنب الإضاءة المباشرة خلف الشاشة"
+    ],
+    "tipsEn": [
+      "4000K supports focus without feeling too cool",
+      "Distribute light to reduce screen glare",
+      "Track lighting allows adjustable aim",
+      "Avoid placing bright sources directly behind the monitor"
+    ],
+    "sceneIds": [],
+    "featured": false,
+    "sortOrder": 5,
+    "seoTitleAr": "إضاءة المكتب | اصول التميز",
+    "seoTitleEn": "Office Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "حلول إضاءة المكاتب: سبوتات وتراك لبيئة عمل مريحة.",
+    "seoDescriptionEn": "Office lighting solutions: downlights and track for comfortable workspaces."
+  },
+  {
+    "id": "space-restaurant",
+    "slug": "restaurant",
+    "nameAr": "مطعم",
+    "nameEn": "Restaurant",
+    "shortDescriptionAr": "إضاءة جوية للضيوف وإبراز الطاولات",
+    "shortDescriptionEn": "Atmospheric lighting for guests and table focus",
+    "descriptionAr": "المطاعم تحتاج طبقات: إضاءة عامة خافتة، تركيز على الطاولات، وإبراز للواجهة أو منطقة الاستقبال. التراك والسبوتات COB مرنة للمشاريع.",
+    "descriptionEn": "Restaurants need layers: soft general light, table focus, and accent for entrance or feature walls. Track and COB spotlights are flexible for projects.",
+    "heroImage": "/images/spaces/restaurant.jpg",
+    "recommendedCategorySlugs": ["track", "cob-spotlights", "pendants", "chandeliers"],
+    "recommendedProductSlugs": [
+      "s1-10w-light-std-track",
+      "s1-15w-cob-std-cob-spotlights",
+      "yz6201-w-track-std-track-2",
+      "p-w-light-std-chandeliers-4"
+    ],
+    "tipsAr": [
+      "ركّز الضوء على الطاولات وليس على الممرات",
+      "3000K يعزز الدفء في تجربة الطعام",
+      "استخدم إضاءة ديكورية في منطقة الاستقبال",
+      "خطط للتحكم في السطوع حسب وقت اليوم"
+    ],
+    "tipsEn": [
+      "Aim light at tables, not walkways",
+      "3000K enhances warmth in dining experiences",
+      "Use decorative lighting at the entrance zone",
+      "Plan dimming control for different dayparts"
+    ],
+    "sceneIds": [],
+    "featured": false,
+    "sortOrder": 6,
+    "seoTitleAr": "إضاءة المطاعم | اصول التميز",
+    "seoTitleEn": "Restaurant Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "إضاءة مطاعم ومقاهي: تراك، سبوتات، وعناصر ديكورية.",
+    "seoDescriptionEn": "Restaurant and café lighting: track, spotlights, and decorative fixtures."
+  },
+  {
+    "id": "space-retail",
+    "slug": "retail-store",
+    "nameAr": "متجر",
+    "nameEn": "Retail Store",
+    "shortDescriptionAr": "إضاءة تبرز المنتجات وتوجّه الحركة",
+    "shortDescriptionEn": "Lighting that highlights products and guides flow",
+    "descriptionAr": "المتاجر التجارية تحتاج إضاءة عامة واضحة مع سبوتات تركيز على العرض. 4000K أو 6500K حسب نوع المنتجات وطبيعة العلامة.",
+    "descriptionEn": "Retail spaces need clear general lighting plus accent spots on displays. Choose 4000K or 6500K based on product type and brand tone.",
+    "heroImage": "/images/spaces/retail.jpg",
+    "recommendedCategorySlugs": ["track", "cob-spotlights", "floodlights"],
+    "recommendedProductSlugs": [
+      "s1-20w-light-black-track",
+      "s1-15w-cob-std-cob-spotlights",
+      "k1-10w-cob-std-cob-spotlights"
+    ],
+    "tipsAr": [
+      "وجّه سبوتات COB نحو رفوف العرض",
+      "4000K مناسب لمعظم المنتجات الاستهلاكية",
+      "تجنب الظلال على واجهات العرض",
+      "استخدم تراك لتعديل الإضاءة عند تغيير الترتيب"
+    ],
+    "tipsEn": [
+      "Aim COB spots toward display shelves",
+      "4000K suits most consumer product displays",
+      "Avoid shadows on merchandising faces",
+      "Use track to adjust lighting when layouts change"
+    ],
+    "sceneIds": [],
+    "featured": false,
+    "sortOrder": 7,
+    "seoTitleAr": "إضاءة المتاجر | اصول التميز",
+    "seoTitleEn": "Retail Store Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "إضاءة متاجر تجارية: تراك وسبوتات لإبراز المنتجات.",
+    "seoDescriptionEn": "Retail store lighting: track and spotlights to highlight merchandise."
+  },
+  {
+    "id": "space-facade",
+    "slug": "facade",
+    "nameAr": "واجهة",
+    "nameEn": "Facade",
+    "shortDescriptionAr": "إضاءة خارجية لإبراز العمارة",
+    "shortDescriptionEn": "Exterior lighting to reveal architecture",
+    "descriptionAr": "إضاءة الواجهة تبرز المواد والخطوط المعمارية. استخدم كشافات موجهة للجدران والأعمدة، مع مراعاة التوزيع المتساوي وتقليل الوهج.",
+    "descriptionEn": "Facade lighting reveals materials and architectural lines. Use aimable floodlights for walls and columns, with even distribution and minimal glare.",
+    "heroImage": "/images/spaces/facade.jpg",
+    "recommendedCategorySlugs": ["floodlights", "landscape", "ground-lights"],
+    "recommendedProductSlugs": [
+      "k1-15w-cob-std-cob-spotlights",
+      "k1-10w-cob-std-cob-spotlights",
+      "p-w-flood-std-gu10"
+    ],
+    "tipsAr": [
+      "وجّه الكشافات للأعلى لإبراز النسيج المعماري",
+      "3000K يعطي دفئاً للواجهات السكنية",
+      "خطط لنقاط التثبيت قبل التمديدات",
+      "تجنب الإضاءة المباشرة في نوافذ السكن"
+    ],
+    "tipsEn": [
+      "Aim floodlights upward to graze architectural texture",
+      "3000K adds warmth to residential facades",
+      "Plan mounting points before cabling",
+      "Avoid direct light into residential windows"
+    ],
+    "sceneIds": [],
+    "featured": false,
+    "sortOrder": 8,
+    "seoTitleAr": "إضاءة الواجهات | اصول التميز",
+    "seoTitleEn": "Facade Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "إضاءة واجهات خارجية: كشافات وإضاءة معمارية.",
+    "seoDescriptionEn": "Exterior facade lighting: floodlights and architectural accent."
+  },
+  {
+    "id": "space-garden",
+    "slug": "garden",
+    "nameAr": "حديقة",
+    "nameEn": "Garden",
+    "shortDescriptionAr": "إضاءة خارجية للمسارات والمناظر",
+    "shortDescriptionEn": "Outdoor lighting for paths and landscape",
+    "descriptionAr": "الحديقة تحتاج إضاءة للمسارات والأشجار والجدران. اختر منتجات خارجية مناسبة للتركيب الميداني مع توزيع يحدد الحركة دون إضاءة زائدة.",
+    "descriptionEn": "Gardens need lighting for paths, trees, and walls. Choose outdoor-rated fixtures with placement that guides movement without over-lighting.",
+    "heroImage": "/images/spaces/garden.jpg",
+    "recommendedCategorySlugs": ["landscape", "floodlights", "ground-lights"],
+    "recommendedProductSlugs": [
+      "p-w-flood-std-gu10",
+      "p-w-flood-std-gu10-2",
+      "k1-7w-cob-std-cob-spotlights"
+    ],
+    "tipsAr": [
+      "أضئ المسارات بتوزيع منخفض على مستوى الأرض",
+      "3000K يعطي أجواء مسائية مريحة",
+      "أبرز الأشجار بإضاءة من الأسفل للأعلى",
+      "تحقق من مواصفات التركيب الخارجي لكل منتج"
+    ],
+    "tipsEn": [
+      "Light paths with low-level distribution",
+      "3000K creates comfortable evening ambience",
+      "Uplight trees from ground level for drama",
+      "Verify outdoor installation specs per product"
+    ],
+    "sceneIds": ["scene-garden-evening"],
+    "featured": true,
+    "sortOrder": 9,
+    "seoTitleAr": "إضاءة الحدائق | اصول التميز",
+    "seoTitleEn": "Garden Lighting | Osool Altamaioz",
+    "seoDescriptionAr": "إضاءة حدائق ومسارات: أعمدة، كشافات، وإضاءة مناظر.",
+    "seoDescriptionEn": "Garden and pathway lighting: bollards, floods, and landscape accent."
+  }
+]

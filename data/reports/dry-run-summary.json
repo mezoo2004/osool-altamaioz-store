@@ -1,0 +1,34 @@
+{
+  "mode": "DRY_RUN",
+  "source": "batch-001",
+  "rows": 835,
+  "products": {
+    "create": 0,
+    "update": 702,
+    "skip": 0,
+    "conflict": 0
+  },
+  "variants": {
+    "create": 835,
+    "update": 0,
+    "unchanged": 0
+  },
+  "warnings": {
+    "missingImages": 835,
+    "missingSellingPrices": 835,
+    "unmappedCategories": 0
+  },
+  "conflictReport": {
+    "generatedAt": "2026-08-18T17:10:36.808Z",
+    "importBatch": "batch-001",
+    "totalConflicts": 0,
+    "policy": "Conflicts are reported — ambiguous SKU matches are never auto-merged.",
+    "recommendedAction": "Review conflicts manually before apply. Do not auto-merge ambiguous records.",
+    "conflicts": []
+  },
+  "unmappedReport": {
+    "generatedAt": "2026-08-18T17:10:36.808Z",
+    "importBatch": "batch-001",
+    "unmapped": []
+  }
+}

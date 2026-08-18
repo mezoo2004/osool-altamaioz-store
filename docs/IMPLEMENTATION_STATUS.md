@@ -1,0 +1,224 @@
+# Implementation Status
+
+Last updated: Homepage final visual redesign (Aug 2026)
+
+## Homepage final visual redesign (DONE — Aug 2026)
+
+Premium cinematic homepage pass — homepage only; no commerce logic changes.
+
+- [x] **DONE** — Homepage-scoped `HomeHeader` / `HomeFooter` (slim utility bar, horizontal nav, deep black footer)
+- [x] **DONE** — Split-screen hero with architectural photography (`HomeImage` + replaceable asset map)
+- [x] **DONE** — Shop By Space editorial grid (9 spaces, featured Majlis, orange numbers)
+- [x] **DONE** — Primary + secondary category rows with Lucide outline icons
+- [x] **DONE** — Featured products (`منتجات مميزة`) via existing `ProductCard` presentation
+- [x] **DONE** — Shop The Scene split layout with interactive hotspots
+- [x] **DONE** — Lighting Experience (3 steps + CCT selector + orange CTA)
+- [x] **DONE** — Dev imagery via Unsplash URLs in `src/lib/home/home-images.ts` + `public/images/home/` structure
+- [ ] **NEEDS REVIEW** — Owner visual approval before PDP/PLP redesign
+- [ ] **DEFERRED UNTIL PHOTOGRAPHY** — Replace remote dev assets with official company imagery
+
+## FINAL UI/UX POLISH — COMPLETE (Parts 1 & 2)
+
+Visual refinement applied across core storefront (Part 1) and secondary surfaces (Part 2). See `docs/UI_POLISH_CHECKLIST.md` for item-level tracking.
+
+### Part 1 (DONE)
+- Header, homepage, PLP, PDP, cart, checkout, mobile nav, footer
+
+### Part 2 (DONE)
+- About, Contact, FAQ, Projects, Policies
+- Account (overview, profile, addresses, orders, detail, tracking)
+- Auth (login, register, forgot password)
+- Wishlist, Shop By Space, Shop The Scene, Lighting Experience
+- Order confirmation, 404/error/loading states
+
+### Remaining review
+- [ ] **NEEDS REVIEW** — Manual responsive QA at 390 / 768 / 1024 / 1440
+- [ ] **NEEDS REVIEW** — Figma pixel-level alignment
+- [ ] **DEFERRED UNTIL IMAGES** — Photography & hero assets
+- [ ] **DEFERRED UNTIL PRICES** — Official price presentation
+
+## Phase 8–9 — Content, SEO & production readiness (DONE)
+
+### Content pages (AR/EN)
+- [x] About (`/about`)
+- [x] Contact (`/contact`) — form shell; channels BUSINESS_CONFIRMATION_REQUIRED
+- [x] FAQ (`/faq`) — accordion + FAQPage JSON-LD
+- [x] Projects (`/projects`) — portfolio architecture + empty state
+- [x] Policy shells: shipping, returns, warranty, privacy, terms — all BUSINESS_CONFIRMATION_REQUIRED
+
+### SEO
+- [x] `sitemap.xml` — static routes + products/categories/spaces/scenes
+- [x] `robots.txt` — allow/disallow rules + sitemap reference
+- [x] Canonical URLs + hreflang AR/EN via `buildPageMetadata`
+- [x] OpenGraph + Twitter cards
+- [x] Organization + WebSite JSON-LD (global)
+- [x] Product + Breadcrumb JSON-LD (PDP, categories)
+- [x] FAQPage JSON-LD
+- [x] `NEXT_PUBLIC_SITE_URL` site config (domain BUSINESS_CONFIRMATION_REQUIRED)
+
+### Error & loading states
+- [x] Localized `not-found.tsx`, `error.tsx`, `global-error.tsx`
+- [x] Skip-to-content link + `:focus-visible` keyboard audit
+- [x] Product image placeholder component + lazy loading
+- [x] Reduced-motion CSS support
+
+### Analytics abstraction
+- [x] Extended `trackEvent` types (page_view, view_item, commerce placeholders)
+- [x] `AnalyticsScripts` — GA4/GTM via env only (no credentials hardcoded)
+- [x] `PageViewTracker` on route changes
+- [x] PDP `view_item` + content page events
+
+## MySQL activation (DONE — Aug 2026)
+
+- [x] **DONE** — MYSQL DATABASE CONNECTION (`u847758257_osoolstore` on Hostinger)
+- [x] **DONE** — DATABASE SCHEMA (`npm run db:push` — empty dedicated DB, no destructive reset)
+- [x] **DONE** — INITIAL SAMPLE CATALOG SYNC (~700 unique products / 835 variants in MySQL)
+- [x] **DONE** — Idempotent re-sync verified (second run: upsert/update only, no duplicate growth)
+- [x] **DONE** — Storefront reads via `PrismaProductRepository` when `DATABASE_URL` is set
+- [x] **DONE** — Development E2E (`npm run dev:e2e`) — auth, address, wishlist, dev checkout, order persistence
+- [ ] **DEFERRED** — OFFICIAL PRICES (`priceConfirmed: false`, `PRICE_UNAVAILABLE` on storefront)
+- [ ] **DEFERRED** — PRODUCT IMAGES (placeholders acceptable)
+- [x] **DONE** — FINAL UI/UX POLISH Parts 1 & 2 (core + secondary surfaces)
+- [ ] **TODO** — PAYMENTS (Tabby, Tamara, Mada, Visa/Mastercard, Apple Pay)
+- [ ] **TODO** — SHIPPING (real carriers)
+
+## P0 Launch Blockers
+
+- [x] **DONE** — Repository/framework inspection
+- [x] **DONE** — Product spreadsheet analysis and normalized import plan
+- [x] **DONE** — Architecture documentation
+- [x] **DONE** — Arabic/English localization and RTL/LTR
+- [x] **DONE** — Design tokens / global UI foundation
+- [x] **DONE** — Global header/navigation/mobile/footer
+- [x] **DONE** — Homepage desktop/mobile AR/EN
+- [x] **DONE** — Catalog/category/PLP/search/filtering
+- [x] **DONE** — PDP and variants
+- [x] **DONE** — Cart and wishlist (full pages, persistence, server validation)
+- [x] **DONE** — Auth/account (login, register, forgot-password UI, session JWT)
+- [x] **DONE** — Checkout/order creation/order success/tracking (dev checkout mode)
+- [x] **DONE** — Shop By Space
+- [x] **DONE** — Shop The Scene
+- [x] **DONE** — Lighting Experience
+- [x] **DONE** — Scalable catalog import engine (batch, idempotent, conflict reports)
+- [x] **DONE** — Production Prisma repositories + central factory
+- [x] **DONE** — Content/policy pages (shells — owner text pending)
+- [x] **DONE** — SEO (sitemap, robots, canonical, hreflang, structured data, OpenGraph)
+- [x] **DONE** — Error pages + accessibility/performance baseline
+- [ ] **TODO** — Payments integration readiness (Phase 10)
+- [ ] **TODO** — Shipping integration readiness (Phase 10)
+- [ ] **TODO** — Production GA4/Meta wiring (env IDs only — scripts ready)
+- [ ] **TODO** — Production deploy + launch checklist
+
+## FINAL UI/UX POLISH — COMPLETE
+
+Design refinements tracked in `docs/UI_POLISH_CHECKLIST.md`. Parts 1 & 2 complete. Manual responsive QA and Figma alignment remain for owner review.
+
+## Phase 7d — MySQL activation + initial sample sync (DONE)
+
+- Hostinger MySQL connection verified via `npm run db:check` (IPv4 resolution for `srv519.hstgr.io`)
+- Schema applied with `npm run db:push` to dedicated empty database
+- Initial sample catalog synced: `npm run catalog:apply -- --sync-db`
+- Counts: 18 categories, 700 unique products (702 grouped rows with 2 duplicate stable IDs in source), 835 variants, 1 ImportBatch
+- All variants: `priceConfirmed: false`; storefront shows price unavailable
+- JSON catalog fallback retained for local dev when `DATABASE_URL` unset
+- Dev test data: `dev-e2e+mysql@osool-altamaioz.test` customer + labeled DEVELOPMENT orders (safe to keep)
+
+## Phase 7c — MySQL migration prep (DONE)
+
+- Prisma provider converted from PostgreSQL → **MySQL**
+- Schema audited: Decimal money fields, Text for long content, VarChar(191) unique indexes
+- `db:check` / `db:verify` use MySQL-compatible Prisma queries (no PostgreSQL raw SQL)
+- Baseline strategy documented in `prisma/migrations/README.md`
+- Hostinger connection details in `docs/DATABASE_SETUP.md` (no passwords)
+- **Executed:** `db:push`, initial catalog sync against live Hostinger MySQL (Aug 2026)
+
+## Phase 7b — Database activation tooling (DONE)
+
+### Connection & verification commands
+- `npm run db:check` — safe connection probe (no credentials printed)
+- `npm run db:verify` — aggregate counts + integrity checks
+- `npm run db:push` / `npm run db:migrate` — schema deployment
+- `docs/DATABASE_SETUP.md` — **QUICK DATABASE ACTIVATION** section
+
+### Production storage rules
+- When `DATABASE_URL` is set: Prisma for products, users, addresses, orders, authenticated wishlist
+- **No silent file fallback** when database is configured but unavailable (503 on auth/checkout APIs)
+- Guest wishlist: browser persistence → merges to MySQL on login
+
+### Catalog sync enhancements
+- Pre-sync validation, chunked idempotent upserts, categories + ProductCategory links, ImportBatch audit
+- Safe to rerun for future product batches
+
+## Phase 7 — Scalable Catalog & Production Data Engine (DONE)
+
+### Import batch architecture
+- `ImportBatch`, `CategorySourceMapping` Prisma models
+- Batch manifests under `data/import/batches/`
+- Idempotent SKU/groupKey identity — never name-only matching
+- Conflict reports → `data/reports/import-conflicts.json`
+- Unmapped categories → `UNMAPPED_CATEGORY` + report (never silent random assignment)
+
+### Import commands
+| Command | Purpose |
+|---------|---------|
+| `npm run catalog:dry-run` | Simulate import, no catalog writes |
+| `npm run catalog:apply` | Intentional apply to `data/catalog/` |
+| `npm run catalog:sync-db` | JSON → MySQL when configured |
+| `npm run data:validate` | SKU/slug/ref validation |
+| `npm run prices:dry-run` | Future price import placeholder |
+| `npm run images:dry-run` | Future image import placeholder |
+
+### Production repositories
+- `getRepositoriesSync()` / `getProductRepository()` via central factory
+- `PrismaProductRepository`, `PrismaUserRepository`, `PrismaAddressRepository`, `PrismaOrderRepository`
+- File/JSON fallback when `DATABASE_URL` unset
+- Order creation uses `$transaction` (no partial orders)
+
+### Search & filters
+- Shared `catalog-query-engine.ts` — data-driven facets, server-side pagination
+- `SearchProvider` abstraction — in-memory/MySQL now; Meilisearch/Algolia later
+
+### Deferred (by design)
+- Official selling prices → `PRICE_UNAVAILABLE`
+- Product photography / image mapping
+- Real payment gateways (Tabby, Tamara, Mada, etc.)
+- Real shipping carrier integrations
+
+### Documentation
+- `docs/DATABASE_SETUP.md`
+- `docs/ADDING_PRODUCTS.md`
+- Updated architecture, schema, product data docs
+
+## Catalog scope reminder
+
+The **current imported sample** contains approximately **703 grouped products** and **835 variants** (batch-001). The final Osool Altamaioz catalog will be **significantly larger**. Architecture supports incremental batches without rebuilding the storefront.
+
+## Phase 6 — Signature Experiences (DONE)
+
+See prior sections — spaces, scenes, lighting experience, analytics abstraction.
+
+## Phase 5 — Commerce (DONE)
+
+ISR PDPs, cart, wishlist, auth (bcrypt + JWT httpOnly), checkout with snapshots, dev payment mode.
+
+## Build status
+
+Run after changes:
+
+- `npm run typecheck`
+- `npm run lint`
+- `npm run build`
+- `npm run data:validate`
+- `npm run db:check`
+- `npm run db:verify`
+- `npm run dev:e2e` (with dev server running — MySQL E2E smoke test)
+
+## Blocked / needs owner
+
+- Official online selling-price column confirmation
+- Product/scene photography assets
+- Real payment/shipping provider credentials
+
+## Next P0 task
+
+**Phase 10 — Integrations & launch:** payment/shipping provider readiness (no live activation without credentials), final domain DNS deploy, owner policy text, official prices/images when approved.

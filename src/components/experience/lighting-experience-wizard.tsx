@@ -1,0 +1,492 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/i18n/navigation";
+import { useCart } from "@/components/commerce/cart-provider";
+import { ProductGrid } from "@/components/catalog/product-card";
+import { ExperienceBreadcrumb } from "@/components/experience/experience-breadcrumb";
+import { getPriceDisplay, getProductName } from "@/lib/catalog/display";
+import type { Product } from "@/lib/catalog/types";
+import { trackEvent } from "@/lib/analytics";
+import { designTokens } from "@/lib/design-tokens";
+import type {
+  CctChoice,
+  LightingRecommendationResult,
+  MoodId,
+  SpaceRecord,
+} from "@/lib/experience/types";
+import { cn } from "@/lib/utils";
+
+const MOODS: MoodId[] = [
+  "warm", "luxury", "modern", "relaxed", "minimal", "hotel", "dramatic", "functional",
+];
+
+const CCTS: CctChoice[] = ["3000K", "4000K", "6500K"];
+
+type LightingExperienceWizardProps = {
+  spaces: SpaceRecord[];
+  locale: string;
+};
+
+type Step = 1 | 2 | 3 | 4 | 5;
+
+export function LightingExperienceWizard({ spaces, locale }: LightingExperienceWizardProps) {
+  const t = useTranslations("experiences");
+  const tCommon = useTranslations("common");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const { mergeLines } = useCart();
+  const brand = locale === "ar" ? "اصول التميز" : "Osool Altamaioz";
+
+  const [step, setStep] = useState<Step>(1);
+  const [spaceSlug, setSpaceSlug] = useState<string>("");
+  const [length, setLength] = useState("");
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
+  const [mood, setMood] = useState<MoodId | "">("");
+  const [cct, setCct] = useState<CctChoice | "">("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [result, setResult] = useState<LightingRecommendationResult | null>(null);
+  const [resultProducts, setResultProducts] = useState<Product[]>([]);
+  const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    trackEvent("lighting_experience_start");
+    const initialSpace = searchParams.get("space");
+    if (initialSpace && spaces.some((s) => s.slug === initialSpace)) {
+      setSpaceSlug(initialSpace);
+    }
+  }, [searchParams, spaces]);
+
+  const syncUrl = useCallback(
+    (partial: {
+      space?: string;
+      length?: string;
+      width?: string;
+      height?: string;
+      mood?: string;
+      cct?: string;
+      step?: number;
+    }) => {
+      const params = new URLSearchParams();
+      if (partial.space ?? spaceSlug) params.set("space", partial.space ?? spaceSlug);
+      if (partial.length ?? length) params.set("length", partial.length ?? length);
+      if (partial.width ?? width) params.set("width", partial.width ?? width);
+      if (partial.height ?? height) params.set("height", partial.height ?? height);
+      if (partial.mood ?? mood) params.set("mood", partial.mood ?? mood);
+      if (partial.cct ?? cct) params.set("cct", partial.cct ?? cct);
+      if (partial.step ?? step) params.set("step", String(partial.step ?? step));
+      router.replace(`/lighting-experience?${params.toString()}`, { scroll: false });
+    },
+    [spaceSlug, length, width, height, mood, cct, step, router],
+  );
+
+  const selectedSpace = spaces.find((s) => s.slug === spaceSlug);
+
+  const validateStep = (current: Step): boolean => {
+    const nextErrors: Record<string, string> = {};
+    if (current === 1 && !spaceSlug) nextErrors.space = t("errorSpaceRequired");
+    if (current === 2) {
+      const l = parseFloat(length);
+      const w = parseFloat(width);
+      const h = parseFloat(height);
+      if (!length || Number.isNaN(l) || l <= 0 || l > 100) nextErrors.length = t("errorDimension");
+      if (!width || Number.isNaN(w) || w <= 0 || w > 100) nextErrors.width = t("errorDimension");
+      if (!height || Number.isNaN(h) || h <= 0 || h > 20) nextErrors.height = t("errorHeight");
+    }
+    if (current === 3 && !mood) nextErrors.mood = t("errorMoodRequired");
+    if (current === 4 && !cct) nextErrors.cct = t("errorCctRequired");
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
+  const goNext = async () => {
+    if (!validateStep(step)) return;
+
+    if (step === 1) {
+      trackEvent("lighting_experience_space", { space_slug: spaceSlug });
+      syncUrl({ step: 2 });
+      setStep(2);
+      return;
+    }
+    if (step === 2) {
+      trackEvent("lighting_experience_dimensions", {
+        length: parseFloat(length),
+        width: parseFloat(width),
+        height: parseFloat(height),
+      });
+      syncUrl({ step: 3 });
+      setStep(3);
+      return;
+    }
+    if (step === 3) {
+      trackEvent("lighting_experience_mood", { mood: mood as string });
+      syncUrl({ step: 4 });
+      setStep(4);
+      return;
+    }
+    if (step === 4) {
+      trackEvent("lighting_experience_cct", { cct: cct as string });
+      setLoading(true);
+      try {
+        const res = await fetch("/api/experience/recommend", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            spaceSlug,
+            length: parseFloat(length),
+            width: parseFloat(width),
+            height: parseFloat(height),
+            mood,
+            cct,
+          }),
+        });
+        const recommendation = (await res.json()) as LightingRecommendationResult;
+
+        const productRes = await fetch("/api/products/batch", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slugs: recommendation.items.map((i) => i.productSlug) }),
+        });
+        const { products } = (await productRes.json()) as { products: Product[] };
+
+        const qtyMap: Record<string, number> = {};
+        for (const item of recommendation.items) {
+          qtyMap[item.productSlug] = item.quantity;
+        }
+        setQuantities(qtyMap);
+        setResult(recommendation);
+        setResultProducts(products ?? []);
+        trackEvent("lighting_experience_complete", { space_slug: spaceSlug });
+        syncUrl({ step: 5 });
+        setStep(5);
+      } finally {
+        setLoading(false);
+      }
+    }
+  };
+
+  const goBack = () => {
+    if (step > 1) setStep((step - 1) as Step);
+  };
+
+  const handleAddBundle = () => {
+    if (!result) return;
+    const lines = result.items
+      .map((item) => {
+        const product = resultProducts.find((p) => p.slug === item.productSlug);
+        if (!product) return null;
+        const variant = product.variants.find((v) => v.id === item.variantId) ?? product.variants[0];
+        if (!variant || variant.stockStatus === "OUT_OF_STOCK") return null;
+        return {
+          productId: product.id,
+          productSlug: product.slug,
+          variantId: variant.id,
+          variantSku: variant.sku,
+          quantity: quantities[item.productSlug] ?? item.quantity,
+        };
+      })
+      .filter(Boolean) as Array<{
+      productId: string;
+      productSlug: string;
+      variantId: string;
+      variantSku: string;
+      quantity: number;
+    }>;
+
+    if (lines.length > 0) {
+      mergeLines(lines);
+      trackEvent("lighting_experience_add_bundle", { item_count: lines.length });
+    }
+  };
+
+  const cctPreviewStyle = useMemo(() => {
+    if (!cct) return {};
+    const hex = designTokens.cct[cct]?.hex ?? "#FFF4E0";
+    return { background: `linear-gradient(135deg, ${hex}, #f7f6f5)` };
+  }, [cct]);
+
+  return (
+    <div className="md:pb-20">
+      <section className="border-b border-border bg-surface-muted">
+        <div className="container-page py-8 md:py-10">
+          <ExperienceBreadcrumb items={[{ label: brand, href: "/" }, { label: t("experienceTitle") }]} />
+          <h1 className="heading-section">{t("experienceTitle")}</h1>
+          <p className="mt-2 max-w-2xl text-meta">{t("experienceSubtitle")}</p>
+
+          <ol className="mt-8 flex items-center gap-0 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label={t("progressLabel")}>
+            {[1, 2, 3, 4, 5].map((n, i) => (
+              <li key={n} className="flex items-center">
+                <div
+                  className={cn(
+                    "flex min-w-[4.5rem] flex-col items-center gap-1.5 text-xs",
+                    step === n ? "text-brand-black-soft" : step > n ? "text-text-primary" : "text-text-secondary",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-semibold tabular-nums transition-colors",
+                      step > n
+                        ? "border-brand-black-soft bg-brand-black-soft text-white"
+                        : step === n
+                          ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
+                          : "border-border bg-white",
+                    )}
+                    aria-current={step === n ? "step" : undefined}
+                  >
+                    {n}
+                  </span>
+                  <span className="hidden max-w-[5rem] text-center leading-tight sm:block">
+                    {t(`step${n}Label` as "step1Label")}
+                  </span>
+                </div>
+                {i < 4 && (
+                  <div
+                    className={cn("mx-1 h-px w-6 sm:w-10", step > n ? "bg-brand-black-soft" : "bg-border")}
+                    aria-hidden="true"
+                  />
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <div className="container-page py-10 md:py-14">
+        {step === 1 && (
+          <div className="space-y-6">
+            <h2 className="heading-subsection">{t("step1Title")}</h2>
+            {errors.space && <p className="text-sm text-brand-orange">{errors.space}</p>}
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+              {spaces.map((space) => (
+                <button
+                  key={space.id}
+                  type="button"
+                  onClick={() => {
+                    setSpaceSlug(space.slug);
+                    syncUrl({ space: space.slug });
+                  }}
+                  className={cn(
+                    "card-surface overflow-hidden text-start transition-colors",
+                    spaceSlug === space.slug
+                      ? "border-brand-black-soft ring-1 ring-brand-black-soft"
+                      : "hover:border-brand-gray/50",
+                  )}
+                >
+                  <div
+                    className="aspect-[4/3] bg-surface-muted"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(8,8,8,0.04), rgba(8,8,8,0.2)), linear-gradient(135deg, #E0DFDD, #6D6F72)",
+                    }}
+                  />
+                  <div className="p-3.5">
+                    <p className="text-sm font-medium">{locale === "ar" ? space.nameAr : space.nameEn}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="mx-auto max-w-xl space-y-6">
+            <h2 className="heading-subsection">{t("step2Title")}</h2>
+            <p className="text-meta">{t("step2Hint")}</p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {(
+                [
+                  ["length", length, setLength, errors.length],
+                  ["width", width, setWidth, errors.width],
+                  ["height", height, setHeight, errors.height],
+                ] as const
+              ).map(([key, value, setter, error]) => (
+                <div key={key}>
+                  <label htmlFor={key} className="mb-1.5 block text-sm font-medium">{t(key as "length")}</label>
+                  <input
+                    id={key}
+                    type="number"
+                    step="0.1"
+                    min="0.1"
+                    value={value}
+                    onChange={(e) => setter(e.target.value)}
+                    className="input-field"
+                    placeholder="0.0"
+                  />
+                  <span className="mt-1 block text-meta">{t("meters")}</span>
+                  {error && <p className="mt-1 text-xs text-brand-orange">{error}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="space-y-6">
+            <h2 className="heading-subsection">{t("step3Title")}</h2>
+            {errors.mood && <p className="text-sm text-brand-orange">{errors.mood}</p>}
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+              {MOODS.map((m) => (
+                <button
+                  key={m}
+                  type="button"
+                  onClick={() => {
+                    setMood(m);
+                    syncUrl({ mood: m });
+                  }}
+                  className={cn(
+                    "rounded-lg border px-4 py-5 text-center transition-colors motion-reduce:transition-none",
+                    mood === m
+                      ? "border-brand-black-soft bg-brand-black-soft/5 ring-1 ring-brand-black-soft"
+                      : "border-border bg-white hover:border-brand-gray",
+                  )}
+                >
+                  <span className="text-sm font-medium">{t(`mood_${m}` as "mood_warm")}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="space-y-6">
+              <h2 className="heading-subsection">{t("step4Title")}</h2>
+              {errors.cct && <p className="text-sm text-brand-orange">{errors.cct}</p>}
+              <div className="grid gap-3">
+                {CCTS.map((k) => {
+                  const label = designTokens.cct[k];
+                  return (
+                    <button
+                      key={k}
+                      type="button"
+                      onClick={() => {
+                        setCct(k);
+                        syncUrl({ cct: k });
+                      }}
+                      className={cn(
+                        "flex items-center gap-4 rounded-lg border px-4 py-3.5 text-start transition-colors motion-reduce:transition-none",
+                        cct === k
+                          ? "border-brand-black-soft bg-brand-black-soft/5 ring-1 ring-brand-black-soft"
+                          : "border-border bg-white hover:border-brand-gray",
+                      )}
+                    >
+                      <span
+                        className="h-9 w-9 shrink-0 rounded-full border border-black/10 shadow-inner"
+                        style={{ backgroundColor: label.hex }}
+                        aria-hidden="true"
+                      />
+                      <span>
+                        <span className="block text-sm font-semibold tabular-nums">{k}</span>
+                        <span className="text-meta">{locale === "ar" ? label.ar : label.en}</span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+            <div
+              className="overflow-hidden rounded-xl border border-border transition-colors duration-500 motion-reduce:transition-none"
+              style={cctPreviewStyle}
+            >
+              <div className="flex aspect-[4/3] items-end p-5">
+                <p className="rounded-lg bg-white/85 px-4 py-2.5 text-sm backdrop-blur">{t("cctPreviewHint")}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {step === 5 && result && (
+          <div className="space-y-8">
+            <div className="card-surface p-5 md:p-8">
+              <h2 className="heading-subsection">{t("step5Title")}</h2>
+              <p className="mt-3 text-text-secondary">{locale === "ar" ? result.explanationAr : result.explanationEn}</p>
+              <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                <SummaryItem label={t("step1Label")} value={selectedSpace ? (locale === "ar" ? selectedSpace.nameAr : selectedSpace.nameEn) : "—"} />
+                <SummaryItem label={t("dimensionsSummary")} value={`${length} × ${width} × ${height} ${t("meters")}`} />
+                <SummaryItem label={t("step3Label")} value={mood ? t(`mood_${mood}` as "mood_warm") : "—"} />
+                <SummaryItem label={t("step4Label")} value={cct || "—"} />
+              </dl>
+            </div>
+
+            {result.categories.length > 0 && (
+              <div>
+                <h3 className="font-semibold">{t("recommendedCategories")}</h3>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {result.categories.map((cat) => (
+                    <Link key={cat.slug} href={`/categories/${cat.slug}`} className="rounded-lg border border-border bg-white px-3 py-1.5 text-sm hover:border-brand-black-soft">
+                      {locale === "ar" ? cat.nameAr : cat.nameEn}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {resultProducts.length > 0 && (
+              <div>
+                <h3 className="mb-4 font-semibold">{t("recommendedProducts")}</h3>
+                <ProductGrid products={resultProducts} locale={locale} />
+                <div className="mt-6 space-y-2">
+                  {result.items.map((item) => {
+                    const product = resultProducts.find((p) => p.slug === item.productSlug);
+                    if (!product) return null;
+                    const variant = product.variants.find((v) => v.id === item.variantId) ?? product.variants[0];
+                    const price = getPriceDisplay(product, variant ?? undefined, locale);
+                    return (
+                      <div key={item.productSlug} className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface-muted px-4 py-3 text-sm">
+                        <div>
+                          <p className="font-medium">{getProductName(product, locale)}</p>
+                          <p className="text-meta">{price.text}</p>
+                        </div>
+                        <input
+                          type="number"
+                          min={1}
+                          max={99}
+                          value={quantities[item.productSlug] ?? item.quantity}
+                          onChange={(e) =>
+                            setQuantities((prev) => ({
+                              ...prev,
+                              [item.productSlug]: Math.max(1, Number(e.target.value) || 1),
+                            }))
+                          }
+                          className="input-field h-9 w-16"
+                          aria-label={t("quantity")}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            <p className="text-meta">{t("disclaimer")}</p>
+            <button type="button" onClick={handleAddBundle} className="btn-cta">{t("addLightingSetup")}</button>
+          </div>
+        )}
+
+        {step < 5 && (
+          <div className="mt-10 flex flex-wrap gap-3 border-t border-border pt-8">
+            {step > 1 && (
+              <button type="button" onClick={goBack} className="btn-cta-secondary">{t("back")}</button>
+            )}
+            <button type="button" onClick={goNext} disabled={loading} className="btn-cta bg-brand-black-soft hover:bg-brand-black">
+              {loading ? tCommon("loading") : step === 4 ? t("generateRecommendation") : t("next")}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SummaryItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg border border-border bg-surface-muted px-3 py-2.5">
+      <dt className="text-meta">{label}</dt>
+      <dd className="mt-0.5 font-medium">{value}</dd>
+    </div>
+  );
+}

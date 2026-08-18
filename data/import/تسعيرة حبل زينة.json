@@ -1,0 +1,3573 @@
+{
+  "importBatch": "batch-001",
+  "importedAt": "2026-08-17T18:15:11.893Z",
+  "sourceFile": "تسعيرة حبل زينة.xlsx",
+  "sheet": "Sheet2 (2)",
+  "blockCount": 4,
+  "variantCount": 166,
+  "blocks": [
+    {
+      "headerRow": 5,
+      "categoryTitle": "حبل زينة",
+      "seriesLine": "MT & TM",
+      "variants": [
+        {
+          "rawCode": "2835/10MM/9W/120P/4000K/MT/3Y",
+          "rawNameAr": "حبل زينة ليد 9واط 10ملم اوف وايت ضمان 3سنوات MT",
+          "sku": "2835/10MM/9W/120P/4000K/MT/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:7",
+          "wattage": "9W",
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "10MM",
+            "9W",
+            "120P",
+            "4000K",
+            "MT",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/10MM/9W/120P/WH/MT/3Y",
+          "rawNameAr": "حبل زينة ليد 9واط 10ملم ابيض ضمان 3سنوات MT",
+          "sku": "2835/10MM/9W/120P/WH/MT/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:8",
+          "wattage": "9W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "10MM",
+            "9W",
+            "120P",
+            "WH",
+            "MT",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/10MM/9W/120P/WW/MT/3Y",
+          "rawNameAr": "حبل زينة ليد 9واط 10ملم اصفر ضمان 3سنوات MT",
+          "sku": "2835/10MM/9W/120P/WW/MT/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:9",
+          "wattage": "9W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "10MM",
+            "9W",
+            "120P",
+            "WW",
+            "MT",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12MM/11W/180P/WW/MT/3Y",
+          "rawNameAr": "حبل زينة ليد 11واط 12ملم اصفر ضمان 3سنوات MT",
+          "sku": "2835/12MM/11W/180P/WW/MT/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:10",
+          "wattage": "11W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12MM",
+            "11W",
+            "180P",
+            "WW",
+            "MT",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/240D/10MM/24V/10M/4000K/MT/5Y",
+          "rawNameAr": "حبل زينة 10MM لاصق 10متر 24فولت 240D اوف وايت ضمان 5سنوات MT",
+          "sku": "2835/240D/10MM/24V/10M/4000K/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:11",
+          "wattage": null,
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835",
+            "240D",
+            "10MM",
+            "24V",
+            "10M",
+            "4000K",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/240D/10MM/24V/10M/WW/MT/5Y",
+          "rawNameAr": "حبل زينة 10MM لاصق 10متر 24فولت 240D اصفر ضمان 5سنوات MT",
+          "sku": "2835/240D/10MM/24V/10M/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:12",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835",
+            "240D",
+            "10MM",
+            "24V",
+            "10M",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/240D/12MM/24V/10M/4000K/MT/5Y",
+          "rawNameAr": "حبل زينة 12MM لاصق 10متر 24فولت 240D اوف وايت ضمان 5سنوات MT",
+          "sku": "2835/240D/12MM/24V/10M/4000K/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:13",
+          "wattage": null,
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835",
+            "240D",
+            "12MM",
+            "24V",
+            "10M",
+            "4000K",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/240D/12MM/24V/10M/WW/MT/5Y",
+          "rawNameAr": "حبل زينة 12MM لاصق 10متر 24فولت 240D اصفر ضمان 5سنوات MT",
+          "sku": "2835/240D/12MM/24V/10M/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:14",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835",
+            "240D",
+            "12MM",
+            "24V",
+            "10M",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/5M/8MM/12V/11W/4000K/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 5متر 12فولت 11واط اوف وايت ضمان 5سنواتMT",
+          "sku": "2835B-120D/5M/8MM/12V/11W/4000K/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:15",
+          "wattage": "11W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "5M",
+            "8MM",
+            "12V",
+            "11W",
+            "4000K",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835B-120D/5M/8MM/12V/11W/WH/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 5متر 12فولت 11واط ابيض ضمان 5سنوات MT",
+          "sku": "2835B-120D/5M/8MM/12V/11W/WH/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:16",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "5M",
+            "8MM",
+            "12V",
+            "11W",
+            "WH",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/5M/8MM/12V/11W/WW/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 5متر 12فولت 11واط اصفر ضمان 5سنواتMT",
+          "sku": "2835B-120D/5M/8MM/12V/11W/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:17",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "5M",
+            "8MM",
+            "12V",
+            "11W",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/5M/8MM/24V/11W/4000K/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 5متر 24فولت 11واط اوف وايت ضمان 5سنوات MT",
+          "sku": "2835B-120D/5M/8MM/24V/11W/4000K/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:18",
+          "wattage": "11W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "5M",
+            "8MM",
+            "24V",
+            "11W",
+            "4000K",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835B-120D/5M/8MM/24V/11W/WH/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 5متر 24فولت 11واط ابيض ضمان 5سنوات MT",
+          "sku": "2835B-120D/5M/8MM/24V/11W/WH/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:19",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "5M",
+            "8MM",
+            "24V",
+            "11W",
+            "WH",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/5M/8MM/24V/11W/WW/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 5متر 24فولت 11واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-120D/5M/8MM/24V/11W/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:20",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "5M",
+            "8MM",
+            "24V",
+            "11W",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/10M/8MM/24V/11W/4000K/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 24فولت 11واط اوف وايت ضمان 5سنوات MT",
+          "sku": "2835B-120D/10M/8MM/24V/11W/4000K/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:21",
+          "wattage": "11W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "10M",
+            "8MM",
+            "24V",
+            "11W",
+            "4000K",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835B-120D/10M/8MM/24V/11W/WW/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 24فولت 11واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-120D/10M/8MM/24V/11W/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:22",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "10M",
+            "8MM",
+            "24V",
+            "11W",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/10M/8MM/12V/11W/4000K/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 12فولت 11واط اوف وايت ضمان 5سنوات MT",
+          "sku": "2835B-120D/10M/8MM/12V/11W/4000K/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:23",
+          "wattage": "11W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "10M",
+            "8MM",
+            "12V",
+            "11W",
+            "4000K",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835B-120D/10M/8MM/12V/11W/WH/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 12فولت 11واط ابيض ضمان 5سنوات MT",
+          "sku": "2835B-120D/10M/8MM/12V/11W/WH/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:24",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "10M",
+            "8MM",
+            "12V",
+            "11W",
+            "WH",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/10M/8MM/12V/11W/WW/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 12فولت 11واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-120D/10M/8MM/12V/11W/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:25",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "10M",
+            "8MM",
+            "12V",
+            "11W",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-120D/10M/8MM/24V/11W/WH/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 24فولت 11واط ابيض ضمان 5سنوات MT",
+          "sku": "2835B-120D/10M/8MM/24V/11W/WH/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:26",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-120D",
+            "10M",
+            "8MM",
+            "24V",
+            "11W",
+            "WH",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-180D/10M/10MM/12V/14W/WW/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 12فولت 14واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-180D/10M/10MM/12V/14W/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:27",
+          "wattage": "14W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-180D",
+            "10M",
+            "10MM",
+            "12V",
+            "14W",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-180D/10M/10MM/24V/14W/WW/MT/5Y",
+          "rawNameAr": "حبل زينة لاصق 10متر 24فولت 14واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-180D/10M/10MM/24V/14W/WW/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:28",
+          "wattage": "14W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-180D",
+            "10M",
+            "10MM",
+            "24V",
+            "14W",
+            "WW",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-320D/10M/8MM/12V/11W/WW/MT/COB/5Y",
+          "rawNameAr": "حبل زينة COB لاصق 10متر 12فولت 11واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-320D/10M/8MM/12V/11W/WW/MT/COB/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:29",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-320D",
+            "10M",
+            "8MM",
+            "12V",
+            "11W",
+            "WW",
+            "MT",
+            "COB",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835B-320D/10M/8MM/24V/11W/4000K/MT/COB/5Y",
+          "rawNameAr": "حبل زينة COB لاصق 10متر 24فولت 11واط اوف وايت ضمان 5سنوات MT",
+          "sku": "2835B-320D/10M/8MM/24V/11W/4000K/MT/COB/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:30",
+          "wattage": "11W",
+          "cct": "4000K",
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-320D",
+            "10M",
+            "8MM",
+            "24V",
+            "11W",
+            "4000K",
+            "MT",
+            "COB",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835B-320D/10M/8MM/24V/11W/WW/MT/COB/5Y",
+          "rawNameAr": "حبل زينة COB لاصق 10متر 24فولت 11واط اصفر ضمان 5سنوات MT",
+          "sku": "2835B-320D/10M/8MM/24V/11W/WW/MT/COB/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:31",
+          "wattage": "11W",
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835B-320D",
+            "10M",
+            "8MM",
+            "24V",
+            "11W",
+            "WW",
+            "MT",
+            "COB",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/320D/24V50/50M/8MM/11W/WW/COB/MT/5Y",
+          "rawNameAr": "حبل زينة COB لاصق 50متر 24فولت 11واط 8MM اصفر ضمان 5سنوات MT",
+          "sku": "2835/320D/24V50/50M/8MM/11W/WW/COB/MT/5Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:32",
+          "wattage": "11W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "5Y",
+          "parts": [
+            "2835",
+            "320D",
+            "24V50",
+            "50M",
+            "8MM",
+            "11W",
+            "WW",
+            "COB",
+            "MT",
+            "5Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12M/120D/4000K/TM/3Y",
+          "rawNameAr": "حبل زينة ليد 12ملم 120D اوف وايت ضمان 3سنوات التميز",
+          "sku": "2835/12M/120D/4000K/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:33",
+          "wattage": null,
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12M",
+            "120D",
+            "4000K",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/12M/120D/WH/TM/3Y",
+          "rawNameAr": "حبل زينة ليد 12ملم 120D ابيض ضمان 3سنوات التميز",
+          "sku": "2835/12M/120D/WH/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:34",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12M",
+            "120D",
+            "WH",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12M/120D/WW/TM/3Y",
+          "rawNameAr": "حبل زينة ليد 12ملم 120D اصفر ضمان 3سنوات التميز",
+          "sku": "2835/12M/120D/WW/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:35",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12M",
+            "120D",
+            "WW",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12M/120D/GREEN/TM/3Y",
+          "rawNameAr": "حبل زينة ليد 12ملم 120D اخضر ضمان 3سنوات التميز",
+          "sku": "2835/12M/120D/GREEN/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:36",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12M",
+            "120D",
+            "GREEN",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12MM/11W/180D/4000K/TM/3Y",
+          "rawNameAr": "حبل زينة ليد 11واط 12ملم اوف وايت ضمان 3سنوات التميز",
+          "sku": "2835/12MM/11W/180D/4000K/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:37",
+          "wattage": "11W",
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12MM",
+            "11W",
+            "180D",
+            "4000K",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/12MM/11W/180D/WW/TM/3Y",
+          "rawNameAr": "حبل زينة ليد 11واط 12ملم اصفر ضمان 3سنوات التميز",
+          "sku": "2835/12MM/11W/180D/WW/TM/3Y",
+          "sourceRowRef": "sheet:Sheet2 (2):row:38",
+          "wattage": "11W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": "3Y",
+          "parts": [
+            "2835",
+            "12MM",
+            "11W",
+            "180D",
+            "WW",
+            "TM",
+            "3Y"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12MM/180D/4000K/14W/TM",
+          "rawNameAr": "حبل زينة 12ملم 3خط 180لمبة 14واط اضاءة اوف وايت TM",
+          "sku": "2835/12MM/180D/4000K/14W/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:39",
+          "wattage": "14W",
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "12MM",
+            "180D",
+            "4000K",
+            "14W",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/12MM/180D/WH/18W/TM",
+          "rawNameAr": "حبل زينة 12ملم 3خط 180لمبة 18واط اضاءة ابيض TM",
+          "sku": "2835/12MM/180D/WH/18W/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:40",
+          "wattage": "18W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "12MM",
+            "180D",
+            "WH",
+            "18W",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12MM/180D/WW/18W/TM",
+          "rawNameAr": "حبل زينة 12ملم 3خط 180لمبة 18واط اضاءة اصفر TM",
+          "sku": "2835/12MM/180D/WW/18W/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:41",
+          "wattage": "18W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "12MM",
+            "180D",
+            "WW",
+            "18W",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/12MM/180D/GREEN/18W/TM",
+          "rawNameAr": "حبل زينة 12ملم 3خط 180لمبة 18واط اضاءة اخضر TM",
+          "sku": "2835/12MM/180D/GREEN/18W/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:42",
+          "wattage": "18W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "12MM",
+            "180D",
+            "GREEN",
+            "18W",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/120D/5M/8MM/24V/10W/4000K/TM",
+          "rawNameAr": "حبل زينة 8MM لاصق 5متر 24فولت 10واط 120D اوف وايت اصول التميز",
+          "sku": "2835/120D/5M/8MM/24V/10W/4000K/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:43",
+          "wattage": "10W",
+          "cct": "4000K",
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "120D",
+            "5M",
+            "8MM",
+            "24V",
+            "10W",
+            "4000K",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "2835/120D/5M/8MM/24V/10W/WW/TM",
+          "rawNameAr": "حبل زينة 8MM لاصق 5متر 24فولت 10واط 120D اصفر اصول التميز",
+          "sku": "2835/120D/5M/8MM/24V/10W/WW/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:44",
+          "wattage": "10W",
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "120D",
+            "5M",
+            "8MM",
+            "24V",
+            "10W",
+            "WW",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-100D-8MM-18W-3000K-TM",
+          "rawNameAr": "حبل زينة لاصق SMD عدسات 8ملم 18واط 100D اصفر التميز",
+          "sku": "2835-100D-8MM-18W-3000K-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:45",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-100D-8MM-18W-3000K-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-100D-8MM-18W-4000K-TM",
+          "rawNameAr": "حبل زينة لاصق SMD عدسات 8ملم 18واط 100D اوف وايت التميز",
+          "sku": "2835-100D-8MM-18W-4000K-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:46",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-100D-8MM-18W-4000K-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 52,
+      "categoryTitle": "حبل زينة",
+      "seriesLine": "MT & TM",
+      "variants": [
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM-M/WH/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TM ابيض",
+          "sku": "NEON/2835/120D/10W/600LM-M/WH/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:54",
+          "wattage": "10W",
+          "cct": null,
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM-M",
+            "WH",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM-M/WW/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TMاصفر",
+          "sku": "NEON/2835/120D/10W/600LM-M/WW/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:55",
+          "wattage": "10W",
+          "cct": null,
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM-M",
+            "WW",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM-M/4000K/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TM اوف وايت",
+          "sku": "NEON/2835/120D/10W/600LM-M/4000K/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:56",
+          "wattage": "10W",
+          "cct": "4000K",
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM-M",
+            "4000K",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM-M/B/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TM ازرق",
+          "sku": "NEON/2835/120D/10W/600LM-M/B/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:57",
+          "wattage": "10W",
+          "cct": null,
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM-M",
+            "B",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM-M/G/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TM اخضر",
+          "sku": "NEON/2835/120D/10W/600LM-M/G/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:58",
+          "wattage": "10W",
+          "cct": null,
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM-M",
+            "G",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM--M/GY/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TM ذهبي",
+          "sku": "NEON/2835/120D/10W/600LM--M/GY/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:59",
+          "wattage": "10W",
+          "cct": null,
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM--M",
+            "GY",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "NEON/2835/120D/10W/600LM-M/PK/TM",
+          "rawNameAr": "حبل زينة ملفوف بقاعدة بلاستيك TM وردي",
+          "sku": "NEON/2835/120D/10W/600LM-M/PK/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:60",
+          "wattage": "10W",
+          "cct": null,
+          "series": "NEON",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEON",
+            "2835",
+            "120D",
+            "10W",
+            "600LM-M",
+            "PK",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-120D-8MM-12*12-10W-3000K-TM",
+          "rawNameAr": "حبل زينة وتربروف 12*12 اصفر التميز",
+          "sku": "2835-120D-8MM-12*12-10W-3000K-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:61",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-120D-8MM-12*12-10W-3000K-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-120D-8MM-12*12-10W-4000K-TM",
+          "rawNameAr": "حبل زينة وتربروف 12*12 اوف وايت التميز",
+          "sku": "2835-120D-8MM-12*12-10W-4000K-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:62",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-120D-8MM-12*12-10W-4000K-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-120D-8MM-12*12-10W-6500K-TM",
+          "rawNameAr": "حبل زينة وتربروف 12*12 ابيض التميز",
+          "sku": "2835-120D-8MM-12*12-10W-6500K-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:63",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-120D-8MM-12*12-10W-6500K-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "COB-8MM-240D-8W-3000K-10M-TM",
+          "rawNameAr": "حبل زينة لاصق 8ملم 10متر COB اصفر 240D مباشر التميز",
+          "sku": "COB-8MM-240D-8W-3000K-10M-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:64",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "COB-8MM-240D-8W-3000K-10M-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "COB-8MM-240D-8W-4000K-10M-TM",
+          "rawNameAr": "حبل زينة لاصق 8ملم 10متر COB اوف وايت 240D مباشر التميز",
+          "sku": "COB-8MM-240D-8W-4000K-10M-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:65",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "COB-8MM-240D-8W-4000K-10M-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "COB-8MM-240D-8W-6500K10M-TM",
+          "rawNameAr": "حبل زينة لاصق 8ملم 10متر COB ابيض 240D مباشر التميز",
+          "sku": "COB-8MM-240D-8W-6500K10M-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:66",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "COB-8MM-240D-8W-6500K10M-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WIERLESS/2835/8MM/120D/10W/4000K/10M/CUT",
+          "rawNameAr": "حبل زينة لاصق 10واط 8ملم 10متر مباشر بدون ترانس اوف وايت",
+          "sku": "WIERLESS/2835/8MM/120D/10W/4000K/10M/CUT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:67",
+          "wattage": "10W",
+          "cct": "4000K",
+          "series": "WIERLESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIERLESS",
+            "2835",
+            "8MM",
+            "120D",
+            "10W",
+            "4000K",
+            "10M",
+            "CUT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "WIERLESS/2835/8MM/120D/10W/WW/10M/CUT",
+          "rawNameAr": "حبل زينة لاصق 10واط  8ملم 10متر مباشر بدون ترانس اصفر",
+          "sku": "WIERLESS/2835/8MM/120D/10W/WW/10M/CUT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:68",
+          "wattage": "10W",
+          "cct": null,
+          "series": "WIERLESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIERLESS",
+            "2835",
+            "8MM",
+            "120D",
+            "10W",
+            "WW",
+            "10M",
+            "CUT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WIRELESS/2835/8MM/120D/10W/WH/10M/CUT/TM",
+          "rawNameAr": "حبل زينة لاصق 10واط 8ملم 10متر مباشر ابيض التميز",
+          "sku": "WIRELESS/2835/8MM/120D/10W/WH/10M/CUT/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:69",
+          "wattage": "10W",
+          "cct": null,
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "2835",
+            "8MM",
+            "120D",
+            "10W",
+            "WH",
+            "10M",
+            "CUT",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WIRELESS/2835/8MM/120D/10W/4000K/50M/CUT/TM",
+          "rawNameAr": "حبل زينة لاصق 10واط 8ملم 50متر اوف وايت مباشر التميز",
+          "sku": "WIRELESS/2835/8MM/120D/10W/4000K/50M/CUT/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:70",
+          "wattage": "10W",
+          "cct": "4000K",
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "2835",
+            "8MM",
+            "120D",
+            "10W",
+            "4000K",
+            "50M",
+            "CUT",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "WIRELESS/2835/8MM/120D/10W/6500K/50M/CUT/TM",
+          "rawNameAr": "حبل زينة لاصق 10واط 8ملم 50متر ابيض مباشر التميز",
+          "sku": "WIRELESS/2835/8MM/120D/10W/6500K/50M/CUT/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:71",
+          "wattage": "10W",
+          "cct": "6500K",
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "2835",
+            "8MM",
+            "120D",
+            "10W",
+            "6500K",
+            "50M",
+            "CUT",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "أبيض",
+            "en": "White"
+          }
+        },
+        {
+          "rawCode": "WIRELESS/2835/8MM/120D/10W/WW/50M/CUT/TM",
+          "rawNameAr": "حبل زينة لاصق 10واط 8ملم 50متر اصفر مباشر التميز",
+          "sku": "WIRELESS/2835/8MM/120D/10W/WW/50M/CUT/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:72",
+          "wattage": "10W",
+          "cct": null,
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "2835",
+            "8MM",
+            "120D",
+            "10W",
+            "WW",
+            "50M",
+            "CUT",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WIRELESS/COB/8MM/288D/4000K/50M/TM",
+          "rawNameAr": "حبل زينة لاصق 8ملم 50متر COB اوف وايت مباشر التمييز",
+          "sku": "WIRELESS/COB/8MM/288D/4000K/50M/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:73",
+          "wattage": null,
+          "cct": "4000K",
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "COB",
+            "8MM",
+            "288D",
+            "4000K",
+            "50M",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": {
+            "ar": "طبيعي",
+            "en": "Neutral"
+          }
+        },
+        {
+          "rawCode": "WIRELESS/COB/8MM/288D/WH/50M/TM",
+          "rawNameAr": "حبل زينة لاصق 8ملم 50متر COB ابيض مباشر التميز",
+          "sku": "WIRELESS/COB/8MM/288D/WH/50M/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:74",
+          "wattage": null,
+          "cct": null,
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "COB",
+            "8MM",
+            "288D",
+            "WH",
+            "50M",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WIRELESS/COB/8MM/288D/WW/50M/TM",
+          "rawNameAr": "حبل زينة لاصق  8ملم 50متر COB اصفر مباشر التميز",
+          "sku": "WIRELESS/COB/8MM/288D/WW/50M/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:75",
+          "wattage": null,
+          "cct": null,
+          "series": "WIRELESS",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIRELESS",
+            "COB",
+            "8MM",
+            "288D",
+            "WW",
+            "50M",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/8MM/120D/5M/WW/TM",
+          "rawNameAr": "حبل زينة 8ملم 5متر اصفر TM جديد",
+          "sku": "2835/8MM/120D/5M/WW/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:76",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "8MM",
+            "120D",
+            "5M",
+            "WW",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/10MM/120D/GREEN/TM",
+          "rawNameAr": "حبل زينة 10ملم 2835 اخضر TM جديد",
+          "sku": "2835/10MM/120D/GREEN/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:77",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "10MM",
+            "120D",
+            "GREEN",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835/10MM/60D/5M/RGB/TM",
+          "rawNameAr": "حبل زينة 10ملم 5متر مشكل مع ريموت TM جديد",
+          "sku": "2835/10MM/60D/5M/RGB/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:78",
+          "wattage": null,
+          "cct": null,
+          "series": "2835",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835",
+            "10MM",
+            "60D",
+            "5M",
+            "RGB",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-120L-10MM-WW-TM-NEW",
+          "rawNameAr": "حبل زينه 10ملم 2835 اصفر TMجديد",
+          "sku": "2835-120L-10MM-WW-TM-NEW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:79",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-120L-10MM-WW-TM-NEW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-156L-10MM-BL-MT",
+          "rawNameAr": "حبل زينه 10ملم 156L ازرق MT",
+          "sku": "2835-156L-10MM-BL-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:80",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-156L-10MM-BL-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-156L-10MM-GR-MT",
+          "rawNameAr": "حبل زينه 10ملم 156L اخضر MT",
+          "sku": "2835-156L-10MM-GR-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:81",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-156L-10MM-GR-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-156L-10MM-GR-TM",
+          "rawNameAr": "حبل زينه 10ملم 156L اخضر اصول التميز",
+          "sku": "2835-156L-10MM-GR-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:82",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-156L-10MM-GR-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-156L-10MML-RD",
+          "rawNameAr": "حبل زينه 10ملم 156L احمر اصول التميز",
+          "sku": "2835-156L-10MML-RD",
+          "sourceRowRef": "sheet:Sheet2 (2):row:83",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-156L-10MML-RD"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "2835-156L-10MM-RD-MT",
+          "rawNameAr": "حبل زينه 10ملم 156L احمر MT",
+          "sku": "2835-156L-10MM-RD-MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:84",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "2835-156L-10MM-RD-MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/TM/A-01/20M/200L/WW",
+          "rawNameAr": "حبل زينه 20متر 200لمبه اصفر",
+          "sku": "MT/TM/A-01/20M/200L/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:85",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "TM",
+            "A-01",
+            "20M",
+            "200L",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/TM/A-02/30M/300L/WW",
+          "rawNameAr": "حبل زينه 30متر 300لمبه اصفر",
+          "sku": "MT/TM/A-02/30M/300L/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:86",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "TM",
+            "A-02",
+            "30M",
+            "300L",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/TM/A-03/50M/500L/WW",
+          "rawNameAr": "حبل زينه 50متر 500لمبه اصفر",
+          "sku": "MT/TM/A-03/50M/500L/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:87",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "TM",
+            "A-03",
+            "50M",
+            "500L",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "100M/1000LED/WW",
+          "rawNameAr": "حبل زينة 100متر 1000لمبة اصفر",
+          "sku": "100M/1000LED/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:88",
+          "wattage": null,
+          "cct": null,
+          "series": "100M",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "100M",
+            "1000LED",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HTDTX/01/10M/10L",
+          "rawNameAr": "حبل زينة افراح هولدر كبير 10لمبة 10متر وتر بروف",
+          "sku": "HTDTX/01/10M/10L",
+          "sourceRowRef": "sheet:Sheet2 (2):row:89",
+          "wattage": null,
+          "cct": null,
+          "series": "HTDTX",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HTDTX",
+            "01",
+            "10M",
+            "10L"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HTDTX/05/20M/20L",
+          "rawNameAr": "حبل زينة  افراح هولدر كبير 20لمبة 20متر وتر بروف",
+          "sku": "HTDTX/05/20M/20L",
+          "sourceRowRef": "sheet:Sheet2 (2):row:90",
+          "wattage": null,
+          "cct": null,
+          "series": "HTDTX",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HTDTX",
+            "05",
+            "20M",
+            "20L"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HTDTX/30M/30L",
+          "rawNameAr": "حبل زينة افراح هولدر كبير 30لمبة 30متر وتربروف",
+          "sku": "HTDTX/30M/30L",
+          "sourceRowRef": "sheet:Sheet2 (2):row:91",
+          "wattage": null,
+          "cct": null,
+          "series": "HTDTX",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HTDTX",
+            "30M",
+            "30L"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HTDTX/06/50M/50L",
+          "rawNameAr": "حبل زينة افراح هولدر كبير 50لمبة 50متر وتر بروف",
+          "sku": "HTDTX/06/50M/50L",
+          "sourceRowRef": "sheet:Sheet2 (2):row:92",
+          "wattage": null,
+          "cct": null,
+          "series": "HTDTX",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HTDTX",
+            "06",
+            "50M",
+            "50L"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HTDTX/04/50M/100L",
+          "rawNameAr": "حبل زينة افراح هولدر كبير 100لمبة 50متر وتر بروف",
+          "sku": "HTDTX/04/50M/100L",
+          "sourceRowRef": "sheet:Sheet2 (2):row:93",
+          "wattage": null,
+          "cct": null,
+          "series": "HTDTX",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HTDTX",
+            "04",
+            "50M",
+            "100L"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "HTDTX/03/100M/200L",
+          "rawNameAr": "حبل زينة افراح هولدر كبير 200لمبة 100متر وتر بروف",
+          "sku": "HTDTX/03/100M/200L",
+          "sourceRowRef": "sheet:Sheet2 (2):row:94",
+          "wattage": null,
+          "cct": null,
+          "series": "HTDTX",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "HTDTX",
+            "03",
+            "100M",
+            "200L"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 100,
+      "categoryTitle": "حبل زينة",
+      "seriesLine": "MT & TM",
+      "variants": [
+        {
+          "rawCode": "MT/01/3*3/RGB",
+          "rawNameAr": "شبك زينة مشكل مربع 3*3 متر",
+          "sku": "MT/01/3*3/RGB",
+          "sourceRowRef": "sheet:Sheet2 (2):row:102",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "01",
+            "3*3",
+            "RGB"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/01/3*3/WW",
+          "rawNameAr": "شبك زينة اصفر مربع 3*3 متر",
+          "sku": "MT/01/3*3/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:103",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "01",
+            "3*3",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/02/2*2/WW",
+          "rawNameAr": "شبك زينة اصفر مربع 2*2 متر",
+          "sku": "MT/02/2*2/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:104",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "02",
+            "2*2",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/02/3*3/GR",
+          "rawNameAr": "شبك زينة اخضر مربع 3*3 متر",
+          "sku": "MT/02/3*3/GR",
+          "sourceRowRef": "sheet:Sheet2 (2):row:105",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "02",
+            "3*3",
+            "GR"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/02/3*4/RGB",
+          "rawNameAr": "شبك زينة مشكل 3*4 متر",
+          "sku": "MT/02/3*4/RGB",
+          "sourceRowRef": "sheet:Sheet2 (2):row:106",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "02",
+            "3*4",
+            "RGB"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/02/3*4/WW",
+          "rawNameAr": "شبك زينة اصفر 3*4 متر",
+          "sku": "MT/02/3*4/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:107",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "02",
+            "3*4",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/04/6M*3M/WW",
+          "rawNameAr": "ستاره زينة نجمة اصفر 3*6 متر MT-04",
+          "sku": "MT/04/6M*3M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:108",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "04",
+            "6M*3M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/05/2M*2M/WW",
+          "rawNameAr": "ستاره زينة اصفر 2*2 متر MT-05",
+          "sku": "MT/05/2M*2M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:109",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "05",
+            "2M*2M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/06/3M*3M/WW",
+          "rawNameAr": "ستاره زينة اصفر 3*3 متر MT-06",
+          "sku": "MT/06/3M*3M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:110",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "06",
+            "3M*3M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/07/4M*3M/WW",
+          "rawNameAr": "ستاره زينة اصفر 4*3 متر MT-07",
+          "sku": "MT/07/4M*3M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:111",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "07",
+            "4M*3M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/08/6M*2M/WW",
+          "rawNameAr": "ستاره زينة اصفر 2*6 متر MT-08",
+          "sku": "MT/08/6M*2M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:112",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "08",
+            "6M*2M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/09/6M*3M/WW",
+          "rawNameAr": "ستاره زينة عادي اصفر 3*6 متر MT-09",
+          "sku": "MT/09/6M*3M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:113",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "09",
+            "6M*3M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/10/8M*2M/WW",
+          "rawNameAr": "ستاره زينة اصفر 2*8 متر MT-10",
+          "sku": "MT/10/8M*2M/WW",
+          "sourceRowRef": "sheet:Sheet2 (2):row:114",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "10",
+            "8M*2M",
+            "WW"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "10MM/SILK",
+          "rawNameAr": "توصيله حبل زينه ليد 10ملم",
+          "sku": "10MM/SILK",
+          "sourceRowRef": "sheet:Sheet2 (2):row:115",
+          "wattage": null,
+          "cct": null,
+          "series": "10MM",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "10MM",
+            "SILK"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "12MM-PLUG",
+          "rawNameAr": "توصيله حبل زينه 12ملم ليد",
+          "sku": "12MM-PLUG",
+          "sourceRowRef": "sheet:Sheet2 (2):row:116",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "12MM-PLUG"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOER-100D-8MM-18W-TM",
+          "rawNameAr": "توصيلة حبل زينة لاصق SMD عدسات 8ملم 18واط 100D التميز",
+          "sku": "CONNECTOER-100D-8MM-18W-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:117",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOER-100D-8MM-18W-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "#22/10MM/CONNECTOR",
+          "rawNameAr": "وصلة كونكتر حبل زينة لاصق غير مباشر 22/10MM#",
+          "sku": "#22/10MM/CONNECTOR",
+          "sourceRowRef": "sheet:Sheet2 (2):row:118",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "#22",
+            "10MM",
+            "CONNECTOR"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "#242/8MM/CONNECTOR",
+          "rawNameAr": "وصلة كونكتر حبل زينة لاصق غير مباشر 242/8MM#",
+          "sku": "#242/8MM/CONNECTOR",
+          "sourceRowRef": "sheet:Sheet2 (2):row:119",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "#242",
+            "8MM",
+            "CONNECTOR"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "NEONHEADLESSPLUG/8M/TM",
+          "rawNameAr": "توصيلة حبل زينة ملفوف بقاعدة بلاستيك  TM",
+          "sku": "NEONHEADLESSPLUG/8M/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:120",
+          "wattage": null,
+          "cct": null,
+          "series": "NEONHEADLESSPLUG",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "NEONHEADLESSPLUG",
+            "8M",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "12*12-FRONT CONNECTION",
+          "rawNameAr": "توصيلة حبل زينة ملفوف بروفايل 12*12",
+          "sku": "12*12-FRONT CONNECTION",
+          "sourceRowRef": "sheet:Sheet2 (2):row:121",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "12*12-FRONT CONNECTION"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WIERLESSHEADLESSPLUG/12MM/8M/TM",
+          "rawNameAr": "توصيلة حبل زينة 12ملم 9واط و11واط التميز ضمان 3سنوات",
+          "sku": "WIERLESSHEADLESSPLUG/12MM/8M/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:122",
+          "wattage": null,
+          "cct": null,
+          "series": "WIERLESSHEADLESSPLUG",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WIERLESSHEADLESSPLUG",
+            "12MM",
+            "8M",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/10MM/9W/MT",
+          "rawNameAr": "توصيلة حبل زينة 9واط 10MM",
+          "sku": "CONNECTOR/10MM/9W/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:123",
+          "wattage": "9W",
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "10MM",
+            "9W",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/12MM/11W/MT",
+          "rawNameAr": "توصيلة حبل زينة 11واط 12MM",
+          "sku": "CONNECTOR/12MM/11W/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:124",
+          "wattage": "11W",
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "12MM",
+            "11W",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/COB/288D",
+          "rawNameAr": "توصيلة حبل زينة لاصق COB 288D",
+          "sku": "CONNECTOR/COB/288D",
+          "sourceRowRef": "sheet:Sheet2 (2):row:125",
+          "wattage": null,
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "COB",
+            "288D"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR-COB-8MM-240D-8W-10M-TM",
+          "rawNameAr": "توصيلة حبل زينة لاصق 8ملم 10متر COB 240D مباشر التميز",
+          "sku": "CONNECTOR-COB-8MM-240D-8W-10M-TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:126",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR-COB-8MM-240D-8W-10M-TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "FRONTCONNECTION/10W",
+          "rawNameAr": "توصيلة حبل زينة لاصق 10متر 10واط 8ملم",
+          "sku": "FRONTCONNECTION/10W",
+          "sourceRowRef": "sheet:Sheet2 (2):row:127",
+          "wattage": "10W",
+          "cct": null,
+          "series": "FRONTCONNECTION",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "FRONTCONNECTION",
+            "10W"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "288D/COB/TM",
+          "rawNameAr": "توصيلة حبل زينة لاصق COB 288D التميز",
+          "sku": "288D/COB/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:128",
+          "wattage": null,
+          "cct": null,
+          "series": "288D",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "288D",
+            "COB",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ILT/10MM/CONNECTOR",
+          "rawNameAr": "وصلة كونكتر حبل زينة لاصق غير مباشر ILT/10MM",
+          "sku": "ILT/10MM/CONNECTOR",
+          "sourceRowRef": "sheet:Sheet2 (2):row:129",
+          "wattage": null,
+          "cct": null,
+          "series": "ILT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ILT",
+            "10MM",
+            "CONNECTOR"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "ILT/8MM/CONNECTOR",
+          "rawNameAr": "وصلة كونكتر حبل زينة لاصق غير مباشر ILT/8MM",
+          "sku": "ILT/8MM/CONNECTOR",
+          "sourceRowRef": "sheet:Sheet2 (2):row:130",
+          "wattage": null,
+          "cct": null,
+          "series": "ILT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "ILT",
+            "8MM",
+            "CONNECTOR"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "5050-96L-PLUG/12MM",
+          "rawNameAr": "ماكينه حبل زينه 12ملم ليد مشكل بريموت",
+          "sku": "5050-96L-PLUG/12MM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:131",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "5050-96L-PLUG",
+            "12MM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "10*20/REMOT/ALMUNIUM/TM",
+          "rawNameAr": "ماكينة حبل زينة ملفوف المونيوم مع ريموت التميز",
+          "sku": "10*20/REMOT/ALMUNIUM/TM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:132",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "10*20",
+            "REMOT",
+            "ALMUNIUM",
+            "TM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "10MM/REMOT/ALMUNIUM",
+          "rawNameAr": "ماكينة حبل زينة 10ملم المونيوم مع ريموت",
+          "sku": "10MM/REMOT/ALMUNIUM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:133",
+          "wattage": null,
+          "cct": null,
+          "series": "10MM",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "10MM",
+            "REMOT",
+            "ALMUNIUM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "10MM-REMOTE",
+          "rawNameAr": "ماكينه حبل زينه 10ملم مشكل بريموت",
+          "sku": "10MM-REMOTE",
+          "sourceRowRef": "sheet:Sheet2 (2):row:134",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "10MM-REMOTE"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "12MM/REMOT/ALMUNIUM",
+          "rawNameAr": "ماكينة حبل زينة 12ملم المونيوم مع ريموت",
+          "sku": "12MM/REMOT/ALMUNIUM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:135",
+          "wattage": null,
+          "cct": null,
+          "series": "12MM",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "12MM",
+            "REMOT",
+            "ALMUNIUM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "18MM/REMOT/ALMUNIUM",
+          "rawNameAr": "ماكينة حبل زينة 18ملم المونيوم مع ريموت",
+          "sku": "18MM/REMOT/ALMUNIUM",
+          "sourceRowRef": "sheet:Sheet2 (2):row:136",
+          "wattage": null,
+          "cct": null,
+          "series": "18MM",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "18MM",
+            "REMOT",
+            "ALMUNIUM"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    },
+    {
+      "headerRow": 142,
+      "categoryTitle": "بروفايل",
+      "seriesLine": "MT",
+      "variants": [
+        {
+          "rawCode": "XT-546/2010SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*10 المونيوم MT/XT546/SL",
+          "sku": "XT-546/2010SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:144",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-546",
+            "2010SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-546/2010SF/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*10 المونيوم اسود MT/XT546/BK",
+          "sku": "XT-546/2010SF/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:145",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-546",
+            "2010SF",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-400/XT-547/2010CC/3M/SL/MT",
+          "rawNameAr": "بروفايل 3متر 20*10 المونيوم بشفة MT/XT-400/XT547/SL",
+          "sku": "XT-400/XT-547/2010CC/3M/SL/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:146",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-400",
+            "XT-547",
+            "2010CC",
+            "3M",
+            "SL",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-547/2010CC/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*10 المونيوم اسود بشفة MT/XT547/BK",
+          "sku": "XT-547/2010CC/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:147",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-547",
+            "2010CC",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-602/2015SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*15 المونيوم MT/XT602/SL",
+          "sku": "XT-602/2015SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:148",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-602",
+            "2015SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-602/2015SF/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*15 المونيوم اسود MT/XT602/BK",
+          "sku": "XT-602/2015SF/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:149",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-602",
+            "2015SF",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-600/2015CC/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*15 المونيوم اسود بشفة MT/XT600/BK",
+          "sku": "XT-600/2015CC/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:150",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-600",
+            "2015CC",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-600/2015CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*15 المونيوم بشفة MT/XT600/SL",
+          "sku": "XT-600/2015CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:151",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-600",
+            "2015CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-614/2020SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*20 المونيوم MT/XT614/SL",
+          "sku": "XT-614/2020SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:152",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-614",
+            "2020SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-614/2020SF/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*20 المونيوم اسود MT/XT614/BK",
+          "sku": "XT-614/2020SF/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:153",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-614",
+            "2020SF",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-432/2020SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*20 المونيوم XT-432/SL",
+          "sku": "XT-432/2020SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:154",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-432",
+            "2020SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-613/2020CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*20 المونيوم بشفة XT-613/SL",
+          "sku": "XT-613/2020CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:155",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-613",
+            "2020CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-613/2020CC/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 20*20 المونيوم اسود بشفة MT/XT613/BK",
+          "sku": "XT-613/2020CC/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:156",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-613",
+            "2020CC",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-453/1010SF/3M/MT",
+          "rawNameAr": "بروفايل 3متر 10*10 المونيوم MT/XT453",
+          "sku": "XT-453/1010SF/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:157",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-453",
+            "1010SF",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-454/1010CC/3M/MT",
+          "rawNameAr": "بروفايل 3متر 10*10 المونيوم بشفة MT/XT-454",
+          "sku": "XT-454/1010CC/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:158",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-454",
+            "1010CC",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-625/1414CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 14*14 المونيوم بشفة MT/XT625/SL",
+          "sku": "XT-625/1414CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:159",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-625",
+            "1414CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-625/1414CC/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 14*14 المونيوم اسود بشفة MT/XT625/BK",
+          "sku": "XT-625/1414CC/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:160",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-625",
+            "1414CC",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-610/14.5*14.5SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 14.5*14.5 المونيوم MT/XT610/SL",
+          "sku": "XT-610/14.5*14.5SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:161",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-610",
+            "14.5*14.5SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-610/14.5*14.5SF/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 14.5*14.5 المونيوم اسود MT/XT610/BK",
+          "sku": "XT-610/14.5*14.5SF/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:162",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-610",
+            "14.5*14.5SF",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-374/1515SF/3M/MT",
+          "rawNameAr": "بروفايل 3متر 15*15 المونيوم MT/XT-374",
+          "sku": "XT-374/1515SF/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:163",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-374",
+            "1515SF",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-341/3M/23*20MM/MT",
+          "rawNameAr": "بروفايل 3متر 23*20 المونيوم MT/XT-341",
+          "sku": "XT-341/3M/23*20MM/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:164",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-341",
+            "3M",
+            "23*20MM",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-961/2327CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 23*27 المونيوم بشفة MT/XT-961/SL",
+          "sku": "XT-961/2327CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:165",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-961",
+            "2327CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-961/2327CC/3M/BK/MT",
+          "rawNameAr": "بروفايل 3متر 23*27 المونيوم اسود بشفة MT/XT-961/BK",
+          "sku": "XT-961/2327CC/3M/BK/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:166",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-961",
+            "2327CC",
+            "3M",
+            "BK",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-615/3010CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 30*10 المونيوم بشفة MT/XT615/SL",
+          "sku": "XT-615/3010CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:167",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-615",
+            "3010CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-952/3015SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 30*15 المونيوم MT/XT952/SL",
+          "sku": "XT-952/3015SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:168",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-952",
+            "3015SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-953/3015CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 30*15 المونيوم بشفة MT/XT953/SL",
+          "sku": "XT-953/3015CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:169",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-953",
+            "3015CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-455/3M/30*20MM/MT",
+          "rawNameAr": "بروفايل 3متر 30*20 المونيوم MT/XT-455",
+          "sku": "XT-455/3M/30*20MM/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:170",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-455",
+            "3M",
+            "30*20MM",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-617/4020CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 40*20 المونيوم بشفة MT/XT617/SL",
+          "sku": "XT-617/4020CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:171",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-617",
+            "4020CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-443/XT-618/5020CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 50*20 المونيوم بشفة 5020CC/XT443/XT618/SL",
+          "sku": "XT-443/XT-618/5020CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:172",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-443",
+            "XT-618",
+            "5020CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-406/1509CC/3M/MT",
+          "rawNameAr": "بروفايل 3متر 9*15 المونيوم بشفة MT/XT-406",
+          "sku": "XT-406/1509CC/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:173",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "XT-406",
+            "1509CC",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-374/1515SF/3M/BK/MT",
+          "rawNameAr": "بروفايل 3متر اسود 15*15 المونيوم MT/XT-374",
+          "sku": "XT-374/1515SF/3M/BK/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:174",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-374",
+            "1515SF",
+            "3M",
+            "BK",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "XT-455/3020SF/3M/BK/MT",
+          "rawNameAr": "بروفايل 3متر اسود 30*20 المونيوم MT/XT455",
+          "sku": "XT-455/3020SF/3M/BK/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:175",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "XT-455",
+            "3020SF",
+            "3M",
+            "BK",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-148/1707SF/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 17*7 المونيوم MT/WM148/SL",
+          "sku": "WM-148/1707SF/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:176",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WM-148",
+            "1707SF",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-148/1707SF/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 17*7 المونيوم اسود MT/WM148/BK",
+          "sku": "WM-148/1707SF/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:177",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "WM-148",
+            "1707SF",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-147/1707CC/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 17*7 المونيوم اسود بشفة MT/WM147/BK",
+          "sku": "WM-147/1707CC/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:178",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "WM-147",
+            "1707CC",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-15/WM-147/1707CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 17*7 المونيوم بشفة MT/WM-15/WM-147/SL",
+          "sku": "WM-15/WM-147/1707CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:179",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WM-15",
+            "WM-147",
+            "1707CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-18/1715CC/3M/MT",
+          "rawNameAr": "بروفايل 3متر 17*15 المونيوم بشفة MT/WM-18/SL",
+          "sku": "WM-18/1715CC/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:180",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WM-18",
+            "1715CC",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-55/MT-632-1/21.5*11CC/3M/MT",
+          "rawNameAr": "بروفايل 3متر 21.5*11 المونيوم بشفة MT/WM-55/MT-632-1/SL",
+          "sku": "WM-55/MT-632-1/21.5*11CC/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:181",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WM-55",
+            "MT-632-1",
+            "21.5*11CC",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-149/3020CC/BK/3M/MT",
+          "rawNameAr": "بروفايل 3متر 30*20 المونيوم اسود بشفة MT/WM149/BK",
+          "sku": "WM-149/3020CC/BK/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:182",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "WM-149",
+            "3020CC",
+            "BK",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-149/3020CC/SL/3M/MT",
+          "rawNameAr": "بروفايل 3متر 30*20 المونيوم بشفة MT/WM149/SL",
+          "sku": "WM-149/3020CC/SL/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:183",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WM-149",
+            "3020CC",
+            "SL",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "BG-84B/3M/50*35MM/BK+WH",
+          "rawNameAr": "بروفايل 3متر 50*35 المونيوم اسود*ابيض BG-84B",
+          "sku": "BG-84B/3M/50*35MM/BK+WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:184",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "BG-84B",
+            "3M",
+            "50*35MM",
+            "BK+WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "BG-84/5035CC/3M/MT",
+          "rawNameAr": "بروفايل 3متر 50*35 المونيوم بشفة MT/BG-84",
+          "sku": "BG-84/5035CC/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:185",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "BG-84",
+            "5035CC",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "BG-18B/3M/50*75MM/BK+WH",
+          "rawNameAr": "بروفايل 3متر 50*75 المونيوم اسود*ابيض BG-18B",
+          "sku": "BG-18B/3M/50*75MM/BK+WH",
+          "sourceRowRef": "sheet:Sheet2 (2):row:186",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": "black",
+          "warrantyHint": null,
+          "parts": [
+            "BG-18B",
+            "3M",
+            "50*75MM",
+            "BK+WH"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "WM-32/MT-632/2126SF/3M/MT",
+          "rawNameAr": "بروفايل 3متر ارضي 21*26 المونيوم MT/WM-32/MT-632/SL",
+          "sku": "WM-32/MT-632/2126SF/3M/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:187",
+          "wattage": null,
+          "cct": null,
+          "series": null,
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "WM-32",
+            "MT-632",
+            "2126SF",
+            "3M",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "MT/XT-58(XT-594/SL+WH)/3M/16*16MM/MT",
+          "rawNameAr": "بروفايل زاوية 3متر 16*16 المونيوم MT/XT-58(XT-594/SL+WH)",
+          "sku": "MT/XT-58(XT-594/SL+WH)/3M/16*16MM/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:188",
+          "wattage": null,
+          "cct": null,
+          "series": "MT",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "MT",
+            "XT-58(XT-594",
+            "SL+WH)",
+            "3M",
+            "16*16MM",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/90DEGREE/L/MT",
+          "rawNameAr": "توصيلة بروفايل MT/L",
+          "sku": "CONNECTOR/90DEGREE/L/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:189",
+          "wattage": null,
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "90DEGREE",
+            "L",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/T/MT",
+          "rawNameAr": "توصيلة بروفايل MT/T",
+          "sku": "CONNECTOR/T/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:190",
+          "wattage": null,
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "T",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/X/MT",
+          "rawNameAr": "توصيلة بروفايل MT/X",
+          "sku": "CONNECTOR/X/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:191",
+          "wattage": null,
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "X",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/Y/MT",
+          "rawNameAr": "توصيلة بروفايل MT/Y",
+          "sku": "CONNECTOR/Y/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:192",
+          "wattage": null,
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "Y",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        },
+        {
+          "rawCode": "CONNECTOR/180DEGREE/MT",
+          "rawNameAr": "توصيلة بروفايل مستقيمة MT",
+          "sku": "CONNECTOR/180DEGREE/MT",
+          "sourceRowRef": "sheet:Sheet2 (2):row:193",
+          "wattage": null,
+          "cct": null,
+          "series": "CONNECTOR",
+          "finish": null,
+          "warrantyHint": null,
+          "parts": [
+            "CONNECTOR",
+            "180DEGREE",
+            "MT"
+          ],
+          "rawPrice": null,
+          "priceStatus": "REQUIRES_BUSINESS_CONFIRMATION",
+          "cctLabel": null
+        }
+      ]
+    }
+  ]
+}

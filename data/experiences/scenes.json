@@ -1,0 +1,263 @@
+[
+  {
+    "id": "scene-majlis-classic",
+    "slug": "majlis-classic",
+    "nameAr": "مجلس كلاسيكي",
+    "nameEn": "Classic Majlis",
+    "descriptionAr": "مجلس ضيافة بتفاصيل دافئة — ثريا مركزية، سبوتات COB، وإضاءة غير مباشرة.",
+    "descriptionEn": "A warm hospitality majlis — centerpiece chandelier, COB downlights, and indirect accent.",
+    "spaceId": "space-majlis",
+    "heroImage": "/images/scenes/majlis-classic.jpg",
+    "mobileImage": "/images/scenes/majlis-classic-mobile.jpg",
+    "hotspots": [
+      {
+        "id": "hs-majlis-chandelier",
+        "sceneId": "scene-majlis-classic",
+        "x": 50,
+        "y": 18,
+        "labelAr": "ثريا مركزية",
+        "labelEn": "Center chandelier",
+        "productSlug": "p-w-light-std-chandeliers-2"
+      },
+      {
+        "id": "hs-majlis-cob",
+        "sceneId": "scene-majlis-classic",
+        "x": 28,
+        "y": 32,
+        "labelAr": "سبوت COB",
+        "labelEn": "COB spotlight",
+        "productSlug": "s1-7w-cob-std-cob-spotlights"
+      },
+      {
+        "id": "hs-majlis-strip",
+        "sceneId": "scene-majlis-classic",
+        "x": 72,
+        "y": 48,
+        "labelAr": "إضاءة غير مباشرة",
+        "labelEn": "Indirect LED strip",
+        "productSlug": "2835-9w-led_strip-std-led-strips"
+      },
+      {
+        "id": "hs-majlis-track",
+        "sceneId": "scene-majlis-classic",
+        "x": 62,
+        "y": 28,
+        "labelAr": "تراك لايت",
+        "labelEn": "Track light",
+        "productSlug": "s1-10w-light-std-track"
+      }
+    ],
+    "items": [
+      { "productSlug": "p-w-light-std-chandeliers-2", "quantity": 1, "sortOrder": 1, "required": true },
+      { "productSlug": "s1-7w-cob-std-cob-spotlights", "quantity": 6, "sortOrder": 2, "required": true },
+      { "productSlug": "2835-9w-led_strip-std-led-strips", "quantity": 2, "sortOrder": 3, "required": false },
+      { "productSlug": "s1-10w-light-std-track", "quantity": 2, "sortOrder": 4, "required": false }
+    ],
+    "featured": true,
+    "sortOrder": 1,
+    "seoTitleAr": "مجلس كلاسيكي — تسوق المشهد | اصول التميز",
+    "seoTitleEn": "Classic Majlis — Shop The Scene | Osool Altamaioz",
+    "seoDescriptionAr": "تسوق إضاءة مجلس كلاسيكي كاملة من صورة واحدة.",
+    "seoDescriptionEn": "Shop a complete classic majlis lighting setup from one scene."
+  },
+  {
+    "id": "scene-majlis-modern",
+    "slug": "majlis-modern",
+    "nameAr": "مجلس مودرن",
+    "nameEn": "Modern Majlis",
+    "descriptionAr": "مجلس معاصر بخطوط نظيفة — تراك لايت وسبوتات COB مع إضاءة غير مباشرة.",
+    "descriptionEn": "A contemporary majlis with clean lines — track lights, COB spots, and indirect accent.",
+    "spaceId": "space-majlis",
+    "heroImage": "/images/scenes/majlis-modern.jpg",
+    "hotspots": [
+      {
+        "id": "hs-majlis-mod-track",
+        "sceneId": "scene-majlis-modern",
+        "x": 45,
+        "y": 22,
+        "labelAr": "تراك لايت",
+        "labelEn": "Track light",
+        "productSlug": "s1-20w-light-black-track"
+      },
+      {
+        "id": "hs-majlis-mod-cob",
+        "sceneId": "scene-majlis-modern",
+        "x": 35,
+        "y": 40,
+        "labelAr": "سبوت COB",
+        "labelEn": "COB downlight",
+        "productSlug": "s1-10w-cob-std-cob-spotlights-2"
+      },
+      {
+        "id": "hs-majlis-mod-strip",
+        "sceneId": "scene-majlis-modern",
+        "x": 68,
+        "y": 55,
+        "labelAr": "بروفايل LED",
+        "labelEn": "LED profile",
+        "productSlug": "p-w-led_strip-std-profiles"
+      }
+    ],
+    "items": [
+      { "productSlug": "s1-20w-light-black-track", "quantity": 3, "sortOrder": 1, "required": true },
+      { "productSlug": "s1-10w-cob-std-cob-spotlights-2", "quantity": 8, "sortOrder": 2, "required": true },
+      { "productSlug": "p-w-led_strip-std-profiles", "quantity": 2, "sortOrder": 3, "required": false }
+    ],
+    "featured": true,
+    "sortOrder": 2,
+    "seoTitleAr": "مجلس مودرن — تسوق المشهد | اصول التميز",
+    "seoTitleEn": "Modern Majlis — Shop The Scene | Osool Altamaioz",
+    "seoDescriptionAr": "اكتشف إضاءة مجلس مودرن وتسوق التجميعة كاملة.",
+    "seoDescriptionEn": "Explore modern majlis lighting and shop the full scene bundle."
+  },
+  {
+    "id": "scene-living-contemporary",
+    "slug": "living-contemporary",
+    "nameAr": "صالة معاصرة",
+    "nameEn": "Contemporary Living",
+    "descriptionAr": "صالة معيشة بإضاءة متوازنة — سبوتات، تراك، ومعلقات.",
+    "descriptionEn": "A contemporary living room with balanced downlights, track, and pendants.",
+    "spaceId": "space-living",
+    "heroImage": "/images/scenes/living-contemporary.jpg",
+    "hotspots": [
+      {
+        "id": "hs-living-cob",
+        "sceneId": "scene-living-contemporary",
+        "x": 40,
+        "y": 25,
+        "labelAr": "سبوت COB",
+        "labelEn": "COB downlight",
+        "productSlug": "s1-10w-cob-std-cob-spotlights-2"
+      },
+      {
+        "id": "hs-living-track",
+        "sceneId": "scene-living-contemporary",
+        "x": 58,
+        "y": 30,
+        "labelAr": "تراك لايت",
+        "labelEn": "Track light",
+        "productSlug": "s1-10w-light-std-track"
+      },
+      {
+        "id": "hs-living-pendant",
+        "sceneId": "scene-living-contemporary",
+        "x": 50,
+        "y": 42,
+        "labelAr": "معلق",
+        "labelEn": "Pendant track",
+        "productSlug": "yz6201-w-track-std-track"
+      }
+    ],
+    "items": [
+      { "productSlug": "s1-10w-cob-std-cob-spotlights-2", "quantity": 4, "sortOrder": 1, "required": true },
+      { "productSlug": "s1-10w-light-std-track", "quantity": 2, "sortOrder": 2, "required": true },
+      { "productSlug": "yz6201-w-track-std-track", "quantity": 1, "sortOrder": 3, "required": false }
+    ],
+    "featured": true,
+    "sortOrder": 3,
+    "seoTitleAr": "صالة معاصرة — تسوق المشهد | اصول التميز",
+    "seoTitleEn": "Contemporary Living — Shop The Scene | Osool Altamaioz",
+    "seoDescriptionAr": "تسوق إضاءة صالة معاصرة من مشهد تفاعلي.",
+    "seoDescriptionEn": "Shop contemporary living room lighting from an interactive scene."
+  },
+  {
+    "id": "scene-kitchen-functional",
+    "slug": "kitchen-functional",
+    "nameAr": "مطبخ عملي",
+    "nameEn": "Functional Kitchen",
+    "descriptionAr": "مطبخ بإضاءة مهمة فوق سطح العمل وإضاءة عامة متساوية.",
+    "descriptionEn": "A kitchen with task lighting over work surfaces and even general illumination.",
+    "spaceId": "space-kitchen",
+    "heroImage": "/images/scenes/kitchen-functional.jpg",
+    "hotspots": [
+      {
+        "id": "hs-kitchen-cob",
+        "sceneId": "scene-kitchen-functional",
+        "x": 35,
+        "y": 28,
+        "labelAr": "سبوت COB",
+        "labelEn": "COB downlight",
+        "productSlug": "s1-10w-cob-std-cob-spotlights-2"
+      },
+      {
+        "id": "hs-kitchen-panel",
+        "sceneId": "scene-kitchen-functional",
+        "x": 55,
+        "y": 32,
+        "labelAr": "بانل",
+        "labelEn": "Panel light",
+        "productSlug": "s1-7w-panel-std-cob-spotlights"
+      },
+      {
+        "id": "hs-kitchen-profile",
+        "sceneId": "scene-kitchen-functional",
+        "x": 48,
+        "y": 58,
+        "labelAr": "بروفايل تحت الخزائن",
+        "labelEn": "Under-cabinet profile",
+        "productSlug": "p-w-led_strip-std-profiles-2"
+      }
+    ],
+    "items": [
+      { "productSlug": "s1-10w-cob-std-cob-spotlights-2", "quantity": 6, "sortOrder": 1, "required": true },
+      { "productSlug": "s1-7w-panel-std-cob-spotlights", "quantity": 2, "sortOrder": 2, "required": true },
+      { "productSlug": "p-w-led_strip-std-profiles-2", "quantity": 3, "sortOrder": 3, "required": false }
+    ],
+    "featured": true,
+    "sortOrder": 4,
+    "seoTitleAr": "مطبخ عملي — تسوق المشهد | اصول التميز",
+    "seoTitleEn": "Functional Kitchen — Shop The Scene | Osool Altamaioz",
+    "seoDescriptionAr": "تسوق إضاءة مطبخ عملية من مشهد تفاعلي.",
+    "seoDescriptionEn": "Shop functional kitchen lighting from an interactive scene."
+  },
+  {
+    "id": "scene-garden-evening",
+    "slug": "garden-evening",
+    "nameAr": "حديقة مسائية",
+    "nameEn": "Evening Garden",
+    "descriptionAr": "حديقة بإضاءة مسارات وأعمدة وكشافات مناظر.",
+    "descriptionEn": "A garden with path bollards and landscape flood accent.",
+    "spaceId": "space-garden",
+    "heroImage": "/images/scenes/garden-evening.jpg",
+    "hotspots": [
+      {
+        "id": "hs-garden-bollard",
+        "sceneId": "scene-garden-evening",
+        "x": 30,
+        "y": 65,
+        "labelAr": "عمود حديقة",
+        "labelEn": "Garden bollard",
+        "productSlug": "p-w-flood-std-gu10"
+      },
+      {
+        "id": "hs-garden-bollard2",
+        "sceneId": "scene-garden-evening",
+        "x": 70,
+        "y": 68,
+        "labelAr": "عمود حديقة",
+        "labelEn": "Garden bollard",
+        "productSlug": "p-w-flood-std-gu10-2"
+      },
+      {
+        "id": "hs-garden-flood",
+        "sceneId": "scene-garden-evening",
+        "x": 52,
+        "y": 35,
+        "labelAr": "كشاف مناظر",
+        "labelEn": "Landscape flood",
+        "productSlug": "k1-10w-cob-std-cob-spotlights"
+      }
+    ],
+    "items": [
+      { "productSlug": "p-w-flood-std-gu10", "quantity": 4, "sortOrder": 1, "required": true },
+      { "productSlug": "p-w-flood-std-gu10-2", "quantity": 2, "sortOrder": 2, "required": false },
+      { "productSlug": "k1-10w-cob-std-cob-spotlights", "quantity": 2, "sortOrder": 3, "required": true }
+    ],
+    "featured": true,
+    "sortOrder": 5,
+    "seoTitleAr": "حديقة مسائية — تسوق المشهد | اصول التميز",
+    "seoTitleEn": "Evening Garden — Shop The Scene | Osool Altamaioz",
+    "seoDescriptionAr": "تسوق إضاءة حديقة مسائية من مشهد تفاعلي.",
+    "seoDescriptionEn": "Shop evening garden lighting from an interactive scene."
+  }
+]
