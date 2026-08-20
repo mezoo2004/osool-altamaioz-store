@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useCart } from "@/components/commerce/cart-provider";
 import { ProductGrid } from "@/components/catalog/product-card";
+import { HomeImage } from "@/components/home/home-image";
 import { ExperienceBreadcrumb } from "@/components/experience/experience-breadcrumb";
 import { getPriceDisplay, getProductName } from "@/lib/catalog/display";
 import type { Product } from "@/lib/catalog/types";
@@ -16,7 +17,9 @@ import type {
   LightingRecommendationResult,
   MoodId,
   SpaceRecord,
+  WallColorTone,
 } from "@/lib/experience/types";
+import { buildScenePreviewUrl, getSpaceImageEntry, resolveSceneSlugFromSpace } from "@/lib/experience/space-images";
 import { cn } from "@/lib/utils";
 
 const MOODS: MoodId[] = [
@@ -24,6 +27,15 @@ const MOODS: MoodId[] = [
 ];
 
 const CCTS: CctChoice[] = ["3000K", "4000K", "6500K"];
+
+const WALL_COLORS: WallColorTone[] = [
+  "very_light",
+  "beige",
+  "light_gray",
+  "dark_gray",
+  "warm_tones",
+  "unsure",
+];
 
 type LightingExperienceWizardProps = {
   spaces: SpaceRecord[];
@@ -46,6 +58,7 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
   const [mood, setMood] = useState<MoodId | "">("");
+  const [wallColor, setWallColor] = useState<WallColorTone>("unsure");
   const [cct, setCct] = useState<CctChoice | "">("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<LightingRecommendationResult | null>(null);
@@ -68,6 +81,7 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
       width?: string;
       height?: string;
       mood?: string;
+      wallColor?: string;
       cct?: string;
       step?: number;
     }) => {
@@ -77,11 +91,12 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
       if (partial.width ?? width) params.set("width", partial.width ?? width);
       if (partial.height ?? height) params.set("height", partial.height ?? height);
       if (partial.mood ?? mood) params.set("mood", partial.mood ?? mood);
+      if (partial.wallColor ?? wallColor) params.set("wallColor", partial.wallColor ?? wallColor);
       if (partial.cct ?? cct) params.set("cct", partial.cct ?? cct);
       if (partial.step ?? step) params.set("step", String(partial.step ?? step));
       router.replace(`/lighting-experience?${params.toString()}`, { scroll: false });
     },
-    [spaceSlug, length, width, height, mood, cct, step, router],
+    [spaceSlug, length, width, height, mood, wallColor, cct, step, router],
   );
 
   const selectedSpace = spaces.find((s) => s.slug === spaceSlug);
@@ -142,6 +157,7 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
             height: parseFloat(height),
             mood,
             cct,
+            wallColor,
           }),
         });
         const recommendation = (await res.json()) as LightingRecommendationResult;
@@ -270,19 +286,22 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
                     syncUrl({ space: space.slug });
                   }}
                   className={cn(
-                    "card-surface overflow-hidden text-start transition-colors",
+                    "group card-surface overflow-hidden text-start transition-colors",
                     spaceSlug === space.slug
                       ? "border-brand-black-soft ring-1 ring-brand-black-soft"
                       : "hover:border-brand-gray/50",
                   )}
                 >
-                  <div
-                    className="aspect-[4/3] bg-surface-muted"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(180deg, rgba(8,8,8,0.04), rgba(8,8,8,0.2)), linear-gradient(135deg, #E0DFDD, #6D6F72)",
-                    }}
-                  />
+                  <div className="relative aspect-[4/3] overflow-hidden bg-surface-muted">
+                    <HomeImage
+                      entry={getSpaceImageEntry(space.slug)}
+                      alt={locale === "ar" ? space.nameAr : space.nameEn}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" aria-hidden="true" />
+                  </div>
                   <div className="p-3.5">
                     <p className="text-sm font-medium">{locale === "ar" ? space.nameAr : space.nameEn}</p>
                   </div>
@@ -320,6 +339,30 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
                   {error && <p className="mt-1 text-xs text-brand-orange">{error}</p>}
                 </div>
               ))}
+            </div>
+            <div className="space-y-3 border-t border-border pt-6">
+              <h3 className="text-sm font-semibold">{t("wallColorTitle")}</h3>
+              <p className="text-meta">{t("wallColorHint")}</p>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {WALL_COLORS.map((tone) => (
+                  <button
+                    key={tone}
+                    type="button"
+                    onClick={() => {
+                      setWallColor(tone);
+                      syncUrl({ wallColor: tone });
+                    }}
+                    className={cn(
+                      "rounded-lg border px-3 py-3 text-start text-sm transition-colors motion-reduce:transition-none",
+                      wallColor === tone
+                        ? "border-brand-orange bg-brand-orange/5 ring-1 ring-brand-orange/30"
+                        : "border-border bg-white hover:border-brand-gray",
+                    )}
+                  >
+                    {t(`wall_${tone}` as "wall_unsure")}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -404,9 +447,21 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
             <div className="card-surface p-5 md:p-8">
               <h2 className="heading-subsection">{t("step5Title")}</h2>
               <p className="mt-3 text-text-secondary">{locale === "ar" ? result.explanationAr : result.explanationEn}</p>
-              <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
+              {result.approach && (
+                <div className="mt-4 rounded-lg border border-border bg-surface-muted p-4 text-sm">
+                  <p className="font-medium">{t("approachTitle")}</p>
+                  <p className="mt-1 text-text-secondary">
+                    {locale === "ar" ? result.approach.wallImpactAr : result.approach.wallImpactEn}
+                  </p>
+                  <p className="mt-2 text-meta">
+                    {t("estimatedLux")}: ~{result.approach.estimatedLuxTarget} lux
+                  </p>
+                </div>
+              )}
+              <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-5">
                 <SummaryItem label={t("step1Label")} value={selectedSpace ? (locale === "ar" ? selectedSpace.nameAr : selectedSpace.nameEn) : "—"} />
                 <SummaryItem label={t("dimensionsSummary")} value={`${length} × ${width} × ${height} ${t("meters")}`} />
+                <SummaryItem label={t("wallColorTitle")} value={t(`wall_${result.wallColor}` as "wall_unsure")} />
                 <SummaryItem label={t("step3Label")} value={mood ? t(`mood_${mood}` as "mood_warm") : "—"} />
                 <SummaryItem label={t("step4Label")} value={cct || "—"} />
               </dl>
@@ -437,9 +492,12 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
                     const price = getPriceDisplay(product, variant ?? undefined, locale);
                     return (
                       <div key={item.productSlug} className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface-muted px-4 py-3 text-sm">
-                        <div>
+                        <div className="min-w-0 flex-1">
                           <p className="font-medium">{getProductName(product, locale)}</p>
                           <p className="text-meta">{price.text}</p>
+                          <p className="mt-1 text-xs text-text-secondary">
+                            {locale === "ar" ? item.reasonAr : item.reasonEn} · ×{quantities[item.productSlug] ?? item.quantity}
+                          </p>
                         </div>
                         <input
                           type="number"
@@ -463,7 +521,22 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
             )}
 
             <p className="text-meta">{t("disclaimer")}</p>
-            <button type="button" onClick={handleAddBundle} className="btn-cta">{t("addLightingSetup")}</button>
+            <div className="flex flex-wrap gap-3">
+              <button type="button" onClick={handleAddBundle} className="btn-cta">{t("addLightingSetup")}</button>
+              {selectedSpace && (
+                <Link
+                  href={buildScenePreviewUrl({
+                    sceneSlug: resolveSceneSlugFromSpace(selectedSpace.slug, selectedSpace.sceneIds),
+                    spaceSlug: selectedSpace.slug,
+                    productSlug: result.items[0]?.productSlug,
+                    cct: result.cct,
+                  })}
+                  className="btn-cta-secondary inline-flex items-center justify-center"
+                >
+                  {t("tryInShopScene")}
+                </Link>
+              )}
+            </div>
           </div>
         )}
 

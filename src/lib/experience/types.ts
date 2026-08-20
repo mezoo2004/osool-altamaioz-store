@@ -73,6 +73,14 @@ export type MoodId =
 
 export type CctChoice = "3000K" | "4000K" | "6500K";
 
+export type WallColorTone =
+  | "very_light"
+  | "beige"
+  | "light_gray"
+  | "dark_gray"
+  | "warm_tones"
+  | "unsure";
+
 export type LightingExperienceInput = {
   spaceSlug: string;
   length: number;
@@ -80,6 +88,15 @@ export type LightingExperienceInput = {
   height: number;
   mood: MoodId;
   cct: CctChoice;
+  wallColor: WallColorTone;
+};
+
+export type RecommendationApproach = {
+  summaryAr: string;
+  summaryEn: string;
+  estimatedLuxTarget: number;
+  wallImpactAr: string;
+  wallImpactEn: string;
 };
 
 export type RecommendationCategory = {
@@ -105,8 +122,10 @@ export type LightingRecommendationResult = {
   area: number;
   mood: MoodId;
   cct: CctChoice;
+  wallColor: WallColorTone;
   explanationAr: string;
   explanationEn: string;
+  approach: RecommendationApproach;
   categories: RecommendationCategory[];
   items: RecommendationItem[];
 };

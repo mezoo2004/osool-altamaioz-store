@@ -38,6 +38,24 @@
         "productSlug": "2835-9w-led_strip-std-led-strips"
       },
       {
+        "id": "hs-majlis-wall",
+        "sceneId": "scene-majlis-classic",
+        "x": 18,
+        "y": 52,
+        "labelAr": "إضاءة حائط",
+        "labelEn": "Wall accent light",
+        "productSlug": "s1-7w-cob-std-cob-spotlights"
+      },
+      {
+        "id": "hs-majlis-cove",
+        "sceneId": "scene-majlis-classic",
+        "x": 82,
+        "y": 38,
+        "labelAr": "إضاءة مخفية / كوف",
+        "labelEn": "Cove / concealed LED",
+        "productSlug": "2835-9w-led_strip-std-led-strips"
+      },
+      {
         "id": "hs-majlis-track",
         "sceneId": "scene-majlis-classic",
         "x": 62,

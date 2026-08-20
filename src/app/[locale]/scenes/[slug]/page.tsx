@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { SceneDetailContent } from "@/components/experience/scene-detail-content";
@@ -54,11 +55,13 @@ export default async function SceneDetailPage({ params }: SceneDetailPageProps) 
   ).filter((h): h is NonNullable<typeof h> => Boolean(h));
 
   return (
-    <SceneDetailContent
-      scene={scene}
-      space={space}
-      hotspotProducts={hotspotProducts}
-      locale={locale}
-    />
+    <Suspense fallback={<div className="container-page py-16 text-meta">…</div>}>
+      <SceneDetailContent
+        scene={scene}
+        space={space}
+        hotspotProducts={hotspotProducts}
+        locale={locale}
+      />
+    </Suspense>
   );
 }

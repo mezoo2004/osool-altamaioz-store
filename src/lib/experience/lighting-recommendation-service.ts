@@ -1,12 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
+import {
+  buildApproachSummary,
+  buildLayerPlan,
+  getTargetLux,
+  getWallReflectance,
+} from "@/lib/experience/lighting-heuristics";
 import type {
-  CctChoice,
   LightingExperienceInput,
   LightingRecommendationResult,
-  MoodId,
   RecommendationCategory,
   RecommendationItem,
+  WallColorTone,
 } from "@/lib/experience/types";
 import {
   pickVariant,
@@ -23,7 +28,6 @@ type RulesFile = {
         string,
         { categories: string[]; productSlugs: string[] }
       >;
-      areaQuantities: Array<{ maxArea: number; items: Record<string, number> }>;
     }
   >;
   categoryLabels: Record<string, { ar: string; en: string }>;
@@ -39,92 +43,105 @@ function loadRules(): RulesFile {
   return rulesCache;
 }
 
-const MOOD_EXPLANATIONS: Record<
-  MoodId,
-  { ar: (cct: CctChoice, area: number) => string; en: (cct: CctChoice, area: number) => string }
-> = {
-  warm: {
-    ar: (cct, area) =>
-      `توصية لمساحة ${area.toFixed(1)} م² بأجواء دافئة ودرجة لون ${cct} — طبقات إضاءة عامة وديكورية.`,
-    en: (cct, area) =>
-      `Recommendation for ${area.toFixed(1)} m² with warm ambience at ${cct} — general and decorative layers.`,
-  },
-  luxury: {
-    ar: (cct, area) =>
-      `حل فاخر لمساحة ${area.toFixed(1)} م² مع ${cct} — عناصر بارزة وإضاءة تركيز.`,
-    en: (cct, area) =>
-      `Luxury solution for ${area.toFixed(1)} m² at ${cct} — statement fixtures and accent focus.`,
-  },
-  modern: {
-    ar: (cct, area) =>
-      `مودرن لمساحة ${area.toFixed(1)} م² — خطوط نظيفة وتراك/سبوتات مع ${cct}.`,
-    en: (cct, area) =>
-      `Modern approach for ${area.toFixed(1)} m² — clean lines with track/downlights at ${cct}.`,
-  },
-  relaxed: {
-    ar: (cct, area) =>
-      `إضاءة هادئة لمساحة ${area.toFixed(1)} م² — توزيع ناعم و${cct}.`,
-    en: (cct, area) =>
-      `Relaxed lighting for ${area.toFixed(1)} m² — soft distribution at ${cct}.`,
-  },
-  minimal: {
-    ar: (cct, area) =>
-      `مينيمال لمساحة ${area.toFixed(1)} م² — عدد محدود من المصادر مع ${cct}.`,
-    en: (cct, area) =>
-      `Minimal setup for ${area.toFixed(1)} m² — fewer fixtures at ${cct}.`,
-  },
-  hotel: {
-    ar: (cct, area) =>
-      `أجواء فندقية لمساحة ${area.toFixed(1)} م² — توازن بين الراحة والأناقة مع ${cct}.`,
-    en: (cct, area) =>
-      `Hotel-style ambience for ${area.toFixed(1)} m² — comfort and elegance at ${cct}.`,
-  },
-  dramatic: {
-    ar: (cct, area) =>
-      `إضاءة درامية لمساحة ${area.toFixed(1)} م² — تباين وتركيز مع ${cct}.`,
-    en: (cct, area) =>
-      `Dramatic lighting for ${area.toFixed(1)} m² — contrast and accent at ${cct}.`,
-  },
-  functional: {
-    ar: (cct, area) =>
-      `حل عملي لمساحة ${area.toFixed(1)} م² — إضاءة مهام وعامة متوازنة مع ${cct}.`,
-    en: (cct, area) =>
-      `Functional setup for ${area.toFixed(1)} m² — balanced task and general light at ${cct}.`,
-  },
+const LAYER_PRODUCT_PICK: Record<string, string[]> = {
+  general: ["s1-10w-cob-std-cob-spotlights-2", "s1-7w-cob-std-cob-spotlights", "s1-10w-cob-std-cob-spotlights-2"],
+  task: ["p-w-led_strip-std-profiles-2", "p-w-led_strip-std-profiles", "s1-7w-panel-std-cob-spotlights"],
+  accent: ["2835-9w-led_strip-std-led-strips-3", "2835-9w-led_strip-std-led-strips", "p-w-led_strip-std-profiles"],
+  decorative: ["p-w-light-std-chandeliers-2", "p-w-light-std-chandeliers-4", "yz6201-w-track-std-track"],
 };
+
+const WALL_IMPACT_AR: Record<WallColorTone, string> = {
+  very_light: "جدران فاتحة — انعكاس ممتاز يقلل الحاجة لزيادة عدد المصابيح.",
+  beige: "جدران بيج — انعكاس جيد مع أجواء دافئة.",
+  light_gray: "رمادي فاتح — توازن بين الإضاءة والهدوء.",
+  dark_gray: "جدران داكنة — زدنا طبقة الإضاءة العامة لتعويض الامتصاص.",
+  warm_tones: "ألوان دافئة — تتناغم مع الإضاءة الدافئة وتعزز الراحة.",
+  unsure: "افترضنا انعكاساً متوسطاً حتى تحدد لون الجدران.",
+};
+
+const WALL_IMPACT_EN: Record<WallColorTone, string> = {
+  very_light: "Light walls — excellent reflectance reduces fixture count needs.",
+  beige: "Beige walls — good reflectance with warm ambience.",
+  light_gray: "Light gray — balanced reflectance.",
+  dark_gray: "Dark walls — we increased general lighting to compensate absorption.",
+  warm_tones: "Warm wall tones — pair well with warm CCT layers.",
+  unsure: "Average reflectance assumed until wall colour is confirmed.",
+};
+
+function pickProductForLayer(
+  layer: string,
+  categorySlug: string,
+  moodSlugs: string[],
+  rules: RulesFile,
+  spaceSlug: string,
+): string[] {
+  const fromMood = moodSlugs.filter(Boolean);
+  const fromLayer = LAYER_PRODUCT_PICK[layer] ?? [];
+  const fromCategory = rules.spaceRules[spaceSlug]?.defaultCategories.includes(categorySlug)
+    ? fromLayer
+    : fromLayer;
+  return [...new Set([...fromMood, ...fromCategory])];
+}
 
 export class LightingRecommendationService {
   async recommend(input: LightingExperienceInput): Promise<LightingRecommendationResult> {
     const rules = loadRules();
     const spaceRule = rules.spaceRules[input.spaceSlug];
     const area = input.length * input.width;
-
     const moodOverride = spaceRule?.moodOverrides?.[input.mood];
+    const moodSlugs = moodOverride?.productSlugs ?? [];
     const categories = moodOverride?.categories ?? spaceRule?.defaultCategories ?? ["cob-spotlights"];
-    const productSlugs = moodOverride?.productSlugs ?? [];
 
-    const areaRule = spaceRule?.areaQuantities.find((r) => area <= r.maxArea);
-    const quantityMap = areaRule?.items ?? {};
+    const layerPlans = buildLayerPlan({
+      spaceSlug: input.spaceSlug,
+      area,
+      mood: input.mood,
+      wallColor: input.wallColor,
+    });
 
-    const slugSet = new Set<string>([...productSlugs, ...Object.keys(quantityMap)]);
-    const resolvedProducts = await resolveProductsBySlugs([...slugSet]);
+    const slugCandidates = new Set<string>();
+    for (const plan of layerPlans) {
+      for (const slug of pickProductForLayer(plan.layer, plan.categorySlug, moodSlugs, rules, input.spaceSlug)) {
+        slugCandidates.add(slug);
+      }
+    }
+    for (const slug of moodSlugs) slugCandidates.add(slug);
+
+    const resolvedProducts = await resolveProductsBySlugs([...slugCandidates]);
 
     const items: RecommendationItem[] = [];
-    for (const slug of slugSet) {
-      const product = resolvedProducts.find((p) => p.slug === slug);
+
+    for (const plan of layerPlans) {
+      const candidates = pickProductForLayer(plan.layer, plan.categorySlug, moodSlugs, rules, input.spaceSlug);
+      let matched = candidates.find((slug) => resolvedProducts.some((p) => p.slug === slug));
+
+      if (!matched) {
+        const { getProductRepository } = await import("@/lib/data");
+        const result = await getProductRepository().list({
+          category: plan.categorySlug,
+          sort: "featured",
+          page: 1,
+          pageSize: 1,
+        });
+        matched = result.items[0]?.slug;
+      }
+
+      if (!matched) continue;
+
+      const product = resolvedProducts.find((p) => p.slug === matched) ??
+        (await resolveProductBySlug(matched));
       if (!product) continue;
 
       const variant = pickVariant(product, { cct: input.cct });
       if (!variant) continue;
 
-      const qty = quantityMap[slug] ?? 1;
       items.push({
-        productSlug: slug,
+        productSlug: matched,
         variantId: variant.id,
-        quantity: qty,
-        reasonAr: `مناسب لمساحة ${input.spaceSlug} بدرجة ${input.cct}`,
-        reasonEn: `Suited for ${input.spaceSlug} at ${input.cct}`,
-        categorySlug: product.primaryCategory,
+        quantity: plan.quantity,
+        reasonAr: plan.reasonAr,
+        reasonEn: plan.reasonEn,
+        categorySlug: plan.categorySlug,
         suggestedWattage: variant.wattage ?? undefined,
       });
     }
@@ -141,12 +158,13 @@ export class LightingRecommendationService {
         for (const product of result.items) {
           const variant = pickVariant(product, { cct: input.cct });
           if (!variant) continue;
+          const qty = Math.max(2, Math.ceil(area / 12));
           items.push({
             productSlug: product.slug,
             variantId: variant.id,
-            quantity: 1,
-            reasonAr: `اختيار من فئة ${cat}`,
-            reasonEn: `Selection from ${cat} category`,
+            quantity: qty,
+            reasonAr: `طبقة ${cat} — تقدير ${qty} وحدة للمساحة.`,
+            reasonEn: `${cat} layer — approx. ${qty} units for the area.`,
             categorySlug: cat,
             suggestedWattage: variant.wattage ?? undefined,
           });
@@ -160,20 +178,56 @@ export class LightingRecommendationService {
         slug,
         nameAr: label?.ar ?? slug,
         nameEn: label?.en ?? slug,
-        reasonAr: `موصى بها لمساحتك ومود ${input.mood}`,
-        reasonEn: `Recommended for your space and ${input.mood} mood`,
+        reasonAr: `مناسبة لمساحة ${input.spaceSlug} ومود ${input.mood}`,
+        reasonEn: `Suited for ${input.spaceSlug} with ${input.mood} mood`,
       };
     });
 
-    const moodExpl = MOOD_EXPLANATIONS[input.mood];
+    const luxTarget = Math.round(getTargetLux(input.spaceSlug) / getWallReflectance(input.wallColor) * 0.72);
 
     return {
       spaceSlug: input.spaceSlug,
       area,
       mood: input.mood,
       cct: input.cct,
-      explanationAr: moodExpl.ar(input.cct, area),
-      explanationEn: moodExpl.en(input.cct, area),
+      wallColor: input.wallColor,
+      explanationAr: buildApproachSummary({
+        spaceSlug: input.spaceSlug,
+        area,
+        mood: input.mood,
+        cct: input.cct,
+        wallColor: input.wallColor,
+        locale: "ar",
+      }),
+      explanationEn: buildApproachSummary({
+        spaceSlug: input.spaceSlug,
+        area,
+        mood: input.mood,
+        cct: input.cct,
+        wallColor: input.wallColor,
+        locale: "en",
+      }),
+      approach: {
+        summaryAr: buildApproachSummary({
+          spaceSlug: input.spaceSlug,
+          area,
+          mood: input.mood,
+          cct: input.cct,
+          wallColor: input.wallColor,
+          locale: "ar",
+        }),
+        summaryEn: buildApproachSummary({
+          spaceSlug: input.spaceSlug,
+          area,
+          mood: input.mood,
+          cct: input.cct,
+          wallColor: input.wallColor,
+          locale: "en",
+        }),
+        estimatedLuxTarget: luxTarget,
+        wallImpactAr: WALL_IMPACT_AR[input.wallColor],
+        wallImpactEn: WALL_IMPACT_EN[input.wallColor],
+      },
       categories: categoryResults,
       items,
     };

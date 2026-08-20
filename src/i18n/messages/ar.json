@@ -444,7 +444,21 @@
     "mood_minimal": "مينيمال",
     "mood_hotel": "فندقي",
     "mood_dramatic": "درامي",
-    "mood_functional": "عملي"
+    "mood_functional": "عملي",
+    "wallColorTitle": "لون الجدران",
+    "wallColorHint": "لون الجدران يؤثر على انعكاس الإضاءة وإحساس السطوع في المساحة.",
+    "wall_very_light": "فاتح جداً / أبيض",
+    "wall_beige": "بيج / أوف وايت",
+    "wall_light_gray": "رمادي فاتح",
+    "wall_dark_gray": "رمادي غامق / داكن",
+    "wall_warm_tones": "ألوان دافئة",
+    "wall_unsure": "غير متأكد",
+    "approachTitle": "نهج الإضاءة المقترح",
+    "estimatedLux": "هدف إرشادي",
+    "tryInShopScene": "جرّب التوصية في تسوق المشهد",
+    "sceneProductPanel": "منتجات المشهد",
+    "scenePreviewHint": "اختر منتجاً من القائمة، ثم اضغط على نقطة في الغرفة لمعاينة تأثير الإضاءة.",
+    "previewCct": "معاينة درجة اللون"
   },
   "errors": {
     "notFoundTitle": "الصفحة غير موجودة",

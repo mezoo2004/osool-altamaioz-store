@@ -444,7 +444,21 @@
     "mood_minimal": "Minimal",
     "mood_hotel": "Hotel",
     "mood_dramatic": "Dramatic",
-    "mood_functional": "Functional"
+    "mood_functional": "Functional",
+    "wallColorTitle": "Wall colour",
+    "wallColorHint": "Wall tone affects light reflectance and how bright the space feels.",
+    "wall_very_light": "Very light / white",
+    "wall_beige": "Beige / off-white",
+    "wall_light_gray": "Light gray",
+    "wall_dark_gray": "Dark gray",
+    "wall_warm_tones": "Warm tones",
+    "wall_unsure": "Not sure",
+    "approachTitle": "Recommended lighting approach",
+    "estimatedLux": "Advisory target",
+    "tryInShopScene": "Try recommendation in Shop The Scene",
+    "sceneProductPanel": "Scene products",
+    "scenePreviewHint": "Select a product, then tap a hotspot to preview its lighting effect in the room.",
+    "previewCct": "Preview colour temperature"
   },
   "errors": {
     "notFoundTitle": "Page not found",

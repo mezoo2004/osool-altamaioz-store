@@ -8,7 +8,7 @@ Premium cinematic homepage pass — homepage only; no commerce logic changes.
 
 - [x] **DONE** — Homepage-scoped `HomeHeader` / `HomeFooter` (slim utility bar, horizontal nav, deep black footer)
 - [x] **DONE** — Split-screen hero with architectural photography (`HomeImage` + replaceable asset map)
-- [x] **DONE** — Shop By Space editorial grid (9 spaces, featured Majlis, orange numbers)
+- [x] **DONE** — Shop By Space editorial grid (9 spaces, featured Majlis, lighting-focused local dev imagery, no numeric labels)
 - [x] **DONE** — Primary + secondary category rows with Lucide outline icons
 - [x] **DONE** — Featured products (`منتجات مميزة`) via existing `ProductCard` presentation
 - [x] **DONE** — Shop The Scene split layout with interactive hotspots

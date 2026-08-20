@@ -36,7 +36,7 @@ export function ShopBySpaceSection() {
           action={<HomeArrowLink href="/spaces">{tCommon("viewAll")}</HomeArrowLink>}
         />
 
-        <div className="home-space-grid">
+        <div className="home-space-grid" role="list">
           {homepageSpaces.map((space) => {
             const imageEntry = homeImages.spaces[space.imageKey];
 
@@ -44,26 +44,31 @@ export function ShopBySpaceSection() {
               <Link
                 key={space.key}
                 href={`/spaces/${space.slug}`}
+                role="listitem"
                 className={cn("home-space-card group relative overflow-hidden home-clip-card", space.gridClass)}
               >
-                <div className="home-space-card-inner relative h-full min-h-[13rem] overflow-hidden sm:min-h-[14rem]">
+                <div className="home-space-card-inner relative h-full overflow-hidden">
                   <HomeImage
                     entry={imageEntry}
                     alt={tSpaces(space.key)}
                     fill
-                    sizes="(max-width: 767px) 74vw, (max-width: 1023px) 33vw, 20vw"
-                    className="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 767px) 78vw, (max-width: 1023px) 50vw, (max-width: 1439px) 28vw, 22vw"
+                    className="home-space-grid-photo transition-transform duration-700 ease-out group-hover:scale-[1.045]"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/35 to-black/8 transition-opacity duration-500 group-hover:from-black/92"
+                    className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition-opacity duration-500 group-hover:from-black/94"
                     aria-hidden="true"
                   />
-                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 lg:p-6">
+                    <span
+                      className="mb-2.5 block h-px w-7 bg-brand-orange/0 transition-all duration-300 group-hover:w-10 group-hover:bg-brand-orange/75"
+                      aria-hidden="true"
+                    />
                     <div className="flex items-end justify-between gap-3">
                       <p className="text-base font-medium tracking-tight text-white sm:text-lg lg:text-xl">
                         {tSpaces(space.key)}
                       </p>
-                      <span className="home-space-arrow mb-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 opacity-90 backdrop-blur-sm transition-all duration-300 group-hover:border-brand-orange/60 group-hover:bg-brand-orange/15 group-hover:opacity-100">
+                      <span className="home-space-arrow mb-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/10 opacity-90 backdrop-blur-sm transition-all duration-300 group-hover:border-brand-orange/60 group-hover:bg-brand-orange/15 group-hover:opacity-100 lg:h-10 lg:w-10">
                         <HomeArrowIcon className="h-4 w-4 text-white rtl:rotate-180" />
                       </span>
                     </div>
