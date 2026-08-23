@@ -1,8 +1,13 @@
 "use client";
 
+import { ImagePlus } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { ImageSourcePicker } from "@/components/visual-search/image-source-picker";
+import { VisualSearchResultsList } from "@/components/visual-search/visual-search-results-list";
+import { searchByImage, revokeImagePreviewUrl } from "@/lib/visual-search/visual-search-client";
+import type { VisualMatchProduct, VisualSearchResult } from "@/lib/visual-search/types";
 import { cn } from "@/lib/utils";
 
 type Suggestion = {
@@ -19,10 +24,17 @@ type SearchBarProps = {
 
 export function SearchBar({ className, compact = false, defaultValue = "" }: SearchBarProps) {
   const t = useTranslations("common");
-  const locale = useLocale();
+  const tVisual = useTranslations("visualSearch");
+  const locale = useLocale() as "ar" | "en";
   const [query, setQuery] = useState(defaultValue);
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [open, setOpen] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [visualOpen, setVisualOpen] = useState(false);
+  const [visualPreview, setVisualPreview] = useState<string | null>(null);
+  const [visualAnalyzing, setVisualAnalyzing] = useState(false);
+  const [visualProducts, setVisualProducts] = useState<VisualMatchProduct[]>([]);
+  const [visualFile, setVisualFile] = useState<File | null>(null);
   const debounceRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -40,6 +52,7 @@ export function SearchBar({ className, compact = false, defaultValue = "" }: Sea
         const data = (await res.json()) as { suggestions: Suggestion[] };
         setSuggestions(data.suggestions ?? []);
         setOpen(true);
+        setVisualOpen(false);
       } catch {
         setSuggestions([]);
       }
@@ -49,6 +62,40 @@ export function SearchBar({ className, compact = false, defaultValue = "" }: Sea
       if (debounceRef.current) window.clearTimeout(debounceRef.current);
     };
   }, [query, locale]);
+
+  const runVisualSearch = async (file: File, preview: string, textQuery?: string) => {
+    setVisualFile(file);
+    setVisualPreview(preview);
+    setVisualOpen(true);
+    setOpen(false);
+    setVisualAnalyzing(true);
+    setVisualProducts([]);
+    try {
+      const result: VisualSearchResult = await searchByImage({
+        file,
+        locale,
+        query: textQuery ?? query,
+      });
+      setVisualProducts(result.products);
+    } catch {
+      setVisualProducts([]);
+    } finally {
+      setVisualAnalyzing(false);
+    }
+  };
+
+  const handleImageSelected = (file: File, previewUrl: string) => {
+    void runVisualSearch(file, previewUrl);
+  };
+
+  const clearVisual = () => {
+    if (visualPreview) revokeImagePreviewUrl(visualPreview);
+    setVisualPreview(null);
+    setVisualFile(null);
+    setVisualProducts([]);
+    setVisualOpen(false);
+    setVisualAnalyzing(false);
+  };
 
   return (
     <div className={cn("relative w-full", className)}>
@@ -61,13 +108,28 @@ export function SearchBar({ className, compact = false, defaultValue = "" }: Sea
           name="q"
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => suggestions.length && setOpen(true)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            if (visualOpen) clearVisual();
+          }}
+          onFocus={() => {
+            if (suggestions.length) setOpen(true);
+            if (visualProducts.length || visualAnalyzing) setVisualOpen(true);
+          }}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           placeholder={compact ? t("searchShort") : t("search")}
-          className="h-10 w-full rounded-lg border border-border bg-surface-muted px-3.5 pe-10 text-sm outline-none transition-colors placeholder:text-text-secondary focus:border-brand-black-soft focus:bg-white"
+          className="h-10 w-full rounded-lg border border-border bg-surface-muted px-3.5 pe-[4.5rem] text-sm outline-none transition-colors placeholder:text-text-secondary focus:border-brand-black-soft focus:bg-white"
           autoComplete="off"
         />
+        <button
+          type="button"
+          onClick={() => setPickerOpen(true)}
+          className="image-search-btn absolute end-10 top-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-brand-black-soft transition-all hover:bg-brand-orange/10 hover:text-brand-orange focus-visible:ring-2 focus-visible:ring-brand-orange/30 active:scale-95 motion-reduce:active:scale-100"
+          aria-label={tVisual("searchByImage")}
+          title={tVisual("searchByImage")}
+        >
+          <ImagePlus className="h-[17px] w-[17px]" strokeWidth={1.75} aria-hidden="true" />
+        </button>
         <button
           type="submit"
           className="absolute end-1 top-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-text-secondary transition-colors hover:bg-white hover:text-brand-black-soft"
@@ -77,7 +139,30 @@ export function SearchBar({ className, compact = false, defaultValue = "" }: Sea
         </button>
       </form>
 
-      {open && suggestions.length > 0 && (
+      <ImageSourcePicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onImageSelected={handleImageSelected}
+        variant="search"
+      />
+
+      {visualOpen && (visualAnalyzing || visualProducts.length > 0) && (
+        <div className="absolute z-50 mt-1.5 w-full">
+          <VisualSearchResultsList
+            products={visualProducts}
+            locale={locale}
+            previewUrl={visualPreview}
+            analyzing={visualAnalyzing}
+          />
+          {!visualAnalyzing && visualFile && visualProducts.length === 0 && (
+            <p className="mt-2 rounded-lg border border-border bg-white p-3 text-sm text-text-secondary">
+              {tVisual("noMatches")}
+            </p>
+          )}
+        </div>
+      )}
+
+      {open && suggestions.length > 0 && !visualOpen && (
         <ul className="absolute z-50 mt-1.5 w-full overflow-hidden rounded-xl border border-border bg-white shadow-soft">
           {suggestions.map((s) => (
             <li key={`${s.type}-${s.label}`}>

@@ -30,7 +30,12 @@ export type AnalyticsEvent =
   | "lighting_experience_mood"
   | "lighting_experience_cct"
   | "lighting_experience_complete"
-  | "lighting_experience_add_bundle";
+  | "lighting_experience_add_bundle"
+  | "passport_view"
+  | "passport_qr_open"
+  | "passport_ai_click"
+  | "passport_replacement_click"
+  | "passport_scene_click";
 
 /** Abstraction layer — adapters (GA4/GTM) enabled via env only; dev falls back to console. */
 export function trackEvent(event: AnalyticsEvent, payload: AnalyticsPayload = {}) {

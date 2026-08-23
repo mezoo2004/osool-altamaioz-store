@@ -1,134 +1,174 @@
-import type { ChatRole } from "./assistant-types";
+import type { SpaceKey } from "./assistant-knowledge";
+import type { ConversationState } from "./assistant-types";
 import {
-  SPACE_LABELS,
-  SPACE_RECOMMENDATIONS,
-  type CctKey,
-  type MoodKey,
-  type SpaceKey,
-} from "./assistant-knowledge";
+  dimensionsFromArea,
+  parseArea,
+  parseCeilingHeight,
+  parseDimensions,
+  parseWallColor,
+} from "./assistant-parsers";
+import { detectCct, detectMood, detectSpace } from "./assistant-state-detectors";
 
-export type SessionState = {
-  currentSpace?: SpaceKey;
-  currentIntent?: string;
-  currentMood?: MoodKey;
-  currentCct?: CctKey;
-  lastRecommendation?: string;
-  lastRecommendedCategories?: string[];
-  lastAssistantAnswer?: string;
+export type { SpaceKey, MoodKey, CctKey } from "./assistant-knowledge";
+export {
+  detectSpace,
+  detectCct,
+  detectMood,
+  detectFollowUpIntent,
+  isRecommendationRequest,
+  isAmbiguousSpaceRequest,
+  spaceLabel,
+} from "./assistant-state-detectors";
+
+export type SessionState = ConversationState & {
   alternativeIndex: number;
-  awaitingClarification?: "space" | "mood" | "cct";
 };
 
-const SPACE_PATTERNS: Array<{ key: SpaceKey; terms: string[] }> = [
-  { key: "majlis", terms: ["مجلس", "majlis", "ديوان"] },
-  { key: "living", terms: ["صالة", "صاله", "living", "غرفة معيشة"] },
-  { key: "bedroom", terms: ["غرفة نوم", "نوم", "bedroom"] },
-  { key: "kitchen", terms: ["مطبخ", "kitchen"] },
-  { key: "office", terms: ["مكتب", "office"] },
-  { key: "restaurant", terms: ["مطعم", "restaurant"] },
-  { key: "retail", terms: ["متجر", "retail", "محل", "بوتيك"] },
-  { key: "facade", terms: ["واجهة", "facade", "واجهه"] },
-  { key: "garden", terms: ["حديقة", "garden", "حديقه"] },
-  { key: "outdoor", terms: ["خارجي", "outdoor", "خارج"] },
-];
+const SPACE_TO_SLUG: Record<string, string> = {
+  majlis: "majlis",
+  living: "living-room",
+  bedroom: "bedroom",
+  kitchen: "kitchen",
+  office: "office",
+  restaurant: "restaurant",
+  retail: "retail-store",
+  facade: "facade",
+  garden: "garden",
+  outdoor: "garden",
+};
 
-export function detectSpace(text: string): SpaceKey | undefined {
-  const n = text.toLowerCase();
-  for (const { key, terms } of SPACE_PATTERNS) {
-    if (terms.some((t) => n.includes(t))) return key;
+export function spaceKeyToSlug(key: string): string {
+  return SPACE_TO_SLUG[key] ?? key;
+}
+
+export function slugToSpaceKey(slug: string): SpaceKey | undefined {
+  const entry = Object.entries(SPACE_TO_SLUG).find(([, s]) => s === slug);
+  return entry ? (entry[0] as SpaceKey) : undefined;
+}
+
+function moodToDesigner(mood?: string): import("@/lib/experience/types").MoodId {
+  const map: Record<string, import("@/lib/experience/types").MoodId> = {
+    warm: "warm",
+    luxury: "luxury",
+    modern: "modern",
+    bright: "functional",
+    practical: "functional",
+  };
+  return (mood && map[mood]) || "warm";
+}
+
+function cctToDesigner(cct?: string): import("@/lib/experience/types").CctChoice {
+  if (cct === "4000") return "4000K";
+  if (cct === "6500") return "6500K";
+  return "3000K";
+}
+
+export function applyMessageToState(state: SessionState, message: string): SessionState {
+  const next = { ...state };
+
+  const space = detectSpace(message);
+  if (space) {
+    next.currentSpace = space;
+    next.spaceSlug = spaceKeyToSlug(space);
   }
-  return undefined;
+
+  const dims = parseDimensions(message);
+  if (dims) {
+    next.roomLength = dims.length;
+    next.roomWidth = dims.width;
+    next.awaitingField = undefined;
+  }
+
+  const area = parseArea(message);
+  if (area && !dims) {
+    const inferred = dimensionsFromArea(area);
+    next.roomLength = inferred.length;
+    next.roomWidth = inferred.width;
+  }
+
+  const height = parseCeilingHeight(message);
+  if (height) {
+    next.ceilingHeight = height;
+    if (next.awaitingField === "ceilingHeight") next.awaitingField = undefined;
+  }
+
+  const wall = parseWallColor(message);
+  if (wall) {
+    next.wallColor = wall;
+    if (next.awaitingField === "wallColor") next.awaitingField = undefined;
+  }
+
+  const cct = detectCct(message);
+  if (cct) {
+    next.preferredCct = cctToDesigner(cct);
+  }
+
+  const mood = detectMood(message);
+  if (mood) {
+    next.mood = moodToDesigner(mood);
+    if (next.awaitingField === "mood") next.awaitingField = undefined;
+  }
+
+  if (/مو متأكد|not sure|unsure|ما أدري|ما ادري/i.test(message)) {
+    next.awaitingField = "mood";
+  }
+
+  return next;
 }
 
-export function detectCct(text: string): CctKey | undefined {
-  if (/6500|بارد|أبيض|cool white/i.test(text)) return "6500";
-  if (/4000|طبيعي|neutral/i.test(text)) return "4000";
-  if (/3000|دافئ|دافى|ادفى|أدفى|warm/i.test(text)) return "3000";
-  return undefined;
-}
-
-export function detectMood(text: string): MoodKey | undefined {
-  if (/فاخر|أفخم|فخم|luxury|premium/i.test(text)) return "luxury";
-  if (/مودرن|modern|عصري|معاصر/i.test(text)) return "modern";
-  if (/مشرق|bright|واضح|عملي/i.test(text)) return "bright";
-  if (/دافئ|دافى|ادفى|أدفى|warm|هادي|هادئ/i.test(text)) return "warm";
-  if (/عملي|practical/i.test(text)) return "practical";
-  return undefined;
-}
-
-export type FollowUpIntent =
-  | "why"
-  | "alternative"
-  | "warmer"
-  | "luxury"
-  | "smaller"
-  | "explain_cct"
-  | "none";
-
-export function detectFollowUpIntent(text: string): FollowUpIntent {
-  const n = text.toLowerCase().trim();
-  if (/ليه|لماذا|ليش|why|اخترت|اخترتي|هذا|هذي|هاذا|هذاك|ذلك/.test(n)) return "why";
-  if (/بديل|خيار ثاني|الخيار الثاني|ورني الخيار|alternative|second option/.test(n)) return "alternative";
-  if (/أدفى|ادفى|أقل بياض|ما أبيها صفراء|اصفر|أصفر|warmer|less white|not yellow/.test(n)) return "warmer";
-  if (/أفخم|افخم|فاخر|luxury|more premium/.test(n)) return "luxury";
-  if (/مساحة صغيرة|صغير|small space|compact/.test(n)) return "smaller";
-  if (/وش تقصد|ما معنى|ما المقصود|explain.*\d{4}|meaning of/.test(n)) return "explain_cct";
-  return "none";
-}
-
-export function isRecommendationRequest(text: string): boolean {
-  return /اقترح|انصح|رشح|ساعد|أبي|ابي|أبغى|ابغى|أحتاج|احتاج|recommend|suggest|help me|need lighting/i.test(
-    text,
-  );
-}
-
-export function isAmbiguousSpaceRequest(text: string): boolean {
-  return (
-    isRecommendationRequest(text) &&
-    !detectSpace(text) &&
-    !/إضاءة|lighting/i.test(text)
-  );
-}
-
-export function buildSessionState(
-  history: Array<{ role: ChatRole; content: string }>,
-  currentMessage: string,
+export function mergeSessionState(
+  clientState: Partial<ConversationState> | undefined,
+  history: Array<{ role: "user" | "assistant"; content: string }>,
+  message: string,
 ): SessionState {
-  const state: SessionState = { alternativeIndex: 0 };
-  const last = history[history.length - 1];
-  const all =
-    last?.role === "user" && last.content === currentMessage
-      ? history
-      : [...history, { role: "user" as const, content: currentMessage }];
+  const state: SessionState = {
+    alternativeIndex: clientState?.alternativeIndex ?? 0,
+    ...clientState,
+  };
 
-  for (const msg of all) {
+  for (const msg of history) {
     if (msg.role === "user") {
-      const space = detectSpace(msg.content);
-      if (space) state.currentSpace = space;
-      const cct = detectCct(msg.content);
-      if (cct) state.currentCct = cct;
-      const mood = detectMood(msg.content);
-      if (mood) state.currentMood = mood;
-    } else {
-      state.lastAssistantAnswer = msg.content;
-      const space = detectSpace(msg.content);
-      if (space) state.currentSpace = space;
-      const cctMatch = msg.content.match(/\b(3000|4000|6500)K?\b/);
-      if (cctMatch) state.currentCct = cctMatch[1] as CctKey;
-      if (msg.content.includes("بديل") || msg.content.includes("alternative")) {
-        state.alternativeIndex += 1;
-      }
-      const rec = state.currentSpace ? SPACE_RECOMMENDATIONS[state.currentSpace] : undefined;
-      if (rec) {
-        state.lastRecommendation = `${rec.cct}K for ${rec.space}`;
-        state.lastRecommendedCategories = rec.categories;
-      }
+      Object.assign(state, applyMessageToState(state, msg.content));
     }
+  }
+
+  Object.assign(state, applyMessageToState(state, message));
+
+  if (state.currentSpace && !state.spaceSlug) {
+    state.spaceSlug = spaceKeyToSlug(state.currentSpace);
   }
 
   return state;
 }
 
-export function spaceLabel(space: SpaceKey, locale: "ar" | "en") {
-  return SPACE_LABELS[space][locale];
+export function hasEnoughForDesigner(state: SessionState): boolean {
+  return Boolean(
+    state.spaceSlug &&
+      state.roomLength &&
+      state.roomWidth &&
+      state.ceilingHeight &&
+      state.roomLength > 0 &&
+      state.roomWidth > 0 &&
+      state.ceilingHeight >= 2,
+  );
 }
+
+export function nextMissingField(state: SessionState): import("./assistant-types").AwaitingField | null {
+  if (!state.currentSpace && !state.spaceSlug) return "space";
+  if (!state.roomLength || !state.roomWidth) return "dimensions";
+  if (!state.ceilingHeight) return "ceilingHeight";
+  if (!state.mood && !state.preferredCct) return "mood";
+  return null;
+}
+
+export function defaultMoodForSpace(space?: string): import("@/lib/experience/types").MoodId {
+  if (space === "kitchen" || space === "office" || space === "retail-store") return "functional";
+  if (space === "majlis" || space === "restaurant") return "luxury";
+  return "warm";
+}
+
+export function defaultWallColor(): import("@/lib/experience/types").WallColorTone {
+  return "unsure";
+}
+
+export { moodToDesigner, cctToDesigner };

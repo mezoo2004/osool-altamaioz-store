@@ -12,7 +12,11 @@ import type { CartLineInput } from "@/lib/commerce/types";
 
 const STORAGE_KEY = "osool-cart-v1";
 
-export type CartLineStored = CartLineInput;
+export type CartLineStored = CartLineInput & {
+  displayName?: string;
+  imageUrl?: string | null;
+  variantNote?: string | null;
+};
 
 type CartContextValue = {
   lines: CartLineStored[];

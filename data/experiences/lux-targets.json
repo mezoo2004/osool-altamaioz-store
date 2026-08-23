@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "purpose": "Advisory illuminance targets for Osool Lighting Designer — design guidance only, not certified engineering.",
+    "unit": "lux",
+    "formula": "requiredLumens ≈ targetLux × roomAreaM2 × lossAdjustmentFactor"
+  },
+  "spaces": {
+    "bedroom": {
+      "ambientLux": 150,
+      "rangeMin": 100,
+      "rangeMax": 200,
+      "notesAr": "إضاءة عامة مريحة للنوم والراحة — طبقات خافتة مع إضاءة قراءة موضعية.",
+      "notesEn": "Comfortable ambient levels for rest — layered with optional reading light."
+    },
+    "living-room": {
+      "ambientLux": 200,
+      "rangeMin": 150,
+      "rangeMax": 300,
+      "notesAr": "إضاءة معيشة متوازنة للجلوس والترفيه.",
+      "notesEn": "Balanced living-room ambient for seating and daily use."
+    },
+    "majlis": {
+      "ambientLux": 180,
+      "rangeMin": 120,
+      "rangeMax": 250,
+      "notesAr": "جو ضيافة دافئ مع طبقات accent وعنصر ديكوري.",
+      "notesEn": "Warm hospitality ambience with accent and decorative layers."
+    },
+    "kitchen": {
+      "ambientLux": 320,
+      "taskLux": 500,
+      "rangeMin": 250,
+      "rangeMax": 500,
+      "notesAr": "إضاءة عامة + مهام للأسطح — 4000K غالباً للعمل.",
+      "notesEn": "Ambient plus task layers for counters — often 4000K for work."
+    },
+    "office": {
+      "ambientLux": 350,
+      "rangeMin": 300,
+      "rangeMax": 500,
+      "notesAr": "إضاءة عمل متوازنة تقلل إجهاد العين.",
+      "notesEn": "Work-oriented levels to reduce eye strain."
+    },
+    "restaurant": {
+      "ambientLux": 220,
+      "rangeMin": 150,
+      "rangeMax": 350,
+      "notesAr": "جو ضيافة مع accent على الطاولات.",
+      "notesEn": "Hospitality mood with table accent emphasis."
+    },
+    "retail-store": {
+      "ambientLux": 450,
+      "rangeMin": 300,
+      "rangeMax": 600,
+      "notesAr": "إبراز المنتجات مع إضاءة accent.",
+      "notesEn": "Merchandise visibility with accent emphasis."
+    },
+    "facade": {
+      "ambientLux": 60,
+      "rangeMin": 30,
+      "rangeMax": 120,
+      "notesAr": "إضاءة معمارية خارجية — ليس إضاءة داخلية.",
+      "notesEn": "Exterior architectural lighting — not interior lux."
+    },
+    "garden": {
+      "ambientLux": 40,
+      "rangeMin": 20,
+      "rangeMax": 80,
+      "notesAr": "مسارات و accent للمناظر الطبيعية.",
+      "notesEn": "Path and landscape accent lighting."
+    }
+  },
+  "usageModifiers": {
+    "functional": 1.12,
+    "relaxed": 0.92,
+    "luxury": 1.05,
+    "minimal": 0.95,
+    "dramatic": 1.08
+  },
+  "brightnessPreference": {
+    "soft": 0.88,
+    "standard": 1,
+    "bright": 1.15
+  },
+  "naturalLight": {
+    "low": 1.1,
+    "medium": 1,
+    "high": 0.9
+  },
+  "interiorStyle": {
+    "light": 0.95,
+    "balanced": 1,
+    "dark": 1.18
+  },
+  "ceilingHeight": {
+    "referenceM": 3,
+    "factorPerMeterAbove": 0.06,
+    "factorPerMeterBelow": -0.04
+  },
+  "fixtureSanity": {
+    "bedroom": { "generalMinPerAreaM2": 6, "generalMin": 4, "generalMaxPerAreaM2": 3.5 },
+    "living-room": { "generalMinPerAreaM2": 5.5, "generalMin": 4, "generalMaxPerAreaM2": 3 },
+    "majlis": { "generalMinPerAreaM2": 5, "generalMin": 6, "generalMaxPerAreaM2": 2.8 },
+    "kitchen": { "generalMinPerAreaM2": 4, "generalMin": 4, "generalMaxPerAreaM2": 2.5 },
+    "office": { "generalMinPerAreaM2": 4.5, "generalMin": 4, "generalMaxPerAreaM2": 3 },
+    "restaurant": { "generalMinPerAreaM2": 5, "generalMin": 6, "generalMaxPerAreaM2": 3 },
+    "retail-store": { "generalMinPerAreaM2": 3.5, "generalMin": 8, "generalMaxPerAreaM2": 2.2 },
+    "facade": { "generalMinPerAreaM2": 12, "generalMin": 2, "generalMaxPerAreaM2": 8 },
+    "garden": { "generalMinPerAreaM2": 15, "generalMin": 2, "generalMaxPerAreaM2": 10 }
+  },
+  "wattageLumenEstimate": {
+    "note": "Advisory fallback only when catalog lumen is missing — LED ~90 lm/W typical, LOW confidence.",
+    "lmPerWatt": 90
+  }
+}

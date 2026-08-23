@@ -65,6 +65,7 @@ function mapDbOrderToCommerce(row: {
   createdAt: Date;
   updatedAt: Date;
   items: {
+    id: string;
     productId: string | null;
     variantId: string | null;
     skuSnapshot: string;
@@ -96,6 +97,7 @@ function mapDbOrderToCommerce(row: {
     items: row.items.map((item) => {
       const attrs = (item.attributesSnapshot ?? {}) as Record<string, string | null>;
       return {
+        id: item.id,
         productId: item.productId ?? "",
         variantId: item.variantId ?? "",
         productSlug: attrs.productSlug ?? "",

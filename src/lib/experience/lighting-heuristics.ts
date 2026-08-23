@@ -1,35 +1,14 @@
-import type { CctChoice, MoodId, WallColorTone } from "@/lib/experience/types";
+import type { CctChoice, LightingLayerKind, MoodId, WallColorTone } from "@/lib/experience/types";
+import type { LayerRecommendation } from "@/lib/experience/types";
+import {
+  buildLayoutSuggestion,
+  calculateLumenRequirement,
+  estimateFixtureCount,
+  type LumenCalculationInput,
+} from "@/lib/experience/lighting-lumen-engine";
+import { getWallReflectance } from "@/lib/experience/lighting-designer-config";
 
-export type LightingLayer = "general" | "task" | "accent" | "decorative";
-
-export type LayerPlan = {
-  layer: LightingLayer;
-  categorySlug: string;
-  quantity: number;
-  reasonAr: string;
-  reasonEn: string;
-};
-
-const TARGET_LUX: Record<string, number> = {
-  majlis: 180,
-  "living-room": 200,
-  bedroom: 150,
-  kitchen: 320,
-  office: 350,
-  restaurant: 220,
-  "retail-store": 450,
-  facade: 60,
-  garden: 40,
-};
-
-const WALL_REFLECTANCE: Record<WallColorTone, number> = {
-  very_light: 0.78,
-  beige: 0.65,
-  light_gray: 0.55,
-  dark_gray: 0.32,
-  warm_tones: 0.58,
-  unsure: 0.55,
-};
+export type { LightingLayerKind as LightingLayer };
 
 const WALL_IMPACT_AR: Record<WallColorTone, string> = {
   very_light: "جدران فاتحة تعكس الإضاءة بكفاءة — يسمح ذلك بكميات معتدلة.",
@@ -49,69 +28,36 @@ const WALL_IMPACT_EN: Record<WallColorTone, string> = {
   unsure: "We assumed average reflectance — refine once wall colour is confirmed.",
 };
 
-/** Approximate useful lumens per downlight for advisory qty (not photometric certification). */
-const LUMENS_PER_DOWNLIGHT = 650;
+export { getWallReflectance };
 
-export function getWallReflectance(wallColor: WallColorTone): number {
-  return WALL_REFLECTANCE[wallColor];
+export function getWallImpact(wallColor: WallColorTone, locale: "ar" | "en"): string {
+  return locale === "ar" ? WALL_IMPACT_AR[wallColor] : WALL_IMPACT_EN[wallColor];
 }
 
-export function getTargetLux(spaceSlug: string): number {
-  return TARGET_LUX[spaceSlug] ?? 200;
-}
+export function buildLayerPlanV2(
+  input: LumenCalculationInput,
+  lumenResult: ReturnType<typeof calculateLumenRequirement>,
+  lumensPerGeneralFixture: number,
+): LayerRecommendation[] {
+  const { spaceSlug, mood } = input;
+  const area = input.length * input.width;
+  const layers: LayerRecommendation[] = [];
 
-export function adjustedLuxTarget(spaceSlug: string, wallColor: WallColorTone): number {
-  const base = getTargetLux(spaceSlug);
-  const reflectance = getWallReflectance(wallColor);
-  const factor = 0.72 / Math.max(reflectance, 0.28);
-  return Math.round(base * factor);
-}
+  const generalCount = estimateFixtureCount({
+    spaceSlug,
+    area,
+    layer: "general",
+    requiredLumens: lumenResult.requiredLumens * 0.65,
+    lumensPerFixture: lumensPerGeneralFixture,
+  });
 
-export function estimateGeneralDownlightCount(area: number, spaceSlug: string, wallColor: WallColorTone): number {
-  const lux = adjustedLuxTarget(spaceSlug, wallColor);
-  const requiredLumens = lux * area * 0.85;
-  const count = Math.ceil(requiredLumens / LUMENS_PER_DOWNLIGHT);
-  const mins: Record<string, number> = {
-    bedroom: 4,
-    "living-room": 4,
-    majlis: 6,
-    kitchen: 4,
-    office: 4,
-    restaurant: 6,
-    "retail-store": 8,
-    facade: 2,
-    garden: 2,
-  };
-  const maxs: Record<string, number> = {
-    bedroom: Math.max(8, Math.ceil(area / 5)),
-    "living-room": Math.max(10, Math.ceil(area / 4.5)),
-    majlis: Math.max(12, Math.ceil(area / 4)),
-    kitchen: Math.max(8, Math.ceil(area / 3.5)),
-    office: Math.max(8, Math.ceil(area / 4)),
-    restaurant: Math.max(10, Math.ceil(area / 4)),
-    "retail-store": Math.max(12, Math.ceil(area / 3)),
-    facade: 6,
-    garden: 6,
-  };
-  return Math.min(Math.max(count, mins[spaceSlug] ?? 4), maxs[spaceSlug] ?? Math.ceil(area / 3));
-}
-
-export function buildLayerPlan(options: {
-  spaceSlug: string;
-  area: number;
-  mood: MoodId;
-  wallColor: WallColorTone;
-}): LayerPlan[] {
-  const { spaceSlug, area, mood, wallColor } = options;
-  const layers: LayerPlan[] = [];
-
-  const generalCount = estimateGeneralDownlightCount(area, spaceSlug, wallColor);
   layers.push({
     layer: "general",
-    categorySlug: spaceSlug === "kitchen" || spaceSlug === "office" ? "cob-spotlights" : "cob-spotlights",
+    categorySlug:
+      spaceSlug === "kitchen" || spaceSlug === "office" ? "cob-spotlights" : "cob-spotlights",
     quantity: generalCount,
-    reasonAr: `إضاءة عامة تغطي ${area.toFixed(0)} م² — تقدير ${generalCount} نقطة إضاءة سقفية.`,
-    reasonEn: `General ceiling coverage for ${area.toFixed(0)} m² — approx. ${generalCount} downlights.`,
+    reasonAr: `إضاءة عامة: ~${generalCount} نقطة لتغطية ${area.toFixed(0)} م² (هدف ~${lumenResult.targetLux} lux).`,
+    reasonEn: `General layer: ~${generalCount} downlights for ${area.toFixed(0)} m² (~${lumenResult.targetLux} lux target).`,
   });
 
   if (spaceSlug === "kitchen" || mood === "functional") {
@@ -119,19 +65,28 @@ export function buildLayerPlan(options: {
       layer: "task",
       categorySlug: "profiles",
       quantity: area > 12 ? 3 : 2,
-      reasonAr: "إضاءة مهام للأسطح والعمل — بروفايل أو خط إضاءة موجه.",
-      reasonEn: "Task lighting for work surfaces — profile or directed linear light.",
+      reasonAr: "إضاءة مهام للأسطح — بروفايل أو خط LED تحت الخزائن.",
+      reasonEn: "Task lighting for work surfaces — profile or under-cabinet linear.",
     });
   }
 
   if (["majlis", "living-room", "bedroom", "restaurant"].includes(spaceSlug)) {
-    const stripQty = area > 25 ? 2 : 1;
+    layers.push({
+      layer: "ambient",
+      categorySlug: "led-strips",
+      quantity: area > 25 ? 2 : 1,
+      reasonAr: "طبقة ambient غير مباشرة (cove/LED) لعمق بصري.",
+      reasonEn: "Indirect ambient (cove/LED strip) for visual depth.",
+    });
+  }
+
+  if (["majlis", "living-room", "bedroom", "restaurant"].includes(spaceSlug)) {
     layers.push({
       layer: "accent",
-      categorySlug: "led-strips",
-      quantity: stripQty,
-      reasonAr: "طبقة accent غير مباشرة لعمق بصري ولتخفيف الظلال.",
-      reasonEn: "Indirect accent layer for depth and softer shadows.",
+      categorySlug: "track",
+      quantity: area > 30 ? 2 : 1,
+      reasonAr: "إضاءة accent للجدران أو عناصر ديكور.",
+      reasonEn: "Accent/track for walls or feature elements.",
     });
   }
 
@@ -142,9 +97,9 @@ export function buildLayerPlan(options: {
     layers.push({
       layer: "decorative",
       categorySlug: spaceSlug === "bedroom" ? "pendants" : "chandeliers",
-      quantity: area > 30 ? 2 : 1,
-      reasonAr: "عنصر ديكوري مركزي يعزز الأجواء — نجفة أو معلقة.",
-      reasonEn: "A decorative focal fixture — chandelier or pendant for ambience.",
+      quantity: area > 35 ? 2 : 1,
+      reasonAr: "عنصر ديكوري مركزي — نجفة أو معلقة فوق منطقة الجلوس.",
+      reasonEn: "Central decorative fixture — chandelier or pendant over seating.",
     });
   }
 
@@ -154,20 +109,63 @@ export function buildLayerPlan(options: {
         layer: "general",
         categorySlug: "floodlights",
         quantity: Math.max(2, Math.ceil(area / 15)),
-        reasonAr: "إضاءة خارجية للواجهة/المسار — كشافات معمارية.",
-        reasonEn: "Exterior architectural flood lighting for paths and features.",
+        reasonAr: "كشافات خارجية للواجهة/المسار.",
+        reasonEn: "Exterior flood for facade/path.",
       },
       {
         layer: "accent",
         categorySlug: "landscape",
         quantity: Math.max(2, Math.ceil(area / 20)),
-        reasonAr: "إضاءة accent للحدائق والعناصر الطبيعية.",
-        reasonEn: "Accent landscape lighting for planting and features.",
+        reasonAr: "إضاءة landscape accent.",
+        reasonEn: "Landscape accent lighting.",
       },
     ];
   }
 
   return layers;
+}
+
+export function buildExplanations(options: {
+  input: LumenCalculationInput;
+  lumenResult: ReturnType<typeof calculateLumenRequirement>;
+  layout: ReturnType<typeof buildLayoutSuggestion>;
+  cct: CctChoice;
+  locale: "ar" | "en";
+}): string[] {
+  const { input, lumenResult, layout, cct, locale } = options;
+  const lines: string[] = [];
+
+  if (locale === "ar") {
+    if (["3000K"].includes(cct) && ["warm", "luxury", "relaxed", "hotel"].includes(input.mood)) {
+      lines.push("اخترنا 3000K لأنك حددت جواً دافئاً ومناسباً للضيافة والراحة.");
+    } else if (cct === "4000K") {
+      lines.push("4000K مناسبة للمساحات الوظيفية والعمل اليومي.");
+    }
+    if (input.wallColor === "dark_gray" || input.interiorStyle === "dark") {
+      lines.push(`زادت التوصية لأن الجدران/الأثاث داكن وارتفاع السقف ${input.height}م.`);
+    }
+    if (input.height > 3.2) {
+      lines.push(`ارتفاع السقف ${input.height}م يتطلب توزيعاً أوسع وقدرة إضاءة أعلى.`);
+    }
+    lines.push(`تم توزيع السبوتات على ~${layout.rows} صف × ${layout.columns} عمود لتقليل الظلال.`);
+    lines.push(lumenResult.formulaDescriptionAr);
+  } else {
+    if (["3000K"].includes(cct) && ["warm", "luxury", "relaxed", "hotel"].includes(input.mood)) {
+      lines.push("We recommend 3000K for your warm, hospitality-oriented mood.");
+    } else if (cct === "4000K") {
+      lines.push("4000K suits functional, task-oriented spaces.");
+    }
+    if (input.wallColor === "dark_gray" || input.interiorStyle === "dark") {
+      lines.push(`We increased output for dark walls/finishes and ${input.height}m ceiling height.`);
+    }
+    if (input.height > 3.2) {
+      lines.push(`${input.height}m ceiling height calls for wider spacing and higher output.`);
+    }
+    lines.push(`Downlights arranged ~${layout.rows} rows × ${layout.columns} cols to reduce shadow pockets.`);
+    lines.push(lumenResult.formulaDescriptionEn);
+  }
+
+  return lines;
 }
 
 export function buildApproachSummary(options: {
@@ -177,13 +175,13 @@ export function buildApproachSummary(options: {
   cct: CctChoice;
   wallColor: WallColorTone;
   locale: "ar" | "en";
+  targetLux: number;
 }): string {
-  const { spaceSlug, area, mood, cct, wallColor, locale } = options;
-  const lux = adjustedLuxTarget(spaceSlug, wallColor);
-  const wallNote = locale === "ar" ? WALL_IMPACT_AR[wallColor] : WALL_IMPACT_EN[wallColor];
-
-  if (locale === "ar") {
-    return `نهج إضاءة ${mood} لمساحة ${area.toFixed(1)} م² — هدف إرشادي ~${lux} lux مع ${cct}. ${wallNote}`;
+  const wallNote = getWallImpact(options.wallColor, options.locale);
+  if (options.locale === "ar") {
+    return `نهج إضاءة ${options.mood} لمساحة ${options.area.toFixed(1)} م² — هدف إرشادي ~${options.targetLux} lux مع ${options.cct}. ${wallNote}`;
   }
-  return `${mood} lighting approach for ${area.toFixed(1)} m² — advisory ~${lux} lux target at ${cct}. ${wallNote}`;
+  return `${options.mood} lighting for ${options.area.toFixed(1)} m² — advisory ~${options.targetLux} lux at ${options.cct}. ${wallNote}`;
 }
+
+export { buildLayoutSuggestion, calculateLumenRequirement };

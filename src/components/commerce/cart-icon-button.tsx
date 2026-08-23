@@ -11,7 +11,7 @@ type CartIconButtonProps = {
 };
 
 export function CartIconButton({ label, count, className }: CartIconButtonProps) {
-  const { openMiniCart, badgePulse } = useCartFeedback();
+  const { openMiniCart, badgePulse, cartIconPulse } = useCartFeedback();
 
   return (
     <button
@@ -20,11 +20,21 @@ export function CartIconButton({ label, count, className }: CartIconButtonProps)
       className={cn("icon-btn-premium relative", className)}
       aria-label={label}
     >
-      <ShoppingBag className="h-5 w-5" strokeWidth={1.5} aria-hidden="true" />
+      {cartIconPulse && (
+        <span
+          className="cart-icon-ring pointer-events-none absolute inset-0 rounded-xl border border-brand-orange/40"
+          aria-hidden="true"
+        />
+      )}
+      <ShoppingBag
+        className={cn("header-icon-svg", cartIconPulse && "cart-icon-bounce")}
+        strokeWidth={1.5}
+        aria-hidden="true"
+      />
       {count > 0 && (
         <span
           className={cn(
-            "absolute -end-1.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-orange px-1 text-[10px] font-bold leading-none text-white",
+            "absolute -end-1 -top-1 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-brand-orange px-1 text-[10px] font-bold leading-none text-white shadow-sm",
             badgePulse && "cart-badge-pulse",
           )}
         >

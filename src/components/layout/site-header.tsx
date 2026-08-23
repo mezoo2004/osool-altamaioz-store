@@ -44,16 +44,16 @@ export function SiteHeader() {
               <SearchBar className="max-w-xl lg:max-w-2xl" />
             </div>
 
-            <div className="ms-auto flex items-center gap-0.5 md:gap-1">
+            <div className="ms-auto flex items-center gap-1 md:gap-1.5">
               <div className="md:hidden">
                 <LanguageSwitcher label={t("language")} />
               </div>
               <IconLink href="/wishlist" label={t("wishlist")}>
-                <Heart strokeWidth={1.5} className="h-5 w-5" />
+                <Heart strokeWidth={1.5} className="header-icon-svg" />
               </IconLink>
               <CartIconButton label={t("cart")} count={cartCount} />
               <IconLink href="/account" label={t("account")}>
-                <User strokeWidth={1.5} className="h-5 w-5" />
+                <User strokeWidth={1.5} className="header-icon-svg" />
               </IconLink>
             </div>
           </div>

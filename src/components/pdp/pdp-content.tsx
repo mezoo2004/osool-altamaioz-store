@@ -108,8 +108,18 @@ export function PdpContent({
       variantId: selectedVariant.id,
       variantSku: selectedVariant.sku,
       quantity,
+      displayName: name,
+      imageUrl: selectedVariant.imageUrl ?? product.variants[0]?.imageUrl ?? null,
+      variantNote: selectedVariant.cct ? `${selectedVariant.cct}K` : null,
     });
-    showAddedFeedback({ productName: name, productSlug: product.slug, quantity });
+    showAddedFeedback({
+      productName: name,
+      productSlug: product.slug,
+      variantSku: selectedVariant.sku,
+      quantity,
+      imageUrl: selectedVariant.imageUrl ?? product.variants[0]?.imageUrl ?? null,
+      variantNote: selectedVariant.cct ? `${selectedVariant.cct}K` : null,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

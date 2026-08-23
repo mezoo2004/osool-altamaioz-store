@@ -152,7 +152,15 @@
   }
 
   .icon-btn-premium {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-xl text-text-primary transition-all duration-200 hover:bg-brand-orange/8 hover:text-brand-orange active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange;
+    @apply relative inline-flex h-11 w-11 items-center justify-center rounded-xl text-brand-black-soft transition-[transform,color,background-color,box-shadow] duration-200 ease-out hover:-translate-y-px hover:bg-brand-orange/8 hover:text-brand-orange hover:shadow-[0_0_0_1px_rgba(234,90,45,0.12)] active:translate-y-0 active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange motion-reduce:transition-none motion-reduce:hover:translate-y-0;
+  }
+
+  .icon-btn-premium .header-icon-svg {
+    @apply h-[22px] w-[22px];
+  }
+
+  .lang-switcher-premium {
+    @apply inline-flex h-9 min-w-[2.75rem] items-center justify-center gap-1.5 rounded-xl border border-border px-3 text-[11px] font-semibold uppercase tracking-wide text-text-secondary transition-[transform,color,background-color,box-shadow,border-color] duration-200 ease-out hover:-translate-y-px hover:border-brand-orange/35 hover:bg-brand-orange/6 hover:text-brand-orange hover:shadow-[0_0_0_1px_rgba(234,90,45,0.1)] active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange motion-reduce:transition-none motion-reduce:hover:translate-y-0;
   }
 
   .nav-link {
@@ -932,17 +940,94 @@
     }
   }
 
-  .cart-badge-pulse {
-    animation: cart-badge-pulse 0.55s ease-out;
+  .cart-icon-bounce {
+    animation: cart-icon-bounce 0.65s cubic-bezier(0.34, 1.4, 0.64, 1);
   }
 
-  @keyframes cart-badge-pulse {
+  @keyframes cart-icon-bounce {
     0%,
     100% {
-      transform: scale(1);
+      transform: translateY(0) scale(1);
     }
-    40% {
-      transform: scale(1.25);
+    35% {
+      transform: translateY(-2px) scale(1.08);
+    }
+    60% {
+      transform: translateY(1px) scale(0.98);
+    }
+  }
+
+  .cart-icon-ring {
+    animation: cart-icon-ring 0.7s ease-out;
+  }
+
+  @keyframes cart-icon-ring {
+    0% {
+      opacity: 0.55;
+      transform: scale(0.85);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.55);
+    }
+  }
+
+  .cart-badge-pulse {
+    animation: cart-badge-pop 0.6s cubic-bezier(0.34, 1.4, 0.64, 1);
+  }
+
+  @keyframes cart-badge-pop {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.5;
+    }
+    45% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .mini-cart-panel {
+    animation: mini-cart-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes mini-cart-in {
+    from {
+      opacity: 0;
+      transform: translateY(-6px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .faq-accordion details[open] .faq-answer {
+    animation: faq-answer-in 0.25s ease-out both;
+  }
+
+  @keyframes faq-answer-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cart-icon-bounce,
+    .cart-icon-ring,
+    .cart-badge-pulse,
+    .mini-cart-panel,
+    .faq-accordion details[open] .faq-answer {
+      animation: none;
     }
   }
 

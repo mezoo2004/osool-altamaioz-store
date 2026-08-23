@@ -1,5 +1,6 @@
 "use client";
 
+import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
@@ -19,13 +20,11 @@ export function LanguageSwitcher({ label, className }: LanguageSwitcherProps) {
     <button
       type="button"
       onClick={() => router.replace(pathname, { locale: nextLocale })}
-      className={cn(
-        "rounded-lg border border-border px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-text-secondary transition-colors hover:border-brand-black-soft hover:text-text-primary",
-        className,
-      )}
+      className={cn("lang-switcher-premium", className)}
       aria-label={label}
     >
-      {label}
+      <Globe className="h-3.5 w-3.5 opacity-70" strokeWidth={1.5} aria-hidden="true" />
+      <span>{locale === "ar" ? "EN" : "AR"}</span>
     </button>
   );
 }

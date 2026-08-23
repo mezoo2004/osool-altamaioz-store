@@ -201,6 +201,63 @@ See prior sections — spaces, scenes, lighting experience, analytics abstractio
 
 ISR PDPs, cart, wishlist, auth (bcrypt + JWT httpOnly), checkout with snapshots, dev payment mode.
 
+## AI Lighting Consultant V2 (DONE — Aug 2026)
+
+Stateful conversational assistant integrated with Lighting Designer V2.
+
+- [x] Session memory (sessionStorage + server state merge)
+- [x] Saudi/Gulf Arabic patterns + progressive missing-field questions
+- [x] Intent detection (14+ intents incl. VISUAL_PRODUCT_SEARCH hook)
+- [x] Lighting Designer V2 engine reuse (no duplicate calculations)
+- [x] Real product cards from ProductRepository
+- [x] Why / alternative / warmer / ceiling / space-pivot follow-ups
+- [x] Shop The Scene + Lighting Experience handoff CTAs
+- [x] Demo rule engine + optional OpenAI polish when `OPENAI_API_KEY` set
+- [x] Visual product search from image upload (shared with main search bar)
+
+## Visual Product Search — Entry Points (DONE — Aug 2026)
+
+Shared `VisualSearchService` for main search bar + AI assistant.
+
+- [x] `VisualSearchService`, `VisionProvider`, `CatalogVisualMatcher`, `FallbackVisualSearch`
+- [x] `/api/search/visual` — multipart image upload, no persistent image storage
+- [x] Shared `ImageSourcePicker` — camera / photo library / files (mobile bottom sheet + desktop popover)
+- [x] Main `SearchBar` — image-plus button, inline preview, analyzing state, real catalog results
+- [x] AI composer — image attachment, preview, visual context in session state
+- [x] Visual follow-ups: colour refine, second option, smaller, room fit + Designer, scene handoff
+- [x] No-API fallback — type/color/style clarification chips
+- [x] AR/EN i18n (`visualSearch` namespace)
+
+## Smart QR Product Passport (DONE — Aug 2026)
+
+Premium post-purchase product passport via signed JWT tokens — no schema migration.
+
+- [x] `/ar|en/passport/[token]` — public product + purchase-linked passports
+- [x] Signed JWT tokens (`PASSPORT_SECRET` / `AUTH_SECRET`) — opaque, no PII in URL
+- [x] Real catalog specs (CCT, wattage, finish, beam angle, lumens from specs, installation)
+- [x] Safe purchase context (order number, date, quantity only)
+- [x] Warranty/installation sections with honest fallbacks (no invented data)
+- [x] QR generation (`qrcode`) + modal + print-ready card layout
+- [x] Order detail — Product Passport + Show QR per line item
+- [x] Smart actions: AI assistant, replacements, complementary, Shop The Scene
+- [x] AI consultant preloads product context via custom event bridge
+- [x] Analytics hooks: `passport_view`, `passport_qr_open`, `passport_ai_click`, etc.
+
+## Lighting Designer V2 (DONE — Aug 2026)
+
+Data-driven lighting recommendation engine at `/lighting-experience`.
+
+- [x] Expanded inputs: dimensions, wall/ceiling swatches, mood, CCT, interior style, natural light, brightness preference
+- [x] Configurable lux targets (`data/experiences/lux-targets.json`) + transparent lumen formula
+- [x] Reflectance / ceiling height / interior / natural light adjustment factors
+- [x] Real product matching via ProductRepository with HIGH/MEDIUM/LOW confidence
+- [x] Fixture quantity sanity checks (e.g. bedroom 44 m² ≥ 8 general downlights)
+- [x] Multi-layer lighting (general, task, accent, decorative, ambient) + layout guidance
+- [x] Premium result page with explanations, confidence, official disclaimer
+- [x] Serializable V2 schema + localStorage + Shop The Scene handoff URL params
+- [ ] **DEFERRED** — Save to user account, PDF report checkout, AI consultant integration
+- [ ] **DEFERRED** — Full scene bundle preload from designer `bundle` query param
+
 ## Build status
 
 Run after changes:

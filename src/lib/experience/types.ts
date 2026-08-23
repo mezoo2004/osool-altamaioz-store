@@ -81,6 +81,12 @@ export type WallColorTone =
   | "warm_tones"
   | "unsure";
 
+export type InteriorStyle = "light" | "balanced" | "dark";
+export type NaturalLightLevel = "low" | "medium" | "high";
+export type BrightnessPreference = "soft" | "standard" | "bright";
+export type ConfidenceLevel = "HIGH" | "MEDIUM" | "LOW";
+export type LightingLayerKind = "general" | "task" | "accent" | "decorative" | "ambient";
+
 export type LightingExperienceInput = {
   spaceSlug: string;
   length: number;
@@ -89,6 +95,10 @@ export type LightingExperienceInput = {
   mood: MoodId;
   cct: CctChoice;
   wallColor: WallColorTone;
+  ceilingColor?: WallColorTone;
+  interiorStyle?: InteriorStyle;
+  naturalLight?: NaturalLightLevel;
+  brightnessPreference?: BrightnessPreference;
 };
 
 export type RecommendationApproach = {
@@ -115,19 +125,66 @@ export type RecommendationItem = {
   reasonEn: string;
   categorySlug?: string;
   suggestedWattage?: string;
+  layer?: LightingLayerKind;
+  confidence?: ConfidenceLevel;
+  confidenceNoteAr?: string;
+  confidenceNoteEn?: string;
+  lumensPerFixture?: number | null;
+};
+
+export type LayerRecommendation = {
+  layer: LightingLayerKind;
+  categorySlug: string;
+  quantity: number;
+  reasonAr: string;
+  reasonEn: string;
+};
+
+export type LayoutSuggestion = {
+  rows: number;
+  columns: number;
+  spacingM: number;
+  wallOffsetM: number;
+  notesAr: string;
+  notesEn: string;
+};
+
+export type LumenCalculationSummary = {
+  targetLux: number;
+  targetLuxNoteAr: string;
+  targetLuxNoteEn: string;
+  requiredLumens: number;
+  adjustmentFactor: number;
+  formulaDescriptionAr: string;
+  formulaDescriptionEn: string;
+  volume: number;
 };
 
 export type LightingRecommendationResult = {
+  schemaVersion: 2;
   spaceSlug: string;
   area: number;
   mood: MoodId;
   cct: CctChoice;
   wallColor: WallColorTone;
+  ceilingColor?: WallColorTone;
+  interiorStyle?: InteriorStyle;
+  naturalLight?: NaturalLightLevel;
+  brightnessPreference?: BrightnessPreference;
   explanationAr: string;
   explanationEn: string;
+  explanationsAr: string[];
+  explanationsEn: string[];
   approach: RecommendationApproach;
+  calculation: LumenCalculationSummary;
+  layers: LayerRecommendation[];
+  layout: LayoutSuggestion;
+  confidence: ConfidenceLevel;
+  confidenceNotesAr: string[];
+  confidenceNotesEn: string[];
   categories: RecommendationCategory[];
   items: RecommendationItem[];
+  dimensions: { length: number; width: number; height: number };
 };
 
 export type ResolvedSceneItem = {

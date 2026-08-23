@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AccountPageShell } from "@/components/commerce/account-page-shell";
+import { OrderPassportActions } from "@/components/passport/order-passport-actions";
 import { EmptyState } from "@/components/ui/empty-state";
 import type { Order } from "@/lib/commerce/types";
 import { cn } from "@/lib/utils";
@@ -118,9 +119,16 @@ export function OrderDetailView({
       <OrderTimeline order={order} />
       <ul className="divide-y divide-border">
         {order.items.map((item) => (
-          <li key={item.sku} className="flex justify-between gap-4 py-3 text-sm">
-            <span>{locale === "ar" ? item.nameAr : item.nameEn} × {item.quantity}</span>
-            <span className="shrink-0 tabular-nums">{formatCurrency(item.lineTotal, locale)}</span>
+          <li key={item.id || item.sku} className="py-3 text-sm">
+            <div className="flex justify-between gap-4">
+              <span>{locale === "ar" ? item.nameAr : item.nameEn} × {item.quantity}</span>
+              <span className="shrink-0 tabular-nums">{formatCurrency(item.lineTotal, locale)}</span>
+            </div>
+            <OrderPassportActions
+              orderNumber={order.orderNumber}
+              item={item}
+              locale={locale as "ar" | "en"}
+            />
           </li>
         ))}
       </ul>

@@ -111,6 +111,7 @@ export type FulfillmentStatus =
   | "CANCELLED";
 
 export type OrderItemSnapshot = {
+  id: string;
   productId: string;
   variantId: string;
   productSlug: string;

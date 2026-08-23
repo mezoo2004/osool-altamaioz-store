@@ -15,7 +15,10 @@ import { CartToast } from "@/components/commerce/cart-toast";
 export type CartAddedMeta = {
   productName: string;
   productSlug?: string;
+  variantSku?: string;
   quantity: number;
+  imageUrl?: string | null;
+  variantNote?: string | null;
 };
 
 type CartFeedbackContextValue = {
@@ -24,15 +27,20 @@ type CartFeedbackContextValue = {
   closeMiniCart: () => void;
   isMiniCartOpen: boolean;
   badgePulse: boolean;
+  cartIconPulse: boolean;
+  lastAdded: CartAddedMeta | null;
 };
 
 const CartFeedbackContext = createContext<CartFeedbackContextValue | null>(null);
 
 export function CartFeedbackProvider({ children }: { children: React.ReactNode }) {
   const [toast, setToast] = useState<CartAddedMeta | null>(null);
+  const [lastAdded, setLastAdded] = useState<CartAddedMeta | null>(null);
   const [isMiniCartOpen, setIsMiniCartOpen] = useState(false);
   const [badgePulse, setBadgePulse] = useState(false);
+  const [cartIconPulse, setCartIconPulse] = useState(false);
   const toastTimer = useRef<number | null>(null);
+  const miniCartTimer = useRef<number | null>(null);
 
   const clearToastTimer = useCallback(() => {
     if (toastTimer.current) {
@@ -41,14 +49,25 @@ export function CartFeedbackProvider({ children }: { children: React.ReactNode }
     }
   }, []);
 
+  const clearMiniCartTimer = useCallback(() => {
+    if (miniCartTimer.current) {
+      window.clearTimeout(miniCartTimer.current);
+      miniCartTimer.current = null;
+    }
+  }, []);
+
   const showAddedFeedback = useCallback(
     (meta: CartAddedMeta) => {
       clearToastTimer();
+      clearMiniCartTimer();
+      setLastAdded(meta);
       setToast(meta);
       setBadgePulse(true);
+      setCartIconPulse(true);
       toastTimer.current = window.setTimeout(() => setToast(null), 4500);
+      miniCartTimer.current = window.setTimeout(() => setIsMiniCartOpen(true), 280);
     },
-    [clearToastTimer],
+    [clearToastTimer, clearMiniCartTimer],
   );
 
   useEffect(() => {
@@ -57,7 +76,19 @@ export function CartFeedbackProvider({ children }: { children: React.ReactNode }
     return () => window.clearTimeout(t);
   }, [badgePulse]);
 
-  useEffect(() => () => clearToastTimer(), [clearToastTimer]);
+  useEffect(() => {
+    if (!cartIconPulse) return;
+    const t = window.setTimeout(() => setCartIconPulse(false), 700);
+    return () => window.clearTimeout(t);
+  }, [cartIconPulse]);
+
+  useEffect(
+    () => () => {
+      clearToastTimer();
+      clearMiniCartTimer();
+    },
+    [clearToastTimer, clearMiniCartTimer],
+  );
 
   const value = useMemo(
     () => ({
@@ -66,15 +97,28 @@ export function CartFeedbackProvider({ children }: { children: React.ReactNode }
       closeMiniCart: () => setIsMiniCartOpen(false),
       isMiniCartOpen,
       badgePulse,
+      cartIconPulse,
+      lastAdded,
     }),
-    [showAddedFeedback, isMiniCartOpen, badgePulse],
+    [showAddedFeedback, isMiniCartOpen, badgePulse, cartIconPulse, lastAdded],
   );
 
   return (
     <CartFeedbackContext.Provider value={value}>
       {children}
-      <CartToast toast={toast} onDismiss={() => setToast(null)} onViewCart={() => setIsMiniCartOpen(true)} />
-      <MiniCartPreview open={isMiniCartOpen} onClose={() => setIsMiniCartOpen(false)} />
+      <CartToast
+        toast={toast}
+        onDismiss={() => setToast(null)}
+        onViewCart={() => {
+          setIsMiniCartOpen(true);
+          setToast(null);
+        }}
+      />
+      <MiniCartPreview
+        open={isMiniCartOpen}
+        onClose={() => setIsMiniCartOpen(false)}
+        lastAdded={lastAdded}
+      />
     </CartFeedbackContext.Provider>
   );
 }

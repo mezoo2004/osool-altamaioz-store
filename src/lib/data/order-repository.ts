@@ -23,7 +23,18 @@ function ensureStore() {
 
 function readOrders(): Order[] {
   ensureStore();
-  return JSON.parse(fs.readFileSync(ORDERS_FILE, "utf8")) as Order[];
+  const orders = JSON.parse(fs.readFileSync(ORDERS_FILE, "utf8")) as Order[];
+  return orders.map(normalizeOrder);
+}
+
+function normalizeOrder(order: Order): Order {
+  return {
+    ...order,
+    items: order.items.map((item, index) => ({
+      ...item,
+      id: item.id ?? `${order.orderNumber}:${item.sku}:${index}`,
+    })),
+  };
 }
 
 function writeOrders(orders: Order[]) {
@@ -85,6 +96,7 @@ export class FileOrderRepository implements OrderRepository {
       },
       shippingAddress: data.address,
       items: validated.lines.map((l) => ({
+        id: crypto.randomUUID(),
         productId: l.productId,
         variantId: l.variantId,
         productSlug: l.productSlug,

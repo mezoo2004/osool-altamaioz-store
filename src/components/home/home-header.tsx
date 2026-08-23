@@ -53,15 +53,15 @@ export function HomeHeader() {
                 <SearchBar className="home-header-search max-w-2xl xl:max-w-3xl" />
               </div>
 
-              <div className="ms-auto flex items-center gap-0.5 md:gap-1">
+              <div className="ms-auto flex items-center gap-1 md:gap-1.5">
                 <div className="lg:hidden">
                   <LanguageSwitcher label={t("language")} />
                 </div>
                 <IconLink href="/account" label={t("account")}>
-                  <User strokeWidth={1.5} className="h-5 w-5" />
+                  <User strokeWidth={1.5} className="header-icon-svg" />
                 </IconLink>
                 <IconLink href="/wishlist" label={t("wishlist")}>
-                  <Heart strokeWidth={1.5} className="h-5 w-5" />
+                  <Heart strokeWidth={1.5} className="header-icon-svg" />
                 </IconLink>
                 <CartIconButton label={t("cart")} count={cartCount} />
               </div>

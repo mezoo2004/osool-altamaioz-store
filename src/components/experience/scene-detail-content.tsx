@@ -150,11 +150,17 @@ export function SceneDetailContent({
       variantId: panelProduct.variant.id,
       variantSku: panelProduct.variant.sku,
       quantity: qty,
+      displayName: getProductName(panelProduct.product, locale),
+      imageUrl: panelProduct.variant.imageUrl,
+      variantNote: panelProduct.variant.cct ? `${panelProduct.variant.cct}K` : null,
     });
     showAddedFeedback({
       productName: getProductName(panelProduct.product, locale),
       productSlug: panelProduct.product.slug,
+      variantSku: panelProduct.variant.sku,
       quantity: qty,
+      imageUrl: panelProduct.variant.imageUrl,
+      variantNote: panelProduct.variant.cct ? `${panelProduct.variant.cct}K` : null,
     });
     trackEvent("shop_scene_add_item", { scene_slug: scene.slug, product_slug: panelProduct.product.slug });
   };

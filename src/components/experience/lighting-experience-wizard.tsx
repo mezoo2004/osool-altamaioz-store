@@ -13,13 +13,19 @@ import type { Product } from "@/lib/catalog/types";
 import { trackEvent } from "@/lib/analytics";
 import { designTokens } from "@/lib/design-tokens";
 import type {
+  BrightnessPreference,
   CctChoice,
+  InteriorStyle,
   LightingRecommendationResult,
   MoodId,
+  NaturalLightLevel,
   SpaceRecord,
   WallColorTone,
 } from "@/lib/experience/types";
-import { buildScenePreviewUrl, getSpaceImageEntry, resolveSceneSlugFromSpace } from "@/lib/experience/space-images";
+import { buildDesignerSceneHandoffUrl } from "@/lib/experience/lighting-designer-handoff";
+import { saveLightingRecommendation } from "@/lib/experience/lighting-designer-storage";
+import { WALL_SWATCH_HEX } from "@/lib/experience/lighting-designer-constants";
+import { getSpaceImageEntry } from "@/lib/experience/space-images";
 import { cn } from "@/lib/utils";
 
 const MOODS: MoodId[] = [
@@ -36,6 +42,10 @@ const WALL_COLORS: WallColorTone[] = [
   "warm_tones",
   "unsure",
 ];
+
+const INTERIOR_STYLES: InteriorStyle[] = ["light", "balanced", "dark"];
+const NATURAL_LIGHT: NaturalLightLevel[] = ["low", "medium", "high"];
+const BRIGHTNESS_PREFS: BrightnessPreference[] = ["soft", "standard", "bright"];
 
 type LightingExperienceWizardProps = {
   spaces: SpaceRecord[];
@@ -59,6 +69,10 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
   const [height, setHeight] = useState("");
   const [mood, setMood] = useState<MoodId | "">("");
   const [wallColor, setWallColor] = useState<WallColorTone>("unsure");
+  const [ceilingColor, setCeilingColor] = useState<WallColorTone | "">("");
+  const [interiorStyle, setInteriorStyle] = useState<InteriorStyle>("balanced");
+  const [naturalLight, setNaturalLight] = useState<NaturalLightLevel>("medium");
+  const [brightnessPreference, setBrightnessPreference] = useState<BrightnessPreference>("standard");
   const [cct, setCct] = useState<CctChoice | "">("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [result, setResult] = useState<LightingRecommendationResult | null>(null);
@@ -71,6 +85,23 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
     const initialSpace = searchParams.get("space");
     if (initialSpace && spaces.some((s) => s.slug === initialSpace)) {
       setSpaceSlug(initialSpace);
+    }
+    const l = searchParams.get("length");
+    const w = searchParams.get("width");
+    const h = searchParams.get("height");
+    if (l) setLength(l);
+    if (w) setWidth(w);
+    if (h) setHeight(h);
+    const moodParam = searchParams.get("mood") as MoodId | null;
+    if (moodParam && MOODS.includes(moodParam)) setMood(moodParam);
+    const wallParam = searchParams.get("wallColor") as WallColorTone | null;
+    if (wallParam && WALL_COLORS.includes(wallParam)) setWallColor(wallParam);
+    const cctParam = searchParams.get("cct") as CctChoice | null;
+    if (cctParam && CCTS.includes(cctParam)) setCct(cctParam);
+    const stepParam = searchParams.get("step");
+    if (stepParam) {
+      const n = parseInt(stepParam, 10);
+      if (n >= 1 && n <= 5) setStep(n as Step);
     }
   }, [searchParams, spaces]);
 
@@ -108,9 +139,13 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
       const l = parseFloat(length);
       const w = parseFloat(width);
       const h = parseFloat(height);
-      if (!length || Number.isNaN(l) || l <= 0 || l > 100) nextErrors.length = t("errorDimension");
-      if (!width || Number.isNaN(w) || w <= 0 || w > 100) nextErrors.width = t("errorDimension");
-      if (!height || Number.isNaN(h) || h <= 0 || h > 20) nextErrors.height = t("errorHeight");
+      if (!length || Number.isNaN(l) || l <= 0 || l > 100) nextErrors.length = t("errorInvalidDimension");
+      else if (l < 0.5) nextErrors.length = t("errorDimension");
+      if (!width || Number.isNaN(w) || w <= 0 || w > 100) nextErrors.width = t("errorInvalidDimension");
+      else if (w < 0.5) nextErrors.width = t("errorDimension");
+      if (!height || Number.isNaN(h) || h <= 0 || h > 12) nextErrors.height = t("errorInvalidDimension");
+      else if (h < 2) nextErrors.height = t("errorHeight");
+      if (l > 0 && w > 0 && l * w > 800) nextErrors.area = t("errorAreaTooLarge");
     }
     if (current === 3 && !mood) nextErrors.mood = t("errorMoodRequired");
     if (current === 4 && !cct) nextErrors.cct = t("errorCctRequired");
@@ -158,6 +193,10 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
             mood,
             cct,
             wallColor,
+            ceilingColor: ceilingColor || undefined,
+            interiorStyle,
+            naturalLight,
+            brightnessPreference,
           }),
         });
         const recommendation = (await res.json()) as LightingRecommendationResult;
@@ -176,6 +215,7 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
         setQuantities(qtyMap);
         setResult(recommendation);
         setResultProducts(products ?? []);
+        saveLightingRecommendation(recommendation);
         trackEvent("lighting_experience_complete", { space_slug: spaceSlug });
         syncUrl({ step: 5 });
         setStep(5);
@@ -353,17 +393,57 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
                       syncUrl({ wallColor: tone });
                     }}
                     className={cn(
-                      "rounded-lg border px-3 py-3 text-start text-sm transition-colors motion-reduce:transition-none",
+                      "flex items-center gap-3 rounded-lg border px-3 py-3 text-start text-sm transition-colors motion-reduce:transition-none",
                       wallColor === tone
                         ? "border-brand-orange bg-brand-orange/5 ring-1 ring-brand-orange/30"
                         : "border-border bg-white hover:border-brand-gray",
                     )}
                   >
+                    <span
+                      className="h-8 w-8 shrink-0 rounded-md border border-black/10 shadow-inner"
+                      style={{ backgroundColor: WALL_SWATCH_HEX[tone] }}
+                      aria-hidden="true"
+                    />
                     {t(`wall_${tone}` as "wall_unsure")}
                   </button>
                 ))}
               </div>
             </div>
+            <div className="space-y-3 border-t border-border pt-6">
+              <h3 className="text-sm font-semibold">{t("ceilingColorTitle")}</h3>
+              <p className="text-meta">{t("ceilingColorHint")}</p>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => setCeilingColor("")}
+                  className={cn(
+                    "rounded-lg border px-3 py-2 text-xs transition-colors",
+                    !ceilingColor ? "border-brand-orange bg-brand-orange/5" : "border-border bg-white",
+                  )}
+                >
+                  {locale === "ar" ? "مثل الجدران" : "Same as walls"}
+                </button>
+                {WALL_COLORS.filter((t) => t !== "unsure").map((tone) => (
+                  <button
+                    key={tone}
+                    type="button"
+                    onClick={() => setCeilingColor(tone)}
+                    className={cn(
+                      "flex items-center gap-2 rounded-lg border px-2 py-1.5 text-xs transition-colors",
+                      ceilingColor === tone ? "border-brand-orange bg-brand-orange/5" : "border-border bg-white",
+                    )}
+                  >
+                    <span
+                      className="h-5 w-5 rounded border border-black/10"
+                      style={{ backgroundColor: WALL_SWATCH_HEX[tone] }}
+                      aria-hidden="true"
+                    />
+                    {t(`wall_${tone}` as "wall_unsure")}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {errors.area && <p className="text-sm text-brand-orange">{errors.area}</p>}
           </div>
         )}
 
@@ -395,76 +475,171 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
         )}
 
         {step === 4 && (
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="space-y-6">
-              <h2 className="heading-subsection">{t("step4Title")}</h2>
-              {errors.cct && <p className="text-sm text-brand-orange">{errors.cct}</p>}
-              <div className="grid gap-3">
-                {CCTS.map((k) => {
-                  const label = designTokens.cct[k];
-                  return (
-                    <button
-                      key={k}
-                      type="button"
-                      onClick={() => {
-                        setCct(k);
-                        syncUrl({ cct: k });
-                      }}
-                      className={cn(
-                        "flex items-center gap-4 rounded-lg border px-4 py-3.5 text-start transition-colors motion-reduce:transition-none",
-                        cct === k
-                          ? "border-brand-black-soft bg-brand-black-soft/5 ring-1 ring-brand-black-soft"
-                          : "border-border bg-white hover:border-brand-gray",
-                      )}
-                    >
-                      <span
-                        className="h-9 w-9 shrink-0 rounded-full border border-black/10 shadow-inner"
-                        style={{ backgroundColor: label.hex }}
-                        aria-hidden="true"
-                      />
-                      <span>
-                        <span className="block text-sm font-semibold tabular-nums">{k}</span>
-                        <span className="text-meta">{locale === "ar" ? label.ar : label.en}</span>
-                      </span>
-                    </button>
-                  );
-                })}
+          <div className="space-y-8">
+            <div className="grid gap-8 lg:grid-cols-2">
+              <div className="space-y-6">
+                <h2 className="heading-subsection">{t("step4Title")}</h2>
+                {errors.cct && <p className="text-sm text-brand-orange">{errors.cct}</p>}
+                <div className="grid gap-3">
+                  {CCTS.map((k) => {
+                    const label = designTokens.cct[k];
+                    return (
+                      <button
+                        key={k}
+                        type="button"
+                        onClick={() => {
+                          setCct(k);
+                          syncUrl({ cct: k });
+                        }}
+                        className={cn(
+                          "flex items-center gap-4 rounded-lg border px-4 py-3.5 text-start transition-colors motion-reduce:transition-none",
+                          cct === k
+                            ? "border-brand-black-soft bg-brand-black-soft/5 ring-1 ring-brand-black-soft"
+                            : "border-border bg-white hover:border-brand-gray",
+                        )}
+                      >
+                        <span
+                          className="h-9 w-9 shrink-0 rounded-full border border-black/10 shadow-inner"
+                          style={{ backgroundColor: label.hex }}
+                          aria-hidden="true"
+                        />
+                        <span>
+                          <span className="block text-sm font-semibold tabular-nums">{k}</span>
+                          <span className="text-meta">{locale === "ar" ? label.ar : label.en}</span>
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              <div
+                className="overflow-hidden rounded-xl border border-border transition-colors duration-500 motion-reduce:transition-none"
+                style={cctPreviewStyle}
+              >
+                <div className="flex aspect-[4/3] items-end p-5">
+                  <p className="rounded-lg bg-white/85 px-4 py-2.5 text-sm backdrop-blur">{t("cctPreviewHint")}</p>
+                </div>
               </div>
             </div>
-            <div
-              className="overflow-hidden rounded-xl border border-border transition-colors duration-500 motion-reduce:transition-none"
-              style={cctPreviewStyle}
-            >
-              <div className="flex aspect-[4/3] items-end p-5">
-                <p className="rounded-lg bg-white/85 px-4 py-2.5 text-sm backdrop-blur">{t("cctPreviewHint")}</p>
-              </div>
+
+            <div className="grid gap-6 border-t border-border pt-8 md:grid-cols-3">
+              <PreferenceGroup
+                title={t("interiorStyleTitle")}
+                options={INTERIOR_STYLES.map((s) => ({
+                  id: s,
+                  label: t(`interiorStyle_${s}` as "interiorStyle_balanced"),
+                }))}
+                value={interiorStyle}
+                onChange={(v) => setInteriorStyle(v as InteriorStyle)}
+              />
+              <PreferenceGroup
+                title={t("naturalLightTitle")}
+                options={NATURAL_LIGHT.map((s) => ({
+                  id: s,
+                  label: t(`naturalLight_${s}` as "naturalLight_medium"),
+                }))}
+                value={naturalLight}
+                onChange={(v) => setNaturalLight(v as NaturalLightLevel)}
+              />
+              <PreferenceGroup
+                title={t("brightnessTitle")}
+                options={BRIGHTNESS_PREFS.map((s) => ({
+                  id: s,
+                  label: t(`brightness_${s}` as "brightness_standard"),
+                }))}
+                value={brightnessPreference}
+                onChange={(v) => setBrightnessPreference(v as BrightnessPreference)}
+              />
             </div>
           </div>
         )}
 
         {step === 5 && result && (
           <div className="space-y-8">
-            <div className="card-surface p-5 md:p-8">
-              <h2 className="heading-subsection">{t("step5Title")}</h2>
-              <p className="mt-3 text-text-secondary">{locale === "ar" ? result.explanationAr : result.explanationEn}</p>
-              {result.approach && (
-                <div className="mt-4 rounded-lg border border-border bg-surface-muted p-4 text-sm">
-                  <p className="font-medium">{t("approachTitle")}</p>
-                  <p className="mt-1 text-text-secondary">
-                    {locale === "ar" ? result.approach.wallImpactAr : result.approach.wallImpactEn}
-                  </p>
-                  <p className="mt-2 text-meta">
-                    {t("estimatedLux")}: ~{result.approach.estimatedLuxTarget} lux
-                  </p>
+            <div className="card-surface overflow-hidden p-0">
+              <div className="border-b border-border bg-gradient-to-br from-brand-orange/5 to-surface-muted px-5 py-6 md:px-8">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <h2 className="heading-subsection">{t("step5Title")}</h2>
+                    <p className="mt-2 max-w-2xl text-text-secondary">
+                      {locale === "ar" ? result.explanationAr : result.explanationEn}
+                    </p>
+                  </div>
+                  <ConfidenceBadge level={result.confidence} label={t(`confidence_${result.confidence}` as "confidence_HIGH")} />
                 </div>
-              )}
-              <dl className="mt-6 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-5">
-                <SummaryItem label={t("step1Label")} value={selectedSpace ? (locale === "ar" ? selectedSpace.nameAr : selectedSpace.nameEn) : "—"} />
-                <SummaryItem label={t("dimensionsSummary")} value={`${length} × ${width} × ${height} ${t("meters")}`} />
-                <SummaryItem label={t("wallColorTitle")} value={t(`wall_${result.wallColor}` as "wall_unsure")} />
-                <SummaryItem label={t("step3Label")} value={mood ? t(`mood_${mood}` as "mood_warm") : "—"} />
-                <SummaryItem label={t("step4Label")} value={cct || "—"} />
-              </dl>
+              </div>
+
+              <div className="space-y-6 p-5 md:p-8">
+                <dl className="grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
+                  <SummaryItem label={t("step1Label")} value={selectedSpace ? (locale === "ar" ? selectedSpace.nameAr : selectedSpace.nameEn) : "—"} />
+                  <SummaryItem label={t("dimensionsSummary")} value={`${length} × ${width} × ${height} ${t("meters")}`} />
+                  <SummaryItem label={t("wallColorTitle")} value={t(`wall_${result.wallColor}` as "wall_unsure")} />
+                  <SummaryItem label={t("step4Label")} value={cct || "—"} />
+                  <SummaryItem label={t("step3Label")} value={mood ? t(`mood_${mood}` as "mood_warm") : "—"} />
+                  <SummaryItem label={t("volume")} value={`${result.calculation.volume.toFixed(0)} m³`} />
+                  <SummaryItem label={t("estimatedLux")} value={`~${result.calculation.targetLux} lux`} />
+                  <SummaryItem label={t("requiredLumens")} value={`~${result.calculation.requiredLumens.toLocaleString()} lm`} />
+                </dl>
+
+                {result.approach && (
+                  <div className="rounded-lg border border-border bg-surface-muted p-4 text-sm">
+                    <p className="font-medium">{t("approachTitle")}</p>
+                    <p className="mt-1 text-text-secondary">
+                      {locale === "ar" ? result.approach.wallImpactAr : result.approach.wallImpactEn}
+                    </p>
+                    <p className="mt-2 text-meta">
+                      {locale === "ar" ? result.calculation.formulaDescriptionAr : result.calculation.formulaDescriptionEn}
+                    </p>
+                  </div>
+                )}
+
+                {result.layers.length > 0 && (
+                  <div>
+                    <h3 className="font-semibold">{t("layersTitle")}</h3>
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                      {result.layers.map((layer) => (
+                        <div key={layer.layer} className="rounded-lg border border-border bg-white px-4 py-3 text-sm">
+                          <p className="font-medium">
+                            {t(`layer_${layer.layer}` as "layer_general")} · ×{layer.quantity}
+                          </p>
+                          <p className="mt-1 text-meta">{locale === "ar" ? layer.reasonAr : layer.reasonEn}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {result.layout && (
+                  <div className="rounded-lg border border-dashed border-brand-orange/30 bg-brand-orange/[0.03] p-4 text-sm">
+                    <h3 className="font-semibold">{t("layoutTitle")}</h3>
+                    <p className="mt-2 text-text-secondary">
+                      {locale === "ar" ? result.layout.notesAr : result.layout.notesEn}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-4 text-meta">
+                      <span>{t("layoutSpacing")}: ~{result.layout.spacingM} {t("meters")}</span>
+                      <span>{t("layoutWallOffset")}: ~{result.layout.wallOffsetM} {t("meters")}</span>
+                    </div>
+                  </div>
+                )}
+
+                {(locale === "ar" ? result.explanationsAr : result.explanationsEn).length > 0 && (
+                  <div>
+                    <h3 className="font-semibold">{t("explanationsTitle")}</h3>
+                    <ul className="mt-3 space-y-2 text-sm text-text-secondary">
+                      {(locale === "ar" ? result.explanationsAr : result.explanationsEn).map((line, i) => (
+                        <li key={i} className="flex gap-2">
+                          <span className="text-brand-orange" aria-hidden="true">•</span>
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {result.confidence !== "HIGH" && (
+                  <p className="text-sm text-meta">{t("missingDataNote")}</p>
+                )}
+              </div>
             </div>
 
             {result.categories.length > 0 && (
@@ -491,13 +666,25 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
                     const variant = product.variants.find((v) => v.id === item.variantId) ?? product.variants[0];
                     const price = getPriceDisplay(product, variant ?? undefined, locale);
                     return (
-                      <div key={item.productSlug} className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface-muted px-4 py-3 text-sm">
+                      <div key={`${item.productSlug}-${item.layer}`} className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-surface-muted px-4 py-3 text-sm">
                         <div className="min-w-0 flex-1">
-                          <p className="font-medium">{getProductName(product, locale)}</p>
+                          <div className="flex flex-wrap items-center gap-2">
+                            {item.layer && (
+                              <span className="rounded bg-brand-orange/10 px-2 py-0.5 text-xs font-medium text-brand-orange">
+                                {t(`layer_${item.layer}` as "layer_general")}
+                              </span>
+                            )}
+                            <p className="font-medium">{getProductName(product, locale)}</p>
+                          </div>
                           <p className="text-meta">{price.text}</p>
                           <p className="mt-1 text-xs text-text-secondary">
                             {locale === "ar" ? item.reasonAr : item.reasonEn} · ×{quantities[item.productSlug] ?? item.quantity}
                           </p>
+                          {item.confidence === "LOW" && (
+                            <p className="mt-1 text-xs text-meta">
+                              {locale === "ar" ? item.confidenceNoteAr : item.confidenceNoteEn}
+                            </p>
+                          )}
                         </div>
                         <input
                           type="number"
@@ -520,16 +707,15 @@ export function LightingExperienceWizard({ spaces, locale }: LightingExperienceW
               </div>
             )}
 
-            <p className="text-meta">{t("disclaimer")}</p>
+            <p className="rounded-lg border border-border bg-surface-muted px-4 py-3 text-sm text-text-secondary">{t("disclaimer")}</p>
             <div className="flex flex-wrap gap-3">
               <button type="button" onClick={handleAddBundle} className="btn-cta">{t("addLightingSetup")}</button>
               {selectedSpace && (
                 <Link
-                  href={buildScenePreviewUrl({
-                    sceneSlug: resolveSceneSlugFromSpace(selectedSpace.slug, selectedSpace.sceneIds),
+                  href={buildDesignerSceneHandoffUrl({
+                    result,
+                    sceneIds: selectedSpace.sceneIds,
                     spaceSlug: selectedSpace.slug,
-                    productSlug: result.items[0]?.productSlug,
-                    cct: result.cct,
                   })}
                   className="btn-cta-secondary inline-flex items-center justify-center"
                 >
@@ -560,6 +746,55 @@ function SummaryItem({ label, value }: { label: string; value: string }) {
     <div className="rounded-lg border border-border bg-surface-muted px-3 py-2.5">
       <dt className="text-meta">{label}</dt>
       <dd className="mt-0.5 font-medium">{value}</dd>
+    </div>
+  );
+}
+
+function ConfidenceBadge({ level, label }: { level: string; label: string }) {
+  const colors =
+    level === "HIGH"
+      ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+      : level === "MEDIUM"
+        ? "border-amber-200 bg-amber-50 text-amber-800"
+        : "border-orange-200 bg-orange-50 text-orange-800";
+  return (
+    <span className={cn("rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide", colors)}>
+      {label}
+    </span>
+  );
+}
+
+function PreferenceGroup({
+  title,
+  options,
+  value,
+  onChange,
+}: {
+  title: string;
+  options: { id: string; label: string }[];
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <div className="space-y-2">
+      <h3 className="text-sm font-semibold">{title}</h3>
+      <div className="flex flex-wrap gap-2">
+        {options.map((opt) => (
+          <button
+            key={opt.id}
+            type="button"
+            onClick={() => onChange(opt.id)}
+            className={cn(
+              "rounded-lg border px-3 py-2 text-xs transition-colors",
+              value === opt.id
+                ? "border-brand-black-soft bg-brand-black-soft/5 ring-1 ring-brand-black-soft"
+                : "border-border bg-white hover:border-brand-gray",
+            )}
+          >
+            {opt.label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
