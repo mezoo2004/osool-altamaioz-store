@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-20T00:59:12.533Z",
+  "generatedAt": "2026-09-20T23:44:45.689Z",
   "importBatch": "batch-001",
   "catalogScope": "initial-imported-sample",
   "catalogScopeNote": "Current counts reflect the initial development sample only — NOT the full Osool Altamaioz catalog.",
   "rawVariantCount": 835,
-  "groupedProductCount": 702,
+  "groupedProductCount": 704,
   "multiVariantProducts": 82,
-  "singleVariantProducts": 620,
+  "singleVariantProducts": 622,
   "importStats": {
     "variantsCreated": 835,
     "variantsUpdated": 0,
@@ -59,8 +59,8 @@
     }
   ],
   "warnings": {
-    "missingImages": 835,
-    "missingSellingPrices": 835,
+    "missingImages": 837,
+    "missingSellingPrices": 100,
     "unmappedCategories": 0
   }
 }

@@ -266,6 +266,9 @@ export function buildCatalog(options = {}) {
 
   const rawRows = collectRawVariants(importBatch);
   const previousProducts = loadPreviousCatalog();
+  const previousByGroupKey = new Map(
+    previousProducts.filter((p) => p.groupKey).map((p) => [p.groupKey, p]),
+  );
   const slugByGroupKey = new Map(
     previousProducts.filter((p) => p.groupKey).map((p) => [p.groupKey, p.slug]),
   );
@@ -274,6 +277,12 @@ export function buildCatalog(options = {}) {
   const conflicts = [];
   const stats = { variantsCreated: 0, variantsUpdated: 0, variantsUnchanged: 0, variantsSkipped: 0 };
   const skuRegistry = new Map();
+  const previousVariantBySku = new Map();
+  for (const prevProduct of previousProducts) {
+    for (const prevVariant of prevProduct.variants ?? []) {
+      previousVariantBySku.set(normalizeSku(prevVariant.sku), prevVariant);
+    }
+  }
 
   for (const row of rawRows) {
   const { variant, block, sourceFile, batchId, sourceRowRef } = row;
@@ -305,6 +314,7 @@ export function buildCatalog(options = {}) {
     const slug = preservedSlug ?? uniqueSlug(slugBase, usedSlugs);
     if (preservedSlug) usedSlugs.add(preservedSlug);
 
+    const prevGroup = previousByGroupKey.get(groupKey);
     groups.set(groupKey, {
       id: productId,
       slug,
@@ -317,10 +327,10 @@ export function buildCatalog(options = {}) {
       primaryCategory,
       sourceFile,
       categoryTitle: block?.categoryTitle ?? null,
-      isFeatured: false,
-      isNew: false,
-      isBestseller: false,
-      isOnOffer: false,
+      isFeatured: prevGroup?.isFeatured ?? false,
+      isNew: prevGroup?.isNew ?? false,
+      isBestseller: prevGroup?.isBestseller ?? false,
+      isOnOffer: prevGroup?.isOnOffer ?? false,
       installationType: productType === "FLOOD" ? "outdoor" : "recessed",
       variants: [],
       importBatch: batchId,
@@ -349,6 +359,7 @@ export function buildCatalog(options = {}) {
     finish: variant.finish ?? null,
     demoPrice: null,
     confirmedPrice: null,
+    compareAtPrice: null,
     salePrice: null,
     priceConfirmed: false,
     priceStatus: "REQUIRES_BUSINESS_CONFIRMATION",
@@ -359,6 +370,15 @@ export function buildCatalog(options = {}) {
     nameAr: variant.rawNameAr,
     nameEn: variant.rawNameEn ?? buildEnglishName(variant, productType),
   };
+
+  const prevVariant = previousVariantBySku.get(normSku);
+  if (prevVariant?.priceConfirmed && prevVariant.confirmedPrice != null) {
+    incomingVariant.confirmedPrice = prevVariant.confirmedPrice;
+    incomingVariant.compareAtPrice = prevVariant.compareAtPrice ?? null;
+    incomingVariant.salePrice = prevVariant.salePrice ?? null;
+    incomingVariant.priceConfirmed = true;
+    incomingVariant.priceStatus = prevVariant.priceStatus ?? "CONFIRMED";
+  }
 
   const action = upsertVariantInProduct(product, incomingVariant, importMeta);
   if (action === "created") stats.variantsCreated++;
@@ -374,18 +394,43 @@ export function buildCatalog(options = {}) {
   });
 }
 
-  const products = [...groups.values()].map((p) => {
+  let products = [...groups.values()].map((p) => {
     const inStock = p.variants.some((v) => v.stockStatus !== "OUT_OF_STOCK");
+    const confirmedPrices = p.variants
+      .filter((v) => v.priceConfirmed && v.confirmedPrice != null)
+      .map((v) => v.confirmedPrice);
+    const isOnOffer =
+      p.isOnOffer ||
+      p.variants.some(
+        (v) =>
+          v.compareAtPrice != null &&
+          v.confirmedPrice != null &&
+          v.compareAtPrice > v.confirmedPrice,
+      );
     return {
       ...p,
       stockStatus: inStock ? "IN_STOCK" : "OUT_OF_STOCK",
       variantCount: p.variants.length,
-      demoPriceFrom: null,
-      demoPriceTo: null,
+      demoPriceFrom: confirmedPrices.length ? Math.min(...confirmedPrices) : null,
+      demoPriceTo: confirmedPrices.length ? Math.max(...confirmedPrices) : null,
+      isOnOffer,
       createdAt: p.createdAt ?? importedAt,
       updatedAt: p.updatedAt ?? importedAt,
     };
   });
+
+  const builtIds = new Set(products.map((p) => p.id));
+  const builtSkus = new Set(
+    products.flatMap((p) => p.variants.map((v) => normalizeSku(v.sku))),
+  );
+  for (const prev of previousProducts) {
+    if (builtIds.has(prev.id)) continue;
+    const onlyInPrev = prev.variants.every((v) => !builtSkus.has(normalizeSku(v.sku)));
+    if (onlyInPrev && prev.importBatch === "official-price-xlsx") {
+      products.push(prev);
+      builtIds.add(prev.id);
+    }
+  }
 
   const categoryCounts = {};
   for (const p of products) {

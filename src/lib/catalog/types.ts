@@ -28,6 +28,8 @@ export type ProductVariant = {
   length?: string | null;
   demoPrice: number | null;
   confirmedPrice: number | null;
+  /** Display-only reference price (8–15% above selling); never used at checkout */
+  compareAtPrice?: number | null;
   salePrice: number | null;
   priceConfirmed: boolean;
   priceStatus: string;

@@ -86,7 +86,7 @@ async function syncProductChunk(tx, products, categoryIdBySlug) {
         isNew: p.isNew ?? false,
         isBestseller: p.isBestseller ?? false,
         isOnOffer: p.isOnOffer ?? false,
-        priceConfirmed: false,
+        priceConfirmed: p.variants?.some((v) => v.priceConfirmed) ?? false,
         sourceBatchId: p.importBatch ?? null,
         importMeta: p.importMeta ?? undefined,
       },
@@ -99,6 +99,8 @@ async function syncProductChunk(tx, products, categoryIdBySlug) {
         productType: p.productType ?? null,
         installationType: p.installationType ?? null,
         stockStatus: p.stockStatus ?? "OUT_OF_STOCK",
+        isOnOffer: p.isOnOffer ?? false,
+        priceConfirmed: p.variants?.some((v) => v.priceConfirmed) ?? false,
         sourceBatchId: p.importBatch ?? null,
         importMeta: p.importMeta ?? undefined,
         updatedAt: new Date(),
@@ -127,6 +129,16 @@ async function syncProductChunk(tx, products, categoryIdBySlug) {
 
     for (const v of p.variants ?? []) {
       const norm = normalizeSku(v.sku);
+      const selling = v.priceConfirmed && v.confirmedPrice != null ? v.confirmedPrice : null;
+      const compareAt =
+        selling != null && v.compareAtPrice != null && v.compareAtPrice > selling
+          ? v.compareAtPrice
+          : null;
+      const attributes = {
+        ...(v.cctLabel ? { cctLabel: v.cctLabel } : {}),
+        ...(compareAt != null ? { compareAtPrice: compareAt } : {}),
+      };
+      const hasAttributes = Object.keys(attributes).length > 0;
       await tx.productVariant.upsert({
         where: { sku: v.sku },
         create: {
@@ -138,13 +150,15 @@ async function syncProductChunk(tx, products, categoryIdBySlug) {
           wattage: v.wattage,
           cct: v.cct,
           finish: v.finish,
-          priceConfirmed: false,
+          price: selling,
+          salePrice: compareAt,
+          priceConfirmed: Boolean(v.priceConfirmed && selling != null),
           stockStatus: v.stockStatus ?? "OUT_OF_STOCK",
           stockQty: v.stockQty ?? 0,
           imageUrl: v.imageUrl ?? null,
           nameAr: v.nameAr,
           nameEn: v.nameEn,
-          attributes: v.cctLabel ? { cctLabel: v.cctLabel } : undefined,
+          attributes: hasAttributes ? attributes : undefined,
           sourceBatchId: v.importMeta?.sourceBatch ?? p.importBatch ?? null,
           sourceFile: v.importMeta?.sourceFile ?? null,
           sourceRowRef: v.importMeta?.sourceRowRef ?? null,
@@ -156,11 +170,15 @@ async function syncProductChunk(tx, products, categoryIdBySlug) {
           wattage: v.wattage,
           cct: v.cct,
           finish: v.finish,
+          price: selling,
+          salePrice: compareAt,
+          priceConfirmed: Boolean(v.priceConfirmed && selling != null),
           stockStatus: v.stockStatus ?? "OUT_OF_STOCK",
           stockQty: v.stockQty ?? 0,
           imageUrl: v.imageUrl ?? null,
           nameAr: v.nameAr,
           nameEn: v.nameEn,
+          attributes: hasAttributes ? attributes : undefined,
           importMeta: v.importMeta ?? undefined,
           updatedAt: new Date(),
         },

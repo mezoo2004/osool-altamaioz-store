@@ -26,6 +26,21 @@ function mapVariant(v: DbVariant): ProductVariant {
       ? (attrs.cctLabel as ProductVariant["cctLabel"])
       : null;
 
+  const confirmedPrice = decimalToNumber(v.price);
+  const dbSale = decimalToNumber(v.salePrice);
+  const attrCompare =
+    typeof attrs.compareAtPrice === "number" && Number.isFinite(attrs.compareAtPrice)
+      ? attrs.compareAtPrice
+      : null;
+  let compareAtPrice: number | null = null;
+  if (attrCompare != null && confirmedPrice != null && attrCompare > confirmedPrice) {
+    compareAtPrice = attrCompare;
+  } else if (dbSale != null && confirmedPrice != null && dbSale > confirmedPrice) {
+    compareAtPrice = dbSale;
+  }
+  const legacySale =
+    dbSale != null && confirmedPrice != null && dbSale < confirmedPrice ? dbSale : null;
+
   return {
     id: v.id,
     sku: v.sku,
@@ -40,8 +55,9 @@ function mapVariant(v: DbVariant): ProductVariant {
     voltage: v.voltage,
     length: v.length,
     demoPrice: null,
-    confirmedPrice: decimalToNumber(v.price),
-    salePrice: decimalToNumber(v.salePrice),
+    confirmedPrice,
+    compareAtPrice,
+    salePrice: legacySale,
     priceConfirmed: v.priceConfirmed,
     priceStatus: v.priceConfirmed ? "CONFIRMED" : "PRICE_UNAVAILABLE",
     stockStatus: v.stockStatus as StockStatus,

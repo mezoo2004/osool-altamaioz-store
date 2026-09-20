@@ -1,12 +1,12 @@
 {
-  "validatedAt": "2026-08-18T17:42:28.112Z",
+  "validatedAt": "2026-09-20T23:22:19.208Z",
   "catalogScope": "initial-imported-sample",
   "summary": {
     "errors": 0,
-    "warnings": 1673,
+    "warnings": 940,
     "informational": {
-      "priceUnavailable": 835,
-      "missingImages": 835
+      "priceUnavailable": 100,
+      "missingImages": 837
     }
   },
   "errors": [],
@@ -28,6 +28,6 @@
     }
   ],
   "info": [
-    "Sample catalog: 702 grouped products"
+    "Sample catalog: 704 grouped products"
   ]
 }

@@ -8,37 +8,75 @@ export function getVariantName(variant: ProductVariant, locale: string) {
   return locale === "ar" ? variant.nameAr : variant.nameEn;
 }
 
+export type PriceDisplay = {
+  text: string;
+  compareAtText: string | null;
+  saveAmount: number | null;
+  isConfirmed: boolean;
+  isDemo: boolean;
+  /** Legacy: true when an old salePrice is below confirmed (rare) */
+  hasSale: boolean;
+  /** Marketing strikethrough compare-at above current selling price */
+  hasMarketingCompare: boolean;
+};
+
+function resolveMarketingCompareAt(variant: ProductVariant): number | null {
+  const selling = variant.confirmedPrice;
+  if (selling == null) return null;
+
+  if (variant.compareAtPrice != null && variant.compareAtPrice > selling) {
+    return variant.compareAtPrice;
+  }
+
+  if (variant.salePrice != null && variant.salePrice > selling) {
+    return variant.salePrice;
+  }
+
+  return null;
+}
+
 export function getPriceDisplay(
   product: Product,
   variant: ProductVariant | undefined,
   locale: string,
-): { text: string; isConfirmed: boolean; isDemo: boolean; hasSale: boolean } {
+): PriceDisplay {
   const v = variant ?? product.variants[0];
   if (!v) {
     return {
       text: locale === "ar" ? "السعر غير متاح" : "Price unavailable",
+      compareAtText: null,
+      saveAmount: null,
       isConfirmed: false,
       isDemo: false,
       hasSale: false,
+      hasMarketingCompare: false,
     };
   }
 
   if (v.priceConfirmed && v.confirmedPrice != null) {
-    const amount = v.salePrice ?? v.confirmedPrice;
+    const compareAt = resolveMarketingCompareAt(v);
+    const hasLegacySale = v.salePrice != null && v.salePrice < v.confirmedPrice;
+    const currentAmount = hasLegacySale ? v.salePrice! : v.confirmedPrice;
     return {
-      text: formatAmount(amount, locale),
+      text: formatAmount(currentAmount, locale),
+      compareAtText: compareAt != null ? formatAmount(compareAt, locale) : null,
+      saveAmount: compareAt != null ? Math.round((compareAt - currentAmount) * 100) / 100 : null,
       isConfirmed: true,
       isDemo: false,
-      hasSale: v.salePrice != null && v.salePrice < v.confirmedPrice,
+      hasSale: hasLegacySale,
+      hasMarketingCompare: compareAt != null && !hasLegacySale,
     };
   }
 
   if (process.env.NEXT_PUBLIC_SHOW_DEMO_PRICES === "true" && v.demoPrice != null) {
     return {
       text: formatAmount(v.demoPrice, locale),
+      compareAtText: null,
+      saveAmount: null,
       isConfirmed: false,
       isDemo: true,
       hasSale: false,
+      hasMarketingCompare: false,
     };
   }
 
@@ -48,17 +86,23 @@ export function getPriceDisplay(
         locale === "ar"
           ? `من — (${product.variantCount} خيارات)`
           : `From — (${product.variantCount} options)`,
+      compareAtText: null,
+      saveAmount: null,
       isConfirmed: false,
       isDemo: false,
       hasSale: false,
+      hasMarketingCompare: false,
     };
   }
 
   return {
     text: locale === "ar" ? "السعر غير متاح" : "Price unavailable",
+    compareAtText: null,
+    saveAmount: null,
     isConfirmed: false,
     isDemo: false,
     hasSale: false,
+    hasMarketingCompare: false,
   };
 }
 

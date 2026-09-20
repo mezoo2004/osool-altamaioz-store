@@ -32,7 +32,7 @@ export function getDisplayPrice(product: Product, variantId?: string) {
     : product.variants[0];
   if (!variant) return null;
   if (variant.priceConfirmed && variant.confirmedPrice != null) {
-    return variant.salePrice ?? variant.confirmedPrice;
+    return variant.confirmedPrice;
   }
   return null;
 }

@@ -5,6 +5,7 @@ import { HomeProductImagePlaceholder } from "@/components/home/home-product-imag
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useWishlist } from "@/components/commerce/wishlist-provider";
+import { ProductPriceDisplay } from "@/components/catalog/product-price-display";
 import { getPriceDisplay, getProductName } from "@/lib/catalog/display";
 import type { Product } from "@/lib/catalog/types";
 import { cn } from "@/lib/utils";
@@ -110,21 +111,13 @@ export function ProductCard({
           >
             {highlightQuery ? <Highlight text={name} query={highlightQuery} /> : name}
           </h3>
-          <div className="flex flex-wrap items-center gap-2 pt-0.5">
-            <p
-              className={cn(
-                priceMuted ? "text-xs font-normal text-text-secondary/75" : "text-price",
-                outOfStock && !priceMuted && "text-text-secondary",
-              )}
-              {...(priceMuted ? { "data-home-price-muted": true } : {})}
-            >
-              {price.text}
-            </p>
-            {price.isDemo && (
-              <span className="rounded-md bg-surface-muted px-1.5 py-0.5 text-[10px] text-text-secondary">
-                {t("demoPrice")}
-              </span>
-            )}
+          <div className="pt-0.5" {...(priceMuted ? { "data-home-price-muted": true } : {})}>
+            <ProductPriceDisplay
+              price={price}
+              locale={locale}
+              muted={priceMuted}
+              className={outOfStock && !priceMuted ? "text-text-secondary" : undefined}
+            />
           </div>
         </div>
       </Link>

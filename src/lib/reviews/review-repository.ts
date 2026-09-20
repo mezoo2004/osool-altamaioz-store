@@ -71,13 +71,17 @@ export async function listApprovedPublicReviews(
   const enriched = await Promise.all(
     rows.map(async (review) => {
       if (!review.productSlug) return review;
-      const product = await repo.getBySlug(review.productSlug);
-      if (!product) return review;
-      return {
-        ...review,
-        productName: locale === "ar" ? product.nameAr : product.nameEn,
-        productImageUrl: product.variants[0]?.imageUrl ?? null,
-      };
+      try {
+        const product = await repo.getBySlug(review.productSlug);
+        if (!product) return review;
+        return {
+          ...review,
+          productName: locale === "ar" ? product.nameAr : product.nameEn,
+          productImageUrl: product.variants[0]?.imageUrl ?? null,
+        };
+      } catch {
+        return review;
+      }
     }),
   );
 

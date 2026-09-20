@@ -7,8 +7,7 @@ export function resolveVariantPriceState(variant: ProductVariant): {
   isPurchasable: boolean;
 } {
   if (variant.priceConfirmed && variant.confirmedPrice != null) {
-    const unitPrice = variant.salePrice ?? variant.confirmedPrice;
-    return { priceState: "CONFIRMED", unitPrice, isPurchasable: true };
+    return { priceState: "CONFIRMED", unitPrice: variant.confirmedPrice, isPurchasable: true };
   }
 
   const devCheckout = process.env.DEVELOPMENT_CHECKOUT_MODE === "true";

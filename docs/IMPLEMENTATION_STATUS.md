@@ -308,3 +308,5 @@ Run after changes:
 ## Next P0 task
 
 **Phase 10 — Integrations & launch:** payment/shipping provider readiness (no live activation without credentials), final domain DNS deploy, owner policy text, official prices/images when approved.
+
+**Official Excel pricing (2026-09-20):** Five Downloads XLSX files parsed via `scripts/import-official-prices.mjs` (dry-run + `--apply`). 737 variant rows matched/updated; 2 new LED-strip SKUs added. Compare-at (8–15%, SKU-hash) stored as `compareAtPrice` in JSON; MySQL sync maps selling → `price`, compare-at → `salePrice` + `attributes.compareAtPrice`. Catalog build preserves confirmed prices by SKU.

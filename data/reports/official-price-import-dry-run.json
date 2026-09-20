@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-09-20T23:22:19.026Z",
+  "files": [
+    "C:\\Users\\admin\\Downloads\\تسعيرة_انارة_داخلية.xlsx",
+    "C:\\Users\\admin\\Downloads\\تسعيرة_افياش_ومفاتيح_بيانو.xlsx",
+    "C:\\Users\\admin\\Downloads\\تسعيرة_مراوح_-لمبات_-_نجف.xlsx",
+    "C:\\Users\\admin\\Downloads\\تسعيرة_كشافات.xlsx",
+    "C:\\Users\\admin\\Downloads\\تسعيرة_حبل_زينة.xlsx"
+  ],
+  "safeToApply": true,
+  "stats": {
+    "totalExcelRows": 737,
+    "uniqueSkus": 713,
+    "matchedExisting": 737,
+    "variantUpdates": 0,
+    "newProducts": 0,
+    "duplicateSkuConflicts": 0,
+    "invalidPrices": 0,
+    "unresolved": [],
+    "ambiguous": []
+  },
+  "duplicateConflicts": [],
+  "ambiguous": [],
+  "unresolvedSample": []
+}

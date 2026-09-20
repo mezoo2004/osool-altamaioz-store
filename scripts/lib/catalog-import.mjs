@@ -64,8 +64,21 @@ export function upsertVariantInProduct(product, incomingVariant, importMeta) {
 
   if (idx >= 0) {
     const prev = product.variants[idx];
-    const changed = JSON.stringify({ ...prev, importMeta: undefined }) !== JSON.stringify({ ...payload, importMeta: undefined });
-    product.variants[idx] = { ...prev, ...payload };
+    const preservedPricing =
+      prev.priceConfirmed && prev.confirmedPrice != null
+        ? {
+            confirmedPrice: prev.confirmedPrice,
+            compareAtPrice: prev.compareAtPrice ?? null,
+            salePrice: prev.salePrice ?? null,
+            priceConfirmed: prev.priceConfirmed,
+            priceStatus: prev.priceStatus ?? "CONFIRMED",
+          }
+        : {};
+    const merged = { ...prev, ...payload, ...preservedPricing };
+    const changed =
+      JSON.stringify({ ...prev, importMeta: undefined }) !==
+      JSON.stringify({ ...merged, importMeta: undefined });
+    product.variants[idx] = merged;
     return changed ? "updated" : "unchanged";
   }
 

@@ -8,6 +8,7 @@ import { useCart } from "@/components/commerce/cart-provider";
 import { useCartFeedback } from "@/components/commerce/cart-feedback-provider";
 import { useWishlist } from "@/components/commerce/wishlist-provider";
 import { ProductGrid } from "@/components/catalog/product-card";
+import { ProductPriceDisplay } from "@/components/catalog/product-price-display";
 import { PdpGallery } from "@/components/pdp/pdp-gallery";
 import {
   BulletList,
@@ -215,18 +216,13 @@ export function PdpContent({
               <h1 className="heading-section text-balance">{name}</h1>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 border-b border-border pb-5">
-              <p className="text-2xl font-semibold tabular-nums tracking-tight">{price.text}</p>
-              {price.isDemo && (
-                <span className="rounded-md bg-surface-muted px-2 py-0.5 text-xs text-text-secondary">
-                  {tCatalog("demoPrice")}
-                </span>
-              )}
+            <div className="space-y-2 border-b border-border pb-5">
+              <ProductPriceDisplay price={price} locale={locale} size="pdp" />
               {!price.isConfirmed && !price.isDemo && (
                 <span className="text-xs text-text-secondary">{tCatalog("priceUnavailable")}</span>
               )}
-              {product.isOnOffer && (
-                <span className="rounded-md bg-brand-orange px-2 py-0.5 text-xs text-white">
+              {product.isOnOffer && !price.hasMarketingCompare && (
+                <span className="inline-flex rounded-md bg-brand-orange px-2 py-0.5 text-xs text-white">
                   {tCatalog("offer")}
                 </span>
               )}
