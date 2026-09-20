@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HomePageContent } from "@/components/home/home-page-content";
+import { isNationalDayCampaignActive } from "@/lib/campaigns/saudi-national-day";
+import { NATIONAL_DAY_HERO_SRC } from "@/lib/campaigns/national-day-hero-asset";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 type HomePageProps = {
@@ -25,5 +27,14 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <HomePageContent locale={locale} />;
+  const nationalDayHeroActive = isNationalDayCampaignActive();
+
+  return (
+    <>
+      {nationalDayHeroActive ? (
+        <link rel="preload" as="image" href={NATIONAL_DAY_HERO_SRC} fetchPriority="high" />
+      ) : null}
+      <HomePageContent locale={locale} />
+    </>
+  );
 }

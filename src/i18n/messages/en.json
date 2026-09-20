@@ -183,6 +183,15 @@
     "heroSubtitle": "Indoor and outdoor solutions, spotlights, floodlights, chandeliers and fans — contemporary design for homes and projects in Saudi Arabia.",
     "heroCtaPrimary": "Start shopping",
     "heroCtaSecondary": "Explore spaces",
+    "nationalDay": {
+      "limitedTag": "Limited time",
+      "eyebrow": "Saudi National Day Celebration",
+      "headline": "Lighting Worthy of the Nation",
+      "supportHeadline": "National Day Offers",
+      "description": "Discover selected indoor and outdoor lighting solutions with a premium National Day campaign for a limited time.",
+      "ctaPrimary": "Explore Offers",
+      "ctaSecondary": "Shop Products"
+    },
     "searchTitle": "Quick search",
     "spacesTitle": "Shop by space",
     "spacesSubtitle": "Choose your space and discover the right lighting",

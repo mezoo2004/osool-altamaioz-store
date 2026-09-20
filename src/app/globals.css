@@ -936,6 +936,151 @@
     @apply transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50;
   }
 
+  /* Saudi National Day campaign hero — full-bleed immersive (temporary) */
+  .nd-hero--immersive {
+    @apply border-b border-white/5;
+  }
+
+  .nd-hero-pattern {
+    background-image:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%),
+      linear-gradient(45deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%),
+      linear-gradient(315deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%);
+    background-size: 28px 28px;
+  }
+
+  .nd-hero-gradient {
+    background:
+      radial-gradient(ellipse 90% 70% at 15% 20%, rgba(15, 92, 69, 0.55), transparent 55%),
+      radial-gradient(ellipse 70% 60% at 85% 80%, rgba(234, 90, 45, 0.12), transparent 50%),
+      linear-gradient(165deg, #0b3d2e 0%, #082d23 45%, #123e34 100%);
+  }
+
+  .nd-hero-ambient-glow {
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 18%, rgba(234, 90, 45, 0.14), transparent 70%),
+      radial-gradient(ellipse 80% 50% at 80% 60%, rgba(15, 92, 69, 0.2), transparent 65%);
+  }
+
+  .nd-hero-scrim {
+    background: linear-gradient(
+      to top,
+      rgba(8, 45, 35, 0.82) 0%,
+      rgba(11, 61, 46, 0.48) 36%,
+      rgba(11, 61, 46, 0.12) 62%,
+      rgba(8, 45, 35, 0.18) 100%
+    );
+  }
+
+  .nd-hero-bg-image {
+    image-rendering: auto;
+  }
+
+  .nd-hero-bg-image-ar {
+    object-position: 58% 38%;
+  }
+
+  .nd-hero-bg-image-en {
+    object-position: 72% 36%;
+  }
+
+  @media (min-width: 640px) {
+    .nd-hero-bg-image-ar {
+      object-position: 54% 32%;
+    }
+
+    .nd-hero-bg-image-en {
+      object-position: 78% 30%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nd-hero-scrim-ar {
+      background: linear-gradient(
+        to left,
+        rgba(8, 45, 35, 0.82) 0%,
+        rgba(11, 61, 46, 0.52) 34%,
+        rgba(11, 61, 46, 0.12) 52%,
+        transparent 72%
+      );
+    }
+
+    .nd-hero-scrim-en {
+      background: linear-gradient(
+        to right,
+        rgba(8, 45, 35, 0.84) 0%,
+        rgba(11, 61, 46, 0.55) 36%,
+        rgba(11, 61, 46, 0.1) 54%,
+        transparent 74%
+      );
+    }
+
+    .nd-hero-bg-image-ar {
+      object-position: center center;
+    }
+
+    .nd-hero-bg-image-en {
+      object-position: 68% center;
+    }
+  }
+
+  .nd-hero-title {
+    animation: nd-hero-reveal 0.8s ease-out both;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .nd-hero-eyebrow,
+  .nd-hero-support {
+    animation: nd-hero-reveal 0.75s ease-out 0.04s both;
+  }
+
+  .nd-hero-copy {
+    animation: nd-hero-reveal 0.7s ease-out both;
+  }
+
+  .nd-hero-description {
+    animation: nd-hero-reveal 0.85s ease-out 0.08s both;
+  }
+
+  .nd-hero-actions {
+    animation: nd-hero-reveal 0.9s ease-out 0.12s both;
+  }
+
+  .nd-hero-bg-image {
+    @apply will-change-auto;
+  }
+
+  @keyframes nd-hero-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nd-hero-title,
+    .nd-hero-eyebrow,
+    .nd-hero-support,
+    .nd-hero-copy,
+    .nd-hero-description,
+    .nd-hero-actions,
+    .nd-hero-bg-image {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+
+  .nd-hero-cta-primary:focus-visible,
+  .nd-hero-cta-secondary:focus-visible {
+    @apply outline-2 outline-offset-2 outline-[#EA5A2D];
+  }
+
   .home-space-card {
     @apply transition-transform duration-300 hover:-translate-y-1;
     box-shadow: 0 4px 24px rgba(8, 8, 8, 0.06);
