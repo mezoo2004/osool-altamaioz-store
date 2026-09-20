@@ -1,47 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { HomeImage } from "@/components/home/home-image";
 import { getHomeImageSrc, homeImages } from "@/lib/home/home-images";
 import { cn } from "@/lib/utils";
 
-const HERO_VIDEO_MP4 = "/videos/home/hero.mp4";
-const HERO_VIDEO_WEBM = "/videos/home/hero.webm";
 const HERO_POSTER = "/images/home/hero/hero-poster.webp";
-
-async function assetExists(url: string): Promise<boolean> {
-  try {
-    const res = await fetch(url, { method: "HEAD" });
-    return res.ok;
-  } catch {
-    return false;
-  }
-}
 
 type HeroVisualProps = {
   className?: string;
   priority?: boolean;
+  /** Set on the server from filesystem; null uses cinematic image fallback. */
+  videoSrc?: string | null;
 };
 
-export function HeroVisual({ className, priority = true }: HeroVisualProps) {
-  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+export function HeroVisual({ className, priority = true, videoSrc = null }: HeroVisualProps) {
   const poster = getHomeImageSrc(homeImages.hero);
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      if (await assetExists(HERO_VIDEO_WEBM)) {
-        if (!cancelled) setVideoSrc(HERO_VIDEO_WEBM);
-        return;
-      }
-      if (await assetExists(HERO_VIDEO_MP4)) {
-        if (!cancelled) setVideoSrc(HERO_VIDEO_MP4);
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   return (
     <div className={cn("home-hero-visual-wrap relative h-full min-h-[inherit] overflow-hidden", className)}>

@@ -1,0 +1,47 @@
+{
+  "_note": "DEMO SEED ONLY — not real customer submissions. Shown with a display badge until live approved reviews exist in the database.",
+  "reviews": [
+    {
+      "id": "demo-review-1",
+      "status": "APPROVED",
+      "isDemoSeed": true,
+      "rating": 5,
+      "displayNameAr": "نورة — الرياض",
+      "displayNameEn": "Noura — Riyadh",
+      "bodyAr": "تجربة تسوق واضحة ومنتجات منظمة. فريق اصول التميز ساعدنا في اختيار سبوتات COB للصالة بدون مبالغة في الوعود.",
+      "bodyEn": "A clear shopping experience and well-organized products. The Osool Altamaioz team helped us choose COB spotlights for our living room without overpromising.",
+      "productSlug": "s1-7w-cob-std-cob-spotlights",
+      "imageUrl": null,
+      "verifiedPurchase": false,
+      "createdAt": "2025-11-12T10:00:00.000Z"
+    },
+    {
+      "id": "demo-review-2",
+      "status": "APPROVED",
+      "isDemoSeed": true,
+      "rating": 4,
+      "displayNameAr": "فهد — جدة",
+      "displayNameEn": "Fahad — Jeddah",
+      "bodyAr": "التوصيل كان منظمًا والتغليف محترم. أعجبني أن الأسعار المعروضة إما معتمدة أو موضحة أنها غير متاحة — بدون أرقام وهمية.",
+      "bodyEn": "Delivery was organized and packaging was professional. I appreciated that prices are either confirmed or clearly marked unavailable — no fake numbers.",
+      "productSlug": null,
+      "imageUrl": null,
+      "verifiedPurchase": false,
+      "createdAt": "2025-10-28T14:30:00.000Z"
+    },
+    {
+      "id": "demo-review-3",
+      "status": "APPROVED",
+      "isDemoSeed": true,
+      "rating": 5,
+      "displayNameAr": "م. سارة — الخبر",
+      "displayNameEn": "Eng. Sarah — Khobar",
+      "bodyAr": "استخدمنا مساعد اصول للإضاءة لاختصار البحث عن إضاءة المطبخ. التجربة كانت عملية ومبنية على منتجات حقيقية في المتجر.",
+      "bodyEn": "We used the Osool lighting assistant to narrow kitchen lighting options. Practical and grounded in real catalog products.",
+      "productSlug": null,
+      "imageUrl": null,
+      "verifiedPurchase": false,
+      "createdAt": "2025-09-05T09:15:00.000Z"
+    }
+  ]
+}

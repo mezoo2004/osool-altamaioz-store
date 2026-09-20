@@ -1,9 +1,17 @@
-import type { Product, ProductSpec, ProductVariant, StockStatus } from "@/lib/catalog/types";
+import type {
+  Product,
+  ProductDetail,
+  ProductSpec,
+  ProductVariant,
+  StockStatus,
+} from "@/lib/catalog/types";
 import type { Product as DbProduct, ProductVariant as DbVariant } from "@prisma/client";
 
 type DbProductWithRelations = DbProduct & {
   variants: DbVariant[];
   categoryLinks?: { category: { slug: string }; isPrimary: boolean }[];
+  images?: { url: string; sortOrder: number }[];
+  specs?: { keyAr: string; keyEn: string; valueAr: string; valueEn: string; sortOrder: number }[];
 };
 
 function decimalToNumber(value: { toNumber(): number } | null | undefined): number | null {
@@ -27,6 +35,10 @@ function mapVariant(v: DbVariant): ProductVariant {
     cctLabel,
     finish: v.finish,
     size: v.size,
+    beamAngle: v.beamAngle,
+    ipRating: v.ipRating,
+    voltage: v.voltage,
+    length: v.length,
     demoPrice: null,
     confirmedPrice: decimalToNumber(v.price),
     salePrice: decimalToNumber(v.salePrice),
@@ -80,19 +92,85 @@ export function mapDbProductToCatalog(row: DbProductWithRelations): Product {
   };
 }
 
-export function buildSpecsFromProduct(product: Product): ProductSpec[] {
-  const v = product.variants[0];
-  if (!v) return [];
+export function buildSpecsFromProduct(
+  product: Product,
+  variant?: ProductVariant | null,
+  dbSpecs: ProductSpec[] = [],
+): ProductSpec[] {
+  const v = variant ?? product.variants[0];
   const specs: ProductSpec[] = [];
+  const seen = new Set<string>();
+
   const add = (keyEn: string, keyAr: string, val: string | null | undefined) => {
-    if (!val) return;
-    specs.push({ keyEn, keyAr, valueEn: val, valueAr: val });
+    const trimmed = val?.trim();
+    if (!trimmed) return;
+    const key = keyEn.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    specs.push({ keyEn, keyAr, valueEn: trimmed, valueAr: trimmed });
   };
+
+  for (const row of dbSpecs) {
+    const key = row.keyEn.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    specs.push(row);
+  }
+
+  if (!v) return specs;
+
   add("Series", "السلسلة", product.series);
-  add("Model / SKU", "الموديل / الكود", v.sku);
+  add("Model / SKU", "الموديل / الكود", v.modelNumber ?? v.sku);
+  add("SKU", "الكود", v.sku);
   add("Power", "القدرة", v.wattage);
   add("CCT", "درجة اللون", v.cct);
+  add("Beam angle", "زاوية الإضاءة", v.beamAngle ?? null);
   add("Finish", "التشطيب", v.finish);
+  add("Color", "اللون", v.finish);
+  add("Size", "الحجم", v.size ?? null);
+  add("IP rating", "تصنيف IP", v.ipRating ?? null);
+  add("Voltage", "الجهد", v.voltage ?? null);
+  add("Dimensions", "الأبعاد", v.length ?? null);
   add("Installation", "التركيب", product.installationType);
-  return specs;
+
+  return specs.filter((s) => s.valueEn.trim().length > 0);
+}
+
+export function mapDbRowToProductDetail(
+  row: DbProductWithRelations,
+  relatedSlugs: string[],
+  completeTheLookSlugs: string[],
+): ProductDetail {
+  const product = mapDbProductToCatalog(row);
+  const dbSpecs =
+    row.specs?.map((s) => ({
+      keyAr: s.keyAr,
+      keyEn: s.keyEn,
+      valueAr: s.valueAr,
+      valueEn: s.valueEn,
+    })) ?? [];
+
+  const galleryFromDb = (row.images ?? [])
+    .slice()
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .map((img) => img.url)
+    .filter(Boolean);
+
+  const galleryFromVariants = product.variants
+    .map((v) => v.imageUrl)
+    .filter((url): url is string => Boolean(url));
+
+  const galleryImages = [...new Set([...galleryFromDb, ...galleryFromVariants])];
+
+  return {
+    ...product,
+    descriptionAr: row.descriptionAr,
+    descriptionEn: row.descriptionEn,
+    warrantyTextAr: row.warrantyTextAr,
+    warrantyTextEn: row.warrantyTextEn,
+    specs: buildSpecsFromProduct(product, product.variants[0], dbSpecs),
+    relatedSlugs,
+    completeTheLookSlugs,
+    galleryImages,
+  };
 }

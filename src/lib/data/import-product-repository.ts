@@ -50,7 +50,9 @@ function buildSpecs(product: Product): ProductSpec[] {
   add("Power", "القدرة", v.wattage);
   add("CCT", "درجة اللون", v.cct);
   add("Finish", "التشطيب", v.finish);
-  add("Warranty", "الضمان", v.warrantyHint ? `${v.warrantyHint.replace("Y", "")} years` : null);
+  if (v.warrantyHint?.trim()) {
+    add("Warranty", "الضمان", v.warrantyHint.trim());
+  }
   add("Installation", "التركيب", product.installationType);
   return specs;
 }
@@ -72,11 +74,20 @@ export class ImportProductRepository implements ProductRepository {
       )
       .slice(0, 4);
 
+    const galleryImages = [
+      ...new Set(product.variants.map((v) => v.imageUrl).filter((url): url is string => Boolean(url))),
+    ];
+
     return {
       ...product,
       specs: buildSpecs(product),
       relatedSlugs: related.map((p) => p.slug),
       completeTheLookSlugs: related.slice(0, 2).map((p) => p.slug),
+      descriptionAr: null,
+      descriptionEn: null,
+      warrantyTextAr: null,
+      warrantyTextEn: null,
+      galleryImages,
     };
   }
 

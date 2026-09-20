@@ -1,19 +1,8 @@
-/** Homepage-only navigation — maps to existing storefront routes. */
-export const homeMainNav = [
-  { key: "home", href: "/" },
-  { key: "indoor", href: "/categories/indoor" },
-  { key: "outdoor", href: "/categories/outdoor" },
-  { key: "smart", href: "/categories/switches-sockets" },
-  { key: "brands", href: "/about" },
-  { key: "spaces", href: "/spaces" },
-  { key: "offers", href: "/offers" },
-  { key: "consult", href: "/lighting-experience" },
-  { key: "projects", href: "/projects" },
-  { key: "experience", href: "/lighting-experience" },
-] as const;
+/** Homepage navigation — aligned with manager storefront nav (Phase 1). */
+export { storefrontMainNav as homeMainNav } from "@/lib/navigation/storefront-nav";
 
 export const homePrimaryCategories = [
-  { key: "indoor", href: "/categories/indoor", icon: "indoor" as const, accent: true },
+  { key: "products", href: "/products", icon: "indoor" as const, accent: true },
   { key: "outdoor", href: "/categories/outdoor", icon: "outdoor" as const },
   { key: "decorative", href: "/categories/decorative", icon: "decorative" as const },
   { key: "offers", href: "/offers", icon: "offers" as const, accent: true, highlight: true },

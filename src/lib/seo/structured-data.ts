@@ -9,7 +9,7 @@ export function buildOrganizationJsonLd(locale: "ar" | "en") {
     "@type": "Organization",
     name: brand[locale],
     url: `${siteUrl}/${locale}`,
-    logo: `${siteUrl}/images/logo.png`,
+    logo: `${siteUrl}/brand/logo/osool-mark-dark.png`,
     // BUSINESS_CONFIRMATION_REQUIRED: official contact email, phone, address
   };
 }

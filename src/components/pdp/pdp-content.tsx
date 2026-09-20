@@ -1,5 +1,6 @@
 "use client";
 
+import { Heart } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -7,6 +8,13 @@ import { useCart } from "@/components/commerce/cart-provider";
 import { useCartFeedback } from "@/components/commerce/cart-feedback-provider";
 import { useWishlist } from "@/components/commerce/wishlist-provider";
 import { ProductGrid } from "@/components/catalog/product-card";
+import { PdpGallery } from "@/components/pdp/pdp-gallery";
+import {
+  BulletList,
+  PdpDetailSections,
+  SpecTable,
+} from "@/components/pdp/pdp-detail-sections";
+import { PdpProductActions } from "@/components/pdp/pdp-product-actions";
 import {
   findVariantBySelections,
   getAvailableOptions,
@@ -14,6 +22,16 @@ import {
   getProductName,
   isCombinationAvailable,
 } from "@/lib/catalog/display";
+import {
+  buildKeySpecRows,
+  buildProductDescription,
+  buildSpecificationRows,
+  buildSuitableUses,
+  collectGalleryImages,
+  extractAccessoryRows,
+  getCategoryLabel,
+  getWarrantyDisplay,
+} from "@/lib/pdp/pdp-presenters";
 import { RecentlyViewedSection } from "@/components/pdp/recently-viewed";
 import type { Product, ProductDetail } from "@/lib/catalog/types";
 import { designTokens } from "@/lib/design-tokens";
@@ -37,12 +55,11 @@ export function PdpContent({
 }: PdpContentProps) {
   const t = useTranslations("pdp");
   const tCatalog = useTranslations("catalog");
+  const localeKey = locale as "ar" | "en";
   const { addLine } = useCart();
   const { showAddedFeedback } = useCartFeedback();
   const { has, toggle } = useWishlist();
 
-  const relatedProducts = related;
-  const lookProducts = completeTheLook;
   useEffect(() => {
     trackEvent("view_item", {
       product_slug: product.slug,
@@ -77,16 +94,25 @@ export function PdpContent({
 
   const price = getPriceDisplay(product, selectedVariant ?? undefined, locale);
   const name = getProductName(product, locale);
+  const categoryLabel = getCategoryLabel(product, locale);
   const inWishlist = has(product.slug);
   const outOfStock = selectedVariant?.stockStatus === "OUT_OF_STOCK";
 
-  const images = useMemo(() => {
-    const urls = product.variants
-      .map((v) => v.imageUrl)
-      .filter(Boolean) as string[];
-    if (!urls.length) return [null];
-    return [...new Set(urls)];
-  }, [product.variants]);
+  const images = useMemo(() => collectGalleryImages(product), [product]);
+
+  const keySpecs = useMemo(
+    () => buildKeySpecRows(product, selectedVariant ?? undefined, locale),
+    [product, selectedVariant, locale],
+  );
+
+  const description = useMemo(() => buildProductDescription(product, locale), [product, locale]);
+  const specRows = useMemo(
+    () => buildSpecificationRows(product, selectedVariant ?? undefined, locale),
+    [product, selectedVariant, locale],
+  );
+  const accessories = useMemo(() => extractAccessoryRows(product, locale), [product, locale]);
+  const suitableUses = useMemo(() => buildSuitableUses(product, locale), [product, locale]);
+  const warrantyText = getWarrantyDisplay(product, locale);
 
   useEffect(() => {
     const key = "osool-recent";
@@ -124,6 +150,8 @@ export function PdpContent({
     setTimeout(() => setAdded(false), 2000);
   };
 
+  const relatedProducts = related.length ? related : completeTheLook;
+
   return (
     <>
       <div className="container-page py-8 pb-mobile-sticky-extra md:py-12 md:pb-12">
@@ -134,40 +162,68 @@ export function PdpContent({
                 {locale === "ar" ? "اصول التميز" : "Osool Altamaioz"}
               </Link>
             </li>
-            <li className="text-text-secondary/60" aria-hidden="true">/</li>
+            <li className="text-text-secondary/60" aria-hidden="true">
+              /
+            </li>
             <li>
-              <Link href={`/categories/${product.primaryCategory}`} className="hover:text-brand-black-soft">
-                {product.primaryCategory}
+              <Link href="/products" className="hover:text-brand-black-soft">
+                {tCatalog("allProducts")}
               </Link>
             </li>
-            <li className="text-text-secondary/60" aria-hidden="true">/</li>
+            <li className="text-text-secondary/60" aria-hidden="true">
+              /
+            </li>
+            <li>
+              <Link
+                href={`/categories/${product.primaryCategory}`}
+                className="hover:text-brand-black-soft"
+              >
+                {categoryLabel}
+              </Link>
+            </li>
+            <li className="text-text-secondary/60" aria-hidden="true">
+              /
+            </li>
             <li className="text-text-primary">{name}</li>
           </ol>
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-          <ProductGallery
+          <PdpGallery
             images={images}
-            activeIndex={activeImage}
-            onSelect={setActiveImage}
             name={name}
             locale={locale}
+            categorySlugs={product.categorySlugs}
+            productType={product.productType}
+            activeIndex={activeImage}
+            onActiveIndexChange={setActiveImage}
           />
 
           <div className="space-y-6">
-            {product.series && (
-              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-text-secondary">
-                {product.series}
-              </p>
-            )}
-            <h1 className="heading-section">{name}</h1>
+            <div className="space-y-2">
+              <Link
+                href={`/categories/${product.primaryCategory}`}
+                className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-orange hover:underline"
+              >
+                {categoryLabel}
+              </Link>
+              {product.series && (
+                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-text-secondary">
+                  {product.series}
+                </p>
+              )}
+              <h1 className="heading-section text-balance">{name}</h1>
+            </div>
 
             <div className="flex flex-wrap items-center gap-3 border-b border-border pb-5">
-              <p className="text-xl font-semibold tabular-nums">{price.text}</p>
+              <p className="text-2xl font-semibold tabular-nums tracking-tight">{price.text}</p>
               {price.isDemo && (
                 <span className="rounded-md bg-surface-muted px-2 py-0.5 text-xs text-text-secondary">
                   {tCatalog("demoPrice")}
                 </span>
+              )}
+              {!price.isConfirmed && !price.isDemo && (
+                <span className="text-xs text-text-secondary">{tCatalog("priceUnavailable")}</span>
               )}
               {product.isOnOffer && (
                 <span className="rounded-md bg-brand-orange px-2 py-0.5 text-xs text-white">
@@ -176,10 +232,17 @@ export function PdpContent({
               )}
             </div>
 
-            <dl className="grid gap-2.5 text-sm">
-              <Row label={t("sku")} value={selectedVariant?.sku ?? "—"} />
-              <Row label={t("model")} value={selectedVariant?.modelNumber ?? selectedVariant?.sku ?? "—"} />
-              <Row label={t("series")} value={product.series ?? "—"} />
+            <dl className="grid gap-2 text-sm">
+              {selectedVariant?.sku && (
+                <Row label={t("sku")} value={selectedVariant.sku} />
+              )}
+              {(selectedVariant?.modelNumber || selectedVariant?.sku) && (
+                <Row
+                  label={t("model")}
+                  value={selectedVariant?.modelNumber ?? selectedVariant?.sku ?? ""}
+                />
+              )}
+              {product.series && <Row label={t("series")} value={product.series} />}
               <Row
                 label={t("availability")}
                 value={
@@ -193,6 +256,22 @@ export function PdpContent({
                 }
               />
             </dl>
+
+            {keySpecs.length > 0 && (
+              <div className="rounded-xl border border-border bg-[#faf9f7] p-4">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-text-secondary">
+                  {t("keySpecs")}
+                </p>
+                <dl className="grid gap-2 sm:grid-cols-2">
+                  {keySpecs.map((row) => (
+                    <div key={row.key} className="min-w-0">
+                      <dt className="text-xs text-text-secondary">{row.key}</dt>
+                      <dd className="text-sm font-medium">{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
 
             {options.cct.length > 0 && (
               <OptionGroup title={t("selectCct")}>
@@ -281,24 +360,69 @@ export function PdpContent({
                 inWishlist={inWishlist}
                 onAdd={handleAddToCart}
                 onWishlist={() => toggle(product.slug)}
+                disabled={!selectedVariant}
               />
             </div>
 
-            <InfoTabs locale={locale} specs={product.specs} />
+            <PdpProductActions
+              product={product}
+              variant={selectedVariant ?? undefined}
+              locale={localeKey}
+            />
+
+            <div className="rounded-xl border border-border bg-white p-4 text-sm">
+              <p className="font-semibold">{t("warranty")}</p>
+              <p className="mt-1 text-meta leading-relaxed">
+                {warrantyText ?? t("warrantyFallback")}
+              </p>
+            </div>
           </div>
         </div>
+
+        <PdpDetailSections
+          sections={[
+            {
+              id: "description",
+              title: t("descriptionTitle"),
+              hidden: !description,
+              content: <p className="text-sm leading-relaxed text-text-primary">{description}</p>,
+            },
+            {
+              id: "specs",
+              title: t("specifications"),
+              hidden: specRows.length === 0,
+              content: <SpecTable rows={specRows} />,
+            },
+            {
+              id: "accessories",
+              title: t("accessoriesTitle"),
+              hidden: accessories.length === 0,
+              content: <SpecTable rows={accessories} />,
+            },
+            {
+              id: "uses",
+              title: t("suitableForTitle"),
+              hidden: suitableUses.length === 0,
+              content: <BulletList items={suitableUses} />,
+            },
+            {
+              id: "support",
+              title: t("shippingSupportTitle"),
+              content: (
+                <div className="space-y-4 text-sm leading-relaxed text-text-primary">
+                  <p>{t("shippingPlaceholder")}</p>
+                  <p>{warrantyText ?? t("warrantyFallback")}</p>
+                  <p>{t("returnsPlaceholder")}</p>
+                </div>
+              ),
+            },
+          ]}
+        />
 
         {relatedProducts.length > 0 && (
           <section className="mt-16 md:mt-20">
             <h2 className="heading-subsection mb-6">{t("related")}</h2>
             <ProductGrid products={relatedProducts} locale={locale} />
-          </section>
-        )}
-
-        {lookProducts.length > 0 && (
-          <section className="mt-16 md:mt-20">
-            <h2 className="heading-subsection mb-6">{t("completeTheLook")}</h2>
-            <ProductGrid products={lookProducts} locale={locale} />
           </section>
         )}
 
@@ -311,69 +435,9 @@ export function PdpContent({
         outOfStock={outOfStock}
         added={added}
         onAdd={handleAddToCart}
+        disabled={!selectedVariant}
       />
     </>
-  );
-}
-
-function ProductGallery({
-  images,
-  activeIndex,
-  onSelect,
-  name,
-  locale,
-}: {
-  images: (string | null)[];
-  activeIndex: number;
-  onSelect: (i: number) => void;
-  name: string;
-  locale: string;
-}) {
-  const active = images[activeIndex] ?? null;
-  return (
-    <div className="space-y-3">
-      <div className="aspect-[4/5] overflow-hidden rounded-xl border border-border bg-surface-muted md:aspect-square">
-        {active ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={active} alt={name} className="h-full w-full object-cover" />
-        ) : (
-          <div
-            className="flex h-full flex-col items-center justify-center gap-2 text-xs uppercase tracking-[0.16em] text-text-secondary"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(8,8,8,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(8,8,8,0.03) 1px, transparent 1px)",
-              backgroundSize: "24px 24px",
-            }}
-          >
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" className="text-brand-gray/40" aria-hidden="true">
-              <rect x="6" y="10" width="20" height="14" rx="1" stroke="currentColor" strokeWidth="1.2" />
-              <path d="M16 6v4M12 8h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-            </svg>
-            <span>{locale === "ar" ? "الصورة غير متوفرة" : "Image unavailable"}</span>
-          </div>
-        )}
-      </div>
-      {images.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto pb-1">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => onSelect(i)}
-              className={cn(
-                "h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 transition-colors",
-                i === activeIndex ? "border-brand-black-soft" : "border-border hover:border-brand-gray",
-              )}
-            >
-              {img ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={img} alt="" className="h-full w-full object-cover" />
-              ) : null}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
   );
 }
 
@@ -385,6 +449,7 @@ function PurchaseControls({
   inWishlist,
   onAdd,
   onWishlist,
+  disabled,
 }: {
   quantity: number;
   setQuantity: (n: number) => void;
@@ -393,6 +458,7 @@ function PurchaseControls({
   inWishlist: boolean;
   onAdd: () => void;
   onWishlist: () => void;
+  disabled?: boolean;
 }) {
   const t = useTranslations("pdp");
   return (
@@ -418,7 +484,7 @@ function PurchaseControls({
       </div>
       <button
         type="button"
-        disabled={outOfStock}
+        disabled={outOfStock || disabled}
         onClick={onAdd}
         className="btn-cta h-11 flex-1 md:flex-none md:min-w-[12rem]"
       >
@@ -433,54 +499,9 @@ function PurchaseControls({
         )}
         aria-label={t("wishlist")}
       >
-        ♥
+        <Heart className={cn("h-4 w-4", inWishlist && "fill-current")} strokeWidth={1.5} />
       </button>
     </div>
-  );
-}
-
-function InfoTabs({
-  locale,
-  specs,
-}: {
-  locale: string;
-  specs: ProductDetail["specs"];
-}) {
-  const t = useTranslations("pdp");
-  return (
-    <div className="card-surface divide-y divide-border">
-      <InfoSection title={t("shipping")} body={t("shippingPlaceholder")} />
-      <InfoSection title={t("warranty")} body={t("warrantyPlaceholder")} />
-      <InfoSection title={t("returns")} body={t("returnsPlaceholder")} />
-      <InfoSection title={t("installments")} body={t("installmentsPlaceholder")} />
-      {specs.length > 0 && (
-        <section className="p-5">
-          <h2 className="mb-3 text-sm font-semibold">{t("specifications")}</h2>
-          <dl className="grid gap-0">
-            {specs.map((spec) => (
-              <div
-                key={spec.keyEn}
-                className="grid grid-cols-2 gap-3 border-b border-border py-2.5 text-sm last:border-0"
-              >
-                <dt className="text-text-secondary">
-                  {locale === "ar" ? spec.keyAr : spec.keyEn}
-                </dt>
-                <dd className="font-medium">{locale === "ar" ? spec.valueAr : spec.valueEn}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-      )}
-    </div>
-  );
-}
-
-function InfoSection({ title, body }: { title: string; body: string }) {
-  return (
-    <section className="p-5">
-      <h2 className="mb-1.5 text-sm font-semibold">{title}</h2>
-      <p className="text-meta">{body}</p>
-    </section>
   );
 }
 
@@ -490,18 +511,18 @@ function MobileStickyBar({
   outOfStock,
   added,
   onAdd,
+  disabled,
 }: {
   name: string;
   price: string;
   outOfStock: boolean;
   added: boolean;
   onAdd: () => void;
+  disabled?: boolean;
 }) {
   const t = useTranslations("pdp");
   return (
-    <div
-      className="bottom-mobile-nav fixed inset-x-0 z-30 border-t border-border bg-white/95 p-3 shadow-[0_-4px_24px_rgba(8,8,8,0.04)] backdrop-blur md:hidden"
-    >
+    <div className="bottom-mobile-nav fixed inset-x-0 z-30 border-t border-border bg-white/95 p-3 shadow-[0_-4px_24px_rgba(8,8,8,0.04)] backdrop-blur md:hidden">
       <div className="flex items-center gap-3">
         <div className="min-w-0 flex-1">
           <p className="truncate text-xs font-medium text-text-secondary">{name}</p>
@@ -509,7 +530,7 @@ function MobileStickyBar({
         </div>
         <button
           type="button"
-          disabled={outOfStock}
+          disabled={outOfStock || disabled}
           onClick={onAdd}
           className="btn-cta h-10 shrink-0 px-4"
         >

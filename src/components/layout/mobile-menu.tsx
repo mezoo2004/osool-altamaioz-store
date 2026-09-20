@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { mainNavigation } from "@/lib/navigation-data";
+import { storefrontMainNav } from "@/lib/navigation/storefront-nav";
 import { cn } from "@/lib/utils";
 
 type MobileMenuProps = {
@@ -12,6 +14,7 @@ type MobileMenuProps = {
 };
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
+  const locale = useLocale() as "ar" | "en";
   const t = useTranslations("nav");
   const tSub = useTranslations("navSub");
   const tCommon = useTranslations("common");
@@ -49,8 +52,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           visible ? "translate-x-0" : "-translate-x-full rtl:translate-x-full",
         )}
       >
-        <div className="flex items-center justify-between border-b border-border px-4 py-3.5">
-          <p className="text-sm font-semibold tracking-tight">{tCommon("menu")}</p>
+        <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-3.5">
+          <OsoolLogo locale={locale} tone="dark" presentation="full" size="headerCompact" href="/" onClick={onClose} />
+          <p className="sr-only">{tCommon("menu")}</p>
           <button
             type="button"
             onClick={onClose}
@@ -62,64 +66,59 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </div>
         <nav className="flex-1 overflow-y-auto p-3" aria-label="Mobile">
           <ul className="space-y-1">
-            {mainNavigation.map((item) => (
-              <li key={item.key}>
-                <div className="flex items-center justify-between rounded-lg hover:bg-surface-muted">
-                  <Link
-                    href={item.href ?? `/categories/${item.slug}`}
-                    onClick={onClose}
-                    className="flex-1 px-3 py-3 text-sm font-medium"
-                  >
-                    {t(item.key)}
-                  </Link>
-                  {item.children && (
-                    <button
-                      type="button"
-                      className="inline-flex h-11 min-w-11 items-center justify-center px-3 text-text-secondary"
-                      aria-expanded={expanded === item.key}
-                      onClick={() =>
-                        setExpanded((current) => (current === item.key ? null : item.key))
-                      }
+            {storefrontMainNav.map((item) => {
+              const isProducts = item.key === "products";
+              return (
+                <li key={item.key}>
+                  <div className="flex items-center justify-between rounded-lg hover:bg-surface-muted">
+                    <Link
+                      href={item.href}
+                      onClick={onClose}
+                      className={cn(
+                        "flex-1 px-3 py-3 text-sm font-medium",
+                        isProducts && "text-brand-orange",
+                      )}
                     >
-                      {expanded === item.key ? "−" : "+"}
-                    </button>
-                  )}
-                </div>
-                {item.children && expanded === item.key && (
-                  <ul className="mb-1 ms-3 border-s border-border ps-3">
-                    {item.children.map((child) => (
-                      <li key={child.key}>
-                        <Link
-                          href={`/categories/${child.slug}`}
-                          onClick={onClose}
-                          className="block rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-muted hover:text-text-primary"
-                        >
-                          {tSub(child.key)}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-            <li className="pt-2">
-              <Link
-                href="/spaces"
-                onClick={onClose}
-                className="block rounded-lg px-3 py-3 text-sm font-medium hover:bg-surface-muted"
-              >
-                {t("spaces")}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/lighting-experience"
-                onClick={onClose}
-                className="block rounded-lg px-3 py-3 text-sm font-medium text-brand-orange hover:bg-brand-orange/5"
-              >
-                {t("experience")}
-              </Link>
-            </li>
+                      {t(item.key)}
+                    </Link>
+                    {isProducts ? (
+                      <button
+                        type="button"
+                        className="inline-flex h-11 min-w-11 items-center justify-center px-3 text-text-secondary"
+                        aria-expanded={expanded === "categories"}
+                        onClick={() =>
+                          setExpanded((current) => (current === "categories" ? null : "categories"))
+                        }
+                      >
+                        {expanded === "categories" ? "−" : "+"}
+                      </button>
+                    ) : null}
+                  </div>
+                  {isProducts && expanded === "categories" ? (
+                    <ul className="mb-1 ms-3 max-h-48 overflow-y-auto border-s border-border ps-3">
+                      {mainNavigation.flatMap((navItem) => [
+                        { key: navItem.key, slug: navItem.slug, label: t(navItem.key) },
+                        ...(navItem.children?.map((child) => ({
+                          key: child.key,
+                          slug: child.slug,
+                          label: tSub(child.key),
+                        })) ?? []),
+                      ]).map((entry) => (
+                        <li key={`${entry.key}-${entry.slug}`}>
+                          <Link
+                            href={`/categories/${entry.slug}`}
+                            onClick={onClose}
+                            className="block rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-surface-muted hover:text-text-primary"
+                          >
+                            {entry.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

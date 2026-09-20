@@ -18,7 +18,7 @@ export function HomeHeader() {
   const pathname = usePathname();
   const t = useTranslations("common");
   const tHome = useTranslations("home");
-  const tNav = useTranslations("homeNav");
+  const tNav = useTranslations("nav");
   const [menuOpen, setMenuOpen] = useState(false);
   const { count: cartCount } = useCart();
 

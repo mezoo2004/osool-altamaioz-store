@@ -9,7 +9,9 @@ import {
   CatalogPagination,
   CatalogToolbar,
 } from "@/components/catalog/catalog-filters";
+import { CatalogCategoryChips } from "@/components/catalog/catalog-category-chips";
 import { ProductGrid } from "@/components/catalog/product-card";
+import type { CatalogCategoryChip } from "@/lib/catalog/catalog-categories";
 import type { CatalogQuery, CatalogResult } from "@/lib/catalog/types";
 import { cn } from "@/lib/utils";
 
@@ -20,6 +22,9 @@ type CatalogPageClientProps = {
   breadcrumb?: React.ReactNode;
   result: CatalogResult;
   query: CatalogQuery;
+  categories?: CatalogCategoryChip[];
+  emptyStateVariant?: "default" | "offers";
+  hideOffersFilter?: boolean;
 };
 
 export function CatalogPageClient({
@@ -29,6 +34,9 @@ export function CatalogPageClient({
   breadcrumb,
   result,
   query,
+  categories,
+  emptyStateVariant = "default",
+  hideOffersFilter = false,
 }: CatalogPageClientProps) {
   const t = useTranslations("catalog");
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -56,12 +64,22 @@ export function CatalogPageClient({
         </p>
       </div>
 
+      {categories && categories.length > 0 ? (
+        <CatalogCategoryChips
+          locale={locale}
+          basePath={basePath}
+          query={query}
+          categories={categories}
+        />
+      ) : null}
+
       <div className="grid gap-8 lg:grid-cols-[15rem_1fr] xl:grid-cols-[16rem_1fr]">
         <CatalogFiltersPanel
           locale={locale}
           basePath={basePath}
           query={query}
           facets={result.facets}
+          hideOffersFilter={hideOffersFilter}
           className="hidden lg:sticky lg:top-[calc(var(--header-height)+1.5rem)] lg:block lg:self-start"
         />
 
@@ -74,7 +92,7 @@ export function CatalogPageClient({
           />
 
           {result.items.length === 0 ? (
-            <CatalogEmptyState />
+            <CatalogEmptyState variant={emptyStateVariant} />
           ) : (
             <ProductGrid products={result.items} locale={locale} highlightQuery={query.q} />
           )}
@@ -116,6 +134,7 @@ export function CatalogPageClient({
               basePath={basePath}
               query={query}
               facets={result.facets}
+              hideOffersFilter={hideOffersFilter}
               onApplied={() => setDrawerOpen(false)}
             />
           </div>

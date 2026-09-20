@@ -214,6 +214,46 @@
     @apply py-10 md:py-12 lg:py-14;
   }
 
+  /* Premium ecommerce hero — dominant visual + promo column */
+  .home-hero-ecommerce {
+    min-height: clamp(28rem, 78vh, 48rem);
+  }
+
+  @media (max-width: 1023px) {
+    .home-hero-ecommerce {
+      min-height: 0;
+    }
+  }
+
+  .home-hero-ecommerce-vignette {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 8, 8, 0.15) 0%,
+      rgba(8, 8, 8, 0.35) 45%,
+      rgba(8, 8, 8, 0.88) 100%
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .home-hero-ecommerce-vignette {
+      background: linear-gradient(
+        90deg,
+        rgba(8, 8, 8, 0.82) 0%,
+        rgba(8, 8, 8, 0.35) 42%,
+        rgba(8, 8, 8, 0.12) 100%
+      );
+    }
+
+    [dir="rtl"] .home-hero-ecommerce-vignette {
+      background: linear-gradient(
+        270deg,
+        rgba(8, 8, 8, 0.82) 0%,
+        rgba(8, 8, 8, 0.35) 42%,
+        rgba(8, 8, 8, 0.12) 100%
+      );
+    }
+  }
+
   /* Hero split — full-bleed architectural photography */
   .home-hero-split {
     min-height: clamp(28rem, 78vh, 48rem);

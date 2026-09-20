@@ -8,12 +8,14 @@ import type {
 import type { ProductRepository } from "@/lib/data/product-repository";
 import { queryProductCatalog } from "@/lib/catalog/catalog-query-engine";
 import { getSearchProvider } from "@/lib/catalog/search-provider";
-import { buildSpecsFromProduct, mapDbProductToCatalog } from "@/lib/data/prisma-product-mapper";
+import { mapDbProductToCatalog, mapDbRowToProductDetail } from "@/lib/data/prisma-product-mapper";
 import { prisma } from "@/lib/prisma";
 
 const productInclude = {
   variants: { orderBy: { sku: "asc" as const } },
   categoryLinks: { include: { category: true } },
+  images: { orderBy: { sortOrder: "asc" as const } },
+  specs: { orderBy: { sortOrder: "asc" as const } },
 };
 
 export class PrismaProductRepository implements ProductRepository {
@@ -58,12 +60,11 @@ export class PrismaProductRepository implements ProductRepository {
       )
       .slice(0, 4);
 
-    return {
-      ...product,
-      specs: buildSpecsFromProduct(product),
-      relatedSlugs: related.map((p) => p.slug),
-      completeTheLookSlugs: related.slice(0, 2).map((p) => p.slug),
-    };
+    return mapDbRowToProductDetail(
+      row,
+      related.map((p) => p.slug),
+      related.slice(0, 2).map((p) => p.slug),
+    );
   }
 
   async getSuggestions(q: string, limit = 8): Promise<SearchSuggestion[]> {

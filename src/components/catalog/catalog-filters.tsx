@@ -13,6 +13,7 @@ type CatalogFiltersPanelProps = {
   facets: CatalogFacets;
   className?: string;
   onApplied?: () => void;
+  hideOffersFilter?: boolean;
 };
 
 export function CatalogFiltersPanel({
@@ -22,6 +23,7 @@ export function CatalogFiltersPanel({
   facets,
   className,
   onApplied,
+  hideOffersFilter = false,
 }: CatalogFiltersPanelProps) {
   const t = useTranslations("catalog");
   const router = useRouter();
@@ -54,17 +56,19 @@ export function CatalogFiltersPanel({
         </button>
       </div>
 
-      <FilterGroup title={t("filterOffers")}>
-        <label className="flex cursor-pointer items-center gap-2.5 text-sm">
-          <input
-            type="checkbox"
-            checked={Boolean(query.offers)}
-            onChange={(e) => update({ offers: e.target.checked || undefined })}
-            className="accent-brand-orange"
-          />
-          {t("filterOffers")}
-        </label>
-      </FilterGroup>
+      {!hideOffersFilter ? (
+        <FilterGroup title={t("filterOffers")}>
+          <label className="flex cursor-pointer items-center gap-2.5 text-sm">
+            <input
+              type="checkbox"
+              checked={Boolean(query.offers)}
+              onChange={(e) => update({ offers: e.target.checked || undefined })}
+              className="accent-brand-orange"
+            />
+            {t("filterOffers")}
+          </label>
+        </FilterGroup>
+      ) : null}
 
       <CheckboxFacet
         title={t("filterCct")}
@@ -288,12 +292,13 @@ export function CatalogPagination({
   );
 }
 
-export function CatalogEmptyState() {
+export function CatalogEmptyState({ variant = "default" }: { variant?: "default" | "offers" }) {
   const t = useTranslations("catalog");
+  const isOffers = variant === "offers";
   return (
     <div className="rounded-xl border border-dashed border-border bg-surface-muted px-6 py-16 text-center">
-      <h2 className="heading-subsection">{t("noResults")}</h2>
-      <p className="mt-2 text-meta">{t("noResultsHint")}</p>
+      <h2 className="heading-subsection">{isOffers ? t("offersEmptyTitle") : t("noResults")}</h2>
+      <p className="mt-2 text-meta">{isOffers ? t("offersEmptyHint") : t("noResultsHint")}</p>
     </div>
   );
 }

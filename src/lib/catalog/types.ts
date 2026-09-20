@@ -22,6 +22,10 @@ export type ProductVariant = {
   cctLabel: CctLabel | null;
   finish: string | null;
   size?: string | null;
+  beamAngle?: string | null;
+  ipRating?: string | null;
+  voltage?: string | null;
+  length?: string | null;
   demoPrice: number | null;
   confirmedPrice: number | null;
   salePrice: number | null;
@@ -131,4 +135,9 @@ export type ProductDetail = Product & {
   specs: ProductSpec[];
   relatedSlugs: string[];
   completeTheLookSlugs: string[];
+  descriptionAr?: string | null;
+  descriptionEn?: string | null;
+  warrantyTextAr?: string | null;
+  warrantyTextEn?: string | null;
+  galleryImages: string[];
 };

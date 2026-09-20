@@ -6,6 +6,10 @@ node_modules/
 out/
 dist/
 build/
+tsconfig.tsbuildinfo
+
+# local QA scratch (not source reports)
+data/reports/qa-*.json
 
 # environment / secrets
 .env
@@ -29,6 +33,8 @@ pnpm-debug.log*
 tmp/
 .generated/
 data/store/
+data/reviews/uploads/
+data/reviews/pending-submissions.json
 
 # Never commit certificates/keys
 *.pem

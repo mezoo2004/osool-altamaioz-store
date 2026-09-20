@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { redirect } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { LightingExperienceWizard } from "@/components/experience/lighting-experience-wizard";
 import { getSpaceRepository } from "@/lib/data";
@@ -7,6 +8,7 @@ import { buildExperienceMetadata } from "@/lib/seo/metadata";
 
 type LightingExperiencePageProps = {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
 export async function generateMetadata({ params }: LightingExperiencePageProps): Promise<Metadata> {
@@ -37,9 +39,26 @@ function ExperienceFallback() {
   );
 }
 
-export default async function LightingExperiencePage({ params }: LightingExperiencePageProps) {
+function hasDesignerHandoff(
+  searchParams: Record<string, string | string[] | undefined>,
+): boolean {
+  return Object.entries(searchParams).some(([key, value]) => {
+    if (key === "page" || key === "sort") return false;
+    if (value == null) return false;
+    if (Array.isArray(value)) return value.some((v) => String(v).trim().length > 0);
+    return String(value).trim().length > 0;
+  });
+}
+
+export default async function LightingExperiencePage({ params, searchParams }: LightingExperiencePageProps) {
   const { locale } = await params;
+  const sp = await searchParams;
   setRequestLocale(locale);
+
+  if (!hasDesignerHandoff(sp)) {
+    redirect(`/${locale}/products`);
+  }
+
   const spaces = await getSpaceRepository().list();
 
   return (

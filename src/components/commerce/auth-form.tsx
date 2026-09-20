@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { Link, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +11,7 @@ type AuthFormProps = {
 };
 
 export function AuthForm({ mode }: AuthFormProps) {
+  const locale = useLocale() as "ar" | "en";
   const t = useTranslations("commerce.auth");
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
@@ -48,7 +50,10 @@ export function AuthForm({ mode }: AuthFormProps) {
 
   return (
     <div className="container-page flex min-h-[60vh] max-w-md flex-col justify-center py-12 md:py-16">
-      <div className="mb-8 text-center md:text-start">
+      <div className="mb-8 space-y-5 text-center md:text-start">
+        <div className="flex justify-center md:justify-start">
+          <OsoolLogo locale={locale} tone="dark" presentation="full" size="auth" href="/" />
+        </div>
         <h1 className="heading-section">{mode === "login" ? t("login") : t("register")}</h1>
       </div>
 
@@ -153,8 +158,12 @@ function Input({
 
 export function ForgotPasswordContent({ locale }: { locale: string }) {
   const t = useTranslations("commerce.auth");
+  const localeKey = locale as "ar" | "en";
   return (
     <div className="container-page flex min-h-[50vh] max-w-md flex-col justify-center py-12 md:py-16">
+      <div className="mb-6 flex justify-center md:justify-start">
+        <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="auth" href="/" />
+      </div>
       <h1 className="heading-section mb-4">{t("forgotPassword")}</h1>
       <div className="card-surface p-5 md:p-6">
         <p className="text-sm leading-relaxed text-text-secondary">{t("forgotPasswordHint")}</p>

@@ -1,6 +1,7 @@
 "use client";
 
-import { ImagePlus, MessageCircle, Send, Sparkles, X } from "lucide-react";
+import { ImagePlus, Send, X } from "lucide-react";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
@@ -24,6 +25,11 @@ import {
   PASSPORT_ASSISTANT_EVENT,
   type PassportAssistantContext,
 } from "@/lib/passport/passport-assistant-bridge";
+import {
+  PDP_SIMILAR_SEARCH_EVENT,
+  type PdpSimilarSearchDetail,
+} from "@/lib/pdp/pdp-visual-search-bridge";
+import type { AssistantProductCard } from "@/lib/assistant/assistant-types";
 import { cn } from "@/lib/utils";
 
 function createId() {
@@ -94,6 +100,82 @@ export function AiChatWidget() {
     window.addEventListener(PASSPORT_ASSISTANT_EVENT, onPassportOpen);
     return () => window.removeEventListener(PASSPORT_ASSISTANT_EVENT, onPassportOpen);
   }, [locale]);
+
+  useEffect(() => {
+    const onSimilar = async (event: Event) => {
+      const detail = (event as CustomEvent<PdpSimilarSearchDetail>).detail;
+      if (!detail) return;
+
+      setOpen(true);
+      setTyping(true);
+
+      const prompt =
+        detail.locale === "ar"
+          ? `ابحث عن منتجات مشابهة لـ ${detail.nameAr}`
+          : `Find products similar to ${detail.nameEn}`;
+
+      setMessages((prev) => [
+        ...prev,
+        { id: createId(), role: "user", content: prompt, createdAt: Date.now() },
+      ]);
+
+      try {
+        const visualSearchResult = await searchByImage({
+          locale: detail.locale,
+          query: detail.query,
+          attributes: detail.attributes,
+        });
+        const cards: AssistantProductCard[] = visualSearchResult.products
+          .filter((p) => p.slug !== detail.slug)
+          .slice(0, 6)
+          .map((p) => ({
+            slug: p.slug,
+            nameAr: p.nameAr,
+            nameEn: p.nameEn,
+            imageUrl: p.imageUrl,
+            sku: p.sku,
+            keySpec: detail.locale === "ar" ? p.reasonAr : p.reasonEn,
+            productUrl: `/products/${p.slug}`,
+            priceText: null,
+            priceAvailable: false,
+          }));
+
+        const reply =
+          detail.locale === "ar"
+            ? cards.length
+              ? "هذه منتجات قريبة من اختيارك — من تشكيلة المتجر الحالية:"
+              : "لم أجد مطابقات كافية الآن. جرّب صورة أو اسأل عن مواصفات محددة."
+            : cards.length
+              ? "Here are close matches from the live catalog:"
+              : "Not enough close matches right now. Try an image or ask about specific specs.";
+
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: createId(),
+            role: "assistant",
+            content: reply,
+            createdAt: Date.now(),
+            products: cards,
+          },
+        ]);
+        setConversationState((prev) => ({
+          ...prev,
+          lastVisualAttributes: detail.attributes,
+        }));
+      } catch {
+        setMessages((prev) => [
+          ...prev,
+          { id: createId(), role: "assistant", content: t("fallback"), createdAt: Date.now() },
+        ]);
+      } finally {
+        setTyping(false);
+      }
+    };
+
+    window.addEventListener(PDP_SIMILAR_SEARCH_EVENT, onSimilar);
+    return () => window.removeEventListener(PDP_SIMILAR_SEARCH_EVENT, onSimilar);
+  }, [t]);
 
   useEffect(() => {
     const saved = loadAssistantSession();
@@ -275,7 +357,14 @@ export function AiChatWidget() {
           aria-expanded={open}
         >
           <span className="ai-chat-pulse-ring absolute inset-0 rounded-2xl" aria-hidden="true" />
-          <Sparkles className="h-6 w-6 transition-transform duration-300 group-hover:rotate-6" strokeWidth={1.5} />
+          <OsoolLogo
+            locale={locale}
+            tone="light"
+            presentation="markOnly"
+            size="assistant"
+            href={false}
+            className="pointer-events-none"
+          />
           <span className="absolute -end-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-brand-orange ring-2 ring-white" aria-hidden="true" />
         </button>
       </div>
@@ -292,8 +381,8 @@ export function AiChatWidget() {
       >
         <header className="flex items-start justify-between gap-3 border-b border-border/80 bg-[#faf9f7] px-4 py-3.5">
           <div className="flex items-start gap-2.5">
-            <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
-              <MessageCircle className="h-4.5 w-4.5" strokeWidth={1.5} aria-hidden="true" />
+            <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-orange/10">
+              <OsoolLogo locale={locale} tone="dark" presentation="markOnly" size="assistant" href={false} />
             </span>
             <div>
               <h2 className="text-sm font-semibold text-brand-black-soft">{t("title")}</h2>

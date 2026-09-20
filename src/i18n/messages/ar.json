@@ -106,6 +106,10 @@
     "close": "إغلاق"
   },
   "nav": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "faq": "الأسئلة الشائعة",
+    "browseCategories": "تصفح الفئات",
     "indoor": "إضاءة داخلية",
     "outdoor": "إضاءة خارجية",
     "decorative": "إضاءة ديكورية",
@@ -118,7 +122,8 @@
     "experience": "تجربة الإضاءة",
     "about": "من نحن",
     "contact": "تواصل معنا",
-    "projects": "مشاريعنا"
+    "projects": "مشاريعنا",
+    "reviews": "آراء عملائنا"
   },
   "navSub": {
     "cob": "سبوت COB",
@@ -149,6 +154,7 @@
     "offers": "العروض",
     "consult": "الاستشارات",
     "projects": "مشاريعنا",
+    "reviews": "آراء عملائنا",
     "experience": "تجربة الإضاءة"
   },
   "homeSecondary": {
@@ -230,12 +236,18 @@
   },
   "mobileNav": {
     "home": "الرئيسية",
+    "products": "المنتجات",
     "categories": "الفئات",
     "search": "بحث",
     "wishlist": "المفضلة",
     "account": "حسابي"
   },
   "catalog": {
+    "allProducts": "كل المنتجات",
+    "allCategories": "الكل",
+    "categoryChips": "فئات المنتجات",
+    "offersEmptyTitle": "لا توجد عروض نشطة حالياً",
+    "offersEmptyHint": "تابعنا لاكتشاف تشكيلات مختارة جديدة من اصول التميز.",
     "filters": "الفلاتر",
     "clearFilters": "مسح الفلاتر",
     "applyFilters": "تطبيق",
@@ -273,6 +285,37 @@
     "next": "التالي",
     "page": "صفحة"
   },
+  "reviews": {
+    "homeTitle": "آراء عملائنا",
+    "homeSubtitle": "تجارب حقيقية من عملاء اختاروا حلول اصول التميز لمساحاتهم.",
+    "viewAll": "كل الآراء",
+    "eyebrow": "آراء العملاء",
+    "pageTitle": "آراء عملائنا",
+    "pageSubtitle": "تجارب حقيقية من عملاء اختاروا حلول اصول التميز لمساحاتهم — بدون إحصائيات أو تقييمات وهمية.",
+    "emptyTitle": "لا توجد آراء معتمدة للعرض بعد",
+    "emptyHint": "كن أول من يشارك تجربته بعد اعتماد التقييم من فريق اصول التميز.",
+    "writeTitle": "اكتب تقييمك",
+    "writeHint": "التقييمات تُراجع قبل النشر على الموقع.",
+    "yourRating": "تقييمك",
+    "shareExperience": "شارك تجربتك",
+    "textPlaceholder": "صف تجربتك مع المنتج أو الخدمة بصدق ووضوح…",
+    "attachImage": "إرفاق صورة",
+    "removeImage": "إزالة الصورة",
+    "submitReview": "إرسال التقييم",
+    "submitting": "جاري الإرسال…",
+    "pendingModeration": "بانتظار المراجعة — شكرًا لمشاركتك.",
+    "ratingRequired": "يرجى اختيار التقييم بالنجوم.",
+    "textRequired": "يرجى كتابة نص التقييم (12 حرفًا على الأقل).",
+    "loginRequired": "سجّل الدخول لكتابة تقييم موثوق.",
+    "loginCta": "تسجيل الدخول",
+    "submitFailed": "تعذر إرسال التقييم. حاول مرة أخرى.",
+    "imageUploadFailed": "تعذر رفع الصورة. تحقق من النوع والحجم.",
+    "loading": "جاري التحميل…",
+    "sortLabel": "ترتيب",
+    "sortNewest": "الأحدث",
+    "sortRating": "الأعلى تقييمًا",
+    "count": "{count} تقييم معتمد"
+  },
   "pdp": {
     "sku": "الكود",
     "model": "الموديل",
@@ -294,7 +337,7 @@
     "installments": "التقسيط",
     "installmentsPlaceholder": "Tabby و Tamara — متاح عند تفعيل مزود الدفع. لا تُعرض أقساط وهمية.",
     "specifications": "المواصفات الفنية",
-    "related": "منتجات ذات صلة",
+    "related": "منتجات مشابهة",
     "completeTheLook": "أكمل المظهر",
     "recentlyViewed": "شوهد مؤخراً",
     "selectCct": "اختر درجة اللون",
@@ -304,7 +347,16 @@
     "invalidCombination": "الخيارات المختارة غير متاحة — جرّب خيارات أخرى.",
     "cct3000": "3000K — دافئ",
     "cct4000": "4000K — طبيعي",
-    "cct6500": "6500K — أبيض"
+    "cct6500": "6500K — أبيض",
+    "keySpecs": "مواصفات أساسية",
+    "descriptionTitle": "وصف المنتج",
+    "accessoriesTitle": "الملحقات ومحتويات العبوة",
+    "suitableForTitle": "مناسب لـ",
+    "shippingSupportTitle": "الشحن والدعم",
+    "warrantyFallback": "تفاصيل الضمان متوفرة لدى فريق اصول التميز.",
+    "askAssistant": "اسأل مساعد اصول عن هذا المنتج",
+    "similarVisualSearch": "ابحث عن منتجات مشابهة",
+    "tryInScene": "جرّبه في المشهد"
   },
   "commerce": {
     "cart": {

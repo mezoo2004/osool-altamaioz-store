@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { useRouter } from "@/i18n/navigation";
 import { useCart } from "@/components/commerce/cart-provider";
 import { useValidatedCart } from "@/components/commerce/use-validated-cart";
@@ -12,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { formatCurrency } from "@/lib/utils";
 
 export function CheckoutPageContent({ locale }: { locale: string }) {
+  const localeKey = useLocale() as "ar" | "en";
   const t = useTranslations("commerce.checkout");
   const router = useRouter();
   const { lines, isHydrated, clearCart } = useCart();
@@ -95,7 +97,10 @@ export function CheckoutPageContent({ locale }: { locale: string }) {
 
   return (
     <div className="container-page py-8 md:py-12">
-      <h1 className="heading-section mb-8 border-b border-border pb-6">{t("title")}</h1>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
+        <h1 className="heading-section">{t("title")}</h1>
+        <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="checkout" href={false} />
+      </div>
       <form onSubmit={handleSubmit} className="grid gap-8 lg:grid-cols-[1fr_20rem] xl:grid-cols-[1fr_22rem]">
         <div className="space-y-5">
           <Section title={t("customerInfo")}>

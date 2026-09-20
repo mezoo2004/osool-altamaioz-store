@@ -106,6 +106,10 @@
     "close": "Close"
   },
   "nav": {
+    "home": "Home",
+    "products": "Products",
+    "faq": "FAQ",
+    "browseCategories": "Browse categories",
     "indoor": "Indoor lighting",
     "outdoor": "Outdoor lighting",
     "decorative": "Decorative lighting",
@@ -118,7 +122,8 @@
     "experience": "Lighting experience",
     "about": "About",
     "contact": "Contact",
-    "projects": "Projects"
+    "projects": "Projects",
+    "reviews": "Customer Reviews"
   },
   "navSub": {
     "cob": "COB spotlights",
@@ -230,12 +235,18 @@
   },
   "mobileNav": {
     "home": "Home",
+    "products": "Products",
     "categories": "Categories",
     "search": "Search",
     "wishlist": "Wishlist",
     "account": "Account"
   },
   "catalog": {
+    "allProducts": "All products",
+    "allCategories": "All",
+    "categoryChips": "Product categories",
+    "offersEmptyTitle": "No active offers right now",
+    "offersEmptyHint": "Check back soon for curated selections from Osool Altamaioz.",
     "filters": "Filters",
     "clearFilters": "Clear filters",
     "applyFilters": "Apply",
@@ -273,6 +284,37 @@
     "next": "Next",
     "page": "Page"
   },
+  "reviews": {
+    "homeTitle": "Customer Reviews",
+    "homeSubtitle": "Real experiences from customers who chose Osool Altamaioz for their spaces.",
+    "viewAll": "All reviews",
+    "eyebrow": "Customer voices",
+    "pageTitle": "Customer Reviews",
+    "pageSubtitle": "Real experiences from customers who chose Osool Altamaioz — no fabricated ratings or statistics.",
+    "emptyTitle": "No approved reviews to show yet",
+    "emptyHint": "Be the first to share your experience once moderation approves your review.",
+    "writeTitle": "Write a Review",
+    "writeHint": "Reviews are moderated before they appear on the storefront.",
+    "yourRating": "Your rating",
+    "shareExperience": "Share your experience",
+    "textPlaceholder": "Describe your experience honestly and clearly…",
+    "attachImage": "Attach a photo",
+    "removeImage": "Remove photo",
+    "submitReview": "Submit review",
+    "submitting": "Submitting…",
+    "pendingModeration": "Pending moderation — thank you for sharing.",
+    "ratingRequired": "Please select a star rating.",
+    "textRequired": "Please write at least 12 characters.",
+    "loginRequired": "Sign in to submit a review.",
+    "loginCta": "Sign in",
+    "submitFailed": "Could not submit your review. Please try again.",
+    "imageUploadFailed": "Could not upload the image. Check type and size.",
+    "loading": "Loading…",
+    "sortLabel": "Sort",
+    "sortNewest": "Newest",
+    "sortRating": "Highest rating",
+    "count": "{count} approved reviews"
+  },
   "pdp": {
     "sku": "SKU",
     "model": "Model",
@@ -304,7 +346,16 @@
     "invalidCombination": "Combination unavailable — choose other options.",
     "cct3000": "3000K — Warm",
     "cct4000": "4000K — Neutral",
-    "cct6500": "6500K — White"
+    "cct6500": "6500K — White",
+    "keySpecs": "Key specifications",
+    "descriptionTitle": "Product description",
+    "accessoriesTitle": "Accessories & what's included",
+    "suitableForTitle": "Suitable for",
+    "shippingSupportTitle": "Shipping & support",
+    "warrantyFallback": "Warranty details are available from the Osool Altamaioz team.",
+    "askAssistant": "Ask Osool assistant about this product",
+    "similarVisualSearch": "Find similar products",
+    "tryInScene": "Try in scene"
   },
   "commerce": {
     "cart": {

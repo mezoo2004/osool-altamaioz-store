@@ -3,6 +3,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { brand } from "@/i18n/routing";
 
 type HomeFooterProps = {
@@ -10,18 +11,13 @@ type HomeFooterProps = {
 };
 
 const shopLinks = [
-  { key: "indoor", href: "/categories/indoor" },
-  { key: "outdoor", href: "/categories/outdoor" },
+  { key: "products", href: "/products" },
   { key: "offers", href: "/offers" },
   { key: "spaces", href: "/spaces" },
   { key: "scenes", href: "/scenes" },
 ] as const;
 
-const serviceLinks = [
-  { key: "experience", href: "/lighting-experience" },
-  { key: "consult", href: "/lighting-experience" },
-  { key: "projects", href: "/projects" },
-] as const;
+const serviceLinks = [{ key: "reviews", href: "/reviews" }] as const;
 
 const infoLinks = [
   { key: "about", href: "/about" },
@@ -40,7 +36,7 @@ export function HomeFooter({ locale }: HomeFooterProps) {
     <footer className="bg-[#080808] text-white">
       <div className="container-home grid gap-10 py-14 md:grid-cols-2 md:py-16 lg:grid-cols-12 lg:gap-12 lg:py-20">
         <div className="space-y-4 lg:col-span-4">
-          <p className="text-xl font-semibold tracking-tight">{brand[locale]}</p>
+          <OsoolLogo locale={locale} tone="light" presentation="full" size="footer" href="/" />
           <p className="max-w-sm text-sm leading-relaxed text-white/58">{tFooter("tagline")}</p>
         </div>
 
@@ -55,7 +51,7 @@ export function HomeFooter({ locale }: HomeFooterProps) {
           title={t("services")}
           links={serviceLinks}
           labelFn={(key) => {
-            if (key === "projects") return tNav("projects");
+            if (key === "reviews") return tNav("reviews");
             return t(key);
           }}
         />

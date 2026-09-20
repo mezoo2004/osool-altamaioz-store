@@ -1,5 +1,34 @@
 # Implementation Status
 
+Last updated: Official branding Phase 2 (Sep 2026)
+
+## Manager storefront Phase 1 (DONE — Sep 2026)
+
+Rebuilt lost manager-approved core storefront on `main` after old-PC revision was not in GitHub.
+
+- [x] **DONE** — Premium ecommerce hero + reusable `PromoCard` / demo campaign (no fake discounts)
+- [x] **DONE** — Simplified primary nav; **Products** one-click → `/products`
+- [x] **DONE** — All products PLP `/ar|en/products` with live catalog + dynamic category chips
+- [x] **DONE** — Offers PLP `/ar|en/offers` (`isOnOffer` filter + premium empty state)
+- [x] **DONE** — Customer-facing Lighting Experience removed from nav/home/footer; route redirects unless AI/designer handoff query params
+## Manager storefront Phase 2 — official branding (DONE — Sep 2026)
+
+- [x] **DONE** — Official logo assets under `public/brand/logo/` (extracted from identity PDF; no partner/card artwork)
+- [x] **DONE** — Reusable `OsoolLogo` (dark/light, full/markOnly) in header, mobile menu, footer, auth, checkout/orders, AI assistant, favicon
+- [x] **DONE** — EN storefront uses official mark only (no English wordmark in source)
+## Manager storefront Phase 3 — premium PDP (DONE — Sep 2026)
+
+- [x] **DONE** — Premium PDP gallery (main/thumbs, swipe, zoom, placeholder fallback)
+- [x] **DONE** — Purchase panel: verified price, SKU/model, key specs, variants, cart/wishlist, mobile sticky bar
+- [x] **DONE** — Accordion sections: description, specifications, accessories (when data exists), suitable uses, shipping/support
+- [x] **DONE** — AI product context, Visual Search similar products, Shop The Scene handoff when supported
+## Manager storefront Phase 4 — customer reviews (DONE — Sep 2026)
+
+- [x] **DONE** — Homepage «آراء عملائنا / Customer Reviews» section (demo seed labeled; no fake stats)
+- [x] **DONE** — `/ar|en/reviews` with form, moderation queue (PENDING file), star rating, optional image upload (dev filesystem)
+- [x] **DONE** — Projects removed from homepage footer primary customer link (route `/projects` retained)
+- [ ] **BLOCKED** — Production review persistence + CDN image storage (`docs/REVIEW_MODEL_PROPOSAL.md`)
+
 Last updated: Homepage final visual redesign (Aug 2026)
 
 ## Homepage final visual redesign (DONE — Aug 2026)

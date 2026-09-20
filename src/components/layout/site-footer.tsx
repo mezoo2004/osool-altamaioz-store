@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { brand } from "@/i18n/routing";
 import { footerLinks } from "@/lib/navigation-data";
 
@@ -17,7 +18,7 @@ export function SiteFooter({ locale }: SiteFooterProps) {
     <footer className="border-t border-border bg-brand-black-soft text-white">
       <div className="container-page grid gap-10 py-14 md:grid-cols-2 md:py-16 lg:grid-cols-4 lg:gap-12">
         <div className="space-y-4 lg:col-span-1">
-          <p className="text-lg font-semibold tracking-tight">{brand[locale]}</p>
+          <OsoolLogo locale={locale} tone="light" presentation="full" size="footer" href="/" />
           <p className="max-w-xs text-sm leading-relaxed text-white/65">{t("tagline")}</p>
         </div>
 

@@ -37,6 +37,9 @@ export function parseCatalogQuery(
   }
 
   if (searchParams.offers === "1" || searchParams.offers === "true") query.offers = true;
+  if (typeof searchParams.category === "string" && searchParams.category.trim()) {
+    query.category = searchParams.category.trim();
+  }
   query.minPrice = parseNumber(String(searchParams.minPrice ?? ""));
   query.maxPrice = parseNumber(String(searchParams.maxPrice ?? ""));
   query.q = typeof searchParams.q === "string" ? searchParams.q : defaults.q;
@@ -58,6 +61,7 @@ export function buildCatalogSearchParams(
   }
 
   if (filters.offers) params.set("offers", "1");
+  if (filters.category) params.set("category", filters.category);
   if (filters.minPrice != null) params.set("minPrice", String(filters.minPrice));
   if (filters.maxPrice != null) params.set("maxPrice", String(filters.maxPrice));
   if (filters.q) params.set("q", filters.q);

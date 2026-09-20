@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { OsoolLogo } from "@/components/brand/osool-logo";
 import { Link } from "@/i18n/navigation";
 import { AccountPageShell } from "@/components/commerce/account-page-shell";
 import { OrderPassportActions } from "@/components/passport/order-passport-actions";
@@ -18,9 +19,13 @@ export function OrderSuccessContent({
   locale: string;
 }) {
   const t = useTranslations("commerce.orderSuccess");
+  const localeKey = locale as "ar" | "en";
   return (
     <div className="container-page py-12 md:py-16">
       <div className="mx-auto max-w-lg text-center">
+        <div className="mb-6 flex justify-center">
+          <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="checkout" href={false} />
+        </div>
         <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-brand-orange/30 bg-brand-orange/5 text-xl text-brand-orange">
           ✓
         </div>
@@ -104,8 +109,12 @@ export function OrderDetailView({
   const t = useTranslations("commerce.orders");
   const statusKey = order.orderStatus.toLowerCase().replace(/_/g, "-");
 
+  const localeKey = locale as "ar" | "en";
   return (
     <div className={cn("card-surface space-y-6 p-5 md:p-6", className)}>
+      <div className="flex justify-end border-b border-border pb-4">
+        <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="checkout" href={false} />
+      </div>
       <div className="flex flex-wrap justify-between gap-4 border-b border-border pb-5">
         <div>
           <p className="text-meta">{t("orderNumber")}</p>

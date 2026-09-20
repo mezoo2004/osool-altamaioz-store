@@ -81,8 +81,7 @@ export const featuredCategories = [
 
 export const footerLinks = {
   shop: [
-    { key: "indoor", href: "/categories/indoor" },
-    { key: "outdoor", href: "/categories/outdoor" },
+    { key: "products", href: "/products" },
     { key: "offers", href: "/offers" },
     { key: "spaces", href: "/spaces" },
     { key: "scenes", href: "/scenes" },
@@ -95,7 +94,7 @@ export const footerLinks = {
   ],
   company: [
     { key: "about", href: "/about" },
-    { key: "projects", href: "/projects" },
+    { key: "reviews", href: "/reviews" },
     { key: "contact", href: "/contact" },
     { key: "privacy", href: "/policies/privacy" },
     { key: "terms", href: "/policies/terms" },
