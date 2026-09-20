@@ -6,14 +6,13 @@ type LogoProps = {
   compact?: boolean;
 };
 
-/** Storefront header logo — official Osool assets. */
+/** Storefront header logo — official mark on light header surfaces. */
 export function Logo({ locale, className, compact = false }: LogoProps) {
   const size: OsoolLogoSize = compact ? "headerCompact" : "header";
   return (
     <OsoolLogo
       locale={locale}
-      tone="dark"
-      presentation="full"
+      surface="light"
       size={size}
       className={className}
       priority

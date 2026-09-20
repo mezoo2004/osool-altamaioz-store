@@ -87,7 +87,10 @@ export function CheckoutPageContent({ locale }: { locale: string }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "order_failed");
       clearCart();
-      router.push(`/checkout/success?order=${encodeURIComponent(data.order.orderNumber)}`);
+      const params = new URLSearchParams({ order: data.order.orderNumber });
+      if (data.order.guestLookupToken) params.set("token", data.order.guestLookupToken);
+      if (data.order.customerSnapshot?.email) params.set("email", data.order.customerSnapshot.email);
+      router.push(`/checkout/success?${params.toString()}`);
     } catch (err) {
       setError(t(`errors.${err instanceof Error ? err.message : "orderFailed"}` as "errors.orderFailed"));
     } finally {
@@ -99,7 +102,7 @@ export function CheckoutPageContent({ locale }: { locale: string }) {
     <div className="container-page py-8 md:py-12">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
         <h1 className="heading-section">{t("title")}</h1>
-        <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="checkout" href={false} />
+        <OsoolLogo locale={localeKey} surface="light" size="checkout" href={false} />
       </div>
       <form onSubmit={handleSubmit} className="grid gap-8 lg:grid-cols-[1fr_20rem] xl:grid-cols-[1fr_22rem]">
         <div className="space-y-5">

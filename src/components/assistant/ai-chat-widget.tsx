@@ -359,8 +359,7 @@ export function AiChatWidget() {
           <span className="ai-chat-pulse-ring absolute inset-0 rounded-2xl" aria-hidden="true" />
           <OsoolLogo
             locale={locale}
-            tone="light"
-            presentation="markOnly"
+            surface="dark"
             size="assistant"
             href={false}
             className="pointer-events-none"
@@ -382,7 +381,7 @@ export function AiChatWidget() {
         <header className="flex items-start justify-between gap-3 border-b border-border/80 bg-[#faf9f7] px-4 py-3.5">
           <div className="flex items-start gap-2.5">
             <span className="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-brand-orange/10">
-              <OsoolLogo locale={locale} tone="dark" presentation="markOnly" size="assistant" href={false} />
+              <OsoolLogo locale={locale} surface="light" size="assistant" href={false} />
             </span>
             <div>
               <h2 className="text-sm font-semibold text-brand-black-soft">{t("title")}</h2>

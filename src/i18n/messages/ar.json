@@ -193,6 +193,20 @@
       "ctaPrimary": "اكتشف العروض",
       "ctaSecondary": "تسوّق المنتجات"
     },
+    "paymentTrust": {
+      "title": "طرق دفع متعددة وآمنة",
+      "methods": {
+        "stc-pay": "STC Pay",
+        "google-pay": "Google Pay",
+        "apple-pay": "Apple Pay",
+        "mada": "مدى",
+        "bank-transfer": "تحويل بنكي",
+        "visa": "Visa",
+        "mastercard": "Mastercard",
+        "tamara": "تمارا",
+        "tabby": "تابي"
+      }
+    },
     "searchTitle": "ابحث بسرعة",
     "spacesTitle": "تسوّق حسب المساحة",
     "spacesSubtitle": "اختر مساحتك واكتشف الإضاءة المناسبة",
@@ -437,6 +451,14 @@
       "hasAccount": "لديك حساب؟",
       "forgotPassword": "نسيت كلمة المرور",
       "forgotPasswordHint": "سيتم تفعيل استعادة كلمة المرور عند ربط قاعدة البيانات وخدمة البريد.",
+      "continueGoogle": "المتابعة باستخدام Google",
+      "continueApple": "المتابعة باستخدام Apple",
+      "orDivider": "أو",
+      "oauthSetupHint": "تسجيل الدخول الاجتماعي يتطلب إعداد OAuth في البيئة.",
+      "oauthNotConfigured": {
+        "google": "Google OAuth غير مهيأ بعد — أضف GOOGLE_CLIENT_ID و GOOGLE_CLIENT_SECRET.",
+        "apple": "Apple Sign In غير مهيأ بعد — أضف بيانات Apple OAuth."
+      },
       "errors": {
         "invalid_credentials": "بيانات الدخول غير صحيحة",
         "email_exists": "البريد مسجّل مسبقاً",
@@ -456,8 +478,25 @@
       "title": "تم استلام طلبك",
       "subtitle": "رقم الطلب",
       "track": "تتبع الطلب",
+      "invoice": "عرض الفاتورة",
       "viewOrders": "عرض الطلبات",
-      "continueShopping": "متابعة التسوق"
+      "continueShopping": "متابعة التسوق",
+      "notificationsHint": "سنرسل تأكيد الطلب عبر البريد وWhatsApp عند تفعيل قنوات الإرسال."
+    },
+    "invoice": {
+      "title": "فاتورة الطلب",
+      "customer": "العميل",
+      "shippingAddress": "عنوان الشحن",
+      "item": "المنتج",
+      "sku": "SKU",
+      "qty": "الكمية",
+      "total": "الإجمالي",
+      "subtotal": "المجموع الفرعي",
+      "shipping": "الشحن",
+      "vat": "ضريبة القيمة المضافة",
+      "grandTotal": "الإجمالي",
+      "track": "تتبع الطلب",
+      "print": "طباعة / PDF"
     },
     "tracking": {
       "title": "تتبع الطلب",

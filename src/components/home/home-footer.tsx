@@ -36,7 +36,7 @@ export function HomeFooter({ locale }: HomeFooterProps) {
     <footer className="bg-[#080808] text-white">
       <div className="container-home grid gap-10 py-14 md:grid-cols-2 md:py-16 lg:grid-cols-12 lg:gap-12 lg:py-20">
         <div className="space-y-4 lg:col-span-4">
-          <OsoolLogo locale={locale} tone="light" presentation="full" size="footer" href="/" />
+          <OsoolLogo locale={locale} surface="dark" size="footer" href="/" />
           <p className="max-w-sm text-sm leading-relaxed text-white/58">{tFooter("tagline")}</p>
         </div>
 

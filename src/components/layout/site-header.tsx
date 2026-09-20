@@ -38,7 +38,7 @@ export function SiteHeader() {
               <MenuIcon />
             </button>
 
-            <Logo locale={locale} className="min-w-0 max-w-[9.5rem] shrink truncate sm:max-w-none" compact />
+            <Logo locale={locale} className="shrink-0" compact />
 
             <div className="hidden flex-1 md:block">
               <SearchBar className="max-w-xl lg:max-w-2xl" />

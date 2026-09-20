@@ -192,6 +192,20 @@
       "ctaPrimary": "Explore Offers",
       "ctaSecondary": "Shop Products"
     },
+    "paymentTrust": {
+      "title": "Secure & Flexible Payment Methods",
+      "methods": {
+        "stc-pay": "STC Pay",
+        "google-pay": "Google Pay",
+        "apple-pay": "Apple Pay",
+        "mada": "mada",
+        "bank-transfer": "Bank Transfer",
+        "visa": "Visa",
+        "mastercard": "Mastercard",
+        "tamara": "Tamara",
+        "tabby": "Tabby"
+      }
+    },
     "searchTitle": "Quick search",
     "spacesTitle": "Shop by space",
     "spacesSubtitle": "Choose your space and discover the right lighting",
@@ -436,6 +450,14 @@
       "hasAccount": "Already have an account?",
       "forgotPassword": "Forgot password",
       "forgotPasswordHint": "Password reset will be enabled when the database and email service are connected.",
+      "continueGoogle": "Continue with Google",
+      "continueApple": "Continue with Apple",
+      "orDivider": "OR",
+      "oauthSetupHint": "Social sign-in requires OAuth credentials in the environment.",
+      "oauthNotConfigured": {
+        "google": "Google OAuth is not configured yet — add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET.",
+        "apple": "Sign in with Apple is not configured yet — add Apple OAuth credentials."
+      },
       "errors": {
         "invalid_credentials": "Invalid credentials",
         "email_exists": "Email already registered",
@@ -455,8 +477,25 @@
       "title": "Order received",
       "subtitle": "Order number",
       "track": "Track order",
+      "invoice": "View invoice",
       "viewOrders": "View orders",
-      "continueShopping": "Continue shopping"
+      "continueShopping": "Continue shopping",
+      "notificationsHint": "Order confirmation email and WhatsApp will send when those channels are configured."
+    },
+    "invoice": {
+      "title": "Order invoice",
+      "customer": "Customer",
+      "shippingAddress": "Shipping address",
+      "item": "Item",
+      "sku": "SKU",
+      "qty": "Qty",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "vat": "VAT",
+      "grandTotal": "Grand total",
+      "track": "Track order",
+      "print": "Print / PDF"
     },
     "tracking": {
       "title": "Track order",

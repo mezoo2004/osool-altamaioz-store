@@ -13,34 +13,52 @@ import { formatCurrency } from "@/lib/utils";
 
 export function OrderSuccessContent({
   orderNumber,
+  order,
   locale,
 }: {
   orderNumber: string;
+  order: Order | null;
   locale: string;
 }) {
   const t = useTranslations("commerce.orderSuccess");
   const localeKey = locale as "ar" | "en";
+  const email = order?.customerSnapshot?.email ?? order?.guestEmail ?? "";
+  const tokenQuery = order?.guestLookupToken ? `&token=${encodeURIComponent(order.guestLookupToken)}` : "";
+  const trackHref = `/track-order?order=${encodeURIComponent(orderNumber)}&email=${encodeURIComponent(email)}${tokenQuery}`;
+  const invoiceHref = `/orders/${encodeURIComponent(orderNumber)}/invoice?email=${encodeURIComponent(email)}${tokenQuery}`;
+
   return (
     <div className="container-page py-12 md:py-16">
-      <div className="mx-auto max-w-lg text-center">
-        <div className="mb-6 flex justify-center">
-          <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="checkout" href={false} />
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-6 flex justify-center md:justify-start">
+          <OsoolLogo locale={localeKey} surface="light" size="checkout" href={false} />
         </div>
-        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-brand-orange/30 bg-brand-orange/5 text-xl text-brand-orange">
+        <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-brand-orange/30 bg-brand-orange/5 text-xl text-brand-orange md:mx-0">
           ✓
         </div>
-        <h1 className="heading-section">{t("title")}</h1>
-        <p className="mt-3 text-meta">{t("subtitle")}</p>
-        <p className="mt-4 text-lg font-semibold tabular-nums tracking-wide">{orderNumber}</p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <Link href={`/track-order?order=${encodeURIComponent(orderNumber)}`} className="btn-cta-secondary">
+        <h1 className="heading-section text-center md:text-start">{t("title")}</h1>
+        <p className="mt-3 text-center text-meta md:text-start">{t("subtitle")}</p>
+        <p className="mt-4 text-center text-lg font-semibold tabular-nums tracking-wide md:text-start">{orderNumber}</p>
+        {order && (
+          <p className="mt-2 text-center text-sm text-text-secondary md:text-start">
+            {t("notificationsHint")}
+          </p>
+        )}
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link href={trackHref} className="btn-cta-secondary justify-center">
             {t("track")}
           </Link>
-          <Link href="/account/orders" className="btn-cta">
+          {order && (
+            <Link href={invoiceHref} className="btn-cta-secondary justify-center">
+              {t("invoice")}
+            </Link>
+          )}
+          <Link href="/account/orders" className="btn-cta justify-center">
             {t("viewOrders")}
           </Link>
         </div>
-        <Link href="/categories/indoor" className="mt-4 inline-block text-sm text-brand-orange hover:underline">
+        {order && <OrderDetailView order={order} locale={locale} className="mt-10" />}
+        <Link href="/categories/indoor" className="mt-6 inline-block text-sm text-brand-orange hover:underline">
           {t("continueShopping")} {locale === "ar" ? "←" : "→"}
         </Link>
       </div>
@@ -48,10 +66,18 @@ export function OrderSuccessContent({
   );
 }
 
-export function TrackOrderContent({ locale }: { locale: string }) {
+export function TrackOrderContent({
+  locale,
+  initialOrderNumber = "",
+  initialEmail = "",
+}: {
+  locale: string;
+  initialOrderNumber?: string;
+  initialEmail?: string;
+}) {
   const t = useTranslations("commerce.tracking");
-  const [orderNumber, setOrderNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [orderNumber, setOrderNumber] = useState(initialOrderNumber);
+  const [email, setEmail] = useState(initialEmail);
   const [order, setOrder] = useState<Order | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -113,7 +139,7 @@ export function OrderDetailView({
   return (
     <div className={cn("card-surface space-y-6 p-5 md:p-6", className)}>
       <div className="flex justify-end border-b border-border pb-4">
-        <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="checkout" href={false} />
+        <OsoolLogo locale={localeKey} surface="light" size="checkout" href={false} />
       </div>
       <div className="flex flex-wrap justify-between gap-4 border-b border-border pb-5">
         <div>

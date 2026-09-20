@@ -1,3 +1,5 @@
 الهوية الرسمية PDF موجودة في هذا المجلد.
-أصول PNG المستخرجة للمتجر: public/brand/logo/ (من PDF — بدون عناصر البطاقة أو شعارات الشركاء).
+مرجع الشارة الرسمية (4 خلفيات): references/brand/logo-mark-sheet.png
+استخراج PNG شفافة: npm run brand:extract-marks (scripts/extract-logo-mark-sheet.mjs)
+أصول المتجر: public/brand/logo/osool-mark-{light,dark,on-orange,on-gray}.png
 إذا توفر لاحقًا SVG رسمي منفصل، أضفه هنا وحدّث public/brand/logo/ دون حذف ملف الهوية.

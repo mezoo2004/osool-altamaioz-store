@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { OsoolLogo } from "@/components/brand/osool-logo";
 import { Link, useRouter } from "@/i18n/navigation";
+import { SocialAuthButtons } from "@/components/commerce/social-auth-buttons";
 import { cn } from "@/lib/utils";
 
 type AuthFormProps = {
@@ -52,12 +53,16 @@ export function AuthForm({ mode }: AuthFormProps) {
     <div className="container-page flex min-h-[60vh] max-w-md flex-col justify-center py-12 md:py-16">
       <div className="mb-8 space-y-5 text-center md:text-start">
         <div className="flex justify-center md:justify-start">
-          <OsoolLogo locale={locale} tone="dark" presentation="full" size="auth" href="/" />
+          <OsoolLogo locale={locale} surface="light" size="auth" href="/" />
         </div>
         <h1 className="heading-section">{mode === "login" ? t("login") : t("register")}</h1>
       </div>
 
-      <form onSubmit={submit} className="card-surface space-y-4 p-5 md:p-6">
+      <div className="card-surface space-y-5 p-5 md:p-6">
+        <SocialAuthButtons />
+      </div>
+
+      <form onSubmit={submit} className="card-surface mt-4 space-y-4 p-5 md:p-6">
         {mode === "register" && (
           <>
             <Input label={t("firstName")} value={form.firstName} onChange={(v) => setForm({ ...form, firstName: v })} required />
@@ -162,7 +167,7 @@ export function ForgotPasswordContent({ locale }: { locale: string }) {
   return (
     <div className="container-page flex min-h-[50vh] max-w-md flex-col justify-center py-12 md:py-16">
       <div className="mb-6 flex justify-center md:justify-start">
-        <OsoolLogo locale={localeKey} tone="dark" presentation="full" size="auth" href="/" />
+        <OsoolLogo locale={localeKey} surface="light" size="auth" href="/" />
       </div>
       <h1 className="heading-section mb-4">{t("forgotPassword")}</h1>
       <div className="card-surface p-5 md:p-6">

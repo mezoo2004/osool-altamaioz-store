@@ -105,6 +105,7 @@ export class FileUserRepository implements UserRepository {
     const user = readUsers().find((u) => u.email === email.toLowerCase());
     if (!user) throw new Error("invalid_credentials");
 
+    if (!user.passwordHash) throw new Error("invalid_credentials");
     const ok = await bcrypt.compare(password, user.passwordHash);
     if (!ok) throw new Error("invalid_credentials");
     return toSessionUser(user);

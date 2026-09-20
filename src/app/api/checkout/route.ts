@@ -12,6 +12,9 @@ export async function POST(request: Request) {
     const body = (await request.json()) as CheckoutInput;
     const user = await getSessionUser();
     const order = await getOrderRepository().createFromCheckout(body, user?.id ?? null);
+    void import("@/lib/notifications/notification-service").then(({ dispatchOrderConfirmedNotifications }) =>
+      dispatchOrderConfirmedNotifications(order).catch(() => undefined),
+    );
     return NextResponse.json({ order });
   } catch (error) {
     const dbError = mapDatabaseError(error);

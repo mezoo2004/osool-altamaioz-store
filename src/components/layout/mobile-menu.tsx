@@ -53,7 +53,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         )}
       >
         <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-3.5">
-          <OsoolLogo locale={locale} tone="dark" presentation="full" size="headerCompact" href="/" onClick={onClose} />
+          <OsoolLogo locale={locale} surface="light" size="headerCompact" href="/" onClick={onClose} />
           <p className="sr-only">{tCommon("menu")}</p>
           <button
             type="button"
