@@ -10,6 +10,10 @@ tsconfig.tsbuildinfo
 
 # local QA scratch (not source reports)
 data/reports/qa-*.json
+data/reports/.batch*.json
+data/reports/.batch-prompts.ndjson
+data/reports/_batch*.json
+data/reports/_cur.json
 
 # environment / secrets
 .env

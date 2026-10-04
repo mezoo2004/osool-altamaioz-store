@@ -1,4 +1,5 @@
 import type { ProductDetail, ProductSpec, ProductVariant } from "@/lib/catalog/types";
+import { getProductGalleryUrls } from "@/lib/catalog/product-images";
 import type { VisualAttributes } from "@/lib/visual-search/types";
 
 export type PdpSpecRow = {
@@ -18,10 +19,7 @@ export function getCategoryLabel(product: ProductDetail, locale: string) {
 }
 
 export function collectGalleryImages(product: ProductDetail): (string | null)[] {
-  const urls = product.galleryImages?.length
-    ? product.galleryImages
-    : product.variants.map((v) => v.imageUrl).filter(Boolean);
-  const unique = [...new Set(urls as string[])];
+  const unique = getProductGalleryUrls(product);
   return unique.length ? unique : [null];
 }
 

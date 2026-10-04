@@ -9,6 +9,7 @@ import type {
   SearchSuggestion,
 } from "@/lib/catalog/types";
 import type { ProductRepository } from "@/lib/data/product-repository";
+import { getProductGalleryUrls } from "@/lib/catalog/product-images";
 import { queryProductCatalog } from "@/lib/catalog/catalog-query-engine";
 import { getSearchProvider } from "@/lib/catalog/search-provider";
 
@@ -74,9 +75,7 @@ export class ImportProductRepository implements ProductRepository {
       )
       .slice(0, 4);
 
-    const galleryImages = [
-      ...new Set(product.variants.map((v) => v.imageUrl).filter((url): url is string => Boolean(url))),
-    ];
+    const galleryImages = getProductGalleryUrls(product);
 
     return {
       ...product,

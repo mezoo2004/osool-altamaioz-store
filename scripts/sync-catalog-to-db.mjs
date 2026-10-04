@@ -185,6 +185,33 @@ async function syncProductChunk(tx, products, categoryIdBySlug) {
       });
       variantUpserts++;
     }
+
+    const gallery = p.galleryImages?.length
+      ? p.galleryImages
+      : [...new Set((p.variants ?? []).map((v) => v.imageUrl).filter(Boolean))];
+    for (let i = 0; i < gallery.length; i++) {
+      const url = gallery[i];
+      const imageId = `${p.id}-img-${i}`;
+      await tx.productImage.upsert({
+        where: { id: imageId },
+        create: {
+          id: imageId,
+          productId: p.id,
+          url,
+          sortOrder: i,
+          isPrimary: i === 0,
+          altAr: p.nameAr,
+          altEn: p.nameEn,
+        },
+        update: {
+          url,
+          sortOrder: i,
+          isPrimary: i === 0,
+          altAr: p.nameAr,
+          altEn: p.nameEn,
+        },
+      });
+    }
   }
 
   return { productUpserts, variantUpserts, linkUpserts };

@@ -5,6 +5,7 @@ import type {
   ProductVariant,
   StockStatus,
 } from "@/lib/catalog/types";
+import { getProductGalleryUrls } from "@/lib/catalog/product-images";
 import type { Product as DbProduct, ProductVariant as DbVariant } from "@prisma/client";
 
 type DbProductWithRelations = DbProduct & {
@@ -176,7 +177,8 @@ export function mapDbRowToProductDetail(
     .map((v) => v.imageUrl)
     .filter((url): url is string => Boolean(url));
 
-  const galleryImages = [...new Set([...galleryFromDb, ...galleryFromVariants])];
+  const productForGallery = { ...product, galleryImages: galleryFromDb.length ? galleryFromDb : undefined };
+  const galleryImages = getProductGalleryUrls(productForGallery);
 
   return {
     ...product,

@@ -74,7 +74,9 @@ export function upsertVariantInProduct(product, incomingVariant, importMeta) {
             priceStatus: prev.priceStatus ?? "CONFIRMED",
           }
         : {};
-    const merged = { ...prev, ...payload, ...preservedPricing };
+    const preservedImages =
+      prev.imageUrl && !incomingVariant.imageUrl ? { imageUrl: prev.imageUrl } : {};
+    const merged = { ...prev, ...payload, ...preservedPricing, ...preservedImages };
     const changed =
       JSON.stringify({ ...prev, importMeta: undefined }) !==
       JSON.stringify({ ...merged, importMeta: undefined });

@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { useWishlist } from "@/components/commerce/wishlist-provider";
 import { ProductPriceDisplay } from "@/components/catalog/product-price-display";
 import { getPriceDisplay, getProductName } from "@/lib/catalog/display";
+import { getProductThumbnailUrl } from "@/lib/catalog/product-images";
 import type { Product } from "@/lib/catalog/types";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +31,7 @@ export function ProductCard({
   const inWishlist = has(product.slug);
   const name = getProductName(product, locale);
   const price = getPriceDisplay(product, product.variants[0], locale);
+  const thumbnailUrl = getProductThumbnailUrl(product);
   const outOfStock = product.stockStatus === "OUT_OF_STOCK";
   const isHome = presentation === "home";
   const priceMuted = isHome && !price.isConfirmed && !price.isDemo;
@@ -64,10 +66,10 @@ export function ProductCard({
           )}
           {...(isHome ? { "data-home-image": true } : {})}
         >
-          {product.variants[0]?.imageUrl ? (
+          {thumbnailUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={product.variants[0].imageUrl}
+              src={thumbnailUrl}
               alt={name}
               loading="lazy"
               decoding="async"

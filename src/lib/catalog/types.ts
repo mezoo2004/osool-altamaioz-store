@@ -65,6 +65,8 @@ export type Product = {
   demoPriceFrom: number | null;
   demoPriceTo: number | null;
   createdAt: string;
+  /** Public URLs — main first, breakdown second when present */
+  galleryImages?: string[];
   variants: ProductVariant[];
 };
 

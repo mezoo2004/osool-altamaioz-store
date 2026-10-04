@@ -269,6 +269,7 @@ export function buildCatalog(options = {}) {
   const previousByGroupKey = new Map(
     previousProducts.filter((p) => p.groupKey).map((p) => [p.groupKey, p]),
   );
+  const previousBySlug = new Map(previousProducts.map((p) => [p.slug, p]));
   const slugByGroupKey = new Map(
     previousProducts.filter((p) => p.groupKey).map((p) => [p.groupKey, p.slug]),
   );
@@ -379,6 +380,9 @@ export function buildCatalog(options = {}) {
     incomingVariant.priceConfirmed = true;
     incomingVariant.priceStatus = prevVariant.priceStatus ?? "CONFIRMED";
   }
+  if (prevVariant?.imageUrl) {
+    incomingVariant.imageUrl = prevVariant.imageUrl;
+  }
 
   const action = upsertVariantInProduct(product, incomingVariant, importMeta);
   if (action === "created") stats.variantsCreated++;
@@ -407,8 +411,10 @@ export function buildCatalog(options = {}) {
           v.confirmedPrice != null &&
           v.compareAtPrice > v.confirmedPrice,
       );
+    const prevProduct = previousBySlug.get(p.slug);
     return {
       ...p,
+      galleryImages: prevProduct?.galleryImages ?? p.galleryImages,
       stockStatus: inStock ? "IN_STOCK" : "OUT_OF_STOCK",
       variantCount: p.variants.length,
       demoPriceFrom: confirmedPrices.length ? Math.min(...confirmedPrices) : null,

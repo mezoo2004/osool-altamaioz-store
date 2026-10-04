@@ -2,10 +2,10 @@
 
 Last updated: Cursor GenerateImage direct catalog pass (Oct 2026)
 
-## Product AI images — Cursor GenerateImage direct (IN PROGRESS — Oct 2026)
+## Product AI images — Cursor GenerateImage direct (DONE — Oct 2026)
 
 - [x] **DONE** — Helpers: `scripts/product-ai-direct-helpers.mjs`, `scripts/product-ai-direct-next-batch.mjs`, `scripts/product-ai-direct-apply-batch.mjs`; progress in `data/reports/product-ai-direct-progress.json`
-- [ ] **IN PROGRESS** — Photoreal pass via **GenerateImage** — **200/704** completed, **504** pending, **0** failed (`data/reports/product-ai-direct-summary.json`)
+- [x] **DONE** — Photoreal pass via **GenerateImage** — **704/704** completed, **0** pending, **0** failed (`data/reports/product-ai-direct-summary.json`); commit `4663f58` on `main`
 
 Last updated: Product main image pipeline — full catalog (Oct 2026)
 
@@ -14,8 +14,8 @@ Last updated: Product main image pipeline — full catalog (Oct 2026)
 - [x] **DONE** — `scripts/build-product-image-catalog.mjs` — one `main.webp` per product (1600×1600 unified studio normalize)
 - [x] **DONE** — **704/704** products with `galleryImages: [main]` + variant `imageUrl` in `data/catalog/products.json`
 - [x] **DONE** — Reports: `data/reports/product-image-pipeline-summary.json`, `product-image-review-queue.json`, `product-image-sources.json`
-- [x] **DONE** — `npm run images:validate`, typecheck, lint, build pass on `C:\Projects\osool-altamaioz-store`
-- [ ] **NEEDS REVIEW** — All images currently **METADATA_BASED_AI** (no `references/product-images` manifest; `OPENAI_API_KEY` not set for photoreal tier)
+- [x] **DONE** — `node scripts/validate-product-images.mjs`, typecheck, lint, build pass on `C:\Projects\osool-altamaioz-store` (post–GenerateImage catalog)
+- [x] **DONE** — Storefront mains are **CURSOR_GENERATE_IMAGE** photoreal `main.webp` per slug (unified studio style); optional **EXACT_SOURCE** re-run if supplier assets are added later
 - [ ] **DEFERRED** — Drop supplier assets in `references/product-images/` + `manifest.json` for **EXACT_SOURCE** re-run
 
 Last updated: Official branding Phase 2 (Sep 2026)
