@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-10-03T22:44:19.440Z",
+  "mode": "apply",
+  "allowGenerated": true,
+  "openAiConfigured": false,
+  "limit": 704,
+  "totalCatalog": 704,
+  "totalProducts": 704,
+  "productsWithMainImage": 704,
+  "exactSourceImages": 0,
+  "referenceBasedAi": 0,
+  "metadataBasedAi": 704,
+  "missingImages": 0,
+  "brokenImages": 0,
+  "manualReviewQueue": 704,
+  "consistencyPass": {
+    "outliersFixed": 0
+  },
+  "canvas": 1600
+}

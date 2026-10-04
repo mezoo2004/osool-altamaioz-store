@@ -27,6 +27,9 @@
     "data:validate": "node scripts/data-validate.mjs",
     "prices:dry-run": "node scripts/import-prices-dry-run.mjs",
     "images:dry-run": "node scripts/import-images-dry-run.mjs",
+    "images:build": "node scripts/build-product-image-catalog.mjs",
+    "images:validate": "node scripts/validate-product-images.mjs",
+    "images:ai-direct": "node scripts/generate-product-ai-images-direct.mjs --apply --concurrency 3",
     "import:analyze": "node scripts/analyze-products.mjs",
     "import:batch": "node scripts/import-batch.mjs",
     "prebuild": "node scripts/build-catalog.mjs"
@@ -47,6 +50,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
+    "@google/genai": "^2.27.0",
+    "@google/generative-ai": "^0.24.1",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.17.1",
@@ -56,6 +61,7 @@
     "eslint": "^9.33.0",
     "eslint-config-next": "^15.5.0",
     "prisma": "^6.19.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2",
     "xlsx": "^0.18.5"
