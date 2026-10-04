@@ -2,7 +2,10 @@ import { notFound } from "next/navigation";
 import { AdminPromotionEditor, type AdminPromotionForm } from "@/components/admin/admin-promotion-editor";
 import { AdminShell } from "@/components/admin/admin-shell";
 import { requireAdminSession } from "@/lib/admin/auth";
+import type { PromotionThemeOverrides } from "@/lib/promotions/promotion-themes";
 import { prisma } from "@/lib/prisma";
+
+export const dynamic = "force-dynamic";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -33,6 +36,10 @@ export default async function AdminPromotionEditPage({ params }: Props) {
     subtitleAr: row.subtitleAr ?? "",
     subtitleEn: row.subtitleEn ?? "",
     imageUrl: row.imageUrl,
+    imageUrlMobile: row.imageUrlMobile,
+    backgroundImageUrl: row.backgroundImageUrl,
+    themePreset: row.themePreset,
+    themeOverrides: (row.themeOverrides ?? {}) as PromotionThemeOverrides,
     primaryCtaLabelAr: row.primaryCtaLabelAr,
     primaryCtaLabelEn: row.primaryCtaLabelEn,
     primaryCtaUrl: row.primaryCtaUrl,

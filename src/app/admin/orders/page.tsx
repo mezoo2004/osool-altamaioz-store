@@ -1,20 +1,24 @@
 import Link from "next/link";
+import { AdminPagination } from "@/components/admin/admin-pagination";
 import { AdminShell } from "@/components/admin/admin-shell";
 import { requireAdminSession } from "@/lib/admin/auth";
-import { prisma } from "@/lib/prisma";
+import { listAdminOrders } from "@/lib/admin/orders-admin";
 
-export default async function AdminOrdersPage() {
+export const dynamic = "force-dynamic";
+
+type Props = { searchParams: Promise<{ page?: string }> };
+
+export default async function AdminOrdersPage({ searchParams }: Props) {
   const user = await requireAdminSession();
-  const orders = await prisma.order.findMany({
-    orderBy: { createdAt: "desc" },
-    take: 50,
-    include: { items: true, customer: true },
-  });
+  const sp = await searchParams;
+  const page = Number(sp.page ?? "1") || 1;
+  const result = await listAdminOrders({ page, pageSize: 25 });
 
   return (
     <AdminShell user={user}>
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">الطلبات</h2>
+        <p className="text-sm text-black/60">{result.total} طلب</p>
         <div className="overflow-hidden rounded-2xl border border-black/10 bg-white">
           <table className="min-w-full text-sm">
             <thead className="bg-black/[0.03] text-black/60">
@@ -28,7 +32,7 @@ export default async function AdminOrdersPage() {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
+              {result.items.map((order) => (
                 <tr key={order.id} className="border-t border-black/5">
                   <td className="px-3 py-2">{order.orderNumber}</td>
                   <td className="px-3 py-2">
@@ -48,6 +52,12 @@ export default async function AdminOrdersPage() {
             </tbody>
           </table>
         </div>
+        <AdminPagination
+          page={result.page}
+          pageSize={result.pageSize}
+          total={result.total}
+          basePath="/admin/orders"
+        />
       </div>
     </AdminShell>
   );

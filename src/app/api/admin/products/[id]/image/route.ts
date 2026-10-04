@@ -24,7 +24,7 @@ export async function POST(request: Request, context: RouteContext) {
     }
 
     const stored = await storeProductMainImage({ slug: product.slug, file });
-    await replaceProductMainImage(id, stored.publicUrl);
+    const { displayUrl } = await replaceProductMainImage(id, stored.publicUrl);
 
     await writeAdminAuditLog({
       adminId: guard.user.id,
@@ -35,7 +35,7 @@ export async function POST(request: Request, context: RouteContext) {
       newValue: { url: stored.publicUrl },
     });
 
-    return NextResponse.json({ ok: true, url: stored.publicUrl });
+    return NextResponse.json({ ok: true, url: displayUrl, displayUrl });
   } catch (error) {
     const message = error instanceof Error ? error.message : "upload_failed";
     appLogger.error("admin.products.image", message);

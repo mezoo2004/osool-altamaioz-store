@@ -2,6 +2,14 @@
 
 Last updated: Admin dashboard + performance phase (Oct 2026)
 
+## Admin image upload + promo themes + dashboard perf (IN PROGRESS — Oct 2026)
+
+- [x] **DONE (code)** — Product main image upload/replace (validate, WebP 1600, atomic write, DB + revalidate)
+- [x] **DONE (code)** — Promotion theme presets + custom colors + desktop/mobile/background images + live preview
+- [x] **DONE (code)** — Admin products/orders/reviews pagination + lean list queries + thumbnails in product table
+- [ ] **NEEDS OPS** — `npm run db:push` on live MySQL for `Promotion.themePreset`, `themeOverrides`, `imageUrlMobile`, `backgroundImageUrl`
+- [ ] **NEEDS QA** — Manual admin UAT checklist (image replace, promo theme, storefront popup sync)
+
 ## Production admin + performance phase (IN PROGRESS — Oct 2026)
 
 - [x] **DONE (code)** — Secure `/admin` area with `CUSTOMER` / `ADMIN` roles, server-side guards on pages + `/api/admin/*`

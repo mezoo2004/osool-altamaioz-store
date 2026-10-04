@@ -63,6 +63,14 @@ enum PromotionFrequency {
   DAILY
 }
 
+enum PromotionThemePreset {
+  OSOOL_DEFAULT
+  NATIONAL_DAY
+  RAMADAN
+  DARK_LUXURY
+  CUSTOM
+}
+
 model Category {
   id               String            @id @default(cuid())
   slug             String            @unique @db.VarChar(191)
@@ -395,6 +403,10 @@ model Promotion {
   subtitleAr           String?            @db.Text
   subtitleEn           String?            @db.Text
   imageUrl             String?            @db.VarChar(500)
+  imageUrlMobile       String?            @db.VarChar(500)
+  backgroundImageUrl   String?            @db.VarChar(500)
+  themePreset          PromotionThemePreset @default(OSOOL_DEFAULT)
+  themeOverrides       Json?
   primaryCtaLabelAr    String             @db.VarChar(128)
   primaryCtaLabelEn    String             @db.VarChar(128)
   primaryCtaUrl        String             @db.VarChar(500)

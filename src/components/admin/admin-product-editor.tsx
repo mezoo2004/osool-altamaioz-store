@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type AdminProductEditorProps = {
   product: {
@@ -22,6 +22,16 @@ type AdminProductEditorProps = {
   categories: { slug: string; nameAr: string }[];
 };
 
+function uploadErrorMessage(code: string) {
+  const map: Record<string, string> = {
+    unsupported_image_type: "نوع الملف غير مدعوم. استخدم JPG أو PNG أو WEBP.",
+    image_too_large: "حجم الملف كبير جداً (الحد 10 م.ب).",
+    invalid_image: "الملف تالف أو غير صالح.",
+    missing_file: "لم يتم اختيار ملف.",
+  };
+  return map[code] ?? "تعذر رفع الصورة.";
+}
+
 export function AdminProductEditor({ product, categories }: AdminProductEditorProps) {
   const router = useRouter();
   const [form, setForm] = useState(product);
@@ -29,6 +39,10 @@ export function AdminProductEditor({ product, categories }: AdminProductEditorPr
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setForm(product);
+  }, [product]);
 
   const pricePreview = useMemo(() => {
     const sell = form.sellingPrice;
@@ -46,6 +60,7 @@ export function AdminProductEditor({ product, categories }: AdminProductEditorPr
     const res = await fetch(`/api/admin/products/${product.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
       body: JSON.stringify({
         nameAr: form.nameAr,
         nameEn: form.nameEn,
@@ -72,14 +87,24 @@ export function AdminProductEditor({ product, categories }: AdminProductEditorPr
     setMessage(null);
     const body = new FormData();
     body.set("file", file);
-    const res = await fetch(`/api/admin/products/${product.id}/image`, { method: "POST", body });
+    const res = await fetch(`/api/admin/products/${product.id}/image`, {
+      method: "POST",
+      body,
+      credentials: "include",
+    });
+    const data = (await res.json()) as { displayUrl?: string; url?: string; error?: string };
     setLoading(false);
     if (!res.ok) {
-      setMessage("تعذر رفع الصورة.");
+      setMessage(uploadErrorMessage(data.error ?? "upload_failed"));
       return;
+    }
+    const nextUrl = data.displayUrl ?? data.url;
+    if (nextUrl) {
+      setForm((f) => ({ ...f, imageUrl: nextUrl }));
     }
     setMessage("تم تحديث الصورة.");
     setFile(null);
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
     setPreviewUrl(null);
     router.refresh();
   }
@@ -176,6 +201,7 @@ export function AdminProductEditor({ product, categories }: AdminProductEditorPr
                 alt=""
                 fill
                 className="object-cover"
+                sizes="160px"
                 unoptimized={!!previewUrl}
               />
             )}
@@ -183,9 +209,10 @@ export function AdminProductEditor({ product, categories }: AdminProductEditorPr
           <div className="space-y-2">
             <input
               type="file"
-              accept="image/jpeg,image/png,image/webp"
+              accept="image/jpeg,image/jpg,image/png,image/webp"
               onChange={(e) => {
                 const next = e.target.files?.[0] ?? null;
+                if (previewUrl) URL.revokeObjectURL(previewUrl);
                 setFile(next);
                 setPreviewUrl(next ? URL.createObjectURL(next) : null);
               }}

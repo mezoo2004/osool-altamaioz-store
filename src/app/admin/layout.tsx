@@ -9,6 +9,8 @@ const notoArabic = Noto_Sans_Arabic({
   display: "swap",
 });
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Admin | Osool Altamaioz",
   robots: { index: false, follow: false },

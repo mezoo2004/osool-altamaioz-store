@@ -14,15 +14,30 @@ export default async function AdminProductEditPage({ params }: AdminProductEditP
 
   const product = await prisma.product.findUnique({
     where: { id },
-    include: {
-      variants: { orderBy: [{ isDefault: "desc" }, { sku: "asc" }] },
-      images: { orderBy: { sortOrder: "asc" } },
-      categoryLinks: { include: { category: true } },
+    select: {
+      id: true,
+      slug: true,
+      nameAr: true,
+      nameEn: true,
+      descriptionAr: true,
+      descriptionEn: true,
+      status: true,
+      variants: {
+        orderBy: [{ isDefault: "desc" }, { sku: "asc" }],
+        take: 1,
+        select: { sku: true, price: true, imageUrl: true, attributes: true },
+      },
+      images: { orderBy: { sortOrder: "asc" }, take: 1, select: { url: true } },
+      categoryLinks: {
+        where: { isPrimary: true },
+        take: 1,
+        select: { category: { select: { slug: true } } },
+      },
     },
   });
   if (!product) notFound();
 
-  const variant = product.variants.find((v) => v.isDefault) ?? product.variants[0];
+  const variant = product.variants[0];
   const attrs = (variant?.attributes ?? {}) as Record<string, unknown>;
   const compareAt =
     typeof attrs.compareAtPrice === "number" ? attrs.compareAtPrice : null;
@@ -45,10 +60,7 @@ export default async function AdminProductEditPage({ params }: AdminProductEditP
           descriptionAr: product.descriptionAr,
           descriptionEn: product.descriptionEn,
           status: product.status,
-          primaryCategorySlug:
-            product.categoryLinks.find((l) => l.isPrimary)?.category.slug ??
-            product.categoryLinks[0]?.category.slug ??
-            null,
+          primaryCategorySlug: product.categoryLinks[0]?.category.slug ?? null,
           imageUrl: product.images[0]?.url ?? variant?.imageUrl ?? null,
           defaultSku: variant?.sku ?? "—",
           sellingPrice: variant?.price?.toNumber() ?? null,

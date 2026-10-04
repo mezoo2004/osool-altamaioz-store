@@ -4,6 +4,12 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { EntryPromoModal } from "@/components/promotions/entry-promo-modal";
 import type { PublicPromotion } from "@/lib/promotions/promotion-service";
+import {
+  type PromotionThemeOverrides,
+  type PromotionThemePreset,
+  presetLabel,
+  resolvePromotionTheme,
+} from "@/lib/promotions/promotion-themes";
 
 export type AdminPromotionForm = {
   id?: string;
@@ -19,6 +25,10 @@ export type AdminPromotionForm = {
   subtitleAr: string;
   subtitleEn: string;
   imageUrl: string | null;
+  imageUrlMobile: string | null;
+  backgroundImageUrl: string | null;
+  themePreset: PromotionThemePreset;
+  themeOverrides: PromotionThemeOverrides;
   primaryCtaLabelAr: string;
   primaryCtaLabelEn: string;
   primaryCtaUrl: string;
@@ -30,19 +40,58 @@ export type AdminPromotionForm = {
   endsAt: string;
 };
 
+const PRESETS: PromotionThemePreset[] = [
+  "OSOOL_DEFAULT",
+  "NATIONAL_DAY",
+  "RAMADAN",
+  "DARK_LUXURY",
+  "CUSTOM",
+];
+
+const COLOR_FIELDS: { key: keyof PromotionThemeOverrides; label: string }[] = [
+  { key: "popupBackground", label: "خلفية النافذة" },
+  { key: "textColor", label: "لون العنوان" },
+  { key: "subtitleColor", label: "لون الوصف" },
+  { key: "primaryCtaBg", label: "خلفية CTA أساسي" },
+  { key: "primaryCtaText", label: "نص CTA أساسي" },
+  { key: "secondaryCtaBg", label: "خلفية CTA ثانوي" },
+  { key: "secondaryCtaText", label: "نص CTA ثانوي" },
+  { key: "overlayColor", label: "لون التظليل" },
+  { key: "borderColor", label: "لون الإطار" },
+  { key: "closeButtonColor", label: "خلفية زر الإغلاق" },
+  { key: "closeButtonText", label: "نص زر الإغلاق" },
+];
+
 export function AdminPromotionEditor({ initial }: { initial: AdminPromotionForm }) {
   const [form, setForm] = useState(initial);
   const [previewOpen, setPreviewOpen] = useState(true);
   const [message, setMessage] = useState<string | null>(null);
+  const [localPreviews, setLocalPreviews] = useState<{
+    desktop?: string;
+    mobile?: string;
+    background?: string;
+  }>({});
 
-  const previewPromo: PublicPromotion = useMemo(
-    () => ({
+  const previewPromo: PublicPromotion = useMemo(() => {
+    const overrides =
+      form.themePreset === "CUSTOM"
+        ? form.themeOverrides
+        : {
+            overlayStrength: form.themeOverrides.overlayStrength,
+            backgroundPosition: form.themeOverrides.backgroundPosition,
+          };
+    const theme = resolvePromotionTheme(form.themePreset, overrides);
+    if (form.backgroundImageUrl || localPreviews.background) {
+      theme.backgroundImageUrl = localPreviews.background ?? form.backgroundImageUrl;
+    }
+    return {
       id: form.id ?? "preview",
       titleAr: form.titleAr,
       titleEn: form.titleEn,
       subtitleAr: form.subtitleAr || null,
       subtitleEn: form.subtitleEn || null,
-      imageUrl: form.imageUrl,
+      imageUrl: localPreviews.desktop ?? form.imageUrl,
+      imageUrlMobile: localPreviews.mobile ?? form.imageUrlMobile,
       primaryCtaLabelAr: form.primaryCtaLabelAr,
       primaryCtaLabelEn: form.primaryCtaLabelEn,
       primaryCtaUrl: form.primaryCtaUrl,
@@ -53,15 +102,35 @@ export function AdminPromotionEditor({ initial }: { initial: AdminPromotionForm 
       frequency: form.frequency,
       desktopEnabled: form.desktopEnabled,
       mobileEnabled: form.mobileEnabled,
-    }),
-    [form],
-  );
+      themePreset: form.themePreset,
+      theme,
+    };
+  }, [form, localPreviews]);
+
+  function setOverride(key: keyof PromotionThemeOverrides, value: string | number) {
+    setForm({
+      ...form,
+      themeOverrides: { ...form.themeOverrides, [key]: value },
+    });
+  }
 
   async function save() {
+    setMessage(null);
+    const payload = {
+      ...form,
+      themeOverrides:
+        form.themePreset === "CUSTOM"
+          ? form.themeOverrides
+          : {
+              overlayStrength: form.themeOverrides.overlayStrength,
+              backgroundPosition: form.themeOverrides.backgroundPosition,
+            },
+    };
     const res = await fetch(form.id ? `/api/admin/promotions/${form.id}` : "/api/admin/promotions", {
       method: form.id ? "PATCH" : "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      credentials: "include",
+      body: JSON.stringify(payload),
     });
     const data = (await res.json()) as { id?: string; error?: string };
     if (!res.ok) {
@@ -75,16 +144,40 @@ export function AdminPromotionEditor({ initial }: { initial: AdminPromotionForm 
     setMessage("تم حفظ الحملة — ستنعكس على المتجر بعد لحظات.");
   }
 
-  async function uploadImage(file: File) {
+  async function uploadImage(file: File, slot: "desktop" | "mobile" | "background") {
     if (!form.id) {
       setMessage("احفظ الحملة أولاً ثم ارفع الصورة.");
       return;
     }
+    const preview = URL.createObjectURL(file);
+    setLocalPreviews((p) => ({ ...p, [slot]: preview }));
+
     const body = new FormData();
     body.set("file", file);
-    const res = await fetch(`/api/admin/promotions/${form.id}/image`, { method: "POST", body });
-    const data = (await res.json()) as { url?: string };
-    if (res.ok && data.url) setForm({ ...form, imageUrl: data.url });
+    body.set("slot", slot);
+    const res = await fetch(`/api/admin/promotions/${form.id}/image`, {
+      method: "POST",
+      body,
+      credentials: "include",
+    });
+    const data = (await res.json()) as { url?: string; error?: string };
+    if (!res.ok || !data.url) {
+      setMessage(data.error ?? "تعذر رفع الصورة");
+      setLocalPreviews((p) => {
+        const next = { ...p };
+        delete next[slot];
+        return next;
+      });
+      return;
+    }
+    setLocalPreviews((p) => {
+      const next = { ...p };
+      delete next[slot];
+      return next;
+    });
+    if (slot === "desktop") setForm({ ...form, imageUrl: data.url });
+    else if (slot === "mobile") setForm({ ...form, imageUrlMobile: data.url });
+    else setForm({ ...form, backgroundImageUrl: data.url });
   }
 
   return (
@@ -173,12 +266,84 @@ export function AdminPromotionEditor({ initial }: { initial: AdminPromotionForm 
             </label>
           ))}
         </div>
-        <input type="file" accept="image/*" onChange={(e) => e.target.files?.[0] && uploadImage(e.target.files[0])} />
-        {form.imageUrl && (
-          <div className="relative h-24 w-40">
-            <Image src={form.imageUrl} alt="" fill className="object-cover rounded-lg" />
-          </div>
-        )}
+
+        <div className="rounded-xl border border-black/10 bg-black/[0.02] p-3 space-y-3">
+          <h4 className="font-medium">المظهر (Theme)</h4>
+          <label className="text-sm block">
+            <span className="mb-1 block">القالب</span>
+            <select
+              value={form.themePreset}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  themePreset: e.target.value as PromotionThemePreset,
+                })
+              }
+              className="w-full rounded-xl border border-black/15 px-3 py-2"
+            >
+              {PRESETS.map((p) => (
+                <option key={p} value={p}>
+                  {presetLabel(p, "ar")}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="text-sm block">
+            <span className="mb-1 block">قوة التظليل ({form.themeOverrides.overlayStrength ?? 55}%)</span>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={form.themeOverrides.overlayStrength ?? 55}
+              onChange={(e) => setOverride("overlayStrength", Number(e.target.value))}
+              className="w-full"
+            />
+          </label>
+          <label className="text-sm block">
+            <span className="mb-1 block">موضع خلفية الحملة</span>
+            <select
+              value={form.themeOverrides.backgroundPosition ?? "center"}
+              onChange={(e) => setOverride("backgroundPosition", e.target.value)}
+              className="w-full rounded-xl border border-black/15 px-3 py-2"
+            >
+              <option value="center">center</option>
+              <option value="top">top</option>
+              <option value="bottom">bottom</option>
+            </select>
+          </label>
+          {form.themePreset === "CUSTOM" && (
+            <div className="grid gap-2 sm:grid-cols-2">
+              {COLOR_FIELDS.map(({ key, label }) => (
+                <label key={key} className="text-xs flex items-center gap-2">
+                  <input
+                    type="color"
+                    value={String(form.themeOverrides[key] ?? "#000000").slice(0, 7)}
+                    onChange={(e) => setOverride(key, e.target.value)}
+                    className="h-8 w-10 cursor-pointer rounded border border-black/10"
+                  />
+                  <span>{label}</span>
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <PromoImageUpload
+          label="صورة الحملة (سطح المكتب)"
+          url={localPreviews.desktop ?? form.imageUrl}
+          onPick={(f) => uploadImage(f, "desktop")}
+        />
+        <PromoImageUpload
+          label="صورة الحملة (جوال — اختياري)"
+          url={localPreviews.mobile ?? form.imageUrlMobile ?? form.imageUrl}
+          onPick={(f) => uploadImage(f, "mobile")}
+        />
+        <PromoImageUpload
+          label="صورة خلفية الحملة (اختياري)"
+          url={localPreviews.background ?? form.backgroundImageUrl}
+          onPick={(f) => uploadImage(f, "background")}
+        />
+
         <button type="button" onClick={save} className="rounded-xl bg-[#EA5A2D] px-4 py-2 text-white">
           حفظ الحملة
         </button>
@@ -200,6 +365,7 @@ export function AdminPromotionEditor({ initial }: { initial: AdminPromotionForm 
                 locale="ar"
                 promotion={previewPromo}
                 forceOpen
+                previewMode="desktop"
                 onClose={() => setPreviewOpen(false)}
               />
             )}
@@ -213,12 +379,42 @@ export function AdminPromotionEditor({ initial }: { initial: AdminPromotionForm 
                 locale="ar"
                 promotion={previewPromo}
                 forceOpen
+                previewMode="mobile"
                 onClose={() => setPreviewOpen(false)}
               />
             )}
           </div>
         </div>
       </section>
+    </div>
+  );
+}
+
+function PromoImageUpload({
+  label,
+  url,
+  onPick,
+}: {
+  label: string;
+  url: string | null | undefined;
+  onPick: (file: File) => void;
+}) {
+  return (
+    <div className="text-sm space-y-2">
+      <span className="block font-medium">{label}</span>
+      <input
+        type="file"
+        accept="image/jpeg,image/png,image/webp"
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) onPick(f);
+        }}
+      />
+      {url && (
+        <div className="relative h-24 w-40 overflow-hidden rounded-lg bg-black/5">
+          <Image src={url} alt="" fill className="object-cover" unoptimized={url.startsWith("blob:")} />
+        </div>
+      )}
     </div>
   );
 }

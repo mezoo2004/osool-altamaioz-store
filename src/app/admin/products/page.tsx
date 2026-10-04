@@ -1,8 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
+import { AdminPagination } from "@/components/admin/admin-pagination";
 import { AdminShell } from "@/components/admin/admin-shell";
 import { requireAdminSession } from "@/lib/admin/auth";
 import { searchAdminProducts } from "@/lib/admin/product-admin";
 import { prisma } from "@/lib/prisma";
+
+export const dynamic = "force-dynamic";
 
 type AdminProductsPageProps = {
   searchParams: Promise<{ q?: string; category?: string; page?: string }>;
@@ -68,6 +72,7 @@ export default async function AdminProductsPage({ searchParams }: AdminProductsP
           <table className="min-w-full text-sm">
             <thead className="bg-black/[0.03] text-black/60">
               <tr>
+                <th className="px-4 py-3 text-start w-14" />
                 <th className="px-4 py-3 text-start">المنتج</th>
                 <th className="px-4 py-3 text-start">SKU</th>
                 <th className="px-4 py-3 text-start">السعر</th>
@@ -77,9 +82,17 @@ export default async function AdminProductsPage({ searchParams }: AdminProductsP
             </thead>
             <tbody>
               {result.items.map((product) => {
-                const variant = product.variants.find((v) => v.isDefault) ?? product.variants[0];
+                const variant = product.variants[0];
+                const thumb = product.images[0]?.url ?? variant?.imageUrl ?? null;
                 return (
                   <tr key={product.id} className="border-t border-black/5">
+                    <td className="px-4 py-3">
+                      <div className="relative h-10 w-10 overflow-hidden rounded-lg bg-black/[0.04]">
+                        {thumb && (
+                          <Image src={thumb} alt="" fill className="object-cover" sizes="40px" />
+                        )}
+                      </div>
+                    </td>
                     <td className="px-4 py-3">
                       <p className="font-medium">{product.nameAr}</p>
                       <p className="text-xs text-black/50">{product.slug}</p>
@@ -102,6 +115,14 @@ export default async function AdminProductsPage({ searchParams }: AdminProductsP
             </tbody>
           </table>
         </div>
+
+        <AdminPagination
+          page={result.page}
+          pageSize={result.pageSize}
+          total={result.total}
+          basePath="/admin/products"
+          query={{ q: sp.q, category: sp.category }}
+        />
       </div>
     </AdminShell>
   );

@@ -8,7 +8,7 @@ export default async function AdminBulkPricesPage() {
   const result = await searchAdminProducts({ page: 1, pageSize: 50 });
 
   const rows = result.items.map((product) => {
-    const variant = product.variants.find((v) => v.isDefault) ?? product.variants[0];
+    const variant = product.variants[0];
     const attrs = (variant?.attributes ?? {}) as Record<string, unknown>;
     return {
       id: product.id,

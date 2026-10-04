@@ -29,10 +29,29 @@ export async function searchAdminProducts(input: {
     prisma.product.count({ where }),
     prisma.product.findMany({
       where,
-      include: {
-        variants: { orderBy: { sku: "asc" } },
-        categoryLinks: { include: { category: true } },
-        images: { orderBy: { sortOrder: "asc" } },
+      select: {
+        id: true,
+        slug: true,
+        nameAr: true,
+        nameEn: true,
+        status: true,
+        variants: {
+          orderBy: [{ isDefault: "desc" }, { sku: "asc" }],
+          take: 1,
+          select: {
+            sku: true,
+            price: true,
+            priceConfirmed: true,
+            imageUrl: true,
+            attributes: true,
+          },
+        },
+        images: { orderBy: { sortOrder: "asc" }, take: 1, select: { url: true } },
+        categoryLinks: {
+          where: { isPrimary: true },
+          take: 1,
+          select: { category: { select: { slug: true, nameAr: true } } },
+        },
       },
       orderBy: { updatedAt: "desc" },
       skip: (page - 1) * pageSize,
@@ -116,21 +135,35 @@ export async function replaceProductMainImage(productId: string, publicUrl: stri
   const product = await prisma.product.findUnique({ where: { id: productId } });
   if (!product) throw new Error("not_found");
 
-  await prisma.$transaction([
-    prisma.productImage.deleteMany({ where: { productId } }),
-    prisma.productImage.create({
-      data: {
-        productId,
-        url: publicUrl,
-        sortOrder: 0,
-        isPrimary: true,
-      },
-    }),
-    prisma.productVariant.updateMany({
+  const canonicalUrl = publicUrl.split("?")[0] ?? publicUrl;
+
+  const existing = await prisma.productImage.findFirst({
+    where: { productId, isPrimary: true },
+    orderBy: { sortOrder: "asc" },
+  });
+
+  await prisma.$transaction(async (tx) => {
+    if (existing) {
+      await tx.productImage.update({
+        where: { id: existing.id },
+        data: { url: canonicalUrl, sortOrder: 0, isPrimary: true },
+      });
+    } else {
+      await tx.productImage.create({
+        data: {
+          productId,
+          url: canonicalUrl,
+          sortOrder: 0,
+          isPrimary: true,
+        },
+      });
+    }
+    await tx.productVariant.updateMany({
       where: { productId },
-      data: { imageUrl: publicUrl },
-    }),
-  ]);
+      data: { imageUrl: canonicalUrl },
+    });
+  });
 
   revalidateCatalogProduct(product.slug);
+  return { canonicalUrl, displayUrl: publicUrl };
 }
