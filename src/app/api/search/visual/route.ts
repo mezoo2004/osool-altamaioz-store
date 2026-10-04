@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import { runVisualSearch } from "@/lib/visual-search/visual-search-service";
 import type { VisualAttributes } from "@/lib/visual-search/types";
+import { applyRouteRateLimit, RATE_LIMITS } from "@/lib/rate-limit/apply-route-rate-limit";
 
 export async function POST(request: Request) {
+  const limited = applyRouteRateLimit(request, RATE_LIMITS.visualSearch);
+  if (limited) return limited;
+
   try {
     const contentType = request.headers.get("content-type") ?? "";
     let locale: "ar" | "en" = "ar";

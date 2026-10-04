@@ -2,8 +2,12 @@ import { NextResponse } from "next/server";
 import { generateAssistantReply } from "@/lib/assistant/assistant-engine";
 import { polishReplyWithAi } from "@/lib/assistant/assistant-provider";
 import type { AssistantRequest } from "@/lib/assistant/assistant-types";
+import { applyRouteRateLimit, RATE_LIMITS } from "@/lib/rate-limit/apply-route-rate-limit";
 
 export async function POST(request: Request) {
+  const limited = applyRouteRateLimit(request, RATE_LIMITS.assistant);
+  if (limited) return limited;
+
   try {
     const body = (await request.json()) as AssistantRequest;
     const message = body.message?.trim();

@@ -177,12 +177,15 @@ export type Customer = {
   createdAt: string;
 };
 
+export type UserRole = "CUSTOMER" | "ADMIN";
+
 export type SessionUser = {
   id: string;
   email: string;
   firstName: string;
   lastName: string;
   phone: string | null;
+  role: UserRole;
 };
 
 export type CheckoutInput = {

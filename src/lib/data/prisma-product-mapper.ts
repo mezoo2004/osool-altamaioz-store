@@ -7,6 +7,7 @@ import type {
 } from "@/lib/catalog/types";
 import { getProductGalleryUrls } from "@/lib/catalog/product-images";
 import type { Product as DbProduct, ProductVariant as DbVariant } from "@prisma/client";
+import type { CatalogListProductRow } from "@/lib/data/prisma-catalog-list-select";
 
 type DbProductWithRelations = DbProduct & {
   variants: DbVariant[];
@@ -68,6 +69,61 @@ function mapVariant(v: DbVariant): ProductVariant {
     nameAr: v.nameAr ?? "",
     nameEn: v.nameEn ?? "",
     importMeta: v.importMeta as ProductVariant["importMeta"],
+  };
+}
+
+export function mapDbListProductToCatalog(row: CatalogListProductRow): Product {
+  const categorySlugs = row.categoryLinks?.map((l) => l.category.slug) ?? ["uncategorized"];
+  const primary =
+    row.categoryLinks?.find((l) => l.isPrimary)?.category.slug ??
+    categorySlugs[0] ??
+    "uncategorized";
+
+  const variants = row.variants.map((v) =>
+    mapVariant({
+      ...v,
+      productId: row.id,
+      normalizedSku: null,
+      isDefault: true,
+      sourceBatchId: null,
+      sourceFile: null,
+      sourceRowRef: null,
+      importMeta: null,
+      createdAt: row.createdAt,
+      updatedAt: row.createdAt,
+    }),
+  );
+
+  const confirmedPrices = variants
+    .filter((v) => v.priceConfirmed && v.confirmedPrice != null)
+    .map((v) => v.confirmedPrice as number);
+
+  const galleryImages = row.images[0]?.url ? [row.images[0].url] : undefined;
+
+  return {
+    id: row.id,
+    slug: row.slug,
+    groupKey: row.groupKey ?? undefined,
+    nameAr: row.nameAr,
+    nameEn: row.nameEn,
+    series: row.series,
+    productType: row.productType ?? "PRODUCT",
+    categorySlugs: categorySlugs.length ? categorySlugs : [primary],
+    primaryCategory: primary,
+    sourceFile: "",
+    categoryTitle: null,
+    isFeatured: row.isFeatured,
+    isNew: row.isNew,
+    isBestseller: row.isBestseller,
+    isOnOffer: row.isOnOffer,
+    installationType: row.installationType,
+    stockStatus: row.stockStatus as StockStatus,
+    variantCount: row._count.variants,
+    demoPriceFrom: confirmedPrices.length ? Math.min(...confirmedPrices) : null,
+    demoPriceTo: confirmedPrices.length ? Math.max(...confirmedPrices) : null,
+    createdAt: row.createdAt.toISOString(),
+    galleryImages,
+    variants,
   };
 }
 

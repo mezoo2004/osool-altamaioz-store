@@ -32,7 +32,7 @@ export async function getCatalogCategoryChips(): Promise<CatalogCategoryChip[]> 
       .filter((row) => row.count > 0);
   }
 
-  const all = await getProductRepository().list({ page: 1, pageSize: 5000, sort: "featured" });
+  const all = await getProductRepository().list({ page: 1, pageSize: 500, sort: "featured" });
   const counts = new Map<string, CatalogCategoryChip>();
 
   for (const product of all.items) {

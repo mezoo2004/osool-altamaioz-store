@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import { ensureDatabaseReady, mapDatabaseError } from "@/lib/api/database-guard";
 import { createSession, getUserRepository } from "@/lib/data/user-repository";
+import { applyRouteRateLimit, RATE_LIMITS } from "@/lib/rate-limit/apply-route-rate-limit";
 
 export async function POST(request: Request) {
+  const limited = applyRouteRateLimit(request, RATE_LIMITS.register);
+  if (limited) return limited;
+
   const dbGuard = await ensureDatabaseReady();
   if (dbGuard) return dbGuard;
 

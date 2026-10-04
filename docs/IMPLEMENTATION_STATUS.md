@@ -1,5 +1,20 @@
 # Implementation Status
 
+Last updated: Admin dashboard + performance phase (Oct 2026)
+
+## Production admin + performance phase (IN PROGRESS — Oct 2026)
+
+- [x] **DONE (code)** — Secure `/admin` area with `CUSTOMER` / `ADMIN` roles, server-side guards on pages + `/api/admin/*`
+- [x] **DONE (code)** — Admin: overview, products, bulk prices, categories, orders, reviews moderation, promotions + live preview
+- [x] **DONE (code)** — DB-backed promotions → `/api/promotions/active` → entry popup (no hardcoded copy; optional explicit `discountPercentClaim` only)
+- [x] **DONE (code)** — Targeted cache revalidation on product/category/promotion admin saves
+- [x] **DONE (code)** — Prisma catalog list pagination for PLP (no full in-memory catalog cache); PDP/related queries scoped
+- [x] **DONE (schema)** — Additive MySQL models: `Promotion`, `AdminAuditLog`, `CustomerReview`, `Customer.role`, category `imageUrl`
+- [x] **DONE (tooling)** — `npm run admin:promote`, `npm run loadtest:read`
+- [ ] **NEEDS OPS** — Promote first admin: `npm run admin:promote -- email@domain.com` (after customer account exists)
+- [ ] **NEEDS QA** — Load test pass on production `next start` (100 users); Lighthouse mobile CWV measurement
+- [ ] **NEEDS QA** — Full admin UAT (price/image/promo) on live DB after deploy
+
 Last updated: Cursor GenerateImage direct catalog pass (Oct 2026)
 
 ## Product AI images — Cursor GenerateImage direct (DONE — Oct 2026)

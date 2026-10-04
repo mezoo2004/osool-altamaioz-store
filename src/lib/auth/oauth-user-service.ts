@@ -47,6 +47,7 @@ async function resolveOAuthPrisma(profile: OAuthUserProfile, email: string): Pro
       firstName: byEmail.firstName ?? "",
       lastName: byEmail.lastName ?? "",
       phone: byEmail.phone,
+      role: byEmail.role,
     };
   }
 
@@ -73,6 +74,7 @@ async function resolveOAuthPrisma(profile: OAuthUserProfile, email: string): Pro
     firstName: created.firstName ?? "",
     lastName: created.lastName ?? "",
     phone: created.phone,
+    role: created.role,
   };
 }
 
@@ -95,6 +97,7 @@ async function resolveOAuthFile(profile: OAuthUserProfile, email: string): Promi
       firstName: existing.firstName,
       lastName: existing.lastName,
       phone: existing.phone,
+      role: "CUSTOMER",
     };
   }
 

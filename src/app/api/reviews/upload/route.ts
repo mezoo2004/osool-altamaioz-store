@@ -3,6 +3,10 @@ import { getSessionUser } from "@/lib/data/user-repository";
 import { storeReviewImageDev } from "@/lib/reviews/review-image-storage";
 
 export async function POST(request: Request) {
+  const { applyRouteRateLimit, RATE_LIMITS } = await import("@/lib/rate-limit/apply-route-rate-limit");
+  const limited = applyRouteRateLimit(request, RATE_LIMITS.reviews);
+  if (limited) return limited;
+
   const user = await getSessionUser();
   if (!user) {
     return NextResponse.json({ error: "auth_required" }, { status: 401 });

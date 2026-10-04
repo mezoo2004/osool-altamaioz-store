@@ -10,6 +10,7 @@ function toSessionUser(row: {
   firstName: string | null;
   lastName: string | null;
   phone: string | null;
+  role: "CUSTOMER" | "ADMIN";
 }): SessionUser {
   return {
     id: row.id,
@@ -17,6 +18,7 @@ function toSessionUser(row: {
     firstName: row.firstName ?? "",
     lastName: row.lastName ?? "",
     phone: row.phone,
+    role: row.role,
   };
 }
 

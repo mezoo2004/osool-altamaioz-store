@@ -32,7 +32,9 @@
     "images:ai-direct": "node scripts/generate-product-ai-images-direct.mjs --apply --concurrency 3",
     "import:analyze": "node scripts/analyze-products.mjs",
     "import:batch": "node scripts/import-batch.mjs",
-    "prebuild": "node scripts/build-catalog.mjs"
+    "prebuild": "node scripts/build-catalog.mjs",
+    "admin:promote": "node scripts/promote-admin.mjs",
+    "loadtest:read": "node scripts/load-test-read.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.0",
@@ -58,6 +60,7 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "autocannon": "^8.0.0",
     "eslint": "^9.33.0",
     "eslint-config-next": "^15.5.0",
     "prisma": "^6.19.0",

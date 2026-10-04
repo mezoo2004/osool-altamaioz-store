@@ -46,6 +46,23 @@ enum PaymentStatus {
   REFUNDED
 }
 
+enum CustomerRole {
+  CUSTOMER
+  ADMIN
+}
+
+enum PromotionStatus {
+  DRAFT
+  SCHEDULED
+  ACTIVE
+  EXPIRED
+}
+
+enum PromotionFrequency {
+  SESSION
+  DAILY
+}
+
 model Category {
   id               String            @id @default(cuid())
   slug             String            @unique @db.VarChar(191)
@@ -57,6 +74,7 @@ model Category {
   descriptionAr    String?           @db.Text
   descriptionEn    String?           @db.Text
   sortOrder        Int               @default(0)
+  imageUrl         String?           @db.VarChar(500)
   isActive         Boolean           @default(true)
   isFeatured       Boolean           @default(false)
   seoTitleAr       String?           @db.VarChar(255)
@@ -115,8 +133,14 @@ model Product {
   @@index([categoryId])
   @@index([series])
   @@index([status])
+  @@index([isOnOffer])
+  @@index([isFeatured])
+  @@index([createdAt])
+  @@index([updatedAt])
   @@index([groupKey])
   @@index([sourceBatchId])
+  @@index([nameAr(length: 64)])
+  @@index([nameEn(length: 64)])
 }
 
 model ProductCategory {
@@ -238,6 +262,7 @@ model Customer {
   lastName      String?        @db.VarChar(191)
   phone         String?        @db.VarChar(32)
   locale        String         @default("ar") @db.VarChar(8)
+  role          CustomerRole   @default(CUSTOMER)
   addresses     Address[]
   orders        Order[]
   wishlistItems WishlistItem[]
@@ -303,6 +328,7 @@ model Order {
 
   @@index([customerId])
   @@index([status])
+  @@index([paymentStatus])
   @@index([createdAt])
 }
 
@@ -353,4 +379,75 @@ model Scene {
   isActive      Boolean @default(true)
 
   @@index([spaceId])
+}
+
+model Promotion {
+  id                   String             @id @default(cuid())
+  status               PromotionStatus    @default(DRAFT)
+  priority             Int                @default(0)
+  popupEnabled         Boolean            @default(true)
+  heroEnabled          Boolean            @default(false)
+  desktopEnabled       Boolean            @default(true)
+  mobileEnabled        Boolean            @default(true)
+  frequency            PromotionFrequency @default(SESSION)
+  titleAr              String             @db.VarChar(255)
+  titleEn              String             @db.VarChar(255)
+  subtitleAr           String?            @db.Text
+  subtitleEn           String?            @db.Text
+  imageUrl             String?            @db.VarChar(500)
+  primaryCtaLabelAr    String             @db.VarChar(128)
+  primaryCtaLabelEn    String             @db.VarChar(128)
+  primaryCtaUrl        String             @db.VarChar(500)
+  secondaryCtaLabelAr  String?            @db.VarChar(128)
+  secondaryCtaLabelEn  String?            @db.VarChar(128)
+  secondaryCtaUrl      String?            @db.VarChar(500)
+  /** Explicit admin-confirmed discount % — never inferred for legal/display claims */
+  discountPercentClaim Int?
+  startsAt             DateTime?
+  endsAt               DateTime?
+  createdById          String?            @db.VarChar(191)
+  updatedById          String?            @db.VarChar(191)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  @@index([status])
+  @@index([priority])
+  @@index([startsAt, endsAt])
+}
+
+model AdminAuditLog {
+  id         String   @id @default(cuid())
+  adminId    String   @db.VarChar(191)
+  adminEmail String   @db.VarChar(191)
+  action     String   @db.VarChar(64)
+  entityType String   @db.VarChar(64)
+  entityId   String?  @db.VarChar(191)
+  oldValue   Json?
+  newValue   Json?
+  createdAt  DateTime @default(now())
+
+  @@index([adminId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+model CustomerReview {
+  id               String   @id @default(cuid())
+  status           String   @default("PENDING") @db.VarChar(32)
+  rating           Int
+  displayNameAr    String   @db.VarChar(191)
+  displayNameEn    String   @db.VarChar(191)
+  bodyAr           String   @db.Text
+  bodyEn           String   @db.Text
+  productSlug      String?  @db.VarChar(191)
+  imageKey         String?  @db.VarChar(500)
+  customerId       String?  @db.VarChar(191)
+  verifiedPurchase Boolean  @default(false)
+  isDemoSeed       Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([status])
+  @@index([productSlug])
+  @@index([createdAt])
 }

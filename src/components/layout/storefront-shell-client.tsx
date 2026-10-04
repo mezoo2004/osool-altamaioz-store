@@ -1,6 +1,12 @@
 "use client";
 
-import { AiChatWidget } from "@/components/assistant/ai-chat-widget";
+import dynamic from "next/dynamic";
+import { EntryPromoHost } from "@/components/promotions/entry-promo-host";
+
+const AiChatWidget = dynamic(
+  () => import("@/components/assistant/ai-chat-widget").then((m) => m.AiChatWidget),
+  { ssr: false },
+);
 import { CartFeedbackProvider } from "@/components/commerce/cart-feedback-provider";
 import { CartProvider } from "@/components/commerce/cart-provider";
 import { WishlistProvider } from "@/components/commerce/wishlist-provider";
@@ -38,6 +44,7 @@ export function StorefrontShellClient({ locale, children }: StorefrontShellClien
             {isHome ? <HomeFooter locale={locale} /> : <SiteFooter locale={locale} />}
             <MobileBottomNav />
           </div>
+          <EntryPromoHost locale={locale} />
           <AiChatWidget />
         </CartFeedbackProvider>
       </CartProvider>

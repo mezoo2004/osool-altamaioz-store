@@ -149,11 +149,12 @@ function toSessionUser(user: StoredUser): SessionUser {
     firstName: user.firstName,
     lastName: user.lastName,
     phone: user.phone,
+    role: "CUSTOMER",
   };
 }
 
 export async function createSession(user: SessionUser) {
-  const token = await new SignJWT({ sub: user.id, email: user.email })
+  const token = await new SignJWT({ sub: user.id, email: user.email, role: user.role })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime("7d")

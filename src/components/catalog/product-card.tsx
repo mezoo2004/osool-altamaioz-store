@@ -1,5 +1,6 @@
 "use client";
 
+import { CatalogProductImage } from "@/components/catalog/catalog-product-image";
 import { ProductImagePlaceholder } from "@/components/ui/product-image-placeholder";
 import { HomeProductImagePlaceholder } from "@/components/home/home-product-image-placeholder";
 import { useTranslations } from "next-intl";
@@ -17,6 +18,7 @@ type ProductCardProps = {
   className?: string;
   highlightQuery?: string;
   presentation?: "default" | "home";
+  imagePriority?: boolean;
 };
 
 export function ProductCard({
@@ -25,6 +27,7 @@ export function ProductCard({
   className,
   highlightQuery,
   presentation = "default",
+  imagePriority = false,
 }: ProductCardProps) {
   const t = useTranslations("catalog");
   const { has, toggle } = useWishlist();
@@ -67,14 +70,12 @@ export function ProductCard({
           {...(isHome ? { "data-home-image": true } : {})}
         >
           {thumbnailUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <CatalogProductImage
               src={thumbnailUrl}
               alt={name}
-              loading="lazy"
-              decoding="async"
+              priority={imagePriority}
               className={cn(
-                "h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]",
+                "transition-transform duration-300 group-hover:scale-[1.03]",
                 outOfStock && "grayscale",
               )}
             />

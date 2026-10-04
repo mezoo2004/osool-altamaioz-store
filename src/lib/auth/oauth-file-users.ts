@@ -49,5 +49,6 @@ export async function createOAuthFileUser(input: {
     firstName: user.firstName,
     lastName: user.lastName,
     phone: user.phone,
+    role: "CUSTOMER",
   };
 }
